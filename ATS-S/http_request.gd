@@ -7,7 +7,7 @@ var tmp = ConfigFile.new()
 func _ready() -> void:
 	while(true):
 		var value = self.request("https://panel.simrail.eu:8084/trains-open?serverCode=" + cfg.get_value("System", "server"))
-		await get_tree().create_timer(5).timeout
+		await get_tree().create_timer(7).timeout
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

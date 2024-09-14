@@ -19,6 +19,10 @@ config/icon="res://icon.svg"
 
 project/assembly_name="SR-ATS"
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/auto_version_code/plugin.cfg")
+
 [input]
 
 "ATS confirm"={
