@@ -6,7 +6,8 @@ var tmp = ConfigFile.new()
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	while(true):
-		var value = self.request("https://panel.simrail.eu:8084/trains-open?serverCode=" + cfg.get_value("System", "server"))
+		var value = request("https://panel.simrail.eu:8084/trains-open?serverCode=" + cfg.get_value("System", "server"))
+		print(value)
 		await get_tree().create_timer(7).timeout
 
 
