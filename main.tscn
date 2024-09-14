@@ -1,5 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://dl6vqmuu804oc"]
+[gd_scene load_steps=4 format=3 uid="uid://dl6vqmuu804oc"]
 
+[ext_resource type="Script" path="res://server.gd" id="1_iym70"]
 [ext_resource type="Texture2D" uid="uid://ddw53s0vlshw" path="res://ATS-S/icon (Custom).png" id="1_o7qkv"]
 [ext_resource type="Script" path="res://S.cs" id="2_4a7gg"]
 
@@ -11,7 +12,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="LineEdit" type="LineEdit" parent="."]
+[node name="Server" type="LineEdit" parent="."]
 layout_mode = 0
 offset_left = 366.0
 offset_top = 137.0
@@ -19,8 +20,9 @@ offset_right = 433.063
 offset_bottom = 168.0
 placeholder_text = "Server"
 max_length = 3
+script = ExtResource("1_iym70")
 
-[node name="LineEdit2" type="LineEdit" parent="."]
+[node name="TrainNumber" type="LineEdit" parent="."]
 layout_mode = 0
 offset_left = 489.0
 offset_top = 139.0
@@ -29,7 +31,7 @@ offset_bottom = 170.0
 placeholder_text = "Train Number"
 max_length = 6
 
-[node name="TextureButton" type="TextureButton" parent="."]
+[node name="ATS-S" type="TextureButton" parent="."]
 layout_mode = 0
 offset_left = 120.0
 offset_top = 327.0
@@ -37,3 +39,6 @@ offset_right = 248.0
 offset_bottom = 455.0
 texture_normal = ExtResource("1_o7qkv")
 script = ExtResource("2_4a7gg")
+
+[connection signal="text_changed" from="Server" to="Server" method="_on_text_changed"]
+[connection signal="text_changed" from="TrainNumber" to="Server" method="_on_train_number_text_changed"]
