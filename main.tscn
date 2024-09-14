@@ -1,8 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://dl6vqmuu804oc"]
+[gd_scene load_steps=9 format=3 uid="uid://dl6vqmuu804oc"]
 
 [ext_resource type="Script" path="res://server.gd" id="1_iym70"]
 [ext_resource type="Texture2D" uid="uid://ddw53s0vlshw" path="res://ATS-S/icon (Custom).png" id="1_o7qkv"]
 [ext_resource type="Script" path="res://S.cs" id="2_4a7gg"]
+[ext_resource type="Texture2D" uid="uid://cjrgpvf2qau18" path="res://ATS-S/icon_INOP (Custom).png" id="3_dalr6"]
+[ext_resource type="Texture2D" uid="uid://dr7q5id583e36" path="res://ATS-Ps/icon (Custom).png" id="5_pvvx2"]
+[ext_resource type="Texture2D" uid="uid://bm7sfftk1ixl5" path="res://ATS-Ps/icon_INOP (Custom).png" id="6_1sgmq"]
+[ext_resource type="Texture2D" uid="uid://cha541t8nc2u6" path="res://ATS-P/icon (Custom).png" id="7_6k4lh"]
+[ext_resource type="Texture2D" uid="uid://dl34jk3e5gqjj" path="res://ATS-P/icon_INOP (Custom).png" id="8_xtb8p"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -24,10 +29,10 @@ script = ExtResource("1_iym70")
 
 [node name="TrainNumber" type="LineEdit" parent="."]
 layout_mode = 0
-offset_left = 489.0
-offset_top = 139.0
-offset_right = 609.0
-offset_bottom = 170.0
+offset_left = 504.0
+offset_top = 135.0
+offset_right = 624.0
+offset_bottom = 166.0
 placeholder_text = "Train Number"
 max_length = 6
 
@@ -38,7 +43,35 @@ offset_top = 327.0
 offset_right = 248.0
 offset_bottom = 455.0
 texture_normal = ExtResource("1_o7qkv")
+texture_disabled = ExtResource("3_dalr6")
 script = ExtResource("2_4a7gg")
 
-[connection signal="text_changed" from="Server" to="Server" method="_on_text_changed"]
-[connection signal="text_changed" from="TrainNumber" to="Server" method="_on_train_number_text_changed"]
+[node name="ATS-Ps" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 318.0
+offset_top = 326.0
+offset_right = 446.0
+offset_bottom = 454.0
+disabled = true
+texture_normal = ExtResource("5_pvvx2")
+texture_disabled = ExtResource("6_1sgmq")
+
+[node name="ATS-P" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 510.0
+offset_top = 327.0
+offset_right = 638.0
+offset_bottom = 455.0
+disabled = true
+texture_normal = ExtResource("7_6k4lh")
+texture_disabled = ExtResource("8_xtb8p")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 656.0
+offset_top = 136.0
+offset_right = 700.0
+offset_bottom = 167.0
+text = "Save"
+
+[connection signal="pressed" from="Button" to="Server" method="_on_button_pressed"]

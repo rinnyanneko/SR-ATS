@@ -10,9 +10,7 @@ func _process(delta: float) -> void:
 	pass
 
 
-func _on_text_changed(new_text: String) -> void:
-	cfg.set_value("System", "server", new_text)
-
-func _on_train_number_text_changed(new_text: String) -> void:
-	cfg.set_value("System", "trainNumber", new_text)
+func _on_button_pressed() -> void:
+	cfg.set_value("System", "server", $".".text)
+	cfg.set_value("System", "trainNumber", $"../TrainNumber".text)
 	cfg.save("res://config.cfg")

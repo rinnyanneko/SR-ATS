@@ -52,6 +52,7 @@ script = ExtResource("7_0oeo2")
 
 [node name="ATS Chime" type="AudioStreamPlayer" parent="AtsNormalOff"]
 stream = ExtResource("7_xdwpm")
+parameters/looping = true
 
 [node name="AtsNormalOn" type="Sprite2D" parent="."]
 position = Vector2(495, 158)
