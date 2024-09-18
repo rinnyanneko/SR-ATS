@@ -1,0 +1,87 @@
+[gd_scene load_steps=16 format=3 uid="uid://b2fq5q2n383tm"]
+
+[ext_resource type="Script" path="res://ATS-S/scene.gd" id="1_573xv"]
+[ext_resource type="Texture2D" uid="uid://qi8arniw74fg" path="res://ATS-S/ATS confirm.png" id="2_12kp5"]
+[ext_resource type="Texture2D" uid="uid://da26ervg41qj5" path="res://return (Custom).png" id="3_vx7d5"]
+[ext_resource type="Script" path="res://ATS-S/back.gd" id="4_64sqy"]
+[ext_resource type="Texture2D" uid="uid://cpkk2fu5vqhbr" path="res://ATS-S/Chime off back.png" id="5_y1l5x"]
+[ext_resource type="Texture2D" uid="uid://cfvpppgfg0q1d" path="res://ATS-S/Chime off.png" id="6_slbwn"]
+[ext_resource type="Texture2D" uid="uid://bdn3mxgw7fx3m" path="res://ATS-S/ATS normal_off.png" id="7_kp5u4"]
+[ext_resource type="Script" path="res://ATS-S/ats_normal_off.gd" id="8_eah34"]
+[ext_resource type="AudioStream" uid="uid://btlooyfxwrf1b" path="res://ATS-S/ATS chime.mp3" id="9_6i5j7"]
+[ext_resource type="Texture2D" uid="uid://brwl7bo77252h" path="res://ATS-S/ATS normal_on.png" id="10_4ct4o"]
+[ext_resource type="Texture2D" uid="uid://dtl1b0c4yb8fv" path="res://ATS-S/ATS alarm_off.png" id="11_x83oe"]
+[ext_resource type="Texture2D" uid="uid://xl76jiqdgmj4" path="res://ATS-S/ATS alarm_on.png" id="12_ui5or"]
+[ext_resource type="Script" path="res://ATS-S/ats_alarm_on.gd" id="13_8js0t"]
+[ext_resource type="AudioStream" uid="uid://d4n1qd6x8q85c" path="res://ATS-S/ATS alarm.mp3" id="14_od4s7"]
+[ext_resource type="Script" path="res://ATS-S/http_request.gd" id="15_8wxhp"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_573xv")
+
+[node name="ATS Confirm" type="TextureButton" parent="."]
+offset_left = 560.0
+offset_top = 343.0
+offset_right = 688.0
+offset_bottom = 471.0
+texture_normal = ExtResource("2_12kp5")
+
+[node name="Return" type="TextureButton" parent="."]
+offset_left = 23.0
+offset_top = 16.0
+offset_right = 87.0
+offset_bottom = 80.0
+texture_normal = ExtResource("3_vx7d5")
+script = ExtResource("4_64sqy")
+
+[node name="ChimeOffBack" type="Sprite2D" parent="."]
+position = Vector2(217, 468)
+texture = ExtResource("5_y1l5x")
+
+[node name="Chime Off" type="TextureButton" parent="ChimeOffBack"]
+offset_left = -60.0
+offset_top = -118.0
+offset_right = 68.0
+offset_bottom = 10.0
+texture_normal = ExtResource("6_slbwn")
+
+[node name="AtsNormalOff" type="Sprite2D" parent="."]
+position = Vector2(495, 158)
+texture = ExtResource("7_kp5u4")
+script = ExtResource("8_eah34")
+
+[node name="ATS Chime" type="AudioStreamPlayer" parent="AtsNormalOff"]
+stream = ExtResource("9_6i5j7")
+parameters/looping = true
+
+[node name="AtsNormalOn" type="Sprite2D" parent="."]
+position = Vector2(495, 158)
+texture = ExtResource("10_4ct4o")
+
+[node name="AtsAlarmOff" type="Sprite2D" parent="."]
+position = Vector2(679, 158)
+texture = ExtResource("11_x83oe")
+
+[node name="AtsAlarmOn" type="Sprite2D" parent="."]
+position = Vector2(679, 158)
+texture = ExtResource("12_ui5or")
+script = ExtResource("13_8js0t")
+
+[node name="ATS Alarm" type="AudioStreamPlayer" parent="AtsAlarmOn"]
+stream = ExtResource("14_od4s7")
+parameters/looping = true
+
+[node name="HTTPRequest" type="HTTPRequest" parent="."]
+use_threads = true
+script = ExtResource("15_8wxhp")
+
+[node name="AcceptDialog" type="AcceptDialog" parent="."]
+title = "ERROR"
+initial_position = 2
+size = Vector2i(742, 100)
+dialog_text = "Error connect to server, check the server code and train number and your internet connection"
+
+[connection signal="pressed" from="ATS Confirm" to="AtsAlarmOn" method="_on_ats_confirm_pressed"]
+[connection signal="pressed" from="Return" to="Return" method="_on_pressed"]
+[connection signal="pressed" from="ChimeOffBack/Chime Off" to="AtsNormalOff" method="_on_chime_off_pressed"]
+[connection signal="request_completed" from="HTTPRequest" to="HTTPRequest" method="_on_request_completed"]

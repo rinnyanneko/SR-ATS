@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dl6vqmuu804oc"]
+[gd_scene load_steps=11 format=3 uid="uid://dl6vqmuu804oc"]
 
 [ext_resource type="Script" path="res://server.gd" id="1_iym70"]
 [ext_resource type="Texture2D" uid="uid://ddw53s0vlshw" path="res://ATS-S/icon (Custom).png" id="1_o7qkv"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://bm7sfftk1ixl5" path="res://ATS-Ps/icon_INOP (Custom).png" id="6_1sgmq"]
 [ext_resource type="Texture2D" uid="uid://cha541t8nc2u6" path="res://ATS-P/icon (Custom).png" id="7_6k4lh"]
 [ext_resource type="Texture2D" uid="uid://dl34jk3e5gqjj" path="res://ATS-P/icon_INOP (Custom).png" id="8_xtb8p"]
+[ext_resource type="Script" path="res://save.gd" id="9_rvkf8"]
 [ext_resource type="Texture2D" uid="uid://clhkgi0ggycix" path="res://banner.png" id="9_usuam"]
 
 [node name="Control" type="Control"]
@@ -43,6 +44,7 @@ offset_left = 120.0
 offset_top = 327.0
 offset_right = 248.0
 offset_bottom = 455.0
+disabled = true
 texture_normal = ExtResource("1_o7qkv")
 texture_disabled = ExtResource("3_dalr6")
 script = ExtResource("4_12aw2")
@@ -67,13 +69,14 @@ disabled = true
 texture_normal = ExtResource("7_6k4lh")
 texture_disabled = ExtResource("8_xtb8p")
 
-[node name="Button" type="Button" parent="."]
+[node name="Save" type="Button" parent="."]
 layout_mode = 0
 offset_left = 664.0
 offset_top = 186.0
 offset_right = 708.0
 offset_bottom = 217.0
 text = "Save"
+script = ExtResource("9_rvkf8")
 
 [node name="Banner" type="Sprite2D" parent="."]
 position = Vector2(567, 89)
@@ -81,4 +84,5 @@ scale = Vector2(0.251848, 0.251848)
 texture = ExtResource("9_usuam")
 
 [connection signal="pressed" from="ATS-S" to="ATS-S" method="_on_pressed"]
-[connection signal="pressed" from="Button" to="Server" method="_on_button_pressed"]
+[connection signal="pressed" from="Save" to="Server" method="_on_button_pressed"]
+[connection signal="pressed" from="Save" to="Save" method="_on_pressed"]
