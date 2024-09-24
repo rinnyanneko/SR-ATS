@@ -8,7 +8,6 @@ var errors = 0
 func _ready() -> void:
 	while(true):
 		var value = request("https://panel.simrail.eu:8084/trains-open?serverCode=" + cfg.get_value("System", "server"))
-		print(value)
 		await get_tree().create_timer(7).timeout
 
 
@@ -37,6 +36,7 @@ func _on_request_completed(result: int, response_code: int, headers: PackedStrin
 	else:
 		$"../AcceptDialog".visible = true
 		get_tree().change_scene_to_file("res://main.tscn")
+		errors = 0
 
 func readArray(array:Array):
 	for data in array:

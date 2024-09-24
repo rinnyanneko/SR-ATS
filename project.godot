@@ -31,6 +31,10 @@ enabled=PackedStringArray()
 ]
 }
 
+[internationalization]
+
+locale/translations=PackedStringArray("res://translation.cmn.translation", "res://translation.en.translation", "res://translation.jp.translation", "res://translation.zh.translation")
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"

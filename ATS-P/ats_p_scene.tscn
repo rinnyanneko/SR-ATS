@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://du8k1m6t8gk8d"]
+
+[ext_resource type="Texture2D" uid="uid://da26ervg41qj5" path="res://return (Custom).png" id="1_gvy33"]
+[ext_resource type="Script" path="res://return.gd" id="2_f4fvo"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Return" type="TextureButton" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+texture_normal = ExtResource("1_gvy33")
+script = ExtResource("2_f4fvo")
+
+[connection signal="pressed" from="Return" to="Return" method="_on_pressed"]

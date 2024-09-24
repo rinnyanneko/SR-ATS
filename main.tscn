@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dl6vqmuu804oc"]
+[gd_scene load_steps=12 format=3 uid="uid://dl6vqmuu804oc"]
 
 [ext_resource type="Script" path="res://server.gd" id="1_iym70"]
 [ext_resource type="Texture2D" uid="uid://ddw53s0vlshw" path="res://ATS-S/icon (Custom).png" id="1_o7qkv"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://dl34jk3e5gqjj" path="res://ATS-P/icon_INOP (Custom).png" id="8_xtb8p"]
 [ext_resource type="Script" path="res://save.gd" id="9_rvkf8"]
 [ext_resource type="Texture2D" uid="uid://clhkgi0ggycix" path="res://banner.png" id="9_usuam"]
+[ext_resource type="Script" path="res://language.gd" id="11_qu0kt"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -21,20 +22,20 @@ grow_vertical = 2
 
 [node name="Server" type="LineEdit" parent="."]
 layout_mode = 0
-offset_left = 374.0
-offset_top = 186.0
-offset_right = 441.063
-offset_bottom = 217.0
+offset_left = 371.0
+offset_top = 188.0
+offset_right = 438.063
+offset_bottom = 219.0
 placeholder_text = "Server"
 max_length = 3
 script = ExtResource("1_iym70")
 
 [node name="TrainNumber" type="LineEdit" parent="."]
 layout_mode = 0
-offset_left = 512.0
-offset_top = 185.0
-offset_right = 632.0
-offset_bottom = 216.0
+offset_left = 509.0
+offset_top = 187.0
+offset_right = 629.0
+offset_bottom = 218.0
 placeholder_text = "Train Number"
 max_length = 6
 
@@ -71,10 +72,10 @@ texture_disabled = ExtResource("8_xtb8p")
 
 [node name="Save" type="Button" parent="."]
 layout_mode = 0
-offset_left = 664.0
-offset_top = 186.0
-offset_right = 708.0
-offset_bottom = 217.0
+offset_left = 659.0
+offset_top = 188.0
+offset_right = 703.0
+offset_bottom = 219.0
 text = "Save"
 script = ExtResource("9_rvkf8")
 
@@ -83,6 +84,22 @@ position = Vector2(567, 89)
 scale = Vector2(0.251848, 0.251848)
 texture = ExtResource("9_usuam")
 
+[node name="Language" type="OptionButton" parent="."]
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 20.0
+item_count = 4
+popup/item_0/text = "English"
+popup/item_1/text = "Japanese"
+popup/item_1/id = 1
+popup/item_2/text = "Chinese(Traditional)"
+popup/item_2/id = 2
+popup/item_3/text = "Chinese(Simplified)"
+popup/item_3/id = 3
+script = ExtResource("11_qu0kt")
+
 [connection signal="pressed" from="ATS-S" to="ATS-S" method="_on_pressed"]
 [connection signal="pressed" from="Save" to="Server" method="_on_button_pressed"]
 [connection signal="pressed" from="Save" to="Save" method="_on_pressed"]
+[connection signal="item_selected" from="Language" to="Save" method="_on_language_item_selected"]
+[connection signal="item_selected" from="Language" to="Language" method="_on_item_selected"]
