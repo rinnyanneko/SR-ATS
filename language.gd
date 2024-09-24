@@ -14,9 +14,13 @@ func _process(delta: float) -> void:
 func _on_item_selected(index: int) -> void:
 	if self.get_selected_id() == 0:
 		TranslationServer.set_locale("en")
+		print("English(en)!")
 	if self.get_selected_id() == 1:
 		TranslationServer.set_locale("jp")
+		print("Japanese(jp)!")
 	if self.get_selected_id() == 2:
 		TranslationServer.set_locale("cmn")
+		print("Tradition Chinese(cmn)!")
 	if self.get_selected_id() == 3:
 		TranslationServer.set_locale("zh")
+		print("Simplified Chinese(zh)!")
