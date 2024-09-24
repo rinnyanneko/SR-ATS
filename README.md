@@ -1,5 +1,9 @@
 # SR-ATS
-ATS for SimRail
+ATS for [SimRail](https://simrail.eu/en/our-games/simrail-2021)
+
+Written with [Godot Game Engine](https://godotengine.org)
+
+Feel free to open a pull request!
 
 [GitHub page](https://github.com/rinnyanneko/SR-ATS)
 
