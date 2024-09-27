@@ -83,7 +83,13 @@ size = Vector2i(742, 100)
 dialog_text = "Error connect to server, check the server code and train number and your internet connection"
 script = ExtResource("16_mevde")
 
+[node name="Timer" type="Timer" parent="."]
+wait_time = 28.0
+autostart = true
+
 [connection signal="pressed" from="ATS Confirm" to="AtsAlarmOn" method="_on_ats_confirm_pressed"]
 [connection signal="pressed" from="Return" to="Return" method="_on_pressed"]
 [connection signal="pressed" from="ChimeOffBack/Chime Off" to="AtsNormalOff" method="_on_chime_off_pressed"]
 [connection signal="request_completed" from="HTTPRequest" to="HTTPRequest" method="_on_request_completed"]
+[connection signal="confirmed" from="ErrorMsg" to="ErrorMsg" method="_on_confirmed"]
+[connection signal="timeout" from="Timer" to="HTTPRequest" method="_on_timer_timeout"]

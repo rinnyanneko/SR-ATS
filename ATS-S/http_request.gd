@@ -31,14 +31,18 @@ func _on_request_completed(result: int, response_code: int, headers: PackedStrin
 		tmp.set_value("TrainData", "SignalInFrontSpeed", data["SignalInFrontSpeed"])
 		tmp.set_value("TrainData", "VDDelayedTimetableIndex", data["VDDelayedTimetableIndex"])
 		tmp.save("res://ATS-S/data.tmp")
-	elif errors < 10:
+	elif errors < 3:
 		errors += 1
-	else:
-		$"../AcceptDialog".visible = true
-		get_tree().change_scene_to_file("res://main.tscn")
-		errors = 0
+
 
 func readArray(array:Array):
 	for data in array:
 		if data["TrainNoLocal"] == cfg.get_value("System", "trainNumber"):
 			return data["TrainData"]
+
+
+func _on_timer_timeout() -> void:
+	if errors == 3:
+		$"../ErrorMsg".visible = true
+	else:
+		errors = 0
