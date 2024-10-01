@@ -14,8 +14,8 @@
 [ext_resource type="Texture2D" uid="uid://xl76jiqdgmj4" path="res://ATS-S/ATS alarm_on.png" id="12_ui5or"]
 [ext_resource type="Script" path="res://ATS-S/ats_alarm_on.gd" id="13_8js0t"]
 [ext_resource type="AudioStream" uid="uid://d4n1qd6x8q85c" path="res://ATS-S/ATS alarm.mp3" id="14_od4s7"]
-[ext_resource type="Script" path="res://ATS-S/http_request.gd" id="15_8wxhp"]
-[ext_resource type="Script" path="res://ATS-S/error_msg.gd" id="16_mevde"]
+[ext_resource type="Script" path="res://http_request.gd" id="15_8wxhp"]
+[ext_resource type="Script" path="res://request_error_msg.gd" id="16_mevde"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_573xv")
