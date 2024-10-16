@@ -84,22 +84,14 @@ position = Vector2(567, 89)
 scale = Vector2(0.251848, 0.251848)
 texture = ExtResource("9_usuam")
 
-[node name="Language" type="OptionButton" parent="."]
+[node name="Language" type="Button" parent="."]
 layout_mode = 0
-offset_right = 32.0
-offset_bottom = 20.0
-item_count = 4
-popup/item_0/text = "English"
-popup/item_1/text = "Japanese"
-popup/item_1/id = 1
-popup/item_2/text = "Chinese(Traditional)"
-popup/item_2/id = 2
-popup/item_3/text = "Chinese(Simplified)"
-popup/item_3/id = 3
+offset_right = 90.0
+offset_bottom = 31.0
+text = "Language"
 script = ExtResource("11_qu0kt")
 
 [connection signal="pressed" from="ATS-S" to="ATS-S" method="_on_pressed"]
 [connection signal="pressed" from="Save" to="Server" method="_on_button_pressed"]
 [connection signal="pressed" from="Save" to="Save" method="_on_pressed"]
-[connection signal="item_selected" from="Language" to="Save" method="_on_language_item_selected"]
-[connection signal="item_selected" from="Language" to="Language" method="_on_item_selected"]
+[connection signal="pressed" from="Language" to="Language" method="_on_pressed"]

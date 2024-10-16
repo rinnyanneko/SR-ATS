@@ -19,9 +19,3 @@ func _on_pressed() -> void:
 		$"../ATS-S".disabled = false
 		#$"../ATS-P".disabled = false
 		#$"../ATS-Ps".disabled = false
-
-
-func _on_language_item_selected(index: int) -> void:
-	$"../Server".placeholder_text = tr("SERVER")
-	$"../TrainNumber".placeholder_text = tr("TRAIN_NUMBER")
-	$".".text = tr("SAVE")
