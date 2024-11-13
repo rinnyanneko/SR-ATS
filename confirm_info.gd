@@ -12,7 +12,7 @@ func _process(delta: float) -> void:
 	pass
 
 func run(atsmode: String):
-	atsmode = self.atsmode
+	self.atsmode = atsmode
 	self.title = tr("CONFIRM_TITLE")
 	self.dialog_text = tr("CONFIRM_TEXT").format({server = cfg.get_value("System", "server"), trainNumber = cfg.get_value("System", "trainNumber")})
 	self.ok_button_text = tr("CONFIRM")
