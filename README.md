@@ -13,14 +13,6 @@ two page will update at the same time
 
 Please give me a star!
 
-# How to use
-
-Download from [releases](https://github.com/rinnyanneko/SR-ATS/releases)
-
-Extract
-
-Run SR-ATS.exe
-
 # Snapshots
 
 ![](./screenshot/Screenshot%202024-09-14%20162539.png)
