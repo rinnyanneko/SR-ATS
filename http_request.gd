@@ -1,11 +1,11 @@
 extends HTTPRequest
 var cfg = ConfigFile.new()
-var err = cfg.load("res://config.cfg")
 var tmp = ConfigFile.new()
 var errors = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	cfg.load("res://config.cfg")
 	while(true):
 		var value = request("https://panel.simrail.eu:8084/trains-open?serverCode=" + cfg.get_value("System", "server"))
 		await get_tree().create_timer(7).timeout

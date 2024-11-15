@@ -3,7 +3,6 @@ SERVER,Server,サーバー,伺服器,服务器
 TRAIN_NUMBER,Train Number,列車番号,車次,车次
 SAVE,Save,保存,保存,保存
 S_ERROR_MSG,"An error occurred while connecting to the server, please check the server code, train number, and your network connection",サーバーへの接続中にエラーが発生しました。サーバーコード、列車番号、ネットワーク接続を確認してください。,連接到伺服器時發生錯誤，請檢查伺服器代碼、車次以及您的網路連接,连接到服务器时发生错误，请检查服务器代码、车次以及您的网络连接
-CONFIRM_TITLE,Please confirm the info,,,
-CONFIRM_TEXT,Server: {server}\nTrain number: {trainNumber},,,
-CONFIRM,Confirm,,,
-CANCEL,Cancel,,,
+CONFIRM_TEXT,Server: {server}\nTrain number: {trainNumber},サーバー：{server}\n列車番号：{trainNumber},伺服器: {server}\n車次: {trainNumber},服务器: {server}\n车次: {trainNumber}
+CONFIRM,Confirm,確認,確認,确认
+CANCEL,Cancel,キャンセル,取消,取消
