@@ -97,6 +97,15 @@ initial_position = 2
 dialog_autowrap = true
 script = ExtResource("12_qinf2")
 
+[node name="LinkButton" type="LinkButton" parent="."]
+layout_mode = 0
+offset_left = 1015.0
+offset_top = 620.0
+offset_right = 1148.0
+offset_bottom = 644.0
+text = "Check for update"
+uri = "./update.exe"
+
 [connection signal="pressed" from="ATS-S" to="ATS-S" method="_on_pressed"]
 [connection signal="pressed" from="Save" to="Server" method="_on_button_pressed"]
 [connection signal="pressed" from="Save" to="Save" method="_on_pressed"]
