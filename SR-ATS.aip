@@ -4,7 +4,7 @@ AIEdition=1
 GUID={8C457F8C-3A2A-4728-9F19-DC38E0371815}
 AppName=SR-ATS
 AppEdition=
-AppVersion=ALPHA-0.0.4
+AppVersion=ALPHA-0.0.5
 GetVerFromExe=0
 AppDescription=ATS for SimRail
 CompanyName=rinnyanneko
@@ -138,7 +138,7 @@ CompoMustSelect=0
 RestartComputer=0
 LaunchFile=1
 LaunchFileName=<MainExecutable>
-LaunchFileChecked=1
+LaunchFileChecked=0
 LaunchFileAdmin=0
 FinishCurrentDir=0
 CustomAction=0
@@ -148,7 +148,7 @@ CustomActionChecked=0
 CustomActionAdmin=0
 TotalFiles=2
 SourceDirFiles=3
-SourceDirSize=85070672
+SourceDirSize=85070320
 
 [GUI]
 FontName=Verdana
