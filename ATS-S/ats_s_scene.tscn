@@ -47,7 +47,7 @@ offset_bottom = 10.0
 texture_normal = ExtResource("6_slbwn")
 
 [node name="AtsNormalOff" type="Sprite2D" parent="."]
-position = Vector2(495, 158)
+position = Vector2(551, 162)
 texture = ExtResource("7_kp5u4")
 script = ExtResource("8_eah34")
 
@@ -56,15 +56,15 @@ stream = ExtResource("9_6i5j7")
 parameters/looping = true
 
 [node name="AtsNormalOn" type="Sprite2D" parent="."]
-position = Vector2(495, 158)
+position = Vector2(551, 162)
 texture = ExtResource("10_4ct4o")
 
 [node name="AtsAlarmOff" type="Sprite2D" parent="."]
-position = Vector2(679, 158)
+position = Vector2(735, 162)
 texture = ExtResource("11_x83oe")
 
 [node name="AtsAlarmOn" type="Sprite2D" parent="."]
-position = Vector2(679, 158)
+position = Vector2(735, 162)
 texture = ExtResource("12_ui5or")
 script = ExtResource("13_8js0t")
 

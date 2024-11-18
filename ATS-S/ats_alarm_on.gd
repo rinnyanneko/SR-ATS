@@ -1,5 +1,6 @@
 extends Sprite2D
 var tmp = ConfigFile.new()
+var passedSignal
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$"..".alarm = true
@@ -8,15 +9,19 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	var err = tmp.load("res://ATS-S/data.tmp")
-	var velocity:float = float(tmp.get_value("TrainData", "Velocity"))
-	var distanceToSignalInFront:float = float(tmp.get_value("TrainData", "DistanceToSignalInFront"))
-	var signalInFrontSpeed:float = float(tmp.get_value("TrainData", "SignalInFrontSpeed"))
-	var signalInFront:String = String(tmp.get_value("TrainData", "SignalInFront"))
-	var passedSignal = $"..".signalInFront
-	print(signalInFront)
-	print(distanceToSignalInFront)
-	print(passedSignal != signalInFront)
+	tmp.load("res://data.tmp")
+	#var velocity:float = float(tmp.get_value("TrainData", "Velocity"))
+	#var distanceToSignalInFront:float = float(tmp.get_value("TrainData", "DistanceToSignalInFront"))
+	#var signalInFrontSpeed:float = float(tmp.get_value("TrainData", "SignalInFrontSpeed"))
+	#var signalInFront:String = String(tmp.get_value("TrainData", "SignalInFront"))
+	var velocity:float = float($"..".Velocity)
+	var distanceToSignalInFront:float = float($"..".DistanceToSignalInFront)
+	var signalInFrontSpeed:float = float($"..".SignalInFrontSpeed)
+	var signalInFront:String = String($"..".SignalInFront)
+	passedSignal = $"..".signalInFront
+	#print(signalInFront)
+	#print(distanceToSignalInFront)
+	#print(passedSignal != signalInFront)
 	if velocity > 0 && distanceToSignalInFront < 600 && signalInFrontSpeed < 32767 &&  passedSignal != signalInFront:
 		visible = true
 		$"..".alarm == true

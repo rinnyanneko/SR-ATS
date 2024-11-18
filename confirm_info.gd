@@ -13,10 +13,9 @@ func _process(delta: float) -> void:
 func run(atsmode: String):
 	cfg.load("res://config.cfg")
 	self.atsmode = atsmode
-	print(tr("CONFIRM_TEXT"))
 	var tmp = tr(tr("CONFIRM_TEXT").format({"server" : cfg.get_value("System", "server")}))
-	print(tmp)
 	self.dialog_text = tmp.format({"trainNumber" : cfg.get_value("System", "trainNumber")})
+	print(self.dialog_text)
 	self.ok_button_text = tr("CONFIRM")
 	self.cancel_button_text = tr("CANCEL")
 	self.visible = true

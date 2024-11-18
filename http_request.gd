@@ -7,6 +7,7 @@ var errors = 0
 func _ready() -> void:
 	cfg.load("res://config.cfg")
 	while(true):
+		print("getting data from server...")
 		var value = request("https://panel.simrail.eu:8084/trains-open?serverCode=" + cfg.get_value("System", "server"))
 		await get_tree().create_timer(7).timeout
 
@@ -20,7 +21,9 @@ func _on_request_completed(result: int, response_code: int, headers: PackedStrin
 	var json:Dictionary = JSON.parse_string(body.get_string_from_utf8())
 	var dataArray:Array = json["data"]
 	var data = readArray(dataArray)
-	if data != null and data["ControlledBySteamID"] != null and data["InBorderStationArea"] != null and data["Latititute"] != null and data["Longitute"] != null and data["Velocity"] != null and data["SignalInFront"] != null and data["DistanceToSignalInFront"] != null and data["SignalInFrontSpeed"] != null and data["VDDelayedTimetableIndex"] != null:
+	print(data)
+	if data != null:
+		'''
 		tmp.set_value("TrainData", "ControlledBySteamID", data["ControlledBySteamID"])
 		tmp.set_value("TrainData", "InBorderStationArea", data["InBorderStationArea"])
 		tmp.set_value("TrainData", "Latititute", data["Latititute"])
@@ -30,7 +33,20 @@ func _on_request_completed(result: int, response_code: int, headers: PackedStrin
 		tmp.set_value("TrainData", "DistanceToSignalInFront", data["DistanceToSignalInFront"])
 		tmp.set_value("TrainData", "SignalInFrontSpeed", data["SignalInFrontSpeed"])
 		tmp.set_value("TrainData", "VDDelayedTimetableIndex", data["VDDelayedTimetableIndex"])
-		tmp.save("res://ATS-S/data.tmp")
+		tmp.save("res://data.tmp")
+		'''
+		if data["ControlledBySteamID"] != null:
+			$"..".ControlledBySteamID = data["ControlledBySteamID"]
+		else:
+			$"..".ControlledBySteamID = "null"
+		$"..".InBorderStationArea = data["InBorderStationArea"]
+		$"..".Latititute = data["Latititute"]
+		$"..".Longitute = data["Longitute"]
+		$"..".Velocity = data["Velocity"]
+		$"..".SignalInFront = data["SignalInFront"]
+		$"..".DistanceToSignalInFront = data["DistanceToSignalInFront"]
+		$"..".SignalInFrontSpeed = data["SignalInFrontSpeed"]
+		$"..".VDDelayedTimetableIndex = data["VDDelayedTimetableIndex"]
 	elif errors < 3:
 		errors += 1
 
