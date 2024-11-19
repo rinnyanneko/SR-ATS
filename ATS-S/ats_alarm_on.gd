@@ -5,15 +5,11 @@ var passedSignal
 func _ready() -> void:
 	$"..".alarm = true
 	$"ATS Alarm".play()
+	print("Test Alarm!")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	tmp.load("res://data.tmp")
-	#var velocity:float = float(tmp.get_value("TrainData", "Velocity"))
-	#var distanceToSignalInFront:float = float(tmp.get_value("TrainData", "DistanceToSignalInFront"))
-	#var signalInFrontSpeed:float = float(tmp.get_value("TrainData", "SignalInFrontSpeed"))
-	#var signalInFront:String = String(tmp.get_value("TrainData", "SignalInFront"))
 	var velocity:float = float($"..".Velocity)
 	var distanceToSignalInFront:float = float($"..".DistanceToSignalInFront)
 	var signalInFrontSpeed:float = float($"..".SignalInFrontSpeed)
@@ -28,6 +24,7 @@ func _process(delta: float) -> void:
 		$"ATS Alarm".play()
 		$"../AtsNormalOff/ATS Chime".play()
 		$"..".signalInFront = signalInFront
+		print("Alarm Triggered!")
 	if $"..".alarm == true:
 		visible = true
 	else:
@@ -39,3 +36,4 @@ func _process(delta: float) -> void:
 func _on_ats_confirm_pressed() -> void:
 	$"ATS Alarm".stop()
 	$"..".alarm = false
+	print("Alarm confirmed!")

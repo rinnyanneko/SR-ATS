@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dl6vqmuu804oc"]
+[gd_scene load_steps=14 format=3 uid="uid://dl6vqmuu804oc"]
 
 [ext_resource type="Script" path="res://server.gd" id="1_iym70"]
 [ext_resource type="Texture2D" uid="uid://ddw53s0vlshw" path="res://ATS-S/icon (Custom).png" id="1_o7qkv"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://clhkgi0ggycix" path="res://banner.png" id="9_usuam"]
 [ext_resource type="Script" path="res://language.gd" id="11_qu0kt"]
 [ext_resource type="Script" path="res://confirm_info.gd" id="12_qinf2"]
+[ext_resource type="Script" path="res://version.gd" id="13_h0e4g"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -103,8 +104,9 @@ offset_left = 1054.0
 offset_top = 621.0
 offset_right = 1150.0
 offset_bottom = 645.0
-text = "ALPHA-0.0.5"
+text = "ALPHA-0.0.6"
 uri = "Updater.exe"
+script = ExtResource("13_h0e4g")
 
 [connection signal="pressed" from="ATS-S" to="ATS-S" method="_on_pressed"]
 [connection signal="pressed" from="Save" to="Server" method="_on_button_pressed"]
@@ -112,3 +114,4 @@ uri = "Updater.exe"
 [connection signal="pressed" from="Language" to="Language" method="_on_pressed"]
 [connection signal="canceled" from="ConfirmationDialog" to="ConfirmationDialog" method="_on_canceled"]
 [connection signal="confirmed" from="ConfirmationDialog" to="ConfirmationDialog" method="_on_confirmed"]
+[connection signal="pressed" from="LinkButton" to="LinkButton" method="_on_pressed"]

@@ -21,10 +21,10 @@
 script = ExtResource("1_573xv")
 
 [node name="ATS Confirm" type="TextureButton" parent="."]
-offset_left = 560.0
-offset_top = 343.0
-offset_right = 688.0
-offset_bottom = 471.0
+offset_left = 588.0
+offset_top = 337.0
+offset_right = 716.0
+offset_bottom = 465.0
 texture_normal = ExtResource("2_12kp5")
 
 [node name="Return" type="TextureButton" parent="."]
@@ -84,7 +84,7 @@ dialog_text = "Error connect to server, check the server code and train number a
 script = ExtResource("16_mevde")
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 28.0
+wait_time = 10.0
 autostart = true
 
 [connection signal="pressed" from="ATS Confirm" to="AtsAlarmOn" method="_on_ats_confirm_pressed"]

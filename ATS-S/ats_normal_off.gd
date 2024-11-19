@@ -20,3 +20,4 @@ func _on_chime_off_pressed() -> void:
 	if $"..".alarm == false:
 		$"..".chime = false
 		$"ATS Chime".stop()
+		print("Chime off!")

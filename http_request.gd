@@ -23,18 +23,8 @@ func _on_request_completed(result: int, response_code: int, headers: PackedStrin
 	var data = readArray(dataArray)
 	print(data)
 	if data != null:
-		'''
-		tmp.set_value("TrainData", "ControlledBySteamID", data["ControlledBySteamID"])
-		tmp.set_value("TrainData", "InBorderStationArea", data["InBorderStationArea"])
-		tmp.set_value("TrainData", "Latititute", data["Latititute"])
-		tmp.set_value("TrainData", "Longitute", data["Longitute"])
-		tmp.set_value("TrainData", "Velocity", data["Velocity"])
-		tmp.set_value("TrainData", "SignalInFront", data["SignalInFront"])
-		tmp.set_value("TrainData", "DistanceToSignalInFront", data["DistanceToSignalInFront"])
-		tmp.set_value("TrainData", "SignalInFrontSpeed", data["SignalInFrontSpeed"])
-		tmp.set_value("TrainData", "VDDelayedTimetableIndex", data["VDDelayedTimetableIndex"])
-		tmp.save("res://data.tmp")
-		'''
+		$"../ErrorMsg".visible = false
+		errors = 0
 		if data["ControlledBySteamID"] != null:
 			$"..".ControlledBySteamID = data["ControlledBySteamID"]
 		else:
@@ -47,7 +37,7 @@ func _on_request_completed(result: int, response_code: int, headers: PackedStrin
 		$"..".DistanceToSignalInFront = data["DistanceToSignalInFront"]
 		$"..".SignalInFrontSpeed = data["SignalInFrontSpeed"]
 		$"..".VDDelayedTimetableIndex = data["VDDelayedTimetableIndex"]
-	elif errors < 3:
+	elif errors < 2:
 		errors += 1
 
 
@@ -58,7 +48,7 @@ func readArray(array:Array):
 
 
 func _on_timer_timeout() -> void:
-	if errors == 3:
+	if errors >= 2:
 		$"../ErrorMsg".visible = true
 	else:
 		errors = 0

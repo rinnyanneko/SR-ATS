@@ -16,11 +16,13 @@ func run(atsmode: String):
 	var tmp = tr(tr("CONFIRM_TEXT").format({"server" : cfg.get_value("System", "server")}))
 	self.dialog_text = tmp.format({"trainNumber" : cfg.get_value("System", "trainNumber")})
 	print(self.dialog_text)
+	print("Confirm?")
 	self.ok_button_text = tr("CONFIRM")
 	self.cancel_button_text = tr("CANCEL")
 	self.visible = true
 
 func _on_confirmed() -> void:
+	print("Confirmed")
 	match self.atsmode:
 		"s":
 			get_tree().change_scene_to_file("res://ATS-S/ats_s_scene.tscn")
@@ -31,4 +33,5 @@ func _on_confirmed() -> void:
 
 
 func _on_canceled() -> void:
+	print("Canceled")
 	self.visible = false
