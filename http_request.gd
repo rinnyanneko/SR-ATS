@@ -39,16 +39,11 @@ func _on_request_completed(result: int, response_code: int, headers: PackedStrin
 		$"..".VDDelayedTimetableIndex = data["VDDelayedTimetableIndex"]
 	elif errors < 2:
 		errors += 1
+	else:
+		$"../ErrorMsg".visible = true
 
 
 func readArray(array:Array):
 	for data in array:
 		if data["TrainNoLocal"] == cfg.get_value("System", "trainNumber"):
 			return data["TrainData"]
-
-
-func _on_timer_timeout() -> void:
-	if errors >= 2:
-		$"../ErrorMsg".visible = true
-	else:
-		errors = 0

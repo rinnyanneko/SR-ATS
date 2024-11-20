@@ -25,6 +25,7 @@ func _process(delta: float) -> void:
 		$"../AtsNormalOff/ATS Chime".play()
 		$"..".signalInFront = signalInFront
 		print("Alarm Triggered!")
+		$"../Timer".start()
 	if $"..".alarm == true:
 		visible = true
 	else:
@@ -34,6 +35,8 @@ func _process(delta: float) -> void:
 
 
 func _on_ats_confirm_pressed() -> void:
-	$"ATS Alarm".stop()
-	$"..".alarm = false
-	print("Alarm confirmed!")
+	if not $"..".alarmHard:
+		$"ATS Alarm".stop()
+		$"..".alarm = false
+		$"../Timer".stop()
+		print("Alarm confirmed!")

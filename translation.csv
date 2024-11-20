@@ -6,3 +6,4 @@ S_ERROR_MSG,"An error occurred while connecting to the server, please check the 
 CONFIRM_TEXT,Server: {server}\nTrain number: {trainNumber},サーバー：{server}\n列車番号：{trainNumber},伺服器: {server}\n車次: {trainNumber},服务器: {server}\n车次: {trainNumber}
 CONFIRM,Confirm,確認,確認,确认
 CANCEL,Cancel,キャンセル,取消,取消
+S_CONFIRM_RESET,Confirm you want to reset the ATS?\nThis operation operation must must be approved by the commander in real life!,ATSをリセットしますか？\n現実世界には運転司令の許可が必要です！,確定要重置ATS嗎?\n這個操作在現實中必須取得指令員的授權!,确定要重置ATS吗?\n这个操作在现实中必须取得指令员的授权!

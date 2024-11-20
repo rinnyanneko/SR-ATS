@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://b2fq5q2n383tm"]
+[gd_scene load_steps=20 format=3 uid="uid://b2fq5q2n383tm"]
 
 [ext_resource type="Script" path="res://ATS-S/scene.gd" id="1_573xv"]
 [ext_resource type="Texture2D" uid="uid://qi8arniw74fg" path="res://ATS-S/ATS confirm.png" id="2_12kp5"]
@@ -16,6 +16,9 @@
 [ext_resource type="AudioStream" uid="uid://d4n1qd6x8q85c" path="res://ATS-S/ATS alarm.mp3" id="14_od4s7"]
 [ext_resource type="Script" path="res://http_request.gd" id="15_8wxhp"]
 [ext_resource type="Script" path="res://request_error_msg.gd" id="16_mevde"]
+[ext_resource type="Texture2D" uid="uid://b1xq6v84p65d0" path="res://noimg.png" id="17_8h0yx"]
+[ext_resource type="Script" path="res://ATS-S/ats_reset.gd" id="18_f8nfu"]
+[ext_resource type="Script" path="res://ATS-S/confirm_reset.gd" id="19_co8m3"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_573xv")
@@ -84,12 +87,27 @@ dialog_text = "Error connect to server, check the server code and train number a
 script = ExtResource("16_mevde")
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 10.0
-autostart = true
+wait_time = 5.0
+one_shot = true
+
+[node name="ATS Reset" type="TextureButton" parent="."]
+offset_left = 641.0
+offset_top = 133.0
+offset_right = 1153.0
+offset_bottom = 645.0
+texture_normal = ExtResource("17_8h0yx")
+script = ExtResource("18_f8nfu")
+
+[node name="Confirm Reset" type="ConfirmationDialog" parent="."]
+initial_position = 1
+script = ExtResource("19_co8m3")
 
 [connection signal="pressed" from="ATS Confirm" to="AtsAlarmOn" method="_on_ats_confirm_pressed"]
 [connection signal="pressed" from="Return" to="Return" method="_on_pressed"]
 [connection signal="pressed" from="ChimeOffBack/Chime Off" to="AtsNormalOff" method="_on_chime_off_pressed"]
 [connection signal="request_completed" from="HTTPRequest" to="HTTPRequest" method="_on_request_completed"]
 [connection signal="confirmed" from="ErrorMsg" to="ErrorMsg" method="_on_confirmed"]
-[connection signal="timeout" from="Timer" to="HTTPRequest" method="_on_timer_timeout"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="pressed" from="ATS Reset" to="ATS Reset" method="_on_pressed"]
+[connection signal="canceled" from="Confirm Reset" to="Confirm Reset" method="_on_canceled"]
+[connection signal="confirmed" from="Confirm Reset" to="Confirm Reset" method="_on_confirmed"]

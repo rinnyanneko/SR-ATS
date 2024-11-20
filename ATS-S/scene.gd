@@ -1,6 +1,7 @@
 extends Node2D
 var alarm = false
 var chime = false
+var alarmHard = false
 var signalInFront = ""
 
 var VDDelayedTimetableIndex = -1.0
@@ -21,3 +22,9 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
+
+
+func _on_timer_timeout() -> void:
+	if not alarm:
+		self.alarmHard = true
+		print("Hard alarm!")
