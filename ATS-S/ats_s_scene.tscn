@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://b2fq5q2n383tm"]
+[gd_scene load_steps=23 format=3 uid="uid://b2fq5q2n383tm"]
 
 [ext_resource type="Script" path="res://ATS-S/scene.gd" id="1_573xv"]
 [ext_resource type="Texture2D" uid="uid://qi8arniw74fg" path="res://ATS-S/ATS confirm.png" id="2_12kp5"]
@@ -16,9 +16,12 @@
 [ext_resource type="AudioStream" uid="uid://d4n1qd6x8q85c" path="res://ATS-S/ATS alarm.mp3" id="14_od4s7"]
 [ext_resource type="Script" path="res://http_request.gd" id="15_8wxhp"]
 [ext_resource type="Script" path="res://request_error_msg.gd" id="16_mevde"]
-[ext_resource type="Texture2D" uid="uid://b1xq6v84p65d0" path="res://noimg.png" id="17_8h0yx"]
+[ext_resource type="Texture2D" uid="uid://d16c4qjav7o3h" path="res://ATS-S/Alarm reset back.png" id="17_2ccdd"]
 [ext_resource type="Script" path="res://ATS-S/ats_reset.gd" id="18_f8nfu"]
+[ext_resource type="Texture2D" uid="uid://cvnwryuxpm40n" path="res://ATS-S/Alarm reset cover.png" id="18_g0bkv"]
+[ext_resource type="Script" path="res://ATS-S/ats_reset_cover.gd" id="19_6hvex"]
 [ext_resource type="Script" path="res://ATS-S/confirm_reset.gd" id="19_co8m3"]
+[ext_resource type="Texture2D" uid="uid://bxf68lfemelrv" path="res://ATS-S/Alarm reset.png" id="20_px1rn"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_573xv")
@@ -90,12 +93,34 @@ script = ExtResource("16_mevde")
 wait_time = 5.0
 one_shot = true
 
-[node name="ATS Reset" type="TextureButton" parent="."]
-offset_left = 641.0
-offset_top = 133.0
-offset_right = 1153.0
-offset_bottom = 645.0
-texture_normal = ExtResource("17_8h0yx")
+[node name="ATS reset back" type="Sprite2D" parent="."]
+position = Vector2(1032, 465)
+texture = ExtResource("17_2ccdd")
+
+[node name="ATS reset cover open" type="TextureButton" parent="ATS reset back"]
+z_index = 1
+offset_left = -301.0
+offset_top = -150.0
+offset_right = -101.0
+texture_normal = ExtResource("18_g0bkv")
+
+[node name="ATS reset cover" type="TextureButton" parent="ATS reset back"]
+z_index = 1
+offset_left = -99.0
+offset_top = -150.0
+offset_right = 100.0
+texture_normal = ExtResource("18_g0bkv")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("19_6hvex")
+
+[node name="ATS Reset" type="TextureButton" parent="ATS reset back"]
+anchors_preset = -1
+offset_left = -99.0
+offset_top = -149.0
+offset_right = 101.0
+offset_bottom = 1.0
+texture_normal = ExtResource("20_px1rn")
 script = ExtResource("18_f8nfu")
 
 [node name="Confirm Reset" type="ConfirmationDialog" parent="."]
@@ -108,6 +133,8 @@ script = ExtResource("19_co8m3")
 [connection signal="request_completed" from="HTTPRequest" to="HTTPRequest" method="_on_request_completed"]
 [connection signal="confirmed" from="ErrorMsg" to="ErrorMsg" method="_on_confirmed"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
-[connection signal="pressed" from="ATS Reset" to="ATS Reset" method="_on_pressed"]
+[connection signal="pressed" from="ATS reset back/ATS reset cover open" to="ATS reset back/ATS reset cover" method="_on_ats_reset_cover_open_pressed"]
+[connection signal="pressed" from="ATS reset back/ATS reset cover" to="ATS reset back/ATS reset cover" method="_on_pressed"]
+[connection signal="pressed" from="ATS reset back/ATS Reset" to="ATS reset back/ATS Reset" method="_on_pressed"]
 [connection signal="canceled" from="Confirm Reset" to="Confirm Reset" method="_on_canceled"]
 [connection signal="confirmed" from="Confirm Reset" to="Confirm Reset" method="_on_confirmed"]

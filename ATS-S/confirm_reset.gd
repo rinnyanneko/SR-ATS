@@ -16,6 +16,7 @@ func run():
 	self.dialog_text = tr("S_CONFIRM_RESET")
 	self.ok_button_text = tr("CONFIRM")
 	self.cancel_button_text = tr("CANCEL")
+	$"../ATS reset back/ATS reset cover"._on_ats_reset_cover_open_pressed()
 
 
 func _on_confirmed() -> void:

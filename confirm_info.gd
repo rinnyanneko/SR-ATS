@@ -22,7 +22,7 @@ func run(atsmode: String):
 	self.visible = true
 
 func _on_confirmed() -> void:
-	print("Confirmed")
+	print("Confirmed, enter ", self.atsmode, " mode")
 	match self.atsmode:
 		"s":
 			get_tree().change_scene_to_file("res://ATS-S/ats_s_scene.tscn")

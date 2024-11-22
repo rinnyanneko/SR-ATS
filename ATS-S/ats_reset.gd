@@ -12,4 +12,4 @@ func _process(delta: float) -> void:
 
 
 func _on_pressed() -> void:
-	$"../Confirm Reset".run()
+	$"../../Confirm Reset".run()
