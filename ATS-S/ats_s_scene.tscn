@@ -115,7 +115,6 @@ stretch_mode = 0
 script = ExtResource("19_6hvex")
 
 [node name="ATS Reset" type="TextureButton" parent="ATS reset back"]
-anchors_preset = -1
 offset_left = -99.0
 offset_top = -149.0
 offset_right = 101.0

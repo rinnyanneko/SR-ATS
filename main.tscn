@@ -104,7 +104,7 @@ offset_left = 1054.0
 offset_top = 621.0
 offset_right = 1150.0
 offset_bottom = 645.0
-text = "ALPHA-0.0.6"
+text = "ALPHA-0.0.7"
 uri = "Updater.exe"
 script = ExtResource("13_h0e4g")
 
