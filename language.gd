@@ -1,4 +1,4 @@
-extends Button
+extends TextureButton
 var cfg = ConfigFile.new()
 var sel = 0
 # Called when the node enters the scene tree for the first time.
@@ -21,10 +21,6 @@ func _ready() -> void:
 		print("Simplified Chinese(zh)!")
 		sel = 0
 	else: sel = 0
-	$"../Server".placeholder_text = tr("SERVER")
-	$"../TrainNumber".placeholder_text = tr("TRAIN_NUMBER")
-	$"../Save".text = tr("SAVE")
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
@@ -51,6 +47,6 @@ func _on_pressed() -> void:
 	cfg.save("res://config.cfg")
 	sel += 1
 	if sel > 3:sel = 0
-	$"../Server".placeholder_text = tr("SERVER")
-	$"../TrainNumber".placeholder_text = tr("TRAIN_NUMBER")
-	$"../Save".text = tr("SAVE")
+	self.disabled = true
+	await get_tree().create_timer(0.1).timeout
+	self.disabled = false

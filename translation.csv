@@ -7,3 +7,6 @@ CONFIRM_TEXT,Server: {server}\nTrain number: {trainNumber},サーバー：{serve
 CONFIRM,Confirm,確認,確認,确认
 CANCEL,Cancel,キャンセル,取消,取消
 S_CONFIRM_RESET,Confirm you want to reset the ATS?\nThis operation operation must must be approved by the commander in real life!,ATSをリセットしますか？\n現実世界には運転司令の許可が必要です！,確定要重置ATS嗎?\n這個操作在現實中必須取得指令員的授權!,确定要重置ATS吗?\n这个操作在现实中必须取得指令员的授权!
+DO_NOT_SHOW,Do not show this page next time,次回からこのページを表示しない,下次不再顯示,下次不再显示
+READ_LICENSE,Please read the Software License Agreement,ライセンスをお読んでください,請閱讀軟體授權合約,请阅读软件授权合约
+AGREE_LICENSE,I agree,同意する,我同意,我同意

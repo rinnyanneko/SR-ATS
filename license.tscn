@@ -1,0 +1,51 @@
+[gd_scene load_steps=4 format=3 uid="uid://nwnyb76cxlwh"]
+
+[ext_resource type="Script" path="res://agree_license.gd" id="1_7lnkw"]
+[ext_resource type="Texture2D" uid="uid://cbvfda7jahf80" path="res://translation.png" id="2_347tw"]
+[ext_resource type="Script" path="res://language.gd" id="2_cuwpl"]
+
+[node name="EULA" type="Node"]
+
+[node name="Title" type="Label" parent="."]
+offset_left = 303.0
+offset_top = 7.0
+offset_right = 810.0
+offset_bottom = 30.0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="License" type="TextEdit" parent="."]
+offset_top = 31.0
+offset_right = 1152.0
+offset_bottom = 612.0
+placeholder_text = "Loading license..."
+editable = false
+wrap_mode = 1
+scroll_smooth = true
+
+[node name="Button" type="Button" parent="."]
+offset_left = 409.0
+offset_top = 616.0
+offset_right = 557.0
+offset_bottom = 647.0
+script = ExtResource("1_7lnkw")
+
+[node name="DoNotShow" type="CheckBox" parent="."]
+offset_left = 567.0
+offset_top = 615.0
+offset_right = 865.0
+offset_bottom = 646.0
+
+[node name="Language" type="TextureButton" parent="."]
+offset_right = 30.0
+offset_bottom = 30.0
+texture_normal = ExtResource("2_347tw")
+script = ExtResource("2_cuwpl")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true
+
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
+[connection signal="pressed" from="Language" to="Button" method="_on_language_pressed"]
+[connection signal="pressed" from="Language" to="Language" method="_on_pressed"]

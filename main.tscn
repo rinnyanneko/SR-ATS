@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dl6vqmuu804oc"]
+[gd_scene load_steps=16 format=3 uid="uid://dl6vqmuu804oc"]
 
 [ext_resource type="Script" path="res://server.gd" id="1_iym70"]
 [ext_resource type="Texture2D" uid="uid://ddw53s0vlshw" path="res://ATS-S/icon (Custom).png" id="1_o7qkv"]
@@ -11,8 +11,10 @@
 [ext_resource type="Script" path="res://save.gd" id="9_rvkf8"]
 [ext_resource type="Texture2D" uid="uid://clhkgi0ggycix" path="res://banner.png" id="9_usuam"]
 [ext_resource type="Script" path="res://language.gd" id="11_qu0kt"]
+[ext_resource type="Texture2D" uid="uid://cbvfda7jahf80" path="res://translation.png" id="11_tf4cp"]
 [ext_resource type="Script" path="res://confirm_info.gd" id="12_qinf2"]
 [ext_resource type="Script" path="res://version.gd" id="13_h0e4g"]
+[ext_resource type="Script" path="res://copyright.gd" id="14_xvmjn"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -86,11 +88,11 @@ position = Vector2(567, 89)
 scale = Vector2(0.251848, 0.251848)
 texture = ExtResource("9_usuam")
 
-[node name="Language" type="Button" parent="."]
+[node name="Language" type="TextureButton" parent="."]
 layout_mode = 0
-offset_right = 90.0
-offset_bottom = 31.0
-text = "Language"
+offset_right = 30.0
+offset_bottom = 30.0
+texture_normal = ExtResource("11_tf4cp")
 script = ExtResource("11_qu0kt")
 
 [node name="ConfirmationDialog" type="ConfirmationDialog" parent="."]
@@ -98,20 +100,30 @@ initial_position = 2
 dialog_autowrap = true
 script = ExtResource("12_qinf2")
 
-[node name="LinkButton" type="LinkButton" parent="."]
+[node name="version" type="LinkButton" parent="."]
 layout_mode = 0
-offset_left = 1054.0
-offset_top = 621.0
-offset_right = 1150.0
-offset_bottom = 645.0
+offset_left = 1056.0
+offset_top = 625.0
+offset_right = 1152.0
+offset_bottom = 648.0
 text = "ALPHA-0.0.7"
 uri = "Updater.exe"
 script = ExtResource("13_h0e4g")
 
+[node name="copyright" type="LinkButton" parent="."]
+layout_mode = 0
+offset_top = 625.0
+offset_right = 389.0
+offset_bottom = 648.0
+text = "Copyright © 2024 rinnyanneko. All rights reserved."
+script = ExtResource("14_xvmjn")
+
 [connection signal="pressed" from="ATS-S" to="ATS-S" method="_on_pressed"]
 [connection signal="pressed" from="Save" to="Server" method="_on_button_pressed"]
 [connection signal="pressed" from="Save" to="Save" method="_on_pressed"]
+[connection signal="pressed" from="Language" to="Server" method="_on_language_pressed"]
 [connection signal="pressed" from="Language" to="Language" method="_on_pressed"]
 [connection signal="canceled" from="ConfirmationDialog" to="ConfirmationDialog" method="_on_canceled"]
 [connection signal="confirmed" from="ConfirmationDialog" to="ConfirmationDialog" method="_on_confirmed"]
-[connection signal="pressed" from="LinkButton" to="LinkButton" method="_on_pressed"]
+[connection signal="pressed" from="version" to="version" method="_on_pressed"]
+[connection signal="pressed" from="copyright" to="copyright" method="_on_pressed"]

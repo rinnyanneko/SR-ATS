@@ -1,7 +1,5 @@
 extends HTTPRequest
 var cfg = ConfigFile.new()
-var tmp = ConfigFile.new()
-var errors = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -24,7 +22,6 @@ func _on_request_completed(result: int, response_code: int, headers: PackedStrin
 	print(data)
 	if data != null:
 		$"../ErrorMsg".visible = false
-		errors = 0
 		if data["ControlledBySteamID"] != null:
 			$"..".ControlledBySteamID = data["ControlledBySteamID"]
 		else:
@@ -37,8 +34,6 @@ func _on_request_completed(result: int, response_code: int, headers: PackedStrin
 		$"..".DistanceToSignalInFront = data["DistanceToSignalInFront"]
 		$"..".SignalInFrontSpeed = data["SignalInFrontSpeed"]
 		$"..".VDDelayedTimetableIndex = data["VDDelayedTimetableIndex"]
-	elif errors < 2:
-		errors += 1
 	else:
 		$"../ErrorMsg".visible = true
 

@@ -11,14 +11,20 @@ config_version=5
 [application]
 
 config/name="SR-ATS"
-config/version="ALPHA-0.0.6"
-run/main_scene="res://main.tscn"
+config/version="ALPHA-0.0.7"
+run/main_scene="res://license.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
+boot_splash/show_image=false
 config/icon="res://icon.svg"
+
+[debug]
+
+file_logging/enable_file_logging=true
 
 [display]
 
 window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
 
 [dotnet]
 
