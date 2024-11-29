@@ -12,7 +12,7 @@ config_version=5
 
 config/name="SR-ATS"
 config/version="ALPHA-0.0.7"
-run/main_scene="res://license.tscn"
+run/main_scene="res://EULA.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 boot_splash/show_image=false
 config/icon="res://icon.svg"
@@ -29,6 +29,10 @@ window/stretch/aspect="expand"
 [dotnet]
 
 project/assembly_name="SR-ATS"
+
+[editor_plugins]
+
+enabled=PackedStringArray()
 
 [input]
 
