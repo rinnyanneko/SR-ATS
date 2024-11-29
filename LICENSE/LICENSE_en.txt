@@ -2,7 +2,7 @@ SR-ATS Software License Agreement
 
 1. Introduction
 
-This Software License Agreement (the "Agreement") is made and entered into by and between rinnyanneko ("Licensor") and any individual or entity that obtains or uses the software (the "Licensee"). This Agreement governs the rights and obligations of the Licensee with respect to obtaining and using the software, and is subject to the terms and conditions of the Apache License, Version 2.0 (the "Apache 2.0").
+This Software License Agreement (the "Agreement") is made by and between rinnyanneko ("Licensor") and any individual or entity that obtains or uses the software (the "Licensee"). This Agreement governs the rights and obligations of the Licensee with respect to obtaining and using the software, and is subject to the terms and conditions of the Apache License, Version 2.0 (the "Apache 2.0").
 
 2. Definitions
 

@@ -147,8 +147,8 @@ CustomActionCommand=<WebSite>
 CustomActionChecked=0
 CustomActionAdmin=0
 TotalFiles=2
-SourceDirFiles=3
-SourceDirSize=85119344
+SourceDirFiles=7
+SourceDirSize=85118433
 
 [GUI]
 FontName=Verdana

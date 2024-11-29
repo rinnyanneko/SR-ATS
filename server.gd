@@ -1,3 +1,6 @@
+# SR-ATS
+# Copyright © 2024 rinnyanneko. All rights reserved.
+
 extends LineEdit
 var cfg = ConfigFile.new()
 # Called when the node enters the scene tree for the first time.

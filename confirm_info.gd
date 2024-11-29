@@ -1,3 +1,6 @@
+# SR-ATS
+# Copyright © 2024 rinnyanneko. All rights reserved.
+
 extends ConfirmationDialog
 var cfg = ConfigFile.new()
 var atsmode = ""

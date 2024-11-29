@@ -1,3 +1,6 @@
+# SR-ATS
+# Copyright © 2024 rinnyanneko. All rights reserved.
+
 extends Button
 var cfg = ConfigFile.new()
 
@@ -33,8 +36,8 @@ func _on_pressed() -> void:
 
 
 func _on_language_pressed() -> void:
-	await get_tree().create_timer(0.1).timeout
-	get_tree().change_scene_to_file("res://license.tscn")
+	await get_tree().create_timer(0.2).timeout
+	get_tree().change_scene_to_file("res://EULA.tscn")
 
 func timer():
 	self.disabled = true

@@ -1,3 +1,6 @@
+# SR-ATS
+# Copyright © 2024 rinnyanneko. All rights reserved.
+
 extends Node2D
 var alarm = false
 var chime = false
