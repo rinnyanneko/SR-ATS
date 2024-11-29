@@ -1,2 +1,2 @@
-ALPHA-0.0.6
-https://github.com/rinnyanneko/SR-ATS/releases/download/ALPHA-0.0.6/Setup.exe
+ALPHA-0.0.7
+https://github.com/rinnyanneko/SR-ATS/releases/download/ALPHA-0.0.7/Setup.exe
