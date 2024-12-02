@@ -9,7 +9,9 @@ Feel free to open a pull request!
 
 [GitLab Page](https://gitlab.com/rinnyanneko/SR-ATS)
 
-two page will update at the same time
+[GitCode Page(for China users)](https://gitcode.com/rinnyanneko/SR-ATS/)
+
+these pages will update at the same time
 
 Please give me a star!
 
