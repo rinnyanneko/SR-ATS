@@ -15,7 +15,7 @@ these pages will update at the same time
 
 Please give me a star!
 
-# Snapshots
+# Screenshots
 
 ![](./screenshot/Screenshot%202024-12-02%20202657.png)
 
