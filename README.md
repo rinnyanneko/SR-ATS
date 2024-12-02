@@ -7,9 +7,9 @@ Feel free to open a pull request!
 
 [GitHub page](https://github.com/rinnyanneko/SR-ATS)
 
-[GitLab Page](https://gitlab.com/rinnyanneko/SR-ATS)
+[GitLab Page(backup)](https://gitlab.com/rinnyanneko/SR-ATS)
 
-[GitCode Page(for China users)](https://gitcode.com/rinnyanneko/SR-ATS/)
+[GitCode Page(for China users download)](https://gitcode.com/rinnyanneko/SR-ATS/)
 
 these pages will update at the same time
 
@@ -17,6 +17,8 @@ Please give me a star!
 
 # Snapshots
 
-![](./screenshot/Screenshot%202024-09-14%20162539.png)
+![](./screenshot/Screenshot%202024-12-02%20202657.png)
 
-![](./screenshot/Screenshot%202024-09-14%20162606.png)
+![](./screenshot/Screenshot%202024-12-02%20202721.png)
+
+![](./screenshot/Screenshot%202024-12-02%20202741.png)
