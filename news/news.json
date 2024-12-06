@@ -1,7 +1,7 @@
 {
-    "type":"update",
-    "number":"1",
-    "title":"NEW UPDATE",
-    "text":"ALPHA-0.0.8 released\n[url=https://github.com/rinnyanneko/SR-ATS/releases/tag/ALPHA-0.0.8]GitHub[/url]\n[url=https://gitcode.com/rinnyanneko/SR-ATS/releases/ALPHA-0.0.8]GitCode[/url]",
-    "image":"false"
+	"type":"update",
+	"number":"1",
+	"title":"NEW UPDATE",
+	"text":"ALPHA-0.0.8 released\n[url=https://github.com/rinnyanneko/SR-ATS/releases/tag/ALPHA-0.0.8]GitHub[/url]\n[url=https://gitcode.com/rinnyanneko/SR-ATS/releases/ALPHA-0.0.8]GitCode[/url]",
+	"image":"https://github.com/rinnyanneko/SR-ATS/blob/main/noimg.png"
 }
