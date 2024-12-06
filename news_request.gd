@@ -15,11 +15,11 @@ func _on_request_completed(result: int, response_code: int, headers: PackedStrin
 	cfg.load("res://config.cfg")
 	json = JSON.parse_string(body.get_string_from_utf8())
 	$"../news".title = json["title"]
-	$"../news".dialog_text = json["text"]
+	$"../news/RichTextLabel".text = json["text"]
 	$"../news".cancel_button_text = tr("CLOSE")
 	$"../news".ok_button_text = tr("DO_NOT_SHOW")
 	if json["image"] != "false":
-		$"../news".dialog_text += "[img]" + json["image"] + "[/img]"
+		$"../news/RichTextLabel".text += "[img]" + json["image"] + "[/img]"
 	print(json)
 	if json["type"] != "" and json["number"] != cfg.get_value("News", "NeverShow"):
 		$"../news".visible = true
@@ -34,3 +34,7 @@ func _on_news_confirmed() -> void:
 func _on_news_canceled() -> void:
 	$"../news".visible = false
 	print("News closed")
+
+
+func _on_rich_text_label_meta_clicked(meta: Variant) -> void:
+	OS.shell_open(str(meta))

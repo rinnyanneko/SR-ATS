@@ -121,6 +121,11 @@ script = ExtResource("14_xvmjn")
 mode = 1
 initial_position = 1
 
+[node name="RichTextLabel" type="RichTextLabel" parent="news"]
+offset_right = 40.0
+offset_bottom = 40.0
+bbcode_enabled = true
+
 [node name="news_request" type="HTTPRequest" parent="."]
 use_threads = true
 timeout = 3.0
@@ -137,4 +142,5 @@ script = ExtResource("15_4f64g")
 [connection signal="pressed" from="copyright" to="copyright" method="_on_pressed"]
 [connection signal="canceled" from="news" to="news_request" method="_on_news_canceled"]
 [connection signal="confirmed" from="news" to="news_request" method="_on_news_confirmed"]
+[connection signal="meta_clicked" from="news/RichTextLabel" to="news_request" method="_on_rich_text_label_meta_clicked"]
 [connection signal="request_completed" from="news_request" to="news_request" method="_on_request_completed"]
