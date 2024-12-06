@@ -106,7 +106,7 @@ offset_left = 1056.0
 offset_top = 625.0
 offset_right = 1152.0
 offset_bottom = 648.0
-text = "ALPHA-0.0.7"
+text = "ALPHA-0.0.8"
 uri = "Updater.exe"
 
 [node name="copyright" type="LinkButton" parent="."]
@@ -120,10 +120,13 @@ script = ExtResource("14_xvmjn")
 [node name="news" type="ConfirmationDialog" parent="."]
 mode = 1
 initial_position = 1
+size = Vector2i(400, 200)
 
 [node name="RichTextLabel" type="RichTextLabel" parent="news"]
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 392.0
+offset_bottom = 151.0
 bbcode_enabled = true
 
 [node name="news_request" type="HTTPRequest" parent="."]

@@ -10,3 +10,4 @@ S_CONFIRM_RESET,Confirm you want to reset the ATS?\nThis operation operation mus
 DO_NOT_SHOW,Do not show this page next time,次回からこのページを表示しない,下次不再顯示,下次不再显示
 READ_LICENSE,Please read the Software License Agreement,ライセンスをお読んでください,請閱讀軟體授權合約,请阅读软件授权合约
 AGREE_LICENSE,I agree,同意する,我同意,我同意
+CLOSE,Close,閉じる,關閉,关闭
