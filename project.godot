@@ -11,11 +11,10 @@ config_version=5
 [application]
 
 config/name="SR-ATS"
-config/version="ALPHA-0.0.8"
+config/version="0.0.8"
 run/main_scene="res://EULA.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
-boot_splash/show_image=false
-config/icon="res://icon.svg"
+config/icon="res://favicon.ico"
 
 [debug]
 

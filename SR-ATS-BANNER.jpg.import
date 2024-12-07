@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://xq0a1wk6lwts"
-path="res://.godot/imported/Screenshot 2024-12-02 202657.png-31f933e3a6a9b93920b2d85085e778e1.ctex"
+uid="uid://k1dbnc8mgulw"
+path="res://.godot/imported/SR-ATS-BANNER.jpg-9bc890c2da58cc8c10f85fe71cd3a53d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://screenshot/Screenshot 2024-12-02 202657.png"
-dest_files=["res://.godot/imported/Screenshot 2024-12-02 202657.png-31f933e3a6a9b93920b2d85085e778e1.ctex"]
+source_file="res://SR-ATS-BANNER.jpg"
+dest_files=["res://.godot/imported/SR-ATS-BANNER.jpg-9bc890c2da58cc8c10f85fe71cd3a53d.ctex"]
 
 [params]
 

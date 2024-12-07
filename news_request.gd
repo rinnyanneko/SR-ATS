@@ -17,14 +17,18 @@ func _process(delta: float) -> void:
 func _on_request_completed(result: int, response_code: int, headers: PackedStringArray, body: PackedByteArray) -> void:
 	cfg.load("res://config.cfg")
 	json = JSON.parse_string(body.get_string_from_utf8())
-	$"../news".title = json["title"]
-	$"../news/RichTextLabel".text = json["text"]
+	var data = json["data"]
+	for i in data:
+		if i["draft"] == "false":
+			data = i
+	$"../news".title = data["title"]
+	$"../news/RichTextLabel".text = data["text"]
 	$"../news".cancel_button_text = tr("CLOSE")
 	$"../news".ok_button_text = tr("DO_NOT_SHOW")
-	if json["image"] != "false":
-		$"../news/RichTextLabel".text += "[img]" + json["image"] + "[/img]"
+	if data["image"] != "false":
+		$"../news/RichTextLabel".text += "[img]" + data["image"] + "[/img]"
 	print(json)
-	if json["type"] != "" and json["number"] != cfg.get_value("News", "NeverShow"):
+	if data["type"] != "" and data["number"] != cfg.get_value("News", "NeverShow") and data["draft"] == "false":
 		$"../news".visible = true
 
 

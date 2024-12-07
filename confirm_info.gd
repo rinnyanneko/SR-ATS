@@ -38,3 +38,7 @@ func _on_confirmed() -> void:
 func _on_canceled() -> void:
 	print("Canceled")
 	self.visible = false
+
+
+func _on_banner_pressed() -> void:
+	OS.shell_open("https://github.com/rinnyanneko/SR-ATS")

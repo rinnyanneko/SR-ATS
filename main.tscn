@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://cha541t8nc2u6" path="res://ATS-P/icon (Custom).png" id="7_6k4lh"]
 [ext_resource type="Texture2D" uid="uid://dl34jk3e5gqjj" path="res://ATS-P/icon_INOP (Custom).png" id="8_xtb8p"]
 [ext_resource type="Script" path="res://save.gd" id="9_rvkf8"]
-[ext_resource type="Texture2D" uid="uid://clhkgi0ggycix" path="res://banner.png" id="9_usuam"]
+[ext_resource type="Texture2D" uid="uid://dtdkmccpkytin" path="res://banner.png" id="9_usuam"]
 [ext_resource type="Script" path="res://language.gd" id="11_qu0kt"]
 [ext_resource type="Texture2D" uid="uid://cbvfda7jahf80" path="res://translation.png" id="11_tf4cp"]
 [ext_resource type="Script" path="res://confirm_info.gd" id="12_qinf2"]
@@ -83,10 +83,14 @@ offset_bottom = 219.0
 text = "Save"
 script = ExtResource("9_rvkf8")
 
-[node name="Banner" type="Sprite2D" parent="."]
-position = Vector2(567, 89)
+[node name="Banner" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 330.0
+offset_top = 110.0
+offset_right = 2030.0
+offset_bottom = 286.0
 scale = Vector2(0.251848, 0.251848)
-texture = ExtResource("9_usuam")
+texture_normal = ExtResource("9_usuam")
 
 [node name="Language" type="TextureButton" parent="."]
 layout_mode = 0
@@ -137,6 +141,7 @@ script = ExtResource("15_4f64g")
 [connection signal="pressed" from="ATS-S" to="ATS-S" method="_on_pressed"]
 [connection signal="pressed" from="Save" to="Server" method="_on_button_pressed"]
 [connection signal="pressed" from="Save" to="Save" method="_on_pressed"]
+[connection signal="pressed" from="Banner" to="ConfirmationDialog" method="_on_banner_pressed"]
 [connection signal="pressed" from="Language" to="Server" method="_on_language_pressed"]
 [connection signal="pressed" from="Language" to="Language" method="_on_pressed"]
 [connection signal="canceled" from="ConfirmationDialog" to="ConfirmationDialog" method="_on_canceled"]
