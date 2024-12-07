@@ -1,2 +1,2 @@
-ALPHA-0.0.8
+ALPHA-0.0.8h1
 https://github.com/rinnyanneko/SR-ATS/releases/download/ALPHA-0.0.8/Setup.exe
