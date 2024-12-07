@@ -18,4 +18,4 @@ mono_crash.*.json
 config.cfg
 addons/
 *.tmp
-androud/
+android/
