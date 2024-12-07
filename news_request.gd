@@ -4,6 +4,7 @@
 extends HTTPRequest
 var cfg = ConfigFile.new()
 var json:Dictionary
+var data
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -17,7 +18,7 @@ func _process(delta: float) -> void:
 func _on_request_completed(result: int, response_code: int, headers: PackedStringArray, body: PackedByteArray) -> void:
 	cfg.load("res://config.cfg")
 	json = JSON.parse_string(body.get_string_from_utf8())
-	var data = json["data"]
+	data = json["data"]
 	for i in data:
 		if i["draft"] == "false":
 			data = i
@@ -33,7 +34,7 @@ func _on_request_completed(result: int, response_code: int, headers: PackedStrin
 
 
 func _on_news_confirmed() -> void:
-	cfg.set_value("News", "NeverShow", String(json["number"]))
+	cfg.set_value("News", "NeverShow", String(data["number"]))
 	cfg.save("res://config.cfg")
 	print("Never show this news")
 	$"../news".visible = false

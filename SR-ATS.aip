@@ -147,8 +147,8 @@ CustomActionCommand=<WebSite>
 CustomActionChecked=0
 CustomActionAdmin=0
 TotalFiles=2
-SourceDirFiles=9
-SourceDirSize=110216769
+SourceDirFiles=7
+SourceDirSize=86841473
 
 [GUI]
 FontName=Verdana
@@ -169,4 +169,7 @@ LogoTransparent=1
 [Shortcuts]
 0=<ProgramsMenu>*?<AppName>*?<MainExecutable>*?*?*?<InstallDir>*?*?0*?Normal*?No
 1=<Desktop>*?<AppName>*?<MainExecutable>*?*?*?<InstallDir>*?*?0*?Normal*?No
+
+[FileOptions]
+0=SR-ATS.apk?D
 
