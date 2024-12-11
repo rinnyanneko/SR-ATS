@@ -7,6 +7,14 @@
 			"text":"ALPHA-0.0.8 released\n[url=https://github.com/rinnyanneko/SR-ATS/releases/tag/ALPHA-0.0.8]GitHub[/url]\n[url=https://gitcode.com/rinnyanneko/SR-ATS/releases/ALPHA-0.0.8]GitCode[/url]",
 			"image":"false",
 			"draft":"false"
+		},
+		{
+			"type":"update",
+			"number":"2",
+			"title":"UPDATE",
+			"text":"v0.0.9.0 released, this update is is required to continue use on SimRail after the major update\n[url=https://github.com/rinnyanneko/SR-ATS/releases/tag/v0.0.9.0]GitHub[/url]\n[url=https://gitcode.com/rinnyanneko/SR-ATS/releases/v0.0.9.0]GitCode[/url]",
+			"image":"false",
+			"draft":"true"
 		}
 	]
 }

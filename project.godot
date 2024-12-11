@@ -33,6 +33,10 @@ project/assembly_name="SR-ATS"
 
 enabled=PackedStringArray()
 
+[gui]
+
+theme/custom_font="res://fonts/NotoSans-SemiBold.ttf"
+
 [input]
 
 "ATS confirm"={
