@@ -1,4 +1,5 @@
 # SR-ATS
+# https://github.com/rinnyanneko/SR-ATS
 # Copyright © 2024 rinnyanneko. All rights reserved.
 
 extends Sprite2D
@@ -21,7 +22,7 @@ func _process(delta: float) -> void:
 	#print(signalInFront)
 	#print(distanceToSignalInFront)
 	#print(passedSignal != signalInFront)
-	if velocity > 0 && distanceToSignalInFront < 600 && signalInFrontSpeed < 32767 &&  passedSignal != signalInFront:
+	if velocity > 0 && distanceToSignalInFront < 600 && signalInFrontSpeed == 0 &&  passedSignal != signalInFront:
 		self.visible = true
 		self.top_level
 		$"..".alarm == true
@@ -36,6 +37,15 @@ func _process(delta: float) -> void:
 		visible = false
 	if Input.is_action_just_pressed("ATS confirm"):
 		_on_ats_confirm_pressed()
+	if velocity > 0 && distanceToSignalInFront < 10 && signalInFrontSpeed == 0:
+		$"..".alarmHard = true
+		print("Hard alarm!")
+		self.visible = true
+		self.top_level
+		$"..".alarm == true
+		$"ATS Alarm".play()
+		$"../AtsNormalOff/ATS Chime".play()
+		$"..".signalInFront = signalInFront
 
 
 func _on_ats_confirm_pressed() -> void:

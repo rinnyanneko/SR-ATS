@@ -1,4 +1,5 @@
 # SR-ATS
+# https://github.com/rinnyanneko/SR-ATS
 # Copyright © 2024 rinnyanneko. All rights reserved.
 
 extends Node2D
@@ -28,6 +29,6 @@ func _process(delta: float) -> void:
 
 
 func _on_timer_timeout() -> void:
-	if not alarm:
+	if alarm:
 		self.alarmHard = true
 		print("Hard alarm!")

@@ -1,4 +1,5 @@
 # SR-ATS
+# https://github.com/rinnyanneko/SR-ATS
 # Copyright © 2024 rinnyanneko. All rights reserved.
 
 extends Sprite2D
