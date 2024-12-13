@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://nwnyb76cxlwh"]
 
-[ext_resource type="Script" path="res://agree_license.gd" id="1_7lnkw"]
-[ext_resource type="Texture2D" uid="uid://cbvfda7jahf80" path="res://translation.png" id="2_347tw"]
-[ext_resource type="Script" path="res://language.gd" id="2_cuwpl"]
+[ext_resource type="Script" path="res://scripts/agree_license.gd" id="1_7lnkw"]
+[ext_resource type="Texture2D" uid="uid://cbvfda7jahf80" path="res://assets/translation.png" id="2_347tw"]
+[ext_resource type="Script" path="res://scripts/language.gd" id="2_cuwpl"]
 
 [node name="EULA" type="Node"]
 

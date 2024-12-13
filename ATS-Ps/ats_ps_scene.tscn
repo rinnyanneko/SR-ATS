@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bbdh4fakp8omv"]
 
-[ext_resource type="Texture2D" uid="uid://da26ervg41qj5" path="res://return (Custom).png" id="1_pty6m"]
-[ext_resource type="Script" path="res://return.gd" id="2_rmidq"]
+[ext_resource type="Texture2D" uid="uid://da26ervg41qj5" path="res://assets/return (Custom).png" id="1_pty6m"]
+[ext_resource type="Script" path="res://scripts/return.gd" id="2_rmidq"]
 
 [node name="Node2D" type="Node2D"]
 

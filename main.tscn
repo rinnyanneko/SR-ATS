@@ -1,20 +1,21 @@
-[gd_scene load_steps=16 format=3 uid="uid://dl6vqmuu804oc"]
+[gd_scene load_steps=17 format=3 uid="uid://dl6vqmuu804oc"]
 
-[ext_resource type="Script" path="res://server.gd" id="1_iym70"]
-[ext_resource type="Texture2D" uid="uid://ddw53s0vlshw" path="res://ATS-S/icon (Custom).png" id="1_o7qkv"]
-[ext_resource type="Texture2D" uid="uid://cjrgpvf2qau18" path="res://ATS-S/icon_INOP (Custom).png" id="3_dalr6"]
-[ext_resource type="Script" path="res://ats_s.gd" id="4_12aw2"]
-[ext_resource type="Texture2D" uid="uid://dr7q5id583e36" path="res://ATS-Ps/icon (Custom).png" id="5_pvvx2"]
-[ext_resource type="Texture2D" uid="uid://bm7sfftk1ixl5" path="res://ATS-Ps/icon_INOP (Custom).png" id="6_1sgmq"]
-[ext_resource type="Texture2D" uid="uid://cha541t8nc2u6" path="res://ATS-P/icon (Custom).png" id="7_6k4lh"]
-[ext_resource type="Texture2D" uid="uid://dl34jk3e5gqjj" path="res://ATS-P/icon_INOP (Custom).png" id="8_xtb8p"]
-[ext_resource type="Script" path="res://save.gd" id="9_rvkf8"]
-[ext_resource type="Texture2D" uid="uid://dtdkmccpkytin" path="res://banner.png" id="9_usuam"]
-[ext_resource type="Script" path="res://language.gd" id="11_qu0kt"]
-[ext_resource type="Texture2D" uid="uid://cbvfda7jahf80" path="res://translation.png" id="11_tf4cp"]
-[ext_resource type="Script" path="res://confirm_info.gd" id="12_qinf2"]
-[ext_resource type="Script" path="res://copyright.gd" id="14_xvmjn"]
-[ext_resource type="Script" path="res://news_request.gd" id="15_4f64g"]
+[ext_resource type="Script" path="res://scripts/server.gd" id="1_iym70"]
+[ext_resource type="Texture2D" uid="uid://ddw53s0vlshw" path="res://ATS-S/assets/icon (Custom).png" id="1_o7qkv"]
+[ext_resource type="Texture2D" uid="uid://cjrgpvf2qau18" path="res://ATS-S/assets/icon_INOP (Custom).png" id="3_dalr6"]
+[ext_resource type="Script" path="res://scripts/ats_s.gd" id="4_12aw2"]
+[ext_resource type="Texture2D" uid="uid://dr7q5id583e36" path="res://ATS-Ps/assets/icon (Custom).png" id="5_pvvx2"]
+[ext_resource type="Texture2D" uid="uid://bm7sfftk1ixl5" path="res://ATS-Ps/assets/icon_INOP (Custom).png" id="6_1sgmq"]
+[ext_resource type="Texture2D" uid="uid://cha541t8nc2u6" path="res://ATS-P/assets/icon (Custom).png" id="7_6k4lh"]
+[ext_resource type="Texture2D" uid="uid://dl34jk3e5gqjj" path="res://ATS-P/assets/icon_INOP (Custom).png" id="8_xtb8p"]
+[ext_resource type="Script" path="res://scripts/save.gd" id="9_rvkf8"]
+[ext_resource type="Texture2D" uid="uid://dtdkmccpkytin" path="res://assets/banner.png" id="9_usuam"]
+[ext_resource type="Script" path="res://scripts/language.gd" id="11_qu0kt"]
+[ext_resource type="Texture2D" uid="uid://cbvfda7jahf80" path="res://assets/translation.png" id="11_tf4cp"]
+[ext_resource type="Script" path="res://scripts/confirm_info.gd" id="12_qinf2"]
+[ext_resource type="Script" path="res://scripts/copyright.gd" id="14_xvmjn"]
+[ext_resource type="Script" path="res://scripts/news_request.gd" id="15_4f64g"]
+[ext_resource type="Script" path="res://scripts/request_servers.gd" id="16_usu0l"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -24,14 +25,15 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Server" type="LineEdit" parent="."]
+[node name="Server" type="OptionButton" parent="."]
 layout_mode = 0
 offset_left = 371.0
 offset_top = 188.0
-offset_right = 438.063
+offset_right = 438.438
 offset_bottom = 219.0
-placeholder_text = "Server"
-max_length = 3
+flat = true
+text_overrun_behavior = 1
+fit_to_longest_item = false
 script = ExtResource("1_iym70")
 
 [node name="TrainNumber" type="LineEdit" parent="."]
@@ -138,8 +140,11 @@ use_threads = true
 timeout = 3.0
 script = ExtResource("15_4f64g")
 
+[node name="RequestServers" type="HTTPRequest" parent="."]
+script = ExtResource("16_usu0l")
+
 [connection signal="pressed" from="ATS-S" to="ATS-S" method="_on_pressed"]
-[connection signal="pressed" from="Save" to="Server" method="_on_button_pressed"]
+[connection signal="pressed" from="Save" to="Server" method="_on_save_button_pressed"]
 [connection signal="pressed" from="Save" to="Save" method="_on_pressed"]
 [connection signal="pressed" from="Banner" to="ConfirmationDialog" method="_on_banner_pressed"]
 [connection signal="pressed" from="Language" to="Server" method="_on_language_pressed"]
@@ -152,3 +157,4 @@ script = ExtResource("15_4f64g")
 [connection signal="confirmed" from="news" to="news_request" method="_on_news_confirmed"]
 [connection signal="meta_clicked" from="news/RichTextLabel" to="news_request" method="_on_rich_text_label_meta_clicked"]
 [connection signal="request_completed" from="news_request" to="news_request" method="_on_request_completed"]
+[connection signal="request_completed" from="RequestServers" to="RequestServers" method="_on_request_completed"]
