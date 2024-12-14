@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bbp1qtqvfj0us"
-path="res://.godot/imported/SR-ATS.png-9cc87021753160027888ca8702696f18.ctex"
+path="res://.godot/imported/SR-ATS.png-fec3f9dd420202055b72df82fad0246f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/SR-ATS.png"
-dest_files=["res://.godot/imported/SR-ATS.png-9cc87021753160027888ca8702696f18.ctex"]
+source_file="res://SR-ATS.png"
+dest_files=["res://.godot/imported/SR-ATS.png-fec3f9dd420202055b72df82fad0246f.ctex"]
 
 [params]
 

@@ -100,9 +100,78 @@ C:\Users\rinny\Documents\GitHub\out\Updater.ini
 ini
 [Licence_Begin]
 41584
-{\rtf1\ansi\ansicpg932\deff0\nouicompat{\fonttbl{\f0\fnil\fcharset128 Yu Gothic;}{\f1\fnil\fcharset0 Yu Gothic;}{\f2\fswiss\fcharset134 Microsoft YaHei;}{\f3\fswiss\fcharset0 Microsoft YaHei;}}
+{\rtf1\ansi\ansicpg932\deff0\nouicompat{\fonttbl{\f0\fswiss\fcharset134 Microsoft YaHei;}{\f1\fswiss\fcharset0 Microsoft YaHei;}{\f2\fnil\fcharset128 Yu Gothic;}{\f3\fnil\fcharset0 Yu Gothic;}}
 {\*\generator Riched20 10.0.22621}\viewkind4\uc1 
-\pard\f0\fs20\lang1041 -English-\par
+\pard\f0\fs20\lang1033 -\'b7\'b1\'f3\'77\'d6\'d0\'ce\'c4/Traditional Chinese-\par
+\par
+SR-ATS \'dc\'9b\'f3\'77\'ca\'da\'99\'e0\'ba\'cf\'bc\'73\par
+\par
+1. \'d0\'f2\'d1\'d4\par
+\par
+\'b1\'be\'dc\'9b\'f3\'77\'ca\'da\'99\'e0\'ba\'cf\'bc\'73\'a3\'a8\'d2\'d4\'cf\'c2\'ba\'86\'b7\'51\'a1\'b8\'b1\'be\'ba\'cf\'bc\'73\'a1\'b9\'a3\'a9\'82\'53\'d3\'c9 rinnyanneko\'a3\'a8\'d2\'d4\'cf\'c2\'ba\'86\'b7\'51\'a1\'b8\'ca\'da\'99\'e0\'c8\'cb\'a1\'b9\'a3\'a9\'c5\'63\'c8\'ce\'ba\'ce\'c8\'a1\'b5\'c3\'a1\'a2\'ca\'b9\'d3\'c3\'b1\'be\'dc\'9b\'f3\'77\'b5\'c4\'82\'80\'c8\'cb\'bb\'f2\'bd\'4d\'bf\'97\'a3\'a8\'d2\'d4\'cf\'c2\'ba\'86\'b7\'51\'a1\'b8\'b1\'bb\'ca\'da\'99\'e0\'c8\'cb\'a1\'b9\'a3\'a9\'b9\'b2\'cd\'ac\'d3\'86\'c1\'a2\'a1\'a3\'b1\'be\'ba\'cf\'bc\'73\'d6\'bc\'d4\'da\'d2\'8e\'b9\'a0\'b1\'bb\'ca\'da\'99\'e0\'c8\'cb\'c8\'a1\'b5\'c3\'a1\'a2\'ca\'b9\'d3\'c3\'b1\'be\'dc\'9b\'f3\'77\'a1\'b8SR-ATS\'a1\'b9\'a3\'a8\'d2\'d4\'cf\'c2\'ba\'86\'b7\'51\'a1\'b8\'b1\'be\'dc\'9b\'f3\'77\'a1\'b9\'a3\'a9\'b5\'c4\'99\'e0\'c0\'fb\'c5\'63\'c1\'78\'84\'d5\'a3\'ac\'81\'4b\'d2\'c0\'93\'fe Apache License, Version 2.0\'a3\'a8\'d2\'d4\'cf\'c2\'ba\'86\'b7\'51\'a1\'b8Apache 2.0\'a1\'b9\'a3\'a9\'d6\'ae\'97\'6c\'bf\'ee\'ca\'da\'99\'e0\'a1\'a3\par
+\par
+2. \'b6\'a8\'c1\'78\par
+\par
+    \'b1\'be\'dc\'9b\'f3\'77\'a3\'ba\'d6\'b8\'d3\'c9\'ca\'da\'99\'e0\'c8\'cb\'e9\'5f\'b0\'6c\'a1\'a2\'c3\'fc\'c3\'fb\'9e\'e9\'a1\'b8SR-ATS\'a1\'b9\'b5\'c4\'dc\'9b\'f3\'77\'a3\'ac\'d2\'d4\'bc\'b0\'cb\'f9\'d3\'d0\'cf\'e0\'ea\'50\'ce\'c4\'bc\'fe\'a3\'a8\'b0\'fc\'c0\'a8\'b5\'ab\'b2\'bb\'cf\'de\'ec\'b6\'d5\'66\'c3\'f7\'ce\'c4\'bc\'fe\'a1\'a2\'d4\'ad\'ca\'bc\'b4\'61\'a1\'a2\'ce\'ef\'bc\'fe\'b4\'fa\'b4\'61\'a1\'a2\'88\'44\'ca\'be\'a1\'a2\'bd\'e9\'c3\'e6\'d4\'4f\'d3\'8b\'a1\'a2\'9c\'79\'d4\'87\'94\'b5\'93\'fe\'b5\'c8\'a3\'a9\'a3\'ac\'d2\'d4\'bc\'b0\'cb\'f9\'d3\'d0\'d1\'dc\'c9\'fa\'d7\'f7\'c6\'b7\'a1\'a3\par
+\par
+    \'d1\'dc\'c9\'fa\'d7\'f7\'c6\'b7\'a3\'ba\'d6\'b8\'bb\'f9\'ec\'b6\'b1\'be\'dc\'9b\'f3\'77\'a3\'ac\'cd\'b8\'df\'5e\'d0\'de\'b8\'c4\'a1\'a2\'bd\'59\'ba\'cf\'bb\'f2\'c6\'e4\'cb\'fb\'b7\'bd\'ca\'bd\'cb\'f9\'ae\'61\'c9\'fa\'b5\'c4\'c8\'ce\'ba\'ce\'d0\'ce\'ca\'bd\'b5\'c4\'d7\'f7\'c6\'b7\'a1\'a3\par
+\par
+    \'d6\'f8\'d7\'f7\'99\'e0\'c2\'95\'c3\'f7\'a3\'ba\'d6\'b8\'98\'cb\'ca\'be\'b1\'be\'dc\'9b\'f3\'77\'d6\'f8\'d7\'f7\'99\'e0\'9a\'77\'8c\'d9\'ca\'da\'99\'e0\'c8\'cb\'b5\'c4\'c2\'95\'c3\'f7\'a3\'ac\'cd\'a8\'b3\'a3\'b0\'fc\'ba\'ac\'ca\'da\'99\'e0\'c8\'cb\'b5\'c4\'c3\'fb\'b7\'51\'a1\'a2\'d6\'f8\'d7\'f7\'99\'e0\'98\'cb\'d3\'9b\'a3\'a8\f1\'a9\f0\'a3\'a9\'bc\'b0\'c4\'ea\'b7\'dd\'a1\'a3\par
+\par
+3. \'ca\'da\'99\'e0\'97\'6c\'bf\'ee\par
+\par
+    \'ca\'da\'99\'e0\'c8\'cb\'d2\'c0\'d5\'d5 Apache 2.0 \'b5\'c4\'97\'6c\'bf\'ee\'a3\'ac\'ca\'da\'d3\'e8\'b1\'bb\'ca\'da\'99\'e0\'c8\'cb\'c8\'ab\'c7\'f2\'d0\'d4\'a1\'a2\'c3\'e2\'b0\'e6\'b6\'90\'a1\'a2\'b7\'c7\'aa\'9a\'81\'d7\'b5\'c4\'99\'e0\'c0\'fb\'a3\'ac\'d4\'ca\'d4\'53\'b1\'bb\'ca\'da\'99\'e0\'c8\'cb\'a3\'ba\par
+\par
+    \'d7\'d4\'d3\'c9\'ca\'b9\'d3\'c3\'a3\'ba\'d2\'d4\'c8\'ce\'ba\'ce\'c4\'bf\'b5\'c4\'a3\'a8\'c9\'cc\'98\'49\'bb\'f2\'b7\'c7\'c9\'cc\'98\'49\'a3\'a9\'ca\'b9\'d3\'c3\'a1\'a2\'d1\'7d\'d1\'75\'a1\'a2\'d0\'de\'b8\'c4\'a1\'a2\'b7\'d6\'b0\'6c\'a1\'a2\'b1\'ed\'d1\'dd\'a1\'a2\'d5\'b9\'ca\'be\'b1\'be\'dc\'9b\'f3\'77\'a1\'a3\par
+\par
+    \'bd\'a8\'c1\'a2\'d1\'dc\'c9\'fa\'d7\'f7\'c6\'b7\'a3\'ba\'bb\'f9\'ec\'b6\'b1\'be\'dc\'9b\'f3\'77\'84\'93\'bd\'a8\'d1\'dc\'c9\'fa\'d7\'f7\'c6\'b7\'a1\'a3\par
+\par
+    \'d4\'d9\'b7\'d6\'b0\'6c\'a3\'ba\'d2\'d4\'d4\'ad\'ca\'bc\'b4\'61\'bb\'f2\'b6\'fe\'df\'4d\'ce\'bb\'b4\'61\'b5\'c4\'d0\'ce\'ca\'bd\'b7\'d6\'b0\'6c\'b1\'be\'dc\'9b\'f3\'77\'bb\'f2\'c6\'e4\'d1\'dc\'c9\'fa\'d7\'f7\'c6\'b7\'a1\'a3\par
+\par
+    \'c9\'a2\'b2\'bc\'a3\'ba\'cd\'b8\'df\'5e\'c8\'ce\'ba\'ce\'c3\'bd\'bd\'e9\'c9\'a2\'b2\'bc\'b1\'be\'dc\'9b\'f3\'77\'bb\'f2\'c6\'e4\'d1\'dc\'c9\'fa\'d7\'f7\'c6\'b7\'a1\'a3\par
+\par
+\'97\'6c\'bc\'fe\'a3\'ba\par
+\par
+    \'d6\'f8\'d7\'f7\'99\'e0\'c2\'95\'c3\'f7\'a3\'ba\'b1\'bb\'ca\'da\'99\'e0\'c8\'cb\'b1\'d8\'ed\'9a\'d4\'da\'cb\'f9\'d3\'d0\'b7\'d6\'b0\'6c\'b5\'c4\'b8\'b1\'b1\'be\'d6\'d0\'b1\'a3\'c1\'f4\'d4\'ad\'ca\'bc\'d6\'f8\'d7\'f7\'99\'e0\'c2\'95\'c3\'f7\'ba\'cd\'b1\'be\'ca\'da\'99\'e0\'97\'6c\'bf\'ee\'a1\'a3\par
+\par
+    \'d0\'de\'b8\'c4\'98\'cb\'ca\'be\'a3\'ba\'8c\'a6\'ec\'b6\'d0\'de\'b8\'c4\'b0\'e6\'b1\'be\'a3\'ac\'b1\'bb\'ca\'da\'99\'e0\'c8\'cb\'b1\'d8\'ed\'9a\'c7\'e5\'b3\'fe\'98\'cb\'ca\'be\'d0\'de\'b8\'c4\'b2\'bf\'b7\'d6\'a1\'a3\par
+\par
+    \'ca\'da\'99\'e0\'97\'6c\'bf\'ee\'82\'f7\'df\'66\'a3\'ba\'b1\'bb\'ca\'da\'99\'e0\'c8\'cb\'c8\'f4\'d4\'d9\'ca\'da\'99\'e0\'cb\'fb\'c8\'cb\'ca\'b9\'d3\'c3\'b1\'be\'dc\'9b\'f3\'77\'bb\'f2\'c6\'e4\'d1\'dc\'c9\'fa\'d7\'f7\'c6\'b7\'a3\'ac\'b1\'d8\'ed\'9a\'d2\'d4\'c5\'63\'b1\'be\'ba\'cf\'bc\'73\'cf\'e0\'cd\'ac\'b5\'c4\'ca\'da\'99\'e0\'97\'6c\'bf\'ee\'ca\'da\'99\'e0\'a1\'a3\par
+\par
+    \'9f\'6f\'b1\'b3\'95\'f8\'a3\'ba\'b1\'bb\'ca\'da\'99\'e0\'c8\'cb\'b2\'bb\'b5\'c3\'8c\'a2\'b1\'be\'ca\'da\'99\'e0\'97\'6c\'bf\'ee\'d3\'c3\'ec\'b6\'cf\'de\'d6\'c6\'c6\'e4\'cb\'fb\'dc\'9b\'f3\'77\'a3\'ac\'d2\'e0\'b2\'bb\'b5\'c3\'d2\'d4\'b1\'be\'dc\'9b\'f3\'77\'bb\'f2\'c6\'e4\'c3\'fb\'b7\'51\'d7\'f7\'9e\'e9\'d0\'fb\'82\'f7\'bb\'f2\'cd\'c6\'8f\'56\'c6\'e4\'ae\'61\'c6\'b7\'bb\'f2\'b7\'fe\'84\'d5\'b5\'c4\'d2\'c0\'93\'fe\'a3\'ac\'ca\'b9\'cb\'fb\'c8\'cb\'d5\'60\'d5\'4a\'9e\'e9\'ca\'da\'99\'e0\'c8\'cb\'d9\'9d\'cd\'ac\'bb\'f2\'d6\'a7\'b3\'d6\'c6\'e4\'ae\'61\'c6\'b7\'bb\'f2\'b7\'fe\'84\'d5\'a1\'a3\par
+\par
+4. \'93\'fa\'b1\'a3\'c5\'63\'c3\'e2\'d8\'9f\'c2\'95\'c3\'f7\par
+\par
+\'b1\'be\'dc\'9b\'f3\'77\'a1\'b8\'b0\'b4\'d4\'ad\'98\'d3\'a1\'b9\'cc\'e1\'b9\'a9\'a3\'ac\'b2\'bb\'b8\'bd\'8e\'a7\'c8\'ce\'ba\'ce\'d0\'ce\'ca\'bd\'b5\'c4\'c3\'f7\'ca\'be\'bb\'f2\'c4\'ac\'ca\'be\'93\'fa\'b1\'a3\'a3\'ac\'b0\'fc\'c0\'a8\'b5\'ab\'b2\'bb\'cf\'de\'ec\'b6\'8c\'a6\'dc\'9b\'f3\'77\'b5\'c4\'df\'6d\'e4\'4e\'d0\'d4\'a1\'a2\'cc\'d8\'b6\'a8\'d3\'c3\'cd\'be\'d6\'ae\'df\'6d\'d3\'c3\'d0\'d4\'a1\'a2\'9f\'6f\'c7\'d6\'99\'e0\'a1\'a2\'b2\'bb\'c7\'d6\'b7\'b8\'cb\'fb\'c8\'cb\'d6\'c7\'bb\'db\'d8\'94\'ae\'61\'99\'e0\'b5\'c8\'a1\'a3\'ca\'da\'99\'e0\'c8\'cb\'8c\'a6\'d2\'f2\'ca\'b9\'d3\'c3\'b1\'be\'dc\'9b\'f3\'77\'b6\'f8\'d4\'ec\'b3\'c9\'b5\'c4\'c8\'ce\'ba\'ce\'93\'70\'ba\'a6\'b2\'bb\'d8\'93\'c8\'ce\'ba\'ce\'d8\'9f\'c8\'ce\'a1\'a3\par
+\par
+5. \'bd\'4b\'d6\'b9\par
+\par
+\'c8\'f4\'b1\'bb\'ca\'da\'99\'e0\'c8\'cb\'df\'60\'b7\'b4\'b1\'be\'ba\'cf\'bc\'73\'b5\'c4\'c8\'ce\'ba\'ce\'97\'6c\'bf\'ee\'a3\'ac\'ca\'da\'99\'e0\'c8\'cb\'d3\'d0\'99\'e0\'c1\'a2\'bc\'b4\'bd\'4b\'d6\'b9\'b1\'be\'ca\'da\'99\'e0\'a1\'a3\par
+\par
+6. \'a0\'8e\'d7\'68\'bd\'e2\'9b\'51\par
+\par
+\'c8\'f4\'d2\'f2\'b1\'be\'ba\'cf\'bc\'73\'b0\'6c\'c9\'fa\'c8\'ce\'ba\'ce\'a0\'8e\'d7\'68\'a3\'ac\'eb\'70\'b7\'bd\'cd\'ac\'d2\'e2\'83\'9e\'cf\'c8\'cd\'b8\'df\'5e\'d3\'d1\'ba\'c3\'85\'66\'c9\'cc\'bd\'e2\'9b\'51\'a1\'a3\'c8\'f4\'85\'66\'c9\'cc\'b2\'bb\'b3\'c9\'a3\'ac\'eb\'70\'b7\'bd\'cd\'ac\'d2\'e2\'d2\'d4\'d6\'d0\'c8\'41\'c3\'f1\'87\'f8\'b7\'a8\'c2\'c9\'9e\'e9\'9c\'ca\'a3\'ac\'81\'4b\'d2\'d4\'c5\'5f\'9e\'b3\'c5\'5f\'b1\'b1\'b5\'d8\'b7\'bd\'b7\'a8\'d4\'ba\'9e\'e9\'b5\'da\'d2\'bb\'8c\'8f\'b7\'a8\'d4\'ba\'a1\'a3\par
+\par
+7. \'c9\'fa\'d0\'a7\'c8\'d5\'c6\'da\'c5\'63\'cd\'ea\'d5\'fb\'85\'66\'d7\'68\par
+\par
+\'b1\'be\'ba\'cf\'bc\'73\'d7\'d4\'b1\'be\'dc\'9b\'f3\'77\'b0\'6c\'b2\'bc\'d6\'ae\'c8\'d5\'c6\'f0\'c9\'fa\'d0\'a7\'a1\'a3\'b1\'be\'ba\'cf\'bc\'73\'9e\'e9\'eb\'70\'b7\'bd\'be\'cd\'dc\'9b\'f3\'77\'ca\'da\'99\'e0\'ca\'c2\'d2\'cb\'d6\'ae\'cd\'ea\'d5\'fb\'85\'66\'d7\'68\'a3\'ac\'81\'4b\'c8\'a1\'b4\'fa\'cf\'c8\'c7\'b0\'cb\'f9\'d3\'d0\'bf\'da\'ee\'5e\'bb\'f2\'95\'f8\'c3\'e6\'d6\'ae\'85\'66\'d7\'68\'a1\'a3\par
+\par
+8. \'dc\'9b\'f3\'77\'b8\'fc\'d0\'c2\par
+\par
+\'ca\'da\'99\'e0\'c8\'cb\'d3\'d0\'99\'e0\'8c\'a6\'b1\'be\'dc\'9b\'f3\'77\'df\'4d\'d0\'d0\'b8\'fc\'d0\'c2\'a1\'a2\'d0\'de\'b8\'c4\'bb\'f2\'c9\'fd\'bc\'89\'a3\'ac\'81\'4b\'8c\'a2\'d0\'c2\'b5\'c4\'b0\'e6\'b1\'be\'cc\'e1\'b9\'a9\'bd\'6f\'b1\'bb\'ca\'da\'99\'e0\'c8\'cb\'a1\'a3\'b1\'bb\'ca\'da\'99\'e0\'c8\'cb\'cd\'ac\'d2\'e2\'bd\'d3\'ca\'dc\'ca\'da\'99\'e0\'c8\'cb\'cc\'e1\'b9\'a9\'b5\'c4\'dc\'9b\'f3\'77\'b8\'fc\'d0\'c2\'a3\'ac\'81\'4b\'cd\'ac\'d2\'e2\'b8\'fc\'d0\'c2\'e1\'e1\'b5\'c4\'dc\'9b\'f3\'77\'c8\'d4\'ca\'dc\'b1\'be\'ba\'cf\'bc\'73\'bc\'73\'ca\'f8\'a1\'a3\par
+\par
+9. \'b5\'da\'c8\'fd\'b7\'bd\'dc\'9b\'f3\'77\par
+\par
+\'b1\'be\'dc\'9b\'f3\'77\'bf\'c9\'c4\'dc\'b0\'fc\'ba\'ac\'bb\'f2\'ca\'b9\'d3\'c3\'b5\'da\'c8\'fd\'b7\'bd\'e9\'5f\'b0\'6c\'b5\'c4\'dc\'9b\'f3\'77\'a3\'a8\'d2\'d4\'cf\'c2\'ba\'86\'b7\'51\'a1\'b8\'b5\'da\'c8\'fd\'b7\'bd\'dc\'9b\'f3\'77\'a1\'b9\'a3\'a9\'a1\'a3\'b5\'da\'c8\'fd\'b7\'bd\'dc\'9b\'f3\'77\'b5\'c4\'ca\'da\'99\'e0\'97\'6c\'bf\'ee\'bf\'c9\'c4\'dc\'c5\'63\'b1\'be\'ba\'cf\'bc\'73\'b2\'bb\'cd\'ac\'a1\'a3\'b1\'bb\'ca\'da\'99\'e0\'c8\'cb\'cd\'ac\'d2\'e2\'d7\'f1\'ca\'d8\'b5\'da\'c8\'fd\'b7\'bd\'dc\'9b\'f3\'77\'b5\'c4\'ca\'da\'99\'e0\'97\'6c\'bf\'ee\'a1\'a3\'ca\'da\'99\'e0\'c8\'cb\'8c\'a6\'b5\'da\'c8\'fd\'b7\'bd\'dc\'9b\'f3\'77\'b2\'bb\'cc\'e1\'b9\'a9\'c8\'ce\'ba\'ce\'b1\'a3\'d7\'43\'a3\'ac\'c7\'d2\'b2\'bb\'8c\'a6\'b5\'da\'c8\'fd\'b7\'bd\'dc\'9b\'f3\'77\'b5\'c4\'c8\'ce\'ba\'ce\'86\'96\'ee\'7d\'bb\'f2\'93\'70\'ba\'a6\'b3\'d0\'93\'fa\'d8\'9f\'c8\'ce\'a1\'a3\par
+\par
+10. \'9c\'ca\'93\'fe\'b7\'a8\'c5\'63\'d1\'61\'b3\'e4\'d2\'8e\'b6\'a8\par
+\par
+\'b1\'be\'ba\'cf\'bc\'73\'91\'aa\'d2\'c0\'d5\'d5\'d6\'d0\'c8\'41\'c3\'f1\'87\'f8\'b7\'a8\'c2\'c9\'bd\'e2\'e1\'8c\'c5\'63\'df\'6d\'d3\'c3\'a1\'a3\'c8\'f4\'b1\'be\'ba\'cf\'bc\'73\'d6\'ae\'b7\'b1\'f3\'77\'d6\'d0\'ce\'c4(Traditional Chinese)\'b0\'e6\'c5\'63\'c6\'e4\'cb\'fb\'d5\'5a\'d1\'d4\'b0\'e6\'b1\'be\'d3\'d0\'c6\'e7\'c1\'78\'d6\'ae\'cc\'8e\'a3\'ac\'91\'aa\'d2\'d4\'b7\'b1\'f3\'77\'d6\'d0\'ce\'c4\'b0\'e6\'b1\'be\'9e\'e9\'9c\'ca\'a1\'a3\'c8\'e7\'d3\'d0\'ce\'b4\'b1\'4d\'ca\'c2\'d2\'cb\'a3\'ac\'cf\'a4\'d2\'c0\'d6\'d0\'c8\'41\'c3\'f1\'87\'f8\'d6\'f8\'d7\'f7\'99\'e0\'b7\'a8\'a1\'a2\'a0\'49\'98\'49\'b5\'7a\'c3\'dc\'b7\'a8\'bc\'b0\'d0\'cc\'b7\'a8\'c9\'cc\'98\'cb\'c7\'d6\'ba\'a6\'d5\'c2\'b9\'9d\'d6\'ae\'cf\'e0\'ea\'50\'d2\'8e\'b6\'a8\'a1\'a3\par
+\par
+rinnyanneko\par
+2024-12-14\f2\lang1041\par
+\par
+-English-\par
 \par
 SR-ATS Software License Agreement\par
 \par
@@ -116,7 +185,7 @@ This Software License Agreement (hereinafter referred to as "this Agreement") is
 \par
     Derivative Works: Refers to any work of any form created based on the Software through modification, combination, or other means.\par
 \par
-    Copyright Notice: Refers to the statement indicating the copyright ownership of the Software belonging to the Licensor, usually including the Licensor's name, copyright symbol (\f1\lang1033\'a9), and year.\par
+    Copyright Notice: Refers to the statement indicating the copyright ownership of the Software belonging to the Licensor, usually including the Licensor's name, copyright symbol (\f3\lang1033\'a9), and year.\par
 \par
 3. License Terms\par
 \par
@@ -171,13 +240,13 @@ This Agreement shall be interpreted and applied in accordance with the laws of t
 rinnyanneko\par
 2024-12-14\par
 \par
--\f2\'c8\'d5\'b1\'be\'d5\'5a\f1 /Japanese-\par
+-\f0\'c8\'d5\'b1\'be\'d5\'5a\f3 /Japanese-\par
 \par
-SR-ATS \f2\'ca\'b9\'d3\'c3\'d4\'53\'d6\'5a\'c6\'f5\'bc\'73\f1\par
+SR-ATS \f0\'ca\'b9\'d3\'c3\'d4\'53\'d6\'5a\'c6\'f5\'bc\'73\f3\par
 \par
-1. \f2\'c7\'b0\'ce\'c4\f1\par
+1. \f0\'c7\'b0\'ce\'c4\f3\par
 \par
-\f2\'b1\'be\'ca\'b9\'d3\'c3\'d4\'53\'d6\'5a\'c6\'f5\'bc\'73\'a3\'a8\'d2\'d4\'cf\'c2\'a1\'b8\'b1\'be\'c6\'f5\'bc\'73\'a1\'b9\f0\'82\'c6\'82\'a2\'82\'a4\'81\'6a\'82\'cd\'81\'41rinnyanneko\'81\'69\'88\'c8\'89\'ba\'81\'75\'83\'89\'83\'43\'83\'5a\'83\'93\'83\'54\'81\'5b\'81\'76\'82\'c6\'82\'a2\'82\'a4\'81\'6a\'82\'c6\'81\'41\'96\'7b\'83\'5c\'83\'74\'83\'67\'83\'45\'83\'46\'83\'41\'82\'f0\'8e\'e6\'93\'be\'82\'b5\'8e\'67\'97\'70\'82\'b7\'82\'e9\'82\'b7\'82\'d7\'82\'c4\'82\'cc\'8c\'c2\'90\'6c\'82\'dc\'82\'bd\'82\'cd\'91\'67\'90\'44\'81\'69\'88\'c8\'89\'ba\'81\'75\'83\'89\'83\'43\'83\'5a\'83\'93\'83\'56\'81\'5b\'81\'76\'82\'c6\'82\'a2\'82\'a4\'81\'6a\'82\'c6\'82\'cc\'8a\'d4\'82\'c5\'92\'f7\'8c\'8b\'82\'b3\'82\'ea\'82\'e9\'81\'42\'96\'7b\'8c\'5f\'96\'f1\'82\'cd\'81\'41\'83\'89\'83\'43\'83\'5a\'83\'93\'83\'56\'81\'5b\'82\'c9\'82\'e6\'82\'e9\'96\'7b\'83\'5c\'83\'74\'83\'67\'83\'45\'83\'46\'83\'41\'81\'75SR-ATS\'81\'76\'81\'69\'88\'c8\'89\'ba\'81\'75\'96\'7b\'83\'5c\'83\'74\'83\'67\'83\'45\'83\'46\'83\'41\'81\'76\'82\'c6\'82\'a2\'82\'a4\'81\'6a\'82\'cc\'8e\'e6\'93\'be\'82\'a8\'82\'e6\'82\'d1\'8e\'67\'97\'70\'82\'c9\'8a\'d6\'82\'b7\'82\'e9\'8c\'a0\'97\'98\'82\'c6\'8b\'60\'96\'b1\'82\'f0\'8b\'4b\'92\'e8\'82\'b7\'82\'e9\'82\'b1\'82\'c6\'82\'f0\'96\'da\'93\'49\'82\'c6\'82\'b5\'81\'41Apache License, Version 2.0\'81\'69\'88\'c8\'89\'ba\'81\'75Apache 2.0\'81\'76\'82\'c6\'82\'a2\'82\'a4\'81\'6a\'82\'cc\'8f\'f0\'8d\'80\'82\'c9\'8a\'ee\'82\'c3\'82\'a2\'82\'c4\'83\'89\'83\'43\'83\'5a\'83\'93\'83\'58\'82\'b3\'82\'ea\'82\'e9\'81\'42\par
+\f0\'b1\'be\'ca\'b9\'d3\'c3\'d4\'53\'d6\'5a\'c6\'f5\'bc\'73\'a3\'a8\'d2\'d4\'cf\'c2\'a1\'b8\'b1\'be\'c6\'f5\'bc\'73\'a1\'b9\f2\'82\'c6\'82\'a2\'82\'a4\'81\'6a\'82\'cd\'81\'41rinnyanneko\'81\'69\'88\'c8\'89\'ba\'81\'75\'83\'89\'83\'43\'83\'5a\'83\'93\'83\'54\'81\'5b\'81\'76\'82\'c6\'82\'a2\'82\'a4\'81\'6a\'82\'c6\'81\'41\'96\'7b\'83\'5c\'83\'74\'83\'67\'83\'45\'83\'46\'83\'41\'82\'f0\'8e\'e6\'93\'be\'82\'b5\'8e\'67\'97\'70\'82\'b7\'82\'e9\'82\'b7\'82\'d7\'82\'c4\'82\'cc\'8c\'c2\'90\'6c\'82\'dc\'82\'bd\'82\'cd\'91\'67\'90\'44\'81\'69\'88\'c8\'89\'ba\'81\'75\'83\'89\'83\'43\'83\'5a\'83\'93\'83\'56\'81\'5b\'81\'76\'82\'c6\'82\'a2\'82\'a4\'81\'6a\'82\'c6\'82\'cc\'8a\'d4\'82\'c5\'92\'f7\'8c\'8b\'82\'b3\'82\'ea\'82\'e9\'81\'42\'96\'7b\'8c\'5f\'96\'f1\'82\'cd\'81\'41\'83\'89\'83\'43\'83\'5a\'83\'93\'83\'56\'81\'5b\'82\'c9\'82\'e6\'82\'e9\'96\'7b\'83\'5c\'83\'74\'83\'67\'83\'45\'83\'46\'83\'41\'81\'75SR-ATS\'81\'76\'81\'69\'88\'c8\'89\'ba\'81\'75\'96\'7b\'83\'5c\'83\'74\'83\'67\'83\'45\'83\'46\'83\'41\'81\'76\'82\'c6\'82\'a2\'82\'a4\'81\'6a\'82\'cc\'8e\'e6\'93\'be\'82\'a8\'82\'e6\'82\'d1\'8e\'67\'97\'70\'82\'c9\'8a\'d6\'82\'b7\'82\'e9\'8c\'a0\'97\'98\'82\'c6\'8b\'60\'96\'b1\'82\'f0\'8b\'4b\'92\'e8\'82\'b7\'82\'e9\'82\'b1\'82\'c6\'82\'f0\'96\'da\'93\'49\'82\'c6\'82\'b5\'81\'41Apache License, Version 2.0\'81\'69\'88\'c8\'89\'ba\'81\'75Apache 2.0\'81\'76\'82\'c6\'82\'a2\'82\'a4\'81\'6a\'82\'cc\'8f\'f0\'8d\'80\'82\'c9\'8a\'ee\'82\'c3\'82\'a2\'82\'c4\'83\'89\'83\'43\'83\'5a\'83\'93\'83\'58\'82\'b3\'82\'ea\'82\'e9\'81\'42\par
 \par
 2. \'92\'e8\'8b\'60\par
 \par
@@ -185,7 +254,7 @@ SR-ATS \f2\'ca\'b9\'d3\'c3\'d4\'53\'d6\'5a\'c6\'f5\'bc\'73\f1\par
 \par
    \'94\'68\'90\'b6\'95\'a8\'81\'46\'96\'7b\'83\'5c\'83\'74\'83\'67\'83\'45\'83\'46\'83\'41\'82\'c9\'8a\'ee\'82\'c3\'82\'ab\'81\'41\'8f\'43\'90\'b3\'81\'41\'8c\'8b\'8d\'87\'81\'41\'82\'dc\'82\'bd\'82\'cd\'82\'bb\'82\'cc\'91\'bc\'82\'cc\'95\'fb\'96\'40\'82\'c5\'8d\'ec\'90\'ac\'82\'b3\'82\'ea\'82\'bd\'82\'a0\'82\'e7\'82\'e4\'82\'e9\'8c\'60\'8e\'ae\'82\'cc\'92\'98\'8d\'ec\'95\'a8\'82\'f0\'8e\'77\'82\'b7\'81\'42\par
 \par
-   \'92\'98\'8d\'ec\'8c\'a0\'95\'5c\'8e\'a6\'81\'46\'96\'7b\'83\'5c\'83\'74\'83\'67\'83\'45\'83\'46\'83\'41\'82\'cc\'92\'98\'8d\'ec\'8c\'a0\'82\'aa\'83\'89\'83\'43\'83\'5a\'83\'93\'83\'54\'81\'5b\'82\'c9\'8b\'41\'91\'ae\'82\'b7\'82\'e9\'82\'b1\'82\'c6\'82\'f0\'8e\'a6\'82\'b7\'95\'5c\'8e\'a6\'82\'c5\'82\'a0\'82\'e8\'81\'41\'92\'ca\'8f\'ed\'82\'cd\'83\'89\'83\'43\'83\'5a\'83\'93\'83\'54\'81\'5b\'82\'cc\'96\'bc\'91\'4f\'81\'41\'92\'98\'8d\'ec\'8c\'a0\'8b\'4c\'8d\'86\'81\'69\f1\'a9\f2\'a3\'a9\'a1\'a2\f0\'82\'a8\'82\'e6\'82\'d1\'94\'4e\'8d\'86\'82\'f0\'8a\'dc\'82\'de\'81\'42\par
+   \'92\'98\'8d\'ec\'8c\'a0\'95\'5c\'8e\'a6\'81\'46\'96\'7b\'83\'5c\'83\'74\'83\'67\'83\'45\'83\'46\'83\'41\'82\'cc\'92\'98\'8d\'ec\'8c\'a0\'82\'aa\'83\'89\'83\'43\'83\'5a\'83\'93\'83\'54\'81\'5b\'82\'c9\'8b\'41\'91\'ae\'82\'b7\'82\'e9\'82\'b1\'82\'c6\'82\'f0\'8e\'a6\'82\'b7\'95\'5c\'8e\'a6\'82\'c5\'82\'a0\'82\'e8\'81\'41\'92\'ca\'8f\'ed\'82\'cd\'83\'89\'83\'43\'83\'5a\'83\'93\'83\'54\'81\'5b\'82\'cc\'96\'bc\'91\'4f\'81\'41\'92\'98\'8d\'ec\'8c\'a0\'8b\'4c\'8d\'86\'81\'69\f3\'a9\f0\'a3\'a9\'a1\'a2\f2\'82\'a8\'82\'e6\'82\'d1\'94\'4e\'8d\'86\'82\'f0\'8a\'dc\'82\'de\'81\'42\par
 \par
 3. \'83\'89\'83\'43\'83\'5a\'83\'93\'83\'58\'8f\'f0\'8d\'80\par
 \par
@@ -240,7 +309,7 @@ SR-ATS \f2\'ca\'b9\'d3\'c3\'d4\'53\'d6\'5a\'c6\'f5\'bc\'73\f1\par
 rinnyanneko\par
 2024-12-14\par
 \par
-\f2 -\'bc\'f2\'cc\'e5\'d6\'d0\'ce\'c4/Simplified Chinese-\par
+\f0 -\'bc\'f2\'cc\'e5\'d6\'d0\'ce\'c4/Simplified Chinese-\par
 \par
 SR-ATS \'c8\'ed\'bc\'fe\'ca\'da\'c8\'a8\'d0\'ad\'d2\'e9\par
 \par
@@ -254,7 +323,7 @@ SR-ATS \'c8\'ed\'bc\'fe\'ca\'da\'c8\'a8\'d0\'ad\'d2\'e9\par
 \par
     \'d1\'dc\'c9\'fa\'d7\'f7\'c6\'b7\'a3\'ba\'d6\'b8\'bb\'f9\'d3\'da\'b1\'be\'c8\'ed\'bc\'fe\'a3\'ac\'cd\'a8\'b9\'fd\'d0\'de\'b8\'c4\'a1\'a2\'bd\'e1\'ba\'cf\'bb\'f2\'c6\'e4\'cb\'fb\'b7\'bd\'ca\'bd\'b2\'fa\'c9\'fa\'b5\'c4\'c8\'ce\'ba\'ce\'d0\'ce\'ca\'bd\'b5\'c4\'d7\'f7\'c6\'b7\'a1\'a3\par
 \par
-    \'d6\'f8\'d7\'f7\'c8\'a8\'c9\'f9\'c3\'f7\'a3\'ba\'d6\'b8\'b1\'ea\'ca\'be\'b1\'be\'c8\'ed\'bc\'fe\'d6\'f8\'d7\'f7\'c8\'a8\'b9\'e9\'ca\'f4\'ca\'da\'c8\'a8\'c8\'cb\'b5\'c4\'c9\'f9\'c3\'f7\'a3\'ac\'cd\'a8\'b3\'a3\'b0\'fc\'ba\'ac\'ca\'da\'c8\'a8\'c8\'cb\'b5\'c4\'c3\'fb\'b3\'c6\'a1\'a2\'d6\'f8\'d7\'f7\'c8\'a8\'b1\'ea\'bc\'c7\'a3\'a8\f3\'a9\f2\'a3\'a9\'bc\'b0\'c4\'ea\'b7\'dd\'a1\'a3\par
+    \'d6\'f8\'d7\'f7\'c8\'a8\'c9\'f9\'c3\'f7\'a3\'ba\'d6\'b8\'b1\'ea\'ca\'be\'b1\'be\'c8\'ed\'bc\'fe\'d6\'f8\'d7\'f7\'c8\'a8\'b9\'e9\'ca\'f4\'ca\'da\'c8\'a8\'c8\'cb\'b5\'c4\'c9\'f9\'c3\'f7\'a3\'ac\'cd\'a8\'b3\'a3\'b0\'fc\'ba\'ac\'ca\'da\'c8\'a8\'c8\'cb\'b5\'c4\'c3\'fb\'b3\'c6\'a1\'a2\'d6\'f8\'d7\'f7\'c8\'a8\'b1\'ea\'bc\'c7\'a3\'a8\f1\'a9\f0\'a3\'a9\'bc\'b0\'c4\'ea\'b7\'dd\'a1\'a3\par
 \par
 3. \'ca\'da\'c8\'a8\'cc\'f5\'bf\'ee\par
 \par
@@ -308,75 +377,6 @@ SR-ATS \'c8\'ed\'bc\'fe\'ca\'da\'c8\'a8\'d0\'ad\'d2\'e9\par
 \par
 rinnyanneko\par
 2024-12-14\par
-\par
--\'b7\'b1\'f3\'77\'d6\'d0\'ce\'c4/Traditional Chinese-\par
-\par
-SR-ATS \'dc\'9b\'f3\'77\'ca\'da\'99\'e0\'ba\'cf\'bc\'73\par
-\par
-1. \'d0\'f2\'d1\'d4\par
-\par
-\'b1\'be\'dc\'9b\'f3\'77\'ca\'da\'99\'e0\'ba\'cf\'bc\'73\'a3\'a8\'d2\'d4\'cf\'c2\'ba\'86\'b7\'51\'a1\'b8\'b1\'be\'ba\'cf\'bc\'73\'a1\'b9\'a3\'a9\'82\'53\'d3\'c9 rinnyanneko\'a3\'a8\'d2\'d4\'cf\'c2\'ba\'86\'b7\'51\'a1\'b8\'ca\'da\'99\'e0\'c8\'cb\'a1\'b9\'a3\'a9\'c5\'63\'c8\'ce\'ba\'ce\'c8\'a1\'b5\'c3\'a1\'a2\'ca\'b9\'d3\'c3\'b1\'be\'dc\'9b\'f3\'77\'b5\'c4\'82\'80\'c8\'cb\'bb\'f2\'bd\'4d\'bf\'97\'a3\'a8\'d2\'d4\'cf\'c2\'ba\'86\'b7\'51\'a1\'b8\'b1\'bb\'ca\'da\'99\'e0\'c8\'cb\'a1\'b9\'a3\'a9\'b9\'b2\'cd\'ac\'d3\'86\'c1\'a2\'a1\'a3\'b1\'be\'ba\'cf\'bc\'73\'d6\'bc\'d4\'da\'d2\'8e\'b9\'a0\'b1\'bb\'ca\'da\'99\'e0\'c8\'cb\'c8\'a1\'b5\'c3\'a1\'a2\'ca\'b9\'d3\'c3\'b1\'be\'dc\'9b\'f3\'77\'a1\'b8SR-ATS\'a1\'b9\'a3\'a8\'d2\'d4\'cf\'c2\'ba\'86\'b7\'51\'a1\'b8\'b1\'be\'dc\'9b\'f3\'77\'a1\'b9\'a3\'a9\'b5\'c4\'99\'e0\'c0\'fb\'c5\'63\'c1\'78\'84\'d5\'a3\'ac\'81\'4b\'d2\'c0\'93\'fe Apache License, Version 2.0\'a3\'a8\'d2\'d4\'cf\'c2\'ba\'86\'b7\'51\'a1\'b8Apache 2.0\'a1\'b9\'a3\'a9\'d6\'ae\'97\'6c\'bf\'ee\'ca\'da\'99\'e0\'a1\'a3\par
-\par
-2. \'b6\'a8\'c1\'78\par
-\par
-    \'b1\'be\'dc\'9b\'f3\'77\'a3\'ba\'d6\'b8\'d3\'c9\'ca\'da\'99\'e0\'c8\'cb\'e9\'5f\'b0\'6c\'a1\'a2\'c3\'fc\'c3\'fb\'9e\'e9\'a1\'b8SR-ATS\'a1\'b9\'b5\'c4\'dc\'9b\'f3\'77\'a3\'ac\'d2\'d4\'bc\'b0\'cb\'f9\'d3\'d0\'cf\'e0\'ea\'50\'ce\'c4\'bc\'fe\'a3\'a8\'b0\'fc\'c0\'a8\'b5\'ab\'b2\'bb\'cf\'de\'ec\'b6\'d5\'66\'c3\'f7\'ce\'c4\'bc\'fe\'a1\'a2\'d4\'ad\'ca\'bc\'b4\'61\'a1\'a2\'ce\'ef\'bc\'fe\'b4\'fa\'b4\'61\'a1\'a2\'88\'44\'ca\'be\'a1\'a2\'bd\'e9\'c3\'e6\'d4\'4f\'d3\'8b\'a1\'a2\'9c\'79\'d4\'87\'94\'b5\'93\'fe\'b5\'c8\'a3\'a9\'a3\'ac\'d2\'d4\'bc\'b0\'cb\'f9\'d3\'d0\'d1\'dc\'c9\'fa\'d7\'f7\'c6\'b7\'a1\'a3\par
-\par
-    \'d1\'dc\'c9\'fa\'d7\'f7\'c6\'b7\'a3\'ba\'d6\'b8\'bb\'f9\'ec\'b6\'b1\'be\'dc\'9b\'f3\'77\'a3\'ac\'cd\'b8\'df\'5e\'d0\'de\'b8\'c4\'a1\'a2\'bd\'59\'ba\'cf\'bb\'f2\'c6\'e4\'cb\'fb\'b7\'bd\'ca\'bd\'cb\'f9\'ae\'61\'c9\'fa\'b5\'c4\'c8\'ce\'ba\'ce\'d0\'ce\'ca\'bd\'b5\'c4\'d7\'f7\'c6\'b7\'a1\'a3\par
-\par
-    \'d6\'f8\'d7\'f7\'99\'e0\'c2\'95\'c3\'f7\'a3\'ba\'d6\'b8\'98\'cb\'ca\'be\'b1\'be\'dc\'9b\'f3\'77\'d6\'f8\'d7\'f7\'99\'e0\'9a\'77\'8c\'d9\'ca\'da\'99\'e0\'c8\'cb\'b5\'c4\'c2\'95\'c3\'f7\'a3\'ac\'cd\'a8\'b3\'a3\'b0\'fc\'ba\'ac\'ca\'da\'99\'e0\'c8\'cb\'b5\'c4\'c3\'fb\'b7\'51\'a1\'a2\'d6\'f8\'d7\'f7\'99\'e0\'98\'cb\'d3\'9b\'a3\'a8\f3\'a9\f2\'a3\'a9\'bc\'b0\'c4\'ea\'b7\'dd\'a1\'a3\par
-\par
-3. \'ca\'da\'99\'e0\'97\'6c\'bf\'ee\par
-\par
-    \'ca\'da\'99\'e0\'c8\'cb\'d2\'c0\'d5\'d5 Apache 2.0 \'b5\'c4\'97\'6c\'bf\'ee\'a3\'ac\'ca\'da\'d3\'e8\'b1\'bb\'ca\'da\'99\'e0\'c8\'cb\'c8\'ab\'c7\'f2\'d0\'d4\'a1\'a2\'c3\'e2\'b0\'e6\'b6\'90\'a1\'a2\'b7\'c7\'aa\'9a\'81\'d7\'b5\'c4\'99\'e0\'c0\'fb\'a3\'ac\'d4\'ca\'d4\'53\'b1\'bb\'ca\'da\'99\'e0\'c8\'cb\'a3\'ba\par
-\par
-    \'d7\'d4\'d3\'c9\'ca\'b9\'d3\'c3\'a3\'ba\'d2\'d4\'c8\'ce\'ba\'ce\'c4\'bf\'b5\'c4\'a3\'a8\'c9\'cc\'98\'49\'bb\'f2\'b7\'c7\'c9\'cc\'98\'49\'a3\'a9\'ca\'b9\'d3\'c3\'a1\'a2\'d1\'7d\'d1\'75\'a1\'a2\'d0\'de\'b8\'c4\'a1\'a2\'b7\'d6\'b0\'6c\'a1\'a2\'b1\'ed\'d1\'dd\'a1\'a2\'d5\'b9\'ca\'be\'b1\'be\'dc\'9b\'f3\'77\'a1\'a3\par
-\par
-    \'bd\'a8\'c1\'a2\'d1\'dc\'c9\'fa\'d7\'f7\'c6\'b7\'a3\'ba\'bb\'f9\'ec\'b6\'b1\'be\'dc\'9b\'f3\'77\'84\'93\'bd\'a8\'d1\'dc\'c9\'fa\'d7\'f7\'c6\'b7\'a1\'a3\par
-\par
-    \'d4\'d9\'b7\'d6\'b0\'6c\'a3\'ba\'d2\'d4\'d4\'ad\'ca\'bc\'b4\'61\'bb\'f2\'b6\'fe\'df\'4d\'ce\'bb\'b4\'61\'b5\'c4\'d0\'ce\'ca\'bd\'b7\'d6\'b0\'6c\'b1\'be\'dc\'9b\'f3\'77\'bb\'f2\'c6\'e4\'d1\'dc\'c9\'fa\'d7\'f7\'c6\'b7\'a1\'a3\par
-\par
-    \'c9\'a2\'b2\'bc\'a3\'ba\'cd\'b8\'df\'5e\'c8\'ce\'ba\'ce\'c3\'bd\'bd\'e9\'c9\'a2\'b2\'bc\'b1\'be\'dc\'9b\'f3\'77\'bb\'f2\'c6\'e4\'d1\'dc\'c9\'fa\'d7\'f7\'c6\'b7\'a1\'a3\par
-\par
-\'97\'6c\'bc\'fe\'a3\'ba\par
-\par
-    \'d6\'f8\'d7\'f7\'99\'e0\'c2\'95\'c3\'f7\'a3\'ba\'b1\'bb\'ca\'da\'99\'e0\'c8\'cb\'b1\'d8\'ed\'9a\'d4\'da\'cb\'f9\'d3\'d0\'b7\'d6\'b0\'6c\'b5\'c4\'b8\'b1\'b1\'be\'d6\'d0\'b1\'a3\'c1\'f4\'d4\'ad\'ca\'bc\'d6\'f8\'d7\'f7\'99\'e0\'c2\'95\'c3\'f7\'ba\'cd\'b1\'be\'ca\'da\'99\'e0\'97\'6c\'bf\'ee\'a1\'a3\par
-\par
-    \'d0\'de\'b8\'c4\'98\'cb\'ca\'be\'a3\'ba\'8c\'a6\'ec\'b6\'d0\'de\'b8\'c4\'b0\'e6\'b1\'be\'a3\'ac\'b1\'bb\'ca\'da\'99\'e0\'c8\'cb\'b1\'d8\'ed\'9a\'c7\'e5\'b3\'fe\'98\'cb\'ca\'be\'d0\'de\'b8\'c4\'b2\'bf\'b7\'d6\'a1\'a3\par
-\par
-    \'ca\'da\'99\'e0\'97\'6c\'bf\'ee\'82\'f7\'df\'66\'a3\'ba\'b1\'bb\'ca\'da\'99\'e0\'c8\'cb\'c8\'f4\'d4\'d9\'ca\'da\'99\'e0\'cb\'fb\'c8\'cb\'ca\'b9\'d3\'c3\'b1\'be\'dc\'9b\'f3\'77\'bb\'f2\'c6\'e4\'d1\'dc\'c9\'fa\'d7\'f7\'c6\'b7\'a3\'ac\'b1\'d8\'ed\'9a\'d2\'d4\'c5\'63\'b1\'be\'ba\'cf\'bc\'73\'cf\'e0\'cd\'ac\'b5\'c4\'ca\'da\'99\'e0\'97\'6c\'bf\'ee\'ca\'da\'99\'e0\'a1\'a3\par
-\par
-    \'9f\'6f\'b1\'b3\'95\'f8\'a3\'ba\'b1\'bb\'ca\'da\'99\'e0\'c8\'cb\'b2\'bb\'b5\'c3\'8c\'a2\'b1\'be\'ca\'da\'99\'e0\'97\'6c\'bf\'ee\'d3\'c3\'ec\'b6\'cf\'de\'d6\'c6\'c6\'e4\'cb\'fb\'dc\'9b\'f3\'77\'a3\'ac\'d2\'e0\'b2\'bb\'b5\'c3\'d2\'d4\'b1\'be\'dc\'9b\'f3\'77\'bb\'f2\'c6\'e4\'c3\'fb\'b7\'51\'d7\'f7\'9e\'e9\'d0\'fb\'82\'f7\'bb\'f2\'cd\'c6\'8f\'56\'c6\'e4\'ae\'61\'c6\'b7\'bb\'f2\'b7\'fe\'84\'d5\'b5\'c4\'d2\'c0\'93\'fe\'a3\'ac\'ca\'b9\'cb\'fb\'c8\'cb\'d5\'60\'d5\'4a\'9e\'e9\'ca\'da\'99\'e0\'c8\'cb\'d9\'9d\'cd\'ac\'bb\'f2\'d6\'a7\'b3\'d6\'c6\'e4\'ae\'61\'c6\'b7\'bb\'f2\'b7\'fe\'84\'d5\'a1\'a3\par
-\par
-4. \'93\'fa\'b1\'a3\'c5\'63\'c3\'e2\'d8\'9f\'c2\'95\'c3\'f7\par
-\par
-\'b1\'be\'dc\'9b\'f3\'77\'a1\'b8\'b0\'b4\'d4\'ad\'98\'d3\'a1\'b9\'cc\'e1\'b9\'a9\'a3\'ac\'b2\'bb\'b8\'bd\'8e\'a7\'c8\'ce\'ba\'ce\'d0\'ce\'ca\'bd\'b5\'c4\'c3\'f7\'ca\'be\'bb\'f2\'c4\'ac\'ca\'be\'93\'fa\'b1\'a3\'a3\'ac\'b0\'fc\'c0\'a8\'b5\'ab\'b2\'bb\'cf\'de\'ec\'b6\'8c\'a6\'dc\'9b\'f3\'77\'b5\'c4\'df\'6d\'e4\'4e\'d0\'d4\'a1\'a2\'cc\'d8\'b6\'a8\'d3\'c3\'cd\'be\'d6\'ae\'df\'6d\'d3\'c3\'d0\'d4\'a1\'a2\'9f\'6f\'c7\'d6\'99\'e0\'a1\'a2\'b2\'bb\'c7\'d6\'b7\'b8\'cb\'fb\'c8\'cb\'d6\'c7\'bb\'db\'d8\'94\'ae\'61\'99\'e0\'b5\'c8\'a1\'a3\'ca\'da\'99\'e0\'c8\'cb\'8c\'a6\'d2\'f2\'ca\'b9\'d3\'c3\'b1\'be\'dc\'9b\'f3\'77\'b6\'f8\'d4\'ec\'b3\'c9\'b5\'c4\'c8\'ce\'ba\'ce\'93\'70\'ba\'a6\'b2\'bb\'d8\'93\'c8\'ce\'ba\'ce\'d8\'9f\'c8\'ce\'a1\'a3\par
-\par
-5. \'bd\'4b\'d6\'b9\par
-\par
-\'c8\'f4\'b1\'bb\'ca\'da\'99\'e0\'c8\'cb\'df\'60\'b7\'b4\'b1\'be\'ba\'cf\'bc\'73\'b5\'c4\'c8\'ce\'ba\'ce\'97\'6c\'bf\'ee\'a3\'ac\'ca\'da\'99\'e0\'c8\'cb\'d3\'d0\'99\'e0\'c1\'a2\'bc\'b4\'bd\'4b\'d6\'b9\'b1\'be\'ca\'da\'99\'e0\'a1\'a3\par
-\par
-6. \'a0\'8e\'d7\'68\'bd\'e2\'9b\'51\par
-\par
-\'c8\'f4\'d2\'f2\'b1\'be\'ba\'cf\'bc\'73\'b0\'6c\'c9\'fa\'c8\'ce\'ba\'ce\'a0\'8e\'d7\'68\'a3\'ac\'eb\'70\'b7\'bd\'cd\'ac\'d2\'e2\'83\'9e\'cf\'c8\'cd\'b8\'df\'5e\'d3\'d1\'ba\'c3\'85\'66\'c9\'cc\'bd\'e2\'9b\'51\'a1\'a3\'c8\'f4\'85\'66\'c9\'cc\'b2\'bb\'b3\'c9\'a3\'ac\'eb\'70\'b7\'bd\'cd\'ac\'d2\'e2\'d2\'d4\'d6\'d0\'c8\'41\'c3\'f1\'87\'f8\'b7\'a8\'c2\'c9\'9e\'e9\'9c\'ca\'a3\'ac\'81\'4b\'d2\'d4\'c5\'5f\'9e\'b3\'c5\'5f\'b1\'b1\'b5\'d8\'b7\'bd\'b7\'a8\'d4\'ba\'9e\'e9\'b5\'da\'d2\'bb\'8c\'8f\'b7\'a8\'d4\'ba\'a1\'a3\par
-\par
-7. \'c9\'fa\'d0\'a7\'c8\'d5\'c6\'da\'c5\'63\'cd\'ea\'d5\'fb\'85\'66\'d7\'68\par
-\par
-\'b1\'be\'ba\'cf\'bc\'73\'d7\'d4\'b1\'be\'dc\'9b\'f3\'77\'b0\'6c\'b2\'bc\'d6\'ae\'c8\'d5\'c6\'f0\'c9\'fa\'d0\'a7\'a1\'a3\'b1\'be\'ba\'cf\'bc\'73\'9e\'e9\'eb\'70\'b7\'bd\'be\'cd\'dc\'9b\'f3\'77\'ca\'da\'99\'e0\'ca\'c2\'d2\'cb\'d6\'ae\'cd\'ea\'d5\'fb\'85\'66\'d7\'68\'a3\'ac\'81\'4b\'c8\'a1\'b4\'fa\'cf\'c8\'c7\'b0\'cb\'f9\'d3\'d0\'bf\'da\'ee\'5e\'bb\'f2\'95\'f8\'c3\'e6\'d6\'ae\'85\'66\'d7\'68\'a1\'a3\par
-\par
-8. \'dc\'9b\'f3\'77\'b8\'fc\'d0\'c2\par
-\par
-\'ca\'da\'99\'e0\'c8\'cb\'d3\'d0\'99\'e0\'8c\'a6\'b1\'be\'dc\'9b\'f3\'77\'df\'4d\'d0\'d0\'b8\'fc\'d0\'c2\'a1\'a2\'d0\'de\'b8\'c4\'bb\'f2\'c9\'fd\'bc\'89\'a3\'ac\'81\'4b\'8c\'a2\'d0\'c2\'b5\'c4\'b0\'e6\'b1\'be\'cc\'e1\'b9\'a9\'bd\'6f\'b1\'bb\'ca\'da\'99\'e0\'c8\'cb\'a1\'a3\'b1\'bb\'ca\'da\'99\'e0\'c8\'cb\'cd\'ac\'d2\'e2\'bd\'d3\'ca\'dc\'ca\'da\'99\'e0\'c8\'cb\'cc\'e1\'b9\'a9\'b5\'c4\'dc\'9b\'f3\'77\'b8\'fc\'d0\'c2\'a3\'ac\'81\'4b\'cd\'ac\'d2\'e2\'b8\'fc\'d0\'c2\'e1\'e1\'b5\'c4\'dc\'9b\'f3\'77\'c8\'d4\'ca\'dc\'b1\'be\'ba\'cf\'bc\'73\'bc\'73\'ca\'f8\'a1\'a3\par
-\par
-9. \'b5\'da\'c8\'fd\'b7\'bd\'dc\'9b\'f3\'77\par
-\par
-\'b1\'be\'dc\'9b\'f3\'77\'bf\'c9\'c4\'dc\'b0\'fc\'ba\'ac\'bb\'f2\'ca\'b9\'d3\'c3\'b5\'da\'c8\'fd\'b7\'bd\'e9\'5f\'b0\'6c\'b5\'c4\'dc\'9b\'f3\'77\'a3\'a8\'d2\'d4\'cf\'c2\'ba\'86\'b7\'51\'a1\'b8\'b5\'da\'c8\'fd\'b7\'bd\'dc\'9b\'f3\'77\'a1\'b9\'a3\'a9\'a1\'a3\'b5\'da\'c8\'fd\'b7\'bd\'dc\'9b\'f3\'77\'b5\'c4\'ca\'da\'99\'e0\'97\'6c\'bf\'ee\'bf\'c9\'c4\'dc\'c5\'63\'b1\'be\'ba\'cf\'bc\'73\'b2\'bb\'cd\'ac\'a1\'a3\'b1\'bb\'ca\'da\'99\'e0\'c8\'cb\'cd\'ac\'d2\'e2\'d7\'f1\'ca\'d8\'b5\'da\'c8\'fd\'b7\'bd\'dc\'9b\'f3\'77\'b5\'c4\'ca\'da\'99\'e0\'97\'6c\'bf\'ee\'a1\'a3\'ca\'da\'99\'e0\'c8\'cb\'8c\'a6\'b5\'da\'c8\'fd\'b7\'bd\'dc\'9b\'f3\'77\'b2\'bb\'cc\'e1\'b9\'a9\'c8\'ce\'ba\'ce\'b1\'a3\'d7\'43\'a3\'ac\'c7\'d2\'b2\'bb\'8c\'a6\'b5\'da\'c8\'fd\'b7\'bd\'dc\'9b\'f3\'77\'b5\'c4\'c8\'ce\'ba\'ce\'86\'96\'ee\'7d\'bb\'f2\'93\'70\'ba\'a6\'b3\'d0\'93\'fa\'d8\'9f\'c8\'ce\'a1\'a3\par
-\par
-10. \'9c\'ca\'93\'fe\'b7\'a8\'c5\'63\'d1\'61\'b3\'e4\'d2\'8e\'b6\'a8\par
-\par
-\'b1\'be\'ba\'cf\'bc\'73\'91\'aa\'d2\'c0\'d5\'d5\'d6\'d0\'c8\'41\'c3\'f1\'87\'f8\'b7\'a8\'c2\'c9\'bd\'e2\'e1\'8c\'c5\'63\'df\'6d\'d3\'c3\'a1\'a3\'c8\'f4\'b1\'be\'ba\'cf\'bc\'73\'d6\'ae\'b7\'b1\'f3\'77\'d6\'d0\'ce\'c4(Traditional Chinese)\'b0\'e6\'c5\'63\'c6\'e4\'cb\'fb\'d5\'5a\'d1\'d4\'b0\'e6\'b1\'be\'d3\'d0\'c6\'e7\'c1\'78\'d6\'ae\'cc\'8e\'a3\'ac\'91\'aa\'d2\'d4\'b7\'b1\'f3\'77\'d6\'d0\'ce\'c4\'b0\'e6\'b1\'be\'9e\'e9\'9c\'ca\'a1\'a3\'c8\'e7\'d3\'d0\'ce\'b4\'b1\'4d\'ca\'c2\'d2\'cb\'a3\'ac\'cf\'a4\'d2\'c0\'d6\'d0\'c8\'41\'c3\'f1\'87\'f8\'d6\'f8\'d7\'f7\'99\'e0\'b7\'a8\'a1\'a2\'a0\'49\'98\'49\'b5\'7a\'c3\'dc\'b7\'a8\'bc\'b0\'d0\'cc\'b7\'a8\'c9\'cc\'98\'cb\'c7\'d6\'ba\'a6\'d5\'c2\'b9\'9d\'d6\'ae\'cf\'e0\'ea\'50\'d2\'8e\'b6\'a8\'a1\'a3\par
-\par
-rinnyanneko\par
-2024-12-14\f0\lang1041\par
 }
  [Licence_End]
 [Registry]
