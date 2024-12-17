@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://b2fq5q2n383tm"]
+[gd_scene load_steps=24 format=3 uid="uid://b2fq5q2n383tm"]
 
 [ext_resource type="Script" path="res://ATS-S/scripts/scene.gd" id="1_573xv"]
 [ext_resource type="Texture2D" uid="uid://qi8arniw74fg" path="res://ATS-S/assets/ATS confirm.png" id="2_12kp5"]
@@ -22,6 +22,7 @@
 [ext_resource type="Script" path="res://ATS-S/scripts/ats_reset_cover.gd" id="19_6hvex"]
 [ext_resource type="Script" path="res://ATS-S/scripts/confirm_reset.gd" id="19_co8m3"]
 [ext_resource type="Texture2D" uid="uid://bxf68lfemelrv" path="res://ATS-S/assets/Alarm reset.png" id="20_px1rn"]
+[ext_resource type="Script" path="res://scripts/joystick.cs" id="23_jlaqq"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_573xv")
@@ -126,6 +127,9 @@ script = ExtResource("18_f8nfu")
 [node name="Confirm Reset" type="ConfirmationDialog" parent="."]
 initial_position = 1
 script = ExtResource("19_co8m3")
+
+[node name="joystick" type="Node" parent="."]
+script = ExtResource("23_jlaqq")
 
 [connection signal="pressed" from="ATS Confirm" to="AtsAlarmOn" method="_on_ats_confirm_pressed"]
 [connection signal="pressed" from="Return" to="Return" method="_on_pressed"]
