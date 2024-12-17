@@ -6,4 +6,9 @@
     <EnableDynamicLoading>true</EnableDynamicLoading>
     <RootNamespace>SRATS</RootNamespace>
   </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="vJoyInterfaceWrap">
+      <HintPath>..\..\..\..\..\Program Files\vJoy\x64\vJoyInterfaceWrap.dll</HintPath>
+    </Reference>
+  </ItemGroup>
 </Project>

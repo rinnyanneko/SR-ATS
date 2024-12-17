@@ -22,7 +22,7 @@
 [ext_resource type="Script" path="res://ATS-S/scripts/ats_reset_cover.gd" id="19_6hvex"]
 [ext_resource type="Script" path="res://ATS-S/scripts/confirm_reset.gd" id="19_co8m3"]
 [ext_resource type="Texture2D" uid="uid://bxf68lfemelrv" path="res://ATS-S/assets/Alarm reset.png" id="20_px1rn"]
-[ext_resource type="Script" path="res://scripts/joystick.cs" id="23_jlaqq"]
+[ext_resource type="Script" path="res://scripts/dlls/ControlBrake.cs" id="23_jlaqq"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_573xv")
@@ -128,7 +128,7 @@ script = ExtResource("18_f8nfu")
 initial_position = 1
 script = ExtResource("19_co8m3")
 
-[node name="joystick" type="Node" parent="."]
+[node name="control_brake" type="Node" parent="."]
 script = ExtResource("23_jlaqq")
 
 [connection signal="pressed" from="ATS Confirm" to="AtsAlarmOn" method="_on_ats_confirm_pressed"]
@@ -142,3 +142,4 @@ script = ExtResource("23_jlaqq")
 [connection signal="pressed" from="ATS reset back/ATS Reset" to="ATS reset back/ATS Reset" method="_on_pressed"]
 [connection signal="canceled" from="Confirm Reset" to="Confirm Reset" method="_on_canceled"]
 [connection signal="confirmed" from="Confirm Reset" to="Confirm Reset" method="_on_confirmed"]
+[connection signal="tree_exiting" from="control_brake" to="control_brake" method="_on_tree_exiting"]
