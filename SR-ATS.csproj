@@ -7,8 +7,11 @@
     <RootNamespace>SRATS</RootNamespace>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="LBIndustrialCtrls">
+      <HintPath>scripts\dlls\LBIndustrialCtrls.dll</HintPath>
+    </Reference>
     <Reference Include="vJoyInterfaceWrap">
-      <HintPath>..\..\..\..\..\Program Files\vJoy\x64\vJoyInterfaceWrap.dll</HintPath>
+      <HintPath>scripts\dlls\vJoyInterfaceWrap.dll</HintPath>
     </Reference>
   </ItemGroup>
 </Project>
