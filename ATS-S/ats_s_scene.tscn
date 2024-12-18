@@ -22,7 +22,7 @@
 [ext_resource type="Script" path="res://ATS-S/scripts/ats_reset_cover.gd" id="19_6hvex"]
 [ext_resource type="Script" path="res://ATS-S/scripts/confirm_reset.gd" id="19_co8m3"]
 [ext_resource type="Texture2D" uid="uid://bxf68lfemelrv" path="res://ATS-S/assets/Alarm reset.png" id="20_px1rn"]
-[ext_resource type="Script" path="res://scripts/dlls/ControlBrake.cs" id="23_jlaqq"]
+[ext_resource type="Script" path="res://scripts/ControlBrake.cs" id="23_br4qr"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_573xv")
@@ -129,7 +129,7 @@ initial_position = 1
 script = ExtResource("19_co8m3")
 
 [node name="control_brake" type="Node" parent="."]
-script = ExtResource("23_jlaqq")
+script = ExtResource("23_br4qr")
 
 [connection signal="pressed" from="ATS Confirm" to="AtsAlarmOn" method="_on_ats_confirm_pressed"]
 [connection signal="pressed" from="Return" to="Return" method="_on_pressed"]
