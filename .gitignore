@@ -20,5 +20,4 @@ addons/
 *.tmp
 android/
 .DS_Store
-
 .vs/

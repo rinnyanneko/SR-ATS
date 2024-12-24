@@ -25,6 +25,6 @@ func _on_save_button_pressed() -> void:
 
 func _on_language_pressed() -> void:
 	await get_tree().create_timer(0.1).timeout
-#	$"../Server".placeholder_text = tr("SERVER")
+	$"../Server".placeholder_text = tr("SERVER")
 	$"../TrainNumber".placeholder_text = tr("TRAIN_NUMBER")
 	$"../Save".text = tr("SAVE")
