@@ -13,11 +13,9 @@ func _ready() -> void:
 		var value = request("https://panel.simrail.eu:8084/trains-open?serverCode=" + cfg.get_value("System", "server"))
 		await get_tree().create_timer(2).timeout
 
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
-
 
 func _on_request_completed(result: int, response_code: int, headers: PackedStringArray, body: PackedByteArray) -> void:
 	var json:Dictionary = JSON.parse_string(body.get_string_from_utf8())
@@ -40,7 +38,6 @@ func _on_request_completed(result: int, response_code: int, headers: PackedStrin
 		$"..".VDDelayedTimetableIndex = data["VDDelayedTimetableIndex"]
 	else:
 		$"../ErrorMsg".visible = true
-
 
 func readArray(array:Array):
 	for data in array:

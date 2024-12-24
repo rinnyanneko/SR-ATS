@@ -1,3 +1,7 @@
+// SR-ATS
+// https://github.com/rinnyanneko/SR-ATS
+// Copyright © 2024 rinnyanneko. All rights reserved.
+
 using Godot;
 using System;
 using vJoyInterfaceWrap;
