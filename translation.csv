@@ -1,4 +1,5 @@
 key,en,jp,cmn,zh
+LANG_NAME,English,日本語,繁體中文,简体中文
 SERVER,Server,サーバー,伺服器,服务器
 TRAIN_NUMBER,Train Number,列車番号,車次,车次
 SAVE,Save,保存,保存,保存

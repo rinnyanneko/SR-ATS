@@ -6,7 +6,6 @@ extends OptionButton
 var cfg = ConfigFile.new()
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	await get_tree().create_timer(0.1).timeout
 	$"../Server".text = tr("SERVER")
 	$"../TrainNumber".placeholder_text = tr("TRAIN_NUMBER")
 	$"../Save".text = tr("SAVE")
@@ -21,10 +20,3 @@ func _on_save_button_pressed() -> void:
 	cfg.set_value("System", "server", $"../RequestServers".codes[$".".get_selected_id()])
 	cfg.set_value("System", "trainNumber", $"../TrainNumber".text)
 	cfg.save("res://config.cfg")
-
-
-func _on_language_pressed() -> void:
-	await get_tree().create_timer(0.1).timeout
-	$"../Server".placeholder_text = tr("SERVER")
-	$"../TrainNumber".placeholder_text = tr("TRAIN_NUMBER")
-	$"../Save".text = tr("SAVE")

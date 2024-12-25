@@ -42,7 +42,7 @@ func _on_language_pressed() -> void:
 
 func timer():
 	self.disabled = true
-	for i in range(10, -1, -1):
+	for i in range(5, -1, -1):
 		self.text = (tr("AGREE_LICENSE") + "...(" + String.num_int64(i) + ")")
 		await get_tree().create_timer(1).timeout
 	self.text = tr("AGREE_LICENSE")

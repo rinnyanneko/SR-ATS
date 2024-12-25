@@ -1,0 +1,68 @@
+[gd_scene load_steps=5 format=3 uid="uid://dm01geiku0yxr"]
+
+[ext_resource type="Texture2D" uid="uid://da26ervg41qj5" path="res://assets/return (Custom).png" id="1_ugf2m"]
+[ext_resource type="Script" path="res://scripts/return.gd" id="2_toyrf"]
+[ext_resource type="Script" path="res://config/scripts/server.gd" id="3_rdhe2"]
+[ext_resource type="Script" path="res://config/scripts/request_servers.gd" id="5_d33gm"]
+
+[node name="Config" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="return" type="TextureButton" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture_normal = ExtResource("1_ugf2m")
+script = ExtResource("2_toyrf")
+
+[node name="RequestServers" type="HTTPRequest" parent="."]
+script = ExtResource("5_d33gm")
+
+[node name="TabBar" type="TabBar" parent="."]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 64.0
+offset_right = 1153.0
+offset_bottom = 106.0
+current_tab = 0
+tab_count = 3
+tab_0/title = "General"
+tab_1/title = "Debug"
+tab_2/title = "Credits"
+
+[node name="Server" type="OptionButton" parent="."]
+layout_mode = 2
+offset_left = 4.0
+offset_top = 106.0
+offset_right = 75.0
+offset_bottom = 137.0
+flat = true
+text_overrun_behavior = 1
+fit_to_longest_item = false
+script = ExtResource("3_rdhe2")
+
+[node name="TrainNumber" type="LineEdit" parent="."]
+layout_mode = 2
+offset_left = 83.0
+offset_top = 106.0
+offset_right = 203.0
+offset_bottom = 137.0
+placeholder_text = "Train Number"
+max_length = 6
+
+[node name="Save" type="Button" parent="."]
+layout_mode = 2
+offset_left = 551.0
+offset_top = 610.0
+offset_right = 595.0
+offset_bottom = 641.0
+text = "Save"
+
+[connection signal="pressed" from="return" to="return" method="_on_pressed"]
+[connection signal="request_completed" from="RequestServers" to="RequestServers" method="_on_request_completed"]
+[connection signal="pressed" from="Save" to="Server" method="_on_save_button_pressed"]
