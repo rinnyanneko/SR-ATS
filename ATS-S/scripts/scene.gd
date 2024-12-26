@@ -17,6 +17,7 @@ var Longitute = -1.0
 var Latititute = -1.0
 var InBorderStationArea = false
 var ControlledBySteamID:String = ""
+var UpdateTime
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

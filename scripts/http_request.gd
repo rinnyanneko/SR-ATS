@@ -24,7 +24,7 @@ func _on_request_completed(result: int, response_code: int, headers: PackedStrin
 	var json:Dictionary = JSON.parse_string(body.get_string_from_utf8())
 	var dataArray:Array = json["data"]
 	var data = readArray(dataArray)
-	print(data)
+#	print(data)
 	if data != null:
 		$"../ErrorMsg".visible = false
 		if data["ControlledBySteamID"] != null:
@@ -39,6 +39,9 @@ func _on_request_completed(result: int, response_code: int, headers: PackedStrin
 		$"..".DistanceToSignalInFront = data["DistanceToSignalInFront"]
 		$"..".SignalInFrontSpeed = data["SignalInFrontSpeed"]
 		$"..".VDDelayedTimetableIndex = data["VDDelayedTimetableIndex"]
+		var time = Time.get_time_dict_from_system()
+		# we can use format strings to pad it to a length of 2 with zeros, e.g. 01:20:12
+		$"..".UpdateTime = ("%02d:%02d:%02d" % [time.hour, time.minute, time.second])
 	else:
 		$"../ErrorMsg".visible = true
 

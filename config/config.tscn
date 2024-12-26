@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://dm01geiku0yxr"]
+[gd_scene load_steps=6 format=3 uid="uid://dm01geiku0yxr"]
 
 [ext_resource type="Texture2D" uid="uid://da26ervg41qj5" path="res://assets/return (Custom).png" id="1_ugf2m"]
 [ext_resource type="Script" path="res://scripts/return.gd" id="2_toyrf"]
+[ext_resource type="Script" path="res://config/scripts/tab_bar.gd" id="3_0wwky"]
 [ext_resource type="Script" path="res://config/scripts/server.gd" id="3_rdhe2"]
 [ext_resource type="Script" path="res://config/scripts/request_servers.gd" id="5_d33gm"]
 
@@ -20,9 +21,6 @@ offset_bottom = 40.0
 texture_normal = ExtResource("1_ugf2m")
 script = ExtResource("2_toyrf")
 
-[node name="RequestServers" type="HTTPRequest" parent="."]
-script = ExtResource("5_d33gm")
-
 [node name="TabBar" type="TabBar" parent="."]
 layout_mode = 0
 offset_left = 1.0
@@ -33,9 +31,19 @@ current_tab = 0
 tab_count = 3
 tab_0/title = "General"
 tab_1/title = "Debug"
+tab_1/disabled = true
 tab_2/title = "Credits"
+script = ExtResource("3_0wwky")
 
-[node name="Server" type="OptionButton" parent="."]
+[node name="RequestServers" type="HTTPRequest" parent="."]
+script = ExtResource("5_d33gm")
+
+[node name="General" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Server" type="OptionButton" parent="General"]
 layout_mode = 2
 offset_left = 4.0
 offset_top = 106.0
@@ -46,7 +54,7 @@ text_overrun_behavior = 1
 fit_to_longest_item = false
 script = ExtResource("3_rdhe2")
 
-[node name="TrainNumber" type="LineEdit" parent="."]
+[node name="TrainNumber" type="LineEdit" parent="General"]
 layout_mode = 2
 offset_left = 83.0
 offset_top = 106.0
@@ -55,14 +63,34 @@ offset_bottom = 137.0
 placeholder_text = "Train Number"
 max_length = 6
 
-[node name="Save" type="Button" parent="."]
+[node name="Save" type="Button" parent="General"]
 layout_mode = 2
 offset_left = 551.0
 offset_top = 610.0
-offset_right = 595.0
+offset_right = 596.0
 offset_bottom = 641.0
 text = "Save"
 
+[node name="Debug Switch" type="CheckBox" parent="General"]
+layout_mode = 0
+offset_left = 1003.0
+offset_top = 617.0
+offset_right = 1152.0
+offset_bottom = 648.0
+disabled = true
+text = "Debug mode"
+
+[node name="Debug" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Credits" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
 [connection signal="pressed" from="return" to="return" method="_on_pressed"]
+[connection signal="tab_changed" from="TabBar" to="TabBar" method="_on_tab_changed"]
 [connection signal="request_completed" from="RequestServers" to="RequestServers" method="_on_request_completed"]
-[connection signal="pressed" from="Save" to="Server" method="_on_save_button_pressed"]
+[connection signal="pressed" from="General/Save" to="General/Server" method="_on_save_button_pressed"]

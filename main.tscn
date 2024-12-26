@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://dl6vqmuu804oc"]
+[gd_scene load_steps=18 format=3 uid="uid://dl6vqmuu804oc"]
 
 [ext_resource type="Texture2D" uid="uid://ddw53s0vlshw" path="res://ATS-S/assets/icon (Custom).png" id="1_o7qkv"]
 [ext_resource type="Texture2D" uid="uid://cjrgpvf2qau18" path="res://ATS-S/assets/icon_INOP (Custom).png" id="3_dalr6"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bm7sfftk1ixl5" path="res://ATS-Ps/assets/icon_INOP (Custom).png" id="6_1sgmq"]
 [ext_resource type="Texture2D" uid="uid://cha541t8nc2u6" path="res://ATS-P/assets/icon (Custom).png" id="7_6k4lh"]
 [ext_resource type="Texture2D" uid="uid://dl34jk3e5gqjj" path="res://ATS-P/assets/icon_INOP (Custom).png" id="8_xtb8p"]
+[ext_resource type="Script" path="res://scripts/banner.gd" id="9_8c6cy"]
 [ext_resource type="Texture2D" uid="uid://dtdkmccpkytin" path="res://assets/banner.png" id="9_usuam"]
 [ext_resource type="Script" path="res://scripts/language.gd" id="11_qu0kt"]
 [ext_resource type="Texture2D" uid="uid://cbvfda7jahf80" path="res://assets/translation.png" id="11_tf4cp"]
@@ -64,6 +65,7 @@ offset_right = 2030.0
 offset_bottom = 286.0
 scale = Vector2(0.251848, 0.251848)
 texture_normal = ExtResource("9_usuam")
+script = ExtResource("9_8c6cy")
 
 [node name="Language" type="TextureButton" parent="."]
 layout_mode = 0
@@ -130,8 +132,14 @@ tooltip_text = "Config"
 texture_normal = ExtResource("15_k3h24")
 script = ExtResource("16_qcr4t")
 
+[node name="DevEnabled" type="AcceptDialog" parent="."]
+title = "DEBUG"
+initial_position = 1
+size = Vector2i(223, 100)
+dialog_text = "Developer setting enabled"
+
 [connection signal="pressed" from="ATS-S" to="ATS-S" method="_on_pressed"]
-[connection signal="pressed" from="Banner" to="ConfirmationDialog" method="_on_banner_pressed"]
+[connection signal="pressed" from="Banner" to="Banner" method="_on_pressed"]
 [connection signal="pressed" from="Language" to="Language" method="_on_pressed"]
 [connection signal="pressed" from="Language" to="Language name" method="_on_language_pressed"]
 [connection signal="canceled" from="ConfirmationDialog" to="ConfirmationDialog" method="_on_canceled"]

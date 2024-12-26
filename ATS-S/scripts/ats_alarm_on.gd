@@ -22,7 +22,7 @@ func _process(delta: float) -> void:
 	#print(signalInFront)
 	#print(distanceToSignalInFront)
 	#print(passedSignal != signalInFront)
-	if velocity > 0 && distanceToSignalInFront < 600 && signalInFrontSpeed == 0 &&  passedSignal != signalInFront:
+	if velocity > 0 && distanceToSignalInFront < 600 && signalInFrontSpeed <= 100 &&  passedSignal != signalInFront:
 		self.visible = true
 		self.top_level
 		$"..".alarm == true

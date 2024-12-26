@@ -1,6 +1,7 @@
 # SR-ATS
 # https://github.com/rinnyanneko/SR-ATS
 # Copyright © 2024 rinnyanneko. All rights reserved.
+
 extends HTTPRequest
 
 var codes:Array
@@ -15,5 +16,5 @@ func _on_request_completed(result: int, response_code: int, headers: PackedStrin
 	for i in json["count"]:
 		var data = json["data"][i]
 		if data["IsActive"]:
-			$"../Server".add_item(data["ServerName"], i)
+			$"../General/Server".add_item(data["ServerName"], i)
 			codes.append(data["ServerCode"])
