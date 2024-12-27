@@ -8,10 +8,10 @@ var cfg = ConfigFile.new()
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	cfg.load("res://config.cfg")
-	if cfg.get_value("System", "server") != "127":
+	if cfg.get_value("Train Data", "server") != "127":
 		while(true):
 			print("getting data from server...")
-			var value = request("https://panel.simrail.eu:8084/trains-open?serverCode=" + cfg.get_value("System", "server"))
+			var value = request("https://panel.simrail.eu:8084/trains-open?serverCode=" + cfg.get_value("Train Data", "server"))
 			await get_tree().create_timer(2).timeout
 	else:
 		pass
@@ -47,5 +47,5 @@ func _on_request_completed(result: int, response_code: int, headers: PackedStrin
 
 func readArray(array:Array):
 	for data in array:
-		if data["TrainNoLocal"] == cfg.get_value("System", "trainNumber"):
+		if data["TrainNoLocal"] == cfg.get_value("Train Data", "trainNumber"):
 			return data["TrainData"]

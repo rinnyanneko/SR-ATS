@@ -24,7 +24,9 @@ func _ready() -> void:
 		TranslationServer.set_locale("zh")
 		print("Simplified Chinese(zh)!")
 		sel = 0
-	else: sel = 0
+	else:
+		sel = 1
+		TranslationServer.set_locale("en")
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass

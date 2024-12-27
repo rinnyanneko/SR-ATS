@@ -27,43 +27,51 @@ offset_left = 1.0
 offset_top = 64.0
 offset_right = 1153.0
 offset_bottom = 106.0
-current_tab = 0
-tab_count = 3
-tab_0/title = "General"
-tab_1/title = "Debug"
-tab_1/disabled = true
-tab_2/title = "Credits"
 script = ExtResource("3_0wwky")
 
 [node name="RequestServers" type="HTTPRequest" parent="."]
 script = ExtResource("5_d33gm")
 
-[node name="General" type="Control" parent="."]
+[node name="Train Data" type="Control" parent="."]
+visible = false
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
 
-[node name="Server" type="OptionButton" parent="General"]
+[node name="Server" type="OptionButton" parent="Train Data"]
 layout_mode = 2
-offset_left = 4.0
-offset_top = 106.0
-offset_right = 75.0
-offset_bottom = 137.0
+offset_left = 81.0
+offset_top = 107.0
+offset_right = 152.0
+offset_bottom = 138.0
 flat = true
 text_overrun_behavior = 1
 fit_to_longest_item = false
 script = ExtResource("3_rdhe2")
 
-[node name="TrainNumber" type="LineEdit" parent="General"]
+[node name="RichTextLabel" type="RichTextLabel" parent="Train Data/Server"]
+layout_mode = 0
+offset_left = -78.0
+offset_top = 4.0
+offset_right = -7.0
+offset_bottom = 30.0
+text = "Server"
+
+[node name="TrainNumber" type="LineEdit" parent="Train Data"]
 layout_mode = 2
-offset_left = 83.0
-offset_top = 106.0
-offset_right = 203.0
-offset_bottom = 137.0
+offset_left = 289.0
+offset_top = 108.0
+offset_right = 409.0
+offset_bottom = 139.0
 placeholder_text = "Train Number"
 max_length = 6
 
-[node name="Save" type="Button" parent="General"]
+[node name="RichTextLabel" type="RichTextLabel" parent="Train Data/TrainNumber"]
+layout_mode = 0
+offset_left = -127.0
+offset_top = 2.0
+offset_bottom = 25.0
+text = "Train Number"
+
+[node name="Save" type="Button" parent="Train Data"]
 layout_mode = 2
 offset_left = 551.0
 offset_top = 610.0
@@ -71,26 +79,64 @@ offset_right = 596.0
 offset_bottom = 641.0
 text = "Save"
 
-[node name="Debug Switch" type="CheckBox" parent="General"]
+[node name="Debug Switch" type="CheckBox" parent="Train Data"]
 layout_mode = 0
 offset_left = 1003.0
-offset_top = 617.0
+offset_top = 609.0
 offset_right = 1152.0
-offset_bottom = 648.0
+offset_bottom = 640.0
 disabled = true
 text = "Debug mode"
 
+[node name="Braking Ratio" type="LineEdit" parent="Train Data"]
+layout_mode = 0
+offset_left = 536.0
+offset_top = 108.0
+offset_right = 654.0
+offset_bottom = 139.0
+placeholder_text = "Braking Ratio"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Train Data/Braking Ratio"]
+layout_mode = 0
+offset_left = -125.0
+offset_top = 4.0
+offset_right = -10.0
+offset_bottom = 29.0
+text = "Braking Ratio"
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="Train Data/Braking Ratio"]
+layout_mode = 0
+offset_left = 126.0
+offset_top = 4.0
+offset_right = 157.0
+offset_bottom = 29.0
+text = "%"
+
 [node name="Debug" type="Control" parent="."]
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
 
 [node name="Credits" type="Control" parent="."]
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Credits"]
+layout_mode = 0
+offset_top = 108.0
+offset_right = 1152.0
+offset_bottom = 629.0
+bbcode_enabled = true
+text = "Thank you for using SR-ATS!
+Main Developer: [url=https://rinnyanneko.github.io]ミルクねこ[/url]
+Icons:
+	[url=https://www.flaticon.com/]Flaticon[/url]
+	[url=https://steamcommunity.com/id/3N-SPAMU-NSZS/]3N[/url]
+SDK and APIs:
+	[url=https://wiki.simrail.eu/API/API-Introduction]SimRail Trains, Servers API[/url]
+	[url=https://sourceforge.net/projects/vjoystick/]vJoy SDK[/url]
+To contribute, don't hasitate forking and opening a pull request!
+
+Copyright © 2024 - 2025 rinnyanneko. All rights reserved."
 
 [connection signal="pressed" from="return" to="return" method="_on_pressed"]
 [connection signal="tab_changed" from="TabBar" to="TabBar" method="_on_tab_changed"]
 [connection signal="request_completed" from="RequestServers" to="RequestServers" method="_on_request_completed"]
-[connection signal="pressed" from="General/Save" to="General/Server" method="_on_save_button_pressed"]
+[connection signal="pressed" from="Train Data/Save" to="Train Data/Server" method="_on_save_button_pressed"]

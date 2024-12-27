@@ -16,5 +16,5 @@ func _on_request_completed(result: int, response_code: int, headers: PackedStrin
 	for i in json["count"]:
 		var data = json["data"][i]
 		if data["IsActive"]:
-			$"../General/Server".add_item(data["ServerName"], i)
+			$"../Train Data/Server".add_item(data["ServerName"], i)
 			codes.append(data["ServerCode"])

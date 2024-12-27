@@ -9,14 +9,18 @@ var cfg = ConfigFile.new()
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	cfg.load("res://config.cfg")
-	$"../Server".text = tr("SERVER")
-	$"../TrainNumber".placeholder_text = tr("TRAIN_NUMBER")
+	$RichTextLabel.text = tr("SERVER")
+	$"../TrainNumber/RichTextLabel".text = tr("TRAIN_NUMBER")
 	$"../Save".text = tr("SAVE")
 	if cfg.get_value("System", "DevSetting"):
 		$"../Debug Switch".disabled = false
 		$"../../TabBar".set_tab_disabled(1, false)
 	else:
 		$"../../TabBar".set_tab_disabled(1, true)
+	if cfg.get_value("Train Data", "server") != null:$".".text = cfg.get_value("Train Data", "server")
+	if cfg.get_value("Train Data", "trainNumber") != null:$"../TrainNumber".text = cfg.get_value("Train Data", "trainNumber")
+	if cfg.get_value("Train Data", "brakingRatio") != null:$"../Braking Ratio".text = cfg.get_value("Train Data", "brakingRatio")
+	if cfg.get_value("System", "Debug"):$"../Debug Switch".button_pressed = true
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -25,8 +29,12 @@ func _process(delta: float) -> void:
 
 
 func _on_save_button_pressed() -> void:
-	if $"../TrainNumber" != null:
-		cfg.set_value("System", "server", $"../../RequestServers".codes[$".".get_selected_id()])
-		cfg.set_value("System", "trainNumber", $"../TrainNumber".text)
+	if $"../TrainNumber" != null and $".".get_selected_id() != -1:
+		cfg.set_value("Train Data", "server", $"../../RequestServers".codes[$".".get_selected_id()])
+		cfg.set_value("Train Data", "trainNumber", $"../TrainNumber".text)
+	if $"../Braking Ratio".text != null:
+		cfg.set_value("Train Data", "brakingRatio", $"../Braking Ratio".text)
+		cfg.set_value("Train Data", "brakeDistance", 480/(float($"../Braking Ratio".text)))
+		cfg.set_value("Train Data", "decelRate", 0.805*(float($"../Braking Ratio".text)**2))
 	cfg.set_value("System", "Debug", $"../Debug Switch".button_pressed)
 	cfg.save("res://config.cfg")

@@ -134,6 +134,13 @@ offset_bottom = 333.0
 text = "Debug frame"
 script = ExtResource("23_7mp4i")
 
+[node name="copyright" type="LinkButton" parent="."]
+offset_top = 625.0
+offset_right = 389.0
+offset_bottom = 648.0
+text = "Copyright © 2024 - 2025 rinnyanneko. All rights reserved."
+underline = 2
+
 [connection signal="pressed" from="ATS Confirm" to="AtsAlarmOn" method="_on_ats_confirm_pressed"]
 [connection signal="pressed" from="Return" to="Return" method="_on_pressed"]
 [connection signal="pressed" from="ChimeOffBack/Chime Off" to="AtsNormalOff" method="_on_chime_off_pressed"]
@@ -145,3 +152,4 @@ script = ExtResource("23_7mp4i")
 [connection signal="pressed" from="ATS reset back/ATS Reset" to="ATS reset back/ATS Reset" method="_on_pressed"]
 [connection signal="canceled" from="Confirm Reset" to="Confirm Reset" method="_on_canceled"]
 [connection signal="confirmed" from="Confirm Reset" to="Confirm Reset" method="_on_confirmed"]
+[connection signal="pressed" from="copyright" to="copyright" method="_on_pressed"]
