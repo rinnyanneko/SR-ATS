@@ -12,6 +12,7 @@ func _ready() -> void:
 	$"../Train Data".visible = true
 	$"../Debug".visible = false
 	$"../Credits".visible = false
+	self.clear_tabs()
 	self.add_tab(tr("TRAIN_DATA"))
 	self.add_tab("Debug")
 	if cfg.get_value("System", "DevSetting"):

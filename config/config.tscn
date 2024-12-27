@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://dm01geiku0yxr"]
+[gd_scene load_steps=7 format=3 uid="uid://dm01geiku0yxr"]
 
 [ext_resource type="Texture2D" uid="uid://da26ervg41qj5" path="res://assets/return (Custom).png" id="1_ugf2m"]
 [ext_resource type="Script" path="res://scripts/return.gd" id="2_toyrf"]
 [ext_resource type="Script" path="res://config/scripts/tab_bar.gd" id="3_0wwky"]
 [ext_resource type="Script" path="res://config/scripts/server.gd" id="3_rdhe2"]
 [ext_resource type="Script" path="res://config/scripts/request_servers.gd" id="5_d33gm"]
+[ext_resource type="Script" path="res://config/scripts/credits_rich_text_label.gd" id="6_ixw2y"]
 
 [node name="Config" type="Control"]
 layout_mode = 3
@@ -27,6 +28,11 @@ offset_left = 1.0
 offset_top = 64.0
 offset_right = 1153.0
 offset_bottom = 106.0
+current_tab = 0
+tab_count = 3
+tab_0/title = "TRAIN_DATA"
+tab_1/title = "Debug"
+tab_2/title = "Credits"
 script = ExtResource("3_0wwky")
 
 [node name="RequestServers" type="HTTPRequest" parent="."]
@@ -135,6 +141,7 @@ SDK and APIs:
 To contribute, don't hasitate forking and opening a pull request!
 
 Copyright © 2024 - 2025 rinnyanneko. All rights reserved."
+script = ExtResource("6_ixw2y")
 
 [connection signal="pressed" from="return" to="return" method="_on_pressed"]
 [connection signal="tab_changed" from="TabBar" to="TabBar" method="_on_tab_changed"]
