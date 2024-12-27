@@ -83,11 +83,12 @@ script = ExtResource("12_qinf2")
 
 [node name="version" type="LinkButton" parent="."]
 layout_mode = 0
-offset_left = 1091.0
+offset_left = 1097.0
 offset_top = 625.0
-offset_right = 1150.0
+offset_right = 1152.0
 offset_bottom = 648.0
-text = "v0.0.10.0"
+text = "v0.0.10"
+underline = 1
 uri = "Updater.exe"
 
 [node name="copyright" type="LinkButton" parent="."]
