@@ -14,6 +14,14 @@
 			"title":"NEW UPDATE",
 			"text":"v0.0.9.0 released, note that I changed the alarm trigger logic\n[url=https://github.com/rinnyanneko/SR-ATS/releases/tag/v0.0.9.0]GitHub[/url]\n[url=https://gitcode.com/rinnyanneko/SR-ATS/releases/v0.0.9.0]GitCode[/url]",
 			"image":"false",
+			"draft":"true"
+		},
+		{
+			"type":"event",
+			"number":"3",
+			"title":"HAPPY NEW YEAR",
+			"text":"Happy New Year 2025!\n新年あけましておめでとうございます～\n新年快樂~",
+			"image":"false",
 			"draft":"false"
 		}
 	]
