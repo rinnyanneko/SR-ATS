@@ -39,7 +39,6 @@ script = ExtResource("3_0wwky")
 script = ExtResource("5_d33gm")
 
 [node name="Train Data" type="Control" parent="."]
-visible = false
 anchors_preset = 0
 
 [node name="Server" type="OptionButton" parent="Train Data"]
@@ -122,6 +121,7 @@ text = "%"
 anchors_preset = 0
 
 [node name="Credits" type="Control" parent="."]
+visible = false
 anchors_preset = 0
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Credits"]

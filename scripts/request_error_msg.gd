@@ -7,7 +7,7 @@ extends AcceptDialog
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	self.dialog_text = tr("S_ERROR_MSG")
+	self.dialog_text = tr("HTTP_REQ_ERR_MSG")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
