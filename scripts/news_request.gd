@@ -22,7 +22,7 @@ func _on_request_completed(result: int, response_code: int, headers: PackedStrin
 		json = JSON.parse_string(body.get_string_from_utf8())
 		data = json["data"]
 		for i in data:
-			if i["draft"] == "false":
+			if not i["draft"]:
 				data = i
 		$"../news".title = data["title"]
 		$"../news/RichTextLabel".text = data["text"]
@@ -31,7 +31,7 @@ func _on_request_completed(result: int, response_code: int, headers: PackedStrin
 		if data["image"] != "false":
 			$"../news/RichTextLabel".text += "[img]" + data["image"] + "[/img]"
 		print(json)
-		if data["type"] != "" and data["number"] > cfg.get_value("News", "NeverShow") and data["draft"] == "false":
+		if data["type"] != "" and data["number"] > cfg.get_value("News", "NeverShow") and not data["draft"]:
 			$"../news".visible = true
 
 

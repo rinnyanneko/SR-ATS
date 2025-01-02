@@ -42,7 +42,6 @@ script = ExtResource("3_0wwky")
 script = ExtResource("5_d33gm")
 
 [node name="Train Data" type="Control" parent="."]
-visible = false
 anchors_preset = 0
 
 [node name="Server" type="OptionButton" parent="Train Data"]
@@ -122,6 +121,7 @@ offset_bottom = 29.0
 text = "%"
 
 [node name="General" type="Control" parent="."]
+visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -143,7 +143,7 @@ layout_mode = 0
 offset_left = -160.0
 offset_top = 5.0
 offset_right = -3.0
-offset_bottom = 28.0
+offset_bottom = 29.0
 text = "UPDATE_CHANNEL"
 
 [node name="UpdateMirror" type="OptionButton" parent="General"]
@@ -164,7 +164,7 @@ layout_mode = 0
 offset_left = -160.0
 offset_top = 5.0
 offset_right = -3.0
-offset_bottom = 28.0
+offset_bottom = 30.0
 text = "UPDATE_MIRROR"
 
 [node name="Save" type="Button" parent="General"]
@@ -204,5 +204,4 @@ script = ExtResource("6_ixw2y")
 [connection signal="tab_changed" from="TabBar" to="TabBar" method="_on_tab_changed"]
 [connection signal="request_completed" from="RequestServers" to="RequestServers" method="_on_request_completed"]
 [connection signal="pressed" from="Train Data/Save" to="Train Data/Server" method="_on_save_button_pressed"]
-[connection signal="pressed" from="General/Save" to="General/UpdateChannel" method="_on_save_pressed"]
 [connection signal="pressed" from="General/Save" to="General/UpdateMirror" method="_on_save_pressed"]

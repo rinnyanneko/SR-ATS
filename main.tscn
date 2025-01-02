@@ -84,11 +84,11 @@ script = ExtResource("12_qinf2")
 
 [node name="version" type="LinkButton" parent="."]
 layout_mode = 0
-offset_left = 1097.0
+offset_left = 1078.0
 offset_top = 625.0
 offset_right = 1152.0
 offset_bottom = 648.0
-text = "v0.0.10"
+text = "v0.0.10b1"
 underline = 1
 
 [node name="copyright" type="LinkButton" parent="."]
@@ -126,7 +126,7 @@ offset_bottom = 27.0
 fit_content = true
 script = ExtResource("14_tq6gw")
 
-[node name="Conig" type="TextureButton" parent="."]
+[node name="Config" type="TextureButton" parent="."]
 layout_mode = 0
 offset_left = 1122.0
 offset_right = 1152.0
@@ -171,6 +171,7 @@ script = ExtResource("19_swxou")
 [connection signal="confirmed" from="news" to="news_request" method="_on_news_confirmed"]
 [connection signal="meta_clicked" from="news/RichTextLabel" to="news_request" method="_on_rich_text_label_meta_clicked"]
 [connection signal="request_completed" from="news_request" to="news_request" method="_on_request_completed"]
-[connection signal="pressed" from="Conig" to="Conig" method="_on_pressed"]
+[connection signal="pressed" from="Config" to="Config" method="_on_pressed"]
 [connection signal="pressed" from="Please enter train data" to="Please enter train data" method="_on_pressed"]
+[connection signal="confirmed" from="updater" to="updater/update_request" method="_on_updater_confirmed"]
 [connection signal="request_completed" from="updater/update_request" to="updater/update_request" method="_on_request_completed"]

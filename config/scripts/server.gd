@@ -12,11 +12,7 @@ func _ready() -> void:
 	$RichTextLabel.text = tr("SERVER")
 	$"../TrainNumber/RichTextLabel".text = tr("TRAIN_NUMBER")
 	$"../Save".text = tr("SAVE")
-	if cfg.get_value("System", "DevSetting"):
-		$"../Debug Switch".disabled = false
-		$"../../TabBar".set_tab_disabled(1, false)
-	else:
-		$"../../TabBar".set_tab_disabled(1, true)
+	if cfg.get_value("System", "DevSetting"):$"../Debug Switch".disabled = false
 	if cfg.get_value("Train Data", "server") != null:$".".text = cfg.get_value("Train Data", "server")
 	if cfg.get_value("Train Data", "trainNumber") != null:$"../TrainNumber".text = cfg.get_value("Train Data", "trainNumber")
 	if cfg.get_value("Train Data", "brakingRatio") != null:$"../Braking Ratio".text = cfg.get_value("Train Data", "brakingRatio")

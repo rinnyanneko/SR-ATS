@@ -17,7 +17,7 @@ func _ready() -> void:
 	$"../DoNotShow".text = tr("DO_NOT_SHOW")
 	self.text = tr("AGREE_LICENSE")
 	timer()
-	if cfg.get_value("License", "DoNotShow") == "true":
+	if cfg.get_value("License", "DoNotShow") and cfg.get_value("License", "agree"):
 		get_tree().change_scene_to_file("res://main.tscn")
 
 
@@ -28,10 +28,10 @@ func _process(delta: float) -> void:
 
 func _on_pressed() -> void:
 	if $"../DoNotShow".button_pressed:
-		cfg.set_value("License", "DoNotShow", "true")
+		cfg.set_value("License", "DoNotShow", true)
 	else:
-		cfg.set_value("License", "DoNotShow", "false")
-	cfg.set_value("License", "agree", "true")
+		cfg.set_value("License", "DoNotShow", false)
+	cfg.set_value("License", "agree", true)
 	cfg.save("res://config.cfg")
 	get_tree().change_scene_to_file("res://main.tscn")
 

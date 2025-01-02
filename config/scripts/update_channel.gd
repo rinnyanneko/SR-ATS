@@ -8,16 +8,12 @@ var cfg = ConfigFile.new()
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	$RichTextLabel.text = tr("UPDATE_MIRROR")
+	cfg.read("res://config.cfg")
+	if cfg.get_value("General", "UpdateChannel") == "Stable":self.selected = 0
+	elif cfg.get_value("General", "UpdateChannel") == "Beta":self.selected = 1
+	$RichTextLabel.text = tr("UPDATE_CHANNEL")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
-
-
-func _on_save_pressed() -> void:
-	if self.get_selected_id() == 0:
-		cfg.set_value("General", "Update Channel", "stable")
-	else:
-		cfg.set_value("General", "Update Channel", "beta")

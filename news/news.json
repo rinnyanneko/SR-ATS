@@ -1,6 +1,6 @@
 {
-	"latest-stable":"v0.0.10",
-	"latest-beta":"v0.0.10",
+	"latest-stable":"v0.0.9.0",
+	"latest-beta":"v0.0.10b1",
 	"data":[
 		{
 			"type":"update",

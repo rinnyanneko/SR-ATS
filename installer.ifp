@@ -3,7 +3,7 @@
 ProjectFileVersion = 1.1
 [General]
 Program name = SR-ATS
-Program version = 0.0.9.0
+Program version = 0.0.10.0
 Windows XP = 0
 Windows Server 2003 = 0
 Windows Vista = 0
@@ -47,7 +47,7 @@ ProgramArguments =
 Allowtc = 0
 Shortcut path = <Company>\<AppName>\
 [Serialoptions]
-Allows = 0
+Allows = 1
 Number = 1
 Mask = #####-#####-#####-#####
 [SplashScreen]
@@ -80,24 +80,21 @@ Execdlls = 1
 20
 21
 [Files/Dirs]
+C:\Users\rinny\Documents\GitHub\out\config.cfg
+54 Byte
+cfg
 C:\Users\rinny\Documents\GitHub\out\SR-ATS.console.exe
-58.5 KB
+59 KB
 exe
 C:\Users\rinny\Documents\GitHub\out\SR-ATS.exe
-80.2 MB
+80.3 MB
 exe
 C:\Users\rinny\Documents\GitHub\out\SR-ATS.pck
-1.6 MB
+2.2 MB
 pck
 C:\Users\rinny\Documents\GitHub\out\LICENSE\
 N/A
 [Folder]
-C:\Users\rinny\Documents\GitHub\out\Updater.exe
-2.8 MB
-exe
-C:\Users\rinny\Documents\GitHub\out\Updater.ini
-1.8 KB
-ini
 [Licence_Begin]
 41584
 {\rtf1\ansi\ansicpg932\deff0\nouicompat{\fonttbl{\f0\fswiss\fcharset134 Microsoft YaHei;}{\f1\fswiss\fcharset0 Microsoft YaHei;}{\f2\fnil\fcharset128 Yu Gothic;}{\f3\fnil\fcharset0 Yu Gothic;}}
@@ -402,5 +399,6 @@ SR-ATS.console
 1
 [IFP_End]
 [Serials]
+8ZKV2-9R3MM-90VHA-0N73J
 [Serials_End]
 [Commands]
