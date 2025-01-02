@@ -165,6 +165,7 @@ script = ExtResource("19_swxou")
 [connection signal="pressed" from="Language" to="Please enter train data" method="_on_language_pressed"]
 [connection signal="canceled" from="ConfirmationDialog" to="ConfirmationDialog" method="_on_canceled"]
 [connection signal="confirmed" from="ConfirmationDialog" to="ConfirmationDialog" method="_on_confirmed"]
+[connection signal="pressed" from="version" to="updater/update_request" method="_on_version_pressed"]
 [connection signal="pressed" from="copyright" to="copyright" method="_on_pressed"]
 [connection signal="canceled" from="news" to="news_request" method="_on_news_canceled"]
 [connection signal="confirmed" from="news" to="news_request" method="_on_news_confirmed"]

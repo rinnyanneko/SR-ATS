@@ -14,6 +14,9 @@ AGREE_LICENSE,I agree,同意する,我同意,我同意
 CLOSE,Close,閉じる,關閉,关闭
 PLEASE_ENTER_TRAIN_DATA,PLEASE ENTER TRAIN DATA,列車情報を入力してください,請輸入列車資訊,请输入列车信息
 TRAIN_DATA,Train Data,列車情報,列車資訊,列车信息
-UPDATE_CHANNEL,,,,
-UPDATE_MIRROR,,,,
-GENERAL_SETTING,,,,
+UPDATE_CHANNEL,Update Channel,更新チャンネル,更新頻道,更新频道
+UPDATE_MIRROR,Update Mirror,更新ミラー,更新鏡像,更新镜像
+GENERAL_SETTING,General,一般,一般,通用
+NEW_STABLE_UPDATE,New update!\nVersion:{version},新しい更新!\nバージョン:{version},檢測到新版本!\n版本號:{version},检测到新版本!\n版本号:{version}
+NEW_BETA_UPDATE,New update!\nVersion:{version}(Beta),新しい更新!\nバージョン:{version}(ベータ版),檢測到新版本!\n版本號:{version}(BETA),检测到新版本!\n版本号:{version}(BETA)
+NO_UPDATE,You are running the latest version,お使いのソフトウェアは最新版です,您正在運行最新版本,您正在运行最新版本

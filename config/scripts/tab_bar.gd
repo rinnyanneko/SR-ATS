@@ -17,9 +17,9 @@ func _ready() -> void:
 	self.add_tab(tr("GENERAL_SETTING"))
 	self.add_tab("Debug")
 	if cfg.get_value("System", "DevSetting"):
-		self.set_tab_disabled(1, false)
+		self.set_tab_disabled(2, false)
 	else:
-		self.set_tab_disabled(1, true)
+		self.set_tab_disabled(2, true)
 	self.add_tab("Credits")
 
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dm01geiku0yxr"]
+[gd_scene load_steps=9 format=3 uid="uid://dm01geiku0yxr"]
 
 [ext_resource type="Texture2D" uid="uid://da26ervg41qj5" path="res://assets/return (Custom).png" id="1_ugf2m"]
 [ext_resource type="Script" path="res://scripts/return.gd" id="2_toyrf"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" path="res://config/scripts/request_servers.gd" id="5_d33gm"]
 [ext_resource type="Script" path="res://config/scripts/credits_rich_text_label.gd" id="6_ixw2y"]
 [ext_resource type="Script" path="res://config/scripts/update_channel.gd" id="6_r4fv4"]
+[ext_resource type="Script" path="res://config/scripts/update_mirror.gd" id="7_1llyc"]
 
 [node name="Config" type="Control"]
 layout_mode = 3
@@ -153,10 +154,10 @@ offset_bottom = 176.0
 item_count = 3
 popup/item_0/text = "GitHub"
 popup/item_1/text = "GitLab"
-popup/item_1/id = 2
+popup/item_1/id = 1
 popup/item_2/text = "GitCode"
 popup/item_2/id = 2
-script = ExtResource("6_r4fv4")
+script = ExtResource("7_1llyc")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="General/UpdateMirror"]
 layout_mode = 0
@@ -165,6 +166,13 @@ offset_top = 5.0
 offset_right = -3.0
 offset_bottom = 28.0
 text = "UPDATE_MIRROR"
+
+[node name="Save" type="Button" parent="General"]
+offset_left = 551.0
+offset_top = 610.0
+offset_right = 596.0
+offset_bottom = 641.0
+text = "Save"
 
 [node name="Debug" type="Control" parent="."]
 anchors_preset = 0
@@ -196,3 +204,5 @@ script = ExtResource("6_ixw2y")
 [connection signal="tab_changed" from="TabBar" to="TabBar" method="_on_tab_changed"]
 [connection signal="request_completed" from="RequestServers" to="RequestServers" method="_on_request_completed"]
 [connection signal="pressed" from="Train Data/Save" to="Train Data/Server" method="_on_save_button_pressed"]
+[connection signal="pressed" from="General/Save" to="General/UpdateChannel" method="_on_save_pressed"]
+[connection signal="pressed" from="General/Save" to="General/UpdateMirror" method="_on_save_pressed"]

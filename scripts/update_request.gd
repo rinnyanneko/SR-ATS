@@ -41,3 +41,7 @@ func _on_request_completed(result: int, response_code: int, headers: PackedStrin
 				$"..".dialog_text = tr("NO_UPDATE")
 				await get_tree().create_timer(3)
 				$"..".visible = false
+
+
+func _on_version_pressed() -> void:
+	self.check_for_update()
