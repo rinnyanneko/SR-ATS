@@ -25,6 +25,14 @@
 			"text":"Happy New Year 2025!\n新年あけましておめでとうございます～\n新年快樂~",
 			"image":"false",
 			"draft":false
+		},
+		{
+			"type":"update",
+			"number":4,
+			"title":"NEW UPDATE",
+			"text":"v0.0.10b1 released, note this is a beta version, may contain lots of bug\n[url=https://github.com/rinnyanneko/SR-ATS/releases/tag/v0.0.10b1]GitHub[/url]\n[url=https://gitcode.com/rinnyanneko/SR-ATS/releases/v0.0.10b1]GitCode[/url]",
+			"image":"false",
+			"draft":false
 		}
 	]
 }
