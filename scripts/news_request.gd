@@ -1,6 +1,6 @@
 # SR-ATS
 # https://github.com/rinnyanneko/SR-ATS
-# Copyright © 2024 rinnyanneko. All rights reserved.
+# Copyright © 2025 rinnyanneko. All rights reserved.
 
 extends HTTPRequest
 var cfg = ConfigFile.new()
@@ -17,21 +17,22 @@ func _process(delta: float) -> void:
 	pass
 
 func _on_request_completed(result: int, response_code: int, headers: PackedStringArray, body: PackedByteArray) -> void:
-	cfg.load("res://config.cfg")
-	json = JSON.parse_string(body.get_string_from_utf8())
-	data = json["data"]
-	for i in data:
-		if i["draft"] == "false":
-			data = i
-	$"../news".title = data["title"]
-	$"../news/RichTextLabel".text = data["text"]
-	$"../news".cancel_button_text = tr("CLOSE")
-	$"../news".ok_button_text = tr("DO_NOT_SHOW")
-	if data["image"] != "false":
-		$"../news/RichTextLabel".text += "[img]" + data["image"] + "[/img]"
-	print(json)
-	if data["type"] != "" and data["number"] != cfg.get_value("News", "NeverShow") and data["draft"] == "false":
-		$"../news".visible = true
+	if response_code == 200:
+		cfg.load("res://config.cfg")
+		json = JSON.parse_string(body.get_string_from_utf8())
+		data = json["data"]
+		for i in data:
+			if i["draft"] == "false":
+				data = i
+		$"../news".title = data["title"]
+		$"../news/RichTextLabel".text = data["text"]
+		$"../news".cancel_button_text = tr("CLOSE")
+		$"../news".ok_button_text = tr("DO_NOT_SHOW")
+		if data["image"] != "false":
+			$"../news/RichTextLabel".text += "[img]" + data["image"] + "[/img]"
+		print(json)
+		if data["type"] != "" and data["number"] != cfg.get_value("News", "NeverShow") and data["draft"] == "false":
+			$"../news".visible = true
 
 
 func _on_news_confirmed() -> void:

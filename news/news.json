@@ -1,8 +1,10 @@
 {
+	"latest-stable":"v0.0.10.0",
+	"latest-beta":"v0.0.10.0",
 	"data":[
 		{
 			"type":"update",
-			"number":"1",
+			"number":1,
 			"title":"NEW UPDATE",
 			"text":"ALPHA-0.0.8 released\n[url=https://github.com/rinnyanneko/SR-ATS/releases/tag/ALPHA-0.0.8]GitHub[/url]\n[url=https://gitcode.com/rinnyanneko/SR-ATS/releases/ALPHA-0.0.8]GitCode[/url]",
 			"image":"false",
@@ -10,7 +12,7 @@
 		},
 		{
 			"type":"update",
-			"number":"2",
+			"number":2,
 			"title":"NEW UPDATE",
 			"text":"v0.0.9.0 released, note that I changed the alarm trigger logic\n[url=https://github.com/rinnyanneko/SR-ATS/releases/tag/v0.0.9.0]GitHub[/url]\n[url=https://gitcode.com/rinnyanneko/SR-ATS/releases/v0.0.9.0]GitCode[/url]",
 			"image":"false",
@@ -18,11 +20,11 @@
 		},
 		{
 			"type":"event",
-			"number":"3",
+			"number":3,
 			"title":"HAPPY NEW YEAR",
 			"text":"Happy New Year 2025!\n新年あけましておめでとうございます～\n新年快樂~",
 			"image":"false",
-			"draft":"false"
+			"draft":"true"
 		}
 	]
 }

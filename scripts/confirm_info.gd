@@ -17,7 +17,7 @@ func _process(delta: float) -> void:
 func run(atsmode: String):
 	cfg.load("res://config.cfg")
 	self.atsmode = atsmode
-	var tmp = tr(tr("CONFIRM_TEXT").format({"server" : cfg.get_value("Train Data", "server")}))
+	var tmp = tr("CONFIRM_TEXT").format({"server" : cfg.get_value("Train Data", "server")})
 	self.dialog_text = tmp.format({"trainNumber" : cfg.get_value("Train Data", "trainNumber")})
 	print(self.dialog_text)
 	print("Confirm?")

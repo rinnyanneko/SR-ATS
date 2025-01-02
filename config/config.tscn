@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dm01geiku0yxr"]
+[gd_scene load_steps=8 format=3 uid="uid://dm01geiku0yxr"]
 
 [ext_resource type="Texture2D" uid="uid://da26ervg41qj5" path="res://assets/return (Custom).png" id="1_ugf2m"]
 [ext_resource type="Script" path="res://scripts/return.gd" id="2_toyrf"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://config/scripts/server.gd" id="3_rdhe2"]
 [ext_resource type="Script" path="res://config/scripts/request_servers.gd" id="5_d33gm"]
 [ext_resource type="Script" path="res://config/scripts/credits_rich_text_label.gd" id="6_ixw2y"]
+[ext_resource type="Script" path="res://config/scripts/update_channel.gd" id="6_r4fv4"]
 
 [node name="Config" type="Control"]
 layout_mode = 3
@@ -29,16 +30,18 @@ offset_top = 64.0
 offset_right = 1153.0
 offset_bottom = 106.0
 current_tab = 0
-tab_count = 3
+tab_count = 4
 tab_0/title = "TRAIN_DATA"
-tab_1/title = "Debug"
-tab_2/title = "Credits"
+tab_1/title = "GENERAL_SETTING"
+tab_2/title = "Debug"
+tab_3/title = "Credits"
 script = ExtResource("3_0wwky")
 
 [node name="RequestServers" type="HTTPRequest" parent="."]
 script = ExtResource("5_d33gm")
 
 [node name="Train Data" type="Control" parent="."]
+visible = false
 anchors_preset = 0
 
 [node name="Server" type="OptionButton" parent="Train Data"]
@@ -116,6 +119,52 @@ offset_top = 4.0
 offset_right = 157.0
 offset_bottom = 29.0
 text = "%"
+
+[node name="General" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="UpdateChannel" type="OptionButton" parent="General"]
+layout_mode = 0
+offset_left = 163.0
+offset_top = 108.0
+offset_right = 244.0
+offset_bottom = 139.0
+item_count = 2
+popup/item_0/text = "Stable"
+popup/item_1/text = "Beta"
+popup/item_1/id = 2
+script = ExtResource("6_r4fv4")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="General/UpdateChannel"]
+layout_mode = 0
+offset_left = -160.0
+offset_top = 5.0
+offset_right = -3.0
+offset_bottom = 28.0
+text = "UPDATE_CHANNEL"
+
+[node name="UpdateMirror" type="OptionButton" parent="General"]
+offset_left = 162.0
+offset_top = 145.0
+offset_right = 257.0
+offset_bottom = 176.0
+item_count = 3
+popup/item_0/text = "GitHub"
+popup/item_1/text = "GitLab"
+popup/item_1/id = 2
+popup/item_2/text = "GitCode"
+popup/item_2/id = 2
+script = ExtResource("6_r4fv4")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="General/UpdateMirror"]
+layout_mode = 0
+offset_left = -160.0
+offset_top = 5.0
+offset_right = -3.0
+offset_bottom = 28.0
+text = "UPDATE_MIRROR"
 
 [node name="Debug" type="Control" parent="."]
 anchors_preset = 0

@@ -14,3 +14,6 @@ AGREE_LICENSE,I agree,同意する,我同意,我同意
 CLOSE,Close,閉じる,關閉,关闭
 PLEASE_ENTER_TRAIN_DATA,PLEASE ENTER TRAIN DATA,列車情報を入力してください,請輸入列車資訊,请输入列车信息
 TRAIN_DATA,Train Data,列車情報,列車資訊,列车信息
+UPDATE_CHANNEL,,,,
+UPDATE_MIRROR,,,,
+GENERAL_SETTING,,,,
