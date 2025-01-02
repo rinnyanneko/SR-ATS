@@ -51,11 +51,11 @@ Allows = 1
 Number = 1
 Mask = #####-#####-#####-#####
 [SplashScreen]
-Image = 
+Image = C:\Users\rinny\Documents\GitHub\SR-ATS\SR-ATS-BANNER.png
 Sound = 
 Time = 2
 PlaySound = 0
-Allow = 0
+Allow = 1
 [Build]
 File = C:\Users\rinny\Documents\GitHub\out\Setup.exe
 SetupIconPath = C:\Users\rinny\Documents\GitHub\SR-ATS\favicon_setup.ico
