@@ -36,7 +36,7 @@ func _on_request_completed(result: int, response_code: int, headers: PackedStrin
 
 
 func _on_news_confirmed() -> void:
-	cfg.set_value("News", "NeverShow", String(data["number"]))
+	cfg.set_value("News", "NeverShow", data["number"])
 	cfg.save("res://config.cfg")
 	print("Never show this news")
 	$"../news".visible = false

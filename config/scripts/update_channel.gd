@@ -8,7 +8,7 @@ var cfg = ConfigFile.new()
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	cfg.read("res://config.cfg")
+	cfg.load("res://config.cfg")
 	if cfg.get_value("General", "UpdateChannel") == "Stable":self.selected = 0
 	elif cfg.get_value("General", "UpdateChannel") == "Beta":self.selected = 1
 	$RichTextLabel.text = tr("UPDATE_CHANNEL")

@@ -147,6 +147,7 @@ offset_bottom = 29.0
 text = "UPDATE_CHANNEL"
 
 [node name="UpdateMirror" type="OptionButton" parent="General"]
+layout_mode = 0
 offset_left = 162.0
 offset_top = 145.0
 offset_right = 257.0
@@ -168,6 +169,7 @@ offset_bottom = 30.0
 text = "UPDATE_MIRROR"
 
 [node name="Save" type="Button" parent="General"]
+layout_mode = 0
 offset_left = 551.0
 offset_top = 610.0
 offset_right = 596.0
