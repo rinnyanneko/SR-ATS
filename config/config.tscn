@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dm01geiku0yxr"]
+[gd_scene load_steps=10 format=3 uid="uid://dm01geiku0yxr"]
 
 [ext_resource type="Texture2D" uid="uid://da26ervg41qj5" path="res://assets/return (Custom).png" id="1_ugf2m"]
 [ext_resource type="Script" path="res://scripts/return.gd" id="2_toyrf"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" path="res://config/scripts/credits_rich_text_label.gd" id="6_ixw2y"]
 [ext_resource type="Script" path="res://config/scripts/update_channel.gd" id="6_r4fv4"]
 [ext_resource type="Script" path="res://config/scripts/update_mirror.gd" id="7_1llyc"]
+[ext_resource type="Script" path="res://config/scripts/debug_save.gd" id="8_saujo"]
 
 [node name="Config" type="Control"]
 layout_mode = 3
@@ -87,15 +88,6 @@ offset_right = 596.0
 offset_bottom = 641.0
 text = "Save"
 
-[node name="Debug Switch" type="CheckBox" parent="Train Data"]
-layout_mode = 0
-offset_left = 1003.0
-offset_top = 609.0
-offset_right = 1152.0
-offset_bottom = 640.0
-disabled = true
-text = "Debug mode"
-
 [node name="Braking Ratio" type="LineEdit" parent="Train Data"]
 layout_mode = 0
 offset_left = 536.0
@@ -132,6 +124,7 @@ offset_left = 163.0
 offset_top = 108.0
 offset_right = 244.0
 offset_bottom = 139.0
+selected = 0
 item_count = 2
 popup/item_0/text = "Stable"
 popup/item_1/text = "Beta"
@@ -152,6 +145,7 @@ offset_left = 162.0
 offset_top = 145.0
 offset_right = 257.0
 offset_bottom = 176.0
+selected = 0
 item_count = 3
 popup/item_0/text = "GitHub"
 popup/item_1/text = "GitLab"
@@ -177,7 +171,25 @@ offset_bottom = 641.0
 text = "Save"
 
 [node name="Debug" type="Control" parent="."]
+visible = false
 anchors_preset = 0
+
+[node name="Debug frame" type="CheckBox" parent="Debug"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 107.0
+offset_right = 148.0
+offset_bottom = 138.0
+text = "Debug frame"
+
+[node name="Save" type="Button" parent="Debug"]
+layout_mode = 0
+offset_left = 551.0
+offset_top = 610.0
+offset_right = 596.0
+offset_bottom = 641.0
+text = "Save"
+script = ExtResource("8_saujo")
 
 [node name="Credits" type="Control" parent="."]
 visible = false
@@ -207,3 +219,4 @@ script = ExtResource("6_ixw2y")
 [connection signal="request_completed" from="RequestServers" to="RequestServers" method="_on_request_completed"]
 [connection signal="pressed" from="Train Data/Save" to="Train Data/Server" method="_on_save_button_pressed"]
 [connection signal="pressed" from="General/Save" to="General/UpdateMirror" method="_on_save_pressed"]
+[connection signal="pressed" from="Debug/Save" to="Debug/Save" method="_on_pressed"]

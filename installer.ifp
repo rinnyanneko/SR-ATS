@@ -3,7 +3,7 @@
 ProjectFileVersion = 1.1
 [General]
 Program name = SR-ATS
-Program version = 0.0.10.0
+Program version = 0.0.10b2
 Windows XP = 0
 Windows Server 2003 = 0
 Windows Vista = 0
@@ -47,21 +47,21 @@ ProgramArguments =
 Allowtc = 0
 Shortcut path = <Company>\<AppName>\
 [Serialoptions]
-Allows = 1
+Allows = 0
 Number = 1
 Mask = #####-#####-#####-#####
 [SplashScreen]
 Image = C:\Users\rinny\Documents\GitHub\SR-ATS\SR-ATS-BANNER.png
-Sound = 
-Time = 2
-PlaySound = 0
+Sound = C:\Users\rinny\Documents\GitHub\SR-ATS\assets\ATCChime.wav
+Time = 1
+PlaySound = 1
 Allow = 1
 [Build]
-File = C:\Users\rinny\Documents\GitHub\out\Setup.exe
+File = C:\Users\rinny\Documents\GitHub\out\SR-ATS-Setup.exe
 SetupIconPath = C:\Users\rinny\Documents\GitHub\SR-ATS\favicon_setup.ico
 UninstallIconPath = ..\icons\modern.ico
 CompressionMethod = 0
-CompressionLevel = 2
+CompressionLevel = 1
 [Updater]
 Allow = 0
 1 = <AppName>
@@ -80,9 +80,6 @@ Execdlls = 1
 20
 21
 [Files/Dirs]
-C:\Users\rinny\Documents\GitHub\out\config.cfg
-54 Byte
-cfg
 C:\Users\rinny\Documents\GitHub\out\SR-ATS.console.exe
 59 KB
 exe
@@ -95,9 +92,6 @@ pck
 C:\Users\rinny\Documents\GitHub\out\LICENSE\
 N/A
 [Folder]
-C:\Users\rinny\Documents\GitHub\out\sdk\dotnet-sdk-9.0.101-win-x64.exe
-213.4 MB
-exe
 [Licence_Begin]
 41584
 {\rtf1\ansi\ansicpg932\deff0\nouicompat{\fonttbl{\f0\fswiss\fcharset134 Microsoft YaHei;}{\f1\fswiss\fcharset0 Microsoft YaHei;}{\f2\fnil\fcharset128 Yu Gothic;}{\f3\fnil\fcharset0 Yu Gothic;}}
@@ -405,7 +399,3 @@ SR-ATS.console
 8ZKV2-9R3MM-90VHA-0N73J
 [Serials_End]
 [Commands]
-Execute Application
-<InstallPath>\sdk\dotnet-sdk-9.0.101-win-x64.exe
-
-

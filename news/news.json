@@ -1,6 +1,6 @@
 {
-	"latest-stable":"v0.0.9.0",
-	"latest-beta":"v0.0.10b1",
+	"latest-stable":"v0.0.10",
+	"latest-beta":"v0.0.10",
 	"data":[
 		{
 			"type":"update",
@@ -31,6 +31,14 @@
 			"number":4,
 			"title":"NEW UPDATE",
 			"text":"v0.0.10b1 released, note this is a beta version, may contain lots of bug\n[url=https://github.com/rinnyanneko/SR-ATS/releases/tag/v0.0.10b1]GitHub[/url]\n[url=https://gitcode.com/rinnyanneko/SR-ATS/releases/v0.0.10b1]GitCode[/url]",
+			"image":"false",
+			"draft":false
+		},
+		{
+			"type":"update",
+			"number":5,
+			"title":"NEW UPDATE",
+			"text":"v0.0.10 released\n[url=https://github.com/rinnyanneko/SR-ATS/releases/tag/v0.0.10]GitHub[/url]\n[url=https://gitcode.com/rinnyanneko/SR-ATS/releases/v0.0.10]GitCode[/url]",
 			"image":"false",
 			"draft":false
 		}

@@ -29,7 +29,7 @@ func _on_request_completed(result: int, response_code: int, headers: PackedStrin
 	if response_code == 200:
 		$"..".visible = true
 		var json = JSON.parse_string(body.get_string_from_utf8())
-		if cfg.get_value("General", "UpdateChannel") == "beta":
+		if cfg.get_value("General", "UpdateChannel") == "Beta":
 			if json["latest-beta"] != $"../../version".text:
 				$"..".dialog_text = tr("NEW_BETA_UPDATE").format({"version" : json["latest-beta"]})
 				update_beta = true

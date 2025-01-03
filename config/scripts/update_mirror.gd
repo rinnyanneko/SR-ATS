@@ -28,7 +28,7 @@ func _on_save_pressed() -> void:
 	else:
 		cfg.set_value("General", "UpdateMirror", "GitCode")
 	if $"../UpdateChannel".get_selected_id() == 0:
-		cfg.set_value("General", "UpdateChannel", "stable")
+		cfg.set_value("General", "UpdateChannel", "Stable")
 	else:
-		cfg.set_value("General", "UpdateChannel", "beta")
+		cfg.set_value("General", "UpdateChannel", "Beta")
 	cfg.save("res://config.cfg")

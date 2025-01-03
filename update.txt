@@ -1,2 +1,2 @@
-v0.0.9.0
-https://github.com/rinnyanneko/SR-ATS/releases/download/v0.0.9.0/Setup.exe
+v0.0.10b1
+https://github.com/rinnyanneko/SR-ATS/releases/download/v0.0.10b1/Setup.exe

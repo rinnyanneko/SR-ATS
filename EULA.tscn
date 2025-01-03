@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://nwnyb76cxlwh"]
+[gd_scene load_steps=5 format=3 uid="uid://nwnyb76cxlwh"]
 
 [ext_resource type="Script" path="res://scripts/agree_license.gd" id="1_7lnkw"]
 [ext_resource type="Texture2D" uid="uid://cbvfda7jahf80" path="res://assets/translation.png" id="2_347tw"]
 [ext_resource type="Script" path="res://scripts/language.gd" id="2_cuwpl"]
+[ext_resource type="AudioStream" uid="uid://ch1k16pldnpsr" path="res://assets/ATCChime.mp3" id="4_ndii3"]
 
 [node name="EULA" type="Node"]
 
@@ -45,6 +46,10 @@ script = ExtResource("2_cuwpl")
 [node name="Timer" type="Timer" parent="."]
 wait_time = 10.0
 one_shot = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_ndii3")
+autoplay = true
 
 [connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
 [connection signal="pressed" from="Language" to="Button" method="_on_language_pressed"]
