@@ -95,6 +95,9 @@ pck
 C:\Users\rinny\Documents\GitHub\out\LICENSE\
 N/A
 [Folder]
+C:\Users\rinny\Documents\GitHub\out\sdk\dotnet-sdk-9.0.101-win-x64.exe
+213.4 MB
+exe
 [Licence_Begin]
 41584
 {\rtf1\ansi\ansicpg932\deff0\nouicompat{\fonttbl{\f0\fswiss\fcharset134 Microsoft YaHei;}{\f1\fswiss\fcharset0 Microsoft YaHei;}{\f2\fnil\fcharset128 Yu Gothic;}{\f3\fnil\fcharset0 Yu Gothic;}}
@@ -402,3 +405,7 @@ SR-ATS.console
 8ZKV2-9R3MM-90VHA-0N73J
 [Serials_End]
 [Commands]
+Execute Application
+<InstallPath>\sdk\dotnet-sdk-9.0.101-win-x64.exe
+
+
