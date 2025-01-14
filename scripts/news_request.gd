@@ -31,7 +31,7 @@ func _on_request_completed(result: int, response_code: int, headers: PackedStrin
 		if data["image"] != "false":
 			$"../news/RichTextLabel".text += "[img]" + data["image"] + "[/img]"
 		print(json)
-		if data["type"] != "" and data["number"]> cfg.get_value("News", "NeverShow")  || 0 and not data["draft"]:
+		if data["type"] != "" and data["number"] > cfg.get_value("News", "NeverShow")  || 0 and not data["draft"]:
 			$"../news".visible = true
 
 
