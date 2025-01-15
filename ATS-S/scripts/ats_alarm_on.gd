@@ -1,6 +1,6 @@
 # SR-ATS
 # https://github.com/rinnyanneko/SR-ATS
-# Copyright © 2024 rinnyanneko. All rights reserved.
+# Copyright © 2025 rinnyanneko. All rights reserved.
 
 extends Sprite2D
 var tmp = ConfigFile.new()
@@ -17,7 +17,7 @@ func _process(delta: float) -> void:
 	var velocity:float = float($"..".Velocity)
 	var distanceToSignalInFront:float = float($"..".DistanceToSignalInFront)
 	var signalInFrontSpeed:float = float($"..".SignalInFrontSpeed)
-	var signalInFront:String = String($"..".SignalInFront)
+	var signalInFront:String = str($"..".SignalInFront)
 	passedSignal = $"..".signalInFront
 	#print(signalInFront)
 	#print(distanceToSignalInFront)

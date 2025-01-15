@@ -1,6 +1,6 @@
 # SR-ATS
 # https://github.com/rinnyanneko/SR-ATS
-# Copyright © 2024 rinnyanneko. All rights reserved.
+# Copyright © 2025 rinnyanneko. All rights reserved.
 
 extends TextureButton
 
@@ -16,4 +16,7 @@ func _process(delta: float) -> void:
 
 
 func _on_pressed() -> void:
-	$"../../Confirm Reset".run()
+	$"../..".alarm = false
+	$"../..".alarmHard = false
+	$"../../AtsAlarmOn/ATS Alarm".stop()
+	print("ATS Reset!")

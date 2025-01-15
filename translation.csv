@@ -1,22 +1,25 @@
-key,en,jp,cmn,zh
-LANG_NAME,English,日本語,繁體中文,简体中文
-SERVER,Server,サーバー,伺服器,服务器
-TRAIN_NUMBER,Train Number,列車番号,車次,车次
-SAVE,Save,保存,保存,保存
-HTTP_REQ_ERR_MSG,"An error occurred while connecting to the server, please check the server code, train number, and your network connection",サーバーへの接続中にエラーが発生しました。サーバーコード、列車番号、ネットワーク接続を確認してください。,連接到伺服器時發生錯誤，請檢查伺服器代碼、車次以及您的網路連接,连接到服务器时发生错误，请检查服务器代码、车次以及您的网络连接
-CONFIRM_TEXT,Server: {server}\nTrain number: {trainNumber},サーバー：{server}\n列車番号：{trainNumber},伺服器: {server}\n車次: {trainNumber},服务器: {server}\n车次: {trainNumber}
-CONFIRM,Confirm,確認,確認,确认
-CANCEL,Cancel,キャンセル,取消,取消
-S_CONFIRM_RESET,Confirm you want to reset the ATS?\nThis operation operation must must be approved by the commander in real life!,ATSをリセットしますか？\n現実世界には運転司令の許可が必要です！,確定要重置ATS嗎?\n這個操作在現實中必須取得指令員的授權!,确定要重置ATS吗?\n这个操作在现实中必须取得指令员的授权!
-DO_NOT_SHOW,Do not show this page next time,次回からこのページを表示しない,下次不再顯示,下次不再显示
-READ_LICENSE,Please read the Software License Agreement,ライセンスをお読んでください,請閱讀軟體授權合約,请阅读软件授权合约
-AGREE_LICENSE,I agree,同意する,我同意,我同意
-CLOSE,Close,閉じる,關閉,关闭
-PLEASE_ENTER_TRAIN_DATA,PLEASE ENTER TRAIN DATA,列車情報を入力してください,請輸入列車資訊,请输入列车信息
-TRAIN_DATA,Train Data,列車情報,列車資訊,列车信息
-UPDATE_CHANNEL,Update Channel,更新チャンネル,更新頻道,更新频道
-UPDATE_MIRROR,Update Mirror,更新ミラー,更新鏡像,更新镜像
-GENERAL_SETTING,General,一般,一般,通用
-NEW_STABLE_UPDATE,New update!\nVersion:{version},新しい更新!\nバージョン:{version},檢測到新版本!\n版本號:{version},检测到新版本!\n版本号:{version}
-NEW_BETA_UPDATE,New update!\nVersion:{version}(Beta),新しい更新!\nバージョン:{version}(ベータ版),檢測到新版本!\n版本號:{version}(BETA),检测到新版本!\n版本号:{version}(BETA)
-NO_UPDATE,You are running the latest version,お使いのソフトウェアは最新版です,您正在運行最新版本,您正在运行最新版本
+key,en,jp,cmn,zh,ko
+LANG_NAME,English,日本語,繁體中文,简体中文,한국어
+SERVER,Server,サーバー,伺服器,服务器,서버
+TRAIN_NUMBER,Train Number,列車番号,車次,车次,기차 번호
+SAVE,Save,保存,保存,保存,저장
+CONFIRM_TEXT,Server: {server}\nTrain number: {trainNumber},サーバー：{server}\n列車番号：{trainNumber},伺服器: {server}\n車次: {trainNumber},服务器: {server}\n车次: {trainNumber},서버: {server}\n열차 번호: {trainNumber}
+CONFIRM,Confirm,確認,確認,确认,확인
+CANCEL,Cancel,キャンセル,取消,取消,취소
+DO_NOT_SHOW,Do not show this page next time,次回からこのページを表示しない,下次不再顯示,下次不再显示,다음에 이 페이지를 표시하지 않음
+READ_LICENSE,Please read the Software License Agreement,ライセンスをお読んでください,請閱讀軟體授權合約,请阅读软件授权合约,라이센스를 읽으십시오.
+AGREE_LICENSE,I agree,同意する,我同意,我同意,동의하다
+CLOSE,Close,閉じる,關閉,关闭,닫다
+PLEASE_ENTER_TRAIN_DATA,PLEASE ENTER TRAIN DATA,列車情報を入力してください,請輸入列車資訊,请输入列车信息,기차 정보를 입력하세요.
+TRAIN_DATA,Train Data,列車情報,列車資訊,列车信息,기차 정보
+UPDATE_CHANNEL,Update Channel,更新チャンネル,更新頻道,更新频道,업데이트 채널
+UPDATE_MIRROR,Update Mirror,更新ミラー,更新鏡像,更新镜像,업데이트 미러
+GENERAL_SETTING,General,一般,一般,通用,일반
+NEW_STABLE_UPDATE,New update!\nVersion:{version}(Stable),新しい更新!\nバージョン:{version}(Stable),檢測到新版本!\n版本號:{version}(Stable),检测到新版本!\n版本号:{version}(Stable),새로운 업데이트! \n 버전 : {version} (Stable)
+NEW_BETA_UPDATE,New update!\nVersion:{version}(Beta),新しい更新!\nバージョン:{version}(BETA),檢測到新版本!\n版本號:{version}(BETA),检测到新版本!\n版本号:{version}(BETA),새로운 업데이트! \n 버전 : {version} (BETA)
+NO_UPDATE,You are running the latest version,お使いのソフトウェアは最新版です,您正在運行最新版本,您正在运行最新版本,소프트웨어는 최신 버전입니다.
+TRAIN_NOT_FOUND,The train number not found in the selected server,選択したサーバーに列車番号が見つかりません,所選伺服器中找不到該車次,所选服务器中找不到该车次,선택한 서버에서 열차 번호를 찾을 수 없습니다.
+SERVER_NOT_FOUND,The server does not exist,サーバーが存在しません,伺服器不存在,服务器不存在,서버가 존재하지 않음
+CONNECTION_ERROR,An error occurred while connecting to the server,サーバーへの接続中にエラーが発生しました,連接到伺服器時發生錯誤,连接到服务器时发生错误,서버에 연결하는 중에 오류가 발생했습니다.
+CONNECTION_TIMEOUT,Connection timeout,接続タイムアウト,連線逾時,连线逾时,연결 시간 초과
+ENTERED_TRAIN_DATA,Server: {server} Train number: {trainNumber},サーバー：{server} 列車番号：{trainNumber},伺服器: {server} 車次: {trainNumber},服务器: {server} 车次: {trainNumber},서버: {server} 열차 번호: {trainNumber}

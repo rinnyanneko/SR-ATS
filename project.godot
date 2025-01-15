@@ -49,7 +49,7 @@ theme/custom_font="res://fonts/NotoSans-SemiBold.ttf"
 
 [internationalization]
 
-locale/translations=PackedStringArray("res://translation.cmn.translation", "res://translation.en.translation", "res://translation.jp.translation", "res://translation.zh.translation")
+locale/translations=PackedStringArray("res://translation.cmn.translation", "res://translation.en.translation", "res://translation.jp.translation", "res://translation.zh.translation", "res://translation.ko.translation")
 
 [rendering]
 

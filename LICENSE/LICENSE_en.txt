@@ -2,67 +2,63 @@
 
 SR-ATS Software License Agreement
 
-1. Preamble
-
-This Software License Agreement (hereinafter referred to as "this Agreement") is entered into by and between rinnyanneko (hereinafter referred to as "Licensor") and any individual or organization that obtains and uses this software (hereinafter referred to as "Licensee"). This Agreement governs the rights and obligations of the Licensee in obtaining and using the "SR-ATS" software (hereinafter referred to as "the Software"), and is licensed under the terms of the Apache License, Version 2.0 (hereinafter referred to as "Apache 2.0").
+1. Introduction
+    This Software License Agreement (hereinafter referred to as "this Agreement") is entered into by rinnyanneko (hereinafter referred to as "Licensor") and any individual or organization that obtains or uses this software (hereinafter referred to as "Licensee"). This Agreement aims to govern the rights and obligations of the Licensee in acquiring and using the software "SR-ATS" (hereinafter referred to as "the Software") and is licensed under the terms of the Apache License, Version 2.0 (hereinafter referred to as "Apache 2.0").  
 
 2. Definitions
 
-    The Software: Refers to the software developed by the Licensor and named "SR-ATS," as well as all related documentation (including but not limited to user manuals, source code, object code, icons, interface design, test data, etc.), and all derivative works.
-
-    Derivative Works: Refers to any work of any form created based on the Software through modification, combination, or other means.
-
-    Copyright Notice: Refers to the statement indicating the copyright ownership of the Software belonging to the Licensor, usually including the Licensor's name, copyright symbol (©), and year.
+- The Software: Refers to the software developed and named "SR-ATS" by the Licensor, including but not limited to documentation, source code, object code, icons, interface designs, test data, and all derivative works.
+- Derivative Works: Refers to works created based on the Software through modification, combination, or other methods.
+- Copyright Notice: Refers to the statement indicating the copyright of the Software belongs to the Licensor, including the Licensor's name, © symbol, and the year.
+- Third-Party Materials: Refers to materials not created by the Licensor but integrated into or related to the Software, including software, documents, data, graphics, audio, or other resources.
 
 3. License Terms
 
-The Licensor grants the Licensee a worldwide, royalty-free, non-exclusive right under the terms of Apache 2.0, allowing the Licensee to:
+    The Licensor, in accordance with Apache 2.0, grants the Licensee the following global, royalty-free, and non-exclusive rights:
 
-    Freely Use: Use, copy, modify, distribute, perform, and display the Software for any purpose (commercial or non-commercial).
+        1. Free Use: Use, copy, modify, distribute, perform, and display the Software for any purpose (commercial or non-commercial).
+        2. Create Derivative Works: Create derivative works based on the Software.
+        3. Redistribution: Distribute the Software or its derivative works in source or binary forms.
+        4. Dissemination: Disseminate the Software or its derivative works through any medium.
 
-    Create Derivative Works: Create derivative works based on the Software.
+    Conditions:
 
-    Redistribute: Distribute the Software or its derivative works in source code or binary code form.
+        1. Retention of Copyright Notice: Retain the original copyright notice and this license agreement in distributed copies.
+        2. Modification Marking: Clearly indicate any modifications made to the Software.
+        3. Passing License Terms: Any sublicenses granted must be under the same terms as this Agreement.
+        4. No Endorsement: The Licensor's name or the Software must not be used as the basis for product promotion, avoiding any misrepresentation that the Licensor endorses the Licensee's products or services.
 
-    Distribute: Distribute the Software or its derivative works through any medium.
+4. Third-Party Materials
 
-Conditions:
+    1. Scope of Materials: The Software may include or integrate third-party materials, such as software programs, graphics, audio, documents, or other resources (hereinafter referred to as "Third-Party Materials").
+    2. License Terms: The use of Third-Party Materials is subject to their original license terms, which may differ from this Agreement. The Licensee must review and comply with applicable third-party license terms.
+    3. Scope of Liability: The Licensor does not provide any express or implied warranties for Third-Party Materials and is not liable for any issues or damages caused by their use.
+    4. Declaration Obligation: When distributing software or derivative works containing Third-Party Materials, the Licensee must include the relevant third-party license terms and necessary copyright notices and ensure compliance with those license requirements.
+    5. Restrictions: The Licensee shall not use Third-Party Materials beyond the scope of their license, and the Licensor assumes no legal responsibility in such cases.
 
-    Copyright Notice: The Licensee must retain the original copyright notice and this license agreement in all distributed copies.
+5. Warranty and Disclaimer
 
-    Modification Marking: For modified versions, the Licensee must clearly mark the modified parts.
+    The Software is provided "as is" without any express or implied warranties, including but not limited to merchantability, fitness for a particular purpose, and non-infringement. The Licensor is not responsible for any damages caused by the use of the Software.
 
-    License Terms Transmission: If the Licensee sublicenses the Software or its derivative works to others, they must sublicense under the same licensing terms as this Agreement.
+6. Termination
 
-    No Endorsement: The Licensee may not use this license agreement to restrict other software, nor may they use the Software or its name as a basis for promoting or advertising their products or services in a way that might mislead others into believing that the Licensor endorses or supports their products or services.
+    If the Licensee violates any terms of this Agreement, the Licensor has the right to terminate this license immediately.
 
-4. Warranty and Disclaimer
+7. Dispute Resolution
 
-The Software is provided "AS IS" without any warranties of any kind, either express or implied, including but not limited to warranties of merchantability, fitness for a particular purpose, non-infringement, and non-violation of intellectual property rights of others. The Licensor shall not be liable for any damages resulting from the use of the Software.
+    Both parties agree to resolve disputes amicably. If amicable resolution fails, disputes shall be governed by the laws of the Republic of China (Taiwan) and adjudicated by the Taipei District Court as the court of first instance.
 
-5. Termination
+8. Effective Date and Complete Agreement
 
-The Licensor has the right to immediately terminate this license if the Licensee violates any terms of this Agreement.
+    This Agreement becomes effective upon the release of the Software and constitutes the complete agreement between the parties regarding the licensing of the Software, replacing any prior oral or written agreements.
 
-6. Dispute Resolution
+9. Software Updates
 
-If any dispute arises from this Agreement, both parties agree to prioritize resolution through amicable negotiation. If negotiation fails, both parties agree to use the laws of the Republic of China as the governing law, and the Taipei District Court of Taiwan as the court of first instance.
+    The Licensor reserves the right to update, modify, or upgrade the Software and provide new versions. The Licensee agrees to accept updates, which remain subject to this Agreement.
 
-7. Effective Date and Entire Agreement
+10. Governing Law and Supplemental Provisions
 
-This Agreement shall take effect from the date of the Software's release. This Agreement constitutes the entire agreement between the parties regarding the Software licensing matters and supersedes all prior oral or written agreements.
-
-8. Software Updates
-
-The Licensor has the right to update, modify, or upgrade the Software and provide new versions to the Licensee. The Licensee agrees to accept software updates provided by the Licensor and agrees that the updated software is still bound by this Agreement.
-
-9. Third-Party Software
-
-The Software may contain or use software developed by third parties (hereinafter referred to as "Third-Party Software"). The licensing terms of the Third-Party Software may differ from this Agreement. The Licensee agrees to comply with the licensing terms of the Third-Party Software. The Licensor provides no warranties for Third-Party Software and assumes no responsibility for any problems or damages caused by Third-Party Software.
-
-10. Governing Law and Supplementary Provisions
-
-This Agreement shall be interpreted and applied in accordance with the laws of the Republic of China. If there is any discrepancy between the Traditional Chinese version of this Agreement and other language versions, the Traditional Chinese version shall prevail. Any matters not covered herein shall be governed by the relevant provisions of the Copyright Act, Trade Secrets Act, and the trademark infringement sections of the Criminal Code of the Republic of China.
+    This Agreement shall be interpreted and governed by the laws of the Republic of China (Taiwan). In case of discrepancies between the Traditional Chinese version of this Agreement and any other language versions, the Traditional Chinese version shall prevail. Any matters not covered herein shall be handled in accordance with the Copyright Act, Trade Secrets Act, and relevant provisions of the Penal Code of the Republic of China.
 
 rinnyanneko
-2024-12-14
+2025-01-16

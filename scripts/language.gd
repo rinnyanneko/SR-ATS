@@ -23,6 +23,10 @@ func _ready() -> void:
 	elif cfg.get_value("System", "lang") == "zh":
 		TranslationServer.set_locale("zh")
 		print("Simplified Chinese(zh)!")
+		sel = 4
+	elif cfg.get_value("System", "lang") == "ko":
+		TranslationServer.set_locale("ko")
+		print("Korean(ko)!")
 		sel = 0
 	else:
 		sel = 1
@@ -50,9 +54,13 @@ func _on_pressed() -> void:
 		cfg.set_value("System", "lang", "zh")
 		TranslationServer.set_locale("zh")
 		print("Simplified Chinese(zh)!")
+	if sel == 4:
+		cfg.set_value("System", "lang", "ko")
+		TranslationServer.set_locale("ko")
+		print("Korean(ko)!")
 	cfg.save("res://config.cfg")
 	sel += 1
-	if sel > 3:sel = 0
+	if sel > 4:sel = 0
 	self.disabled = true
 	await get_tree().create_timer(0.1).timeout
 	self.disabled = false
