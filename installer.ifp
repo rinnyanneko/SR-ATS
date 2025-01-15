@@ -3,7 +3,7 @@
 ProjectFileVersion = 1.1
 [General]
 Program name = SR-ATS
-Program version = 0.0.10b2
+Program version = 0.0.10.1
 Windows XP = 0
 Windows Server 2003 = 0
 Windows Vista = 0
@@ -79,6 +79,7 @@ Execdlls = 1
 19
 20
 21
+22
 [Files/Dirs]
 C:\Users\rinny\Documents\GitHub\out\SR-ATS.console.exe
 59 KB
