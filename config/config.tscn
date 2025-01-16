@@ -218,7 +218,12 @@ Icons:
 SDK and APIs:
 	[url=https://wiki.simrail.eu/API/API-Introduction]SimRail Trains, Servers API[/url]
 	[url=https://sourceforge.net/projects/vjoystick/]vJoy SDK[/url]
+<<<<<<< Updated upstream
 To contribute, don't hasitate forking and opening a pull request!
+=======
+	[url=https://github.com/doceazedo/godot_wry]WRY[/url]
+To contribute, please contact me via Discord(@rinnyanneko)
+>>>>>>> Stashed changes
 
 Copyright © 2024 - 2025 rinnyanneko. All rights reserved."
 script = ExtResource("6_ixw2y")
