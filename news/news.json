@@ -1,6 +1,6 @@
 {
-	"latest-stable":"v0.0.10",
-	"latest-beta":"v0.0.10",
+	"latest-stable":"v0.0.10.1",
+	"latest-beta":"v0.0.10.1",
 	"data":[
 		{
 			"type":"update",
@@ -39,6 +39,14 @@
 			"number":5,
 			"title":"NEW UPDATE",
 			"text":"v0.0.10 released\n[url=https://github.com/rinnyanneko/SR-ATS/releases/tag/v0.0.10]GitHub[/url]\n[url=https://gitcode.com/rinnyanneko/SR-ATS/releases/v0.0.10]GitCode[/url]",
+			"image":"false",
+			"draft":false
+		},
+		{
+			"type":"update",
+			"number":6,
+			"title":"TRANSLATION",
+			"text":"Thank you for using SR-ATS, although I add Korean in to the software, it is translated by Google Translate, so it may not be accurate, if you want to help me to translate the software, please contact me.\n감사합니다. SR-ATS를 사용해 주셔서 감사합니다. 소프트웨어에 한국어를 추가했지만 Google 번역으로 번역되었으므로 정확하지 않을 수 있습니다. 소프트웨어를 번역하는 데 도움을 주시려면 저에게 연락하십시오.",
 			"image":"false",
 			"draft":false
 		}
