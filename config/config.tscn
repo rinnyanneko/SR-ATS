@@ -52,6 +52,7 @@ dialog_text = "Error connect to server, check the server code and train number a
 script = ExtResource("5_tvbes")
 
 [node name="Train Data" type="Control" parent="."]
+visible = false
 anchors_preset = 0
 
 [node name="Server" type="OptionButton" parent="Train Data"]
@@ -201,7 +202,6 @@ text = "Save"
 script = ExtResource("8_saujo")
 
 [node name="Credits" type="Control" parent="."]
-visible = false
 anchors_preset = 0
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Credits"]
@@ -218,7 +218,6 @@ Icons:
 SDK and APIs:
 	[url=https://wiki.simrail.eu/API/API-Introduction]SimRail Trains, Servers API[/url]
 	[url=https://sourceforge.net/projects/vjoystick/]vJoy SDK[/url]
-
 	[url=https://github.com/doceazedo/godot_wry]WRY[/url]
 To contribute, please contact me via Discord(@rinnyanneko)
 
