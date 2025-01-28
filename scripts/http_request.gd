@@ -7,8 +7,8 @@ var cfg = ConfigFile.new()
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	cfg.load("res://config.cfg")
-	if cfg.get_value("Train Data", "server") != "127":
+	cfg.load("user://config.cfg")
+	if cfg.get_value("Train Data", "server", "null") != "127":
 		while(true):
 			print("getting data from server...")
 			var value = request("https://panel.simrail.eu:8084/trains-open?serverCode=" + cfg.get_value("Train Data", "server"))
@@ -43,7 +43,7 @@ func _on_request_completed(result: int, response_code: int, headers: PackedStrin
 		if data["ControlledBySteamID"] != null:
 			$"..".ControlledBySteamID = data["ControlledBySteamID"]
 		else:
-			$"..".ControlledBySteamID = "<null>"
+			$"..".ControlledBySteamID = "null"
 		$"..".InBorderStationArea = data["InBorderStationArea"]
 		$"..".Latititute = data["Latititute"]
 		$"..".Longitute = data["Longitute"]

@@ -8,7 +8,7 @@ var cfg = ConfigFile.new()
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	cfg.load("res://config.cfg")
+	cfg.load("user://config.cfg")
 	$RichTextLabel.text = tr("SERVER")
 	$"../TrainNumber/RichTextLabel".text = tr("TRAIN_NUMBER")
 	$"../Save".text = tr("SAVE")

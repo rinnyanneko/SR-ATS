@@ -13,9 +13,9 @@ config_version=5
 config/name="SR-ATS"
 config/version="0.0.10.1"
 run/main_scene="res://EULA.tscn"
+config/features=PackedStringArray("4.3", "C#", "GL Compatibility")
 boot_splash/image="res://SR-ATS.png"
 boot_splash/fullsize=false
-config/features=PackedStringArray("4.3", "C#", "GL Compatibility")
 config/icon="res://SR-ATS.png"
 
 [debug]

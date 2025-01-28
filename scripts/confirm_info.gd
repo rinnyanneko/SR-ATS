@@ -1,6 +1,6 @@
 # SR-ATS
 # https://github.com/rinnyanneko/SR-ATS
-# Copyright © 2024 rinnyanneko. All rights reserved.
+# Copyright © 2025 rinnyanneko. All rights reserved.
 
 extends ConfirmationDialog
 var cfg = ConfigFile.new()
@@ -15,9 +15,9 @@ func _process(delta: float) -> void:
 	pass
 
 func run(atsmode: String):
-	cfg.load("res://config.cfg")
+	cfg.load("user://config.cfg")
 	self.atsmode = atsmode
-	self.dialog_text = tr("CONFIRM_TEXT").format({server = cfg.get_value("Train Data", "server"), trainNumber = cfg.get_value("Train Data", "trainNumber")})
+	self.dialog_text = tr("CONFIRM_TEXT").format({server = cfg.get_value("Train Data", "server", "null"), trainNumber = cfg.get_value("Train Data", "trainNumber", "null")})
 	print(self.dialog_text)
 	print("Confirm?")
 	self.ok_button_text = tr("CONFIRM")

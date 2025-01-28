@@ -17,8 +17,8 @@ func _process(delta: float) -> void:
 	pass
 
 func check_for_update():
-	cfg.load("res://config.cfg")
-	if cfg.get_value("General", "UpdateMirror") == "GitHub":
+	cfg.load("user://config.cfg")
+	if cfg.get_value("General", "UpdateMirror", "GitHub") == "GitHub":
 		var value = request("https://raw.githubusercontent.com/rinnyanneko/SR-ATS/refs/heads/main/news/news.json")
 	elif cfg.get_value("General", "UpdateMirror") == "GitCode":
 		var value = request("https://raw.gitcode.com/rinnyanneko/SR-ATS/raw/main/news/news.json")
@@ -29,7 +29,7 @@ func _on_request_completed(result: int, response_code: int, headers: PackedStrin
 	if response_code == 200:
 		$"..".visible = true
 		var json = JSON.parse_string(body.get_string_from_utf8())
-		if cfg.get_value("General", "UpdateChannel") == "Beta":
+		if cfg.get_value("General", "UpdateChannel", "Stable") == "Beta":
 			if json["latest-beta"] != $"../../version".text:
 				$"..".dialog_text = tr("NEW_BETA_UPDATE").format({"version" : json["latest-beta"]})
 				update_beta = true

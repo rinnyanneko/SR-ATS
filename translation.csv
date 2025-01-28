@@ -23,3 +23,4 @@ SERVER_NOT_FOUND,The server does not exist,サーバーが存在しません,伺
 CONNECTION_ERROR,An error occurred while connecting to the server,サーバーへの接続中にエラーが発生しました,連接到伺服器時發生錯誤,连接到服务器时发生错误,서버에 연결하는 중에 오류가 발생했습니다.
 CONNECTION_TIMEOUT,Connection timeout,接続タイムアウト,連線逾時,连线逾时,연결 시간 초과
 ENTERED_TRAIN_DATA,Server: {server} Train number: {trainNumber},サーバー：{server} 列車番号：{trainNumber},伺服器: {server} 車次: {trainNumber},服务器: {server} 车次: {trainNumber},서버: {server} 열차 번호: {trainNumber}
+OPEN_APP_USR_DIR,Open application user directory,ソフトウェアのユーザーディレクトリを開く,開啟軟體使用者目錄,打开软件用户目录,소프트웨어 사용자 디렉터리 열기

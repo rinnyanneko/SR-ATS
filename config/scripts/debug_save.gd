@@ -7,7 +7,7 @@ var cfg = ConfigFile.new()
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	cfg.load("res://config.cfg")
+	cfg.load("user://config.cfg")
 	if cfg.get_value("System", "Debug"):$"../Debug frame".button_pressed = true
 
 
@@ -18,4 +18,4 @@ func _process(delta: float) -> void:
 
 func _on_pressed() -> void:
 	cfg.set_value("System", "Debug", $"../Debug frame".button_pressed)
-	cfg.save("res://config.cfg")
+	cfg.save("user://config.cfg")
