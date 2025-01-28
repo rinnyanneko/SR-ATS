@@ -8,7 +8,7 @@ var cfg = ConfigFile.new()
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	cfg.load("res://config.cfg")
+	cfg.load("user://config.cfg")
 	$"../Train Data".visible = true
 	$"../Debug".visible = false
 	$"../Credits".visible = false

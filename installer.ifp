@@ -3,7 +3,7 @@
 ProjectFileVersion = 1.1
 [General]
 Program name = SR-ATS
-Program version = 0.0.10.1
+Program version = 0.0.10.2b1
 Windows XP = 0
 Windows Server 2003 = 0
 Windows Vista = 0
@@ -27,7 +27,7 @@ Header image = <main>
 Show Label = 1
 VisualStylesEnabled = 1
 [Files]
-Installation path = <ApplicationData>\<Company>\<AppName>\
+Installation path = <ProgramFiles>\<Company>\<AppName>\
 Autcip = 1
 [Uninstall]
 Vwau = 0
@@ -47,7 +47,7 @@ ProgramArguments =
 Allowtc = 0
 Shortcut path = <Company>\<AppName>\
 [Serialoptions]
-Allows = 0
+Allows = 1
 Number = 1
 Mask = #####-#####-#####-#####
 [SplashScreen]
@@ -81,21 +81,24 @@ Execdlls = 1
 21
 22
 [Files/Dirs]
-C:\Users\rinny\Documents\GitHub\out\SR-ATS.console.exe
-59 KB
-exe
-C:\Users\rinny\Documents\GitHub\out\SR-ATS.exe
-80.3 MB
-exe
-C:\Users\rinny\Documents\GitHub\out\SR-ATS.pck
-2.2 MB
-pck
-C:\Users\rinny\Documents\GitHub\out\LICENSE\
-N/A
-[Folder]
-C:\Users\rinny\Documents\GitHub\out\godot_wry.dll
+C:\Users\rinny\Documents\GitHub\out\res\godot_wry.dll
 3.8 MB
 dll
+C:\Users\rinny\Documents\GitHub\out\res\SR-ATS.console.exe
+59 KB
+exe
+C:\Users\rinny\Documents\GitHub\out\res\SR-ATS.exe
+80.3 MB
+exe
+C:\Users\rinny\Documents\GitHub\out\res\SR-ATS.pck
+2.9 MB
+pck
+C:\Users\rinny\Documents\GitHub\out\res\LICENSE\
+N/A
+[Folder]
+C:\Users\rinny\Documents\GitHub\out\res\data_SR-ATS_windows_x86_64\
+N/A
+[Folder]
 [Licence_Begin]
 16530
 {\rtf1\ansi\ansicpg932\deff0\nouicompat{\fonttbl{\f0\fnil\fcharset0 Arial;}{\f1\fswiss\fcharset134 Microsoft YaHei;}{\f2\fnil Arial;}}
@@ -255,6 +258,6 @@ SR-ATS.console
 1
 [IFP_End]
 [Serials]
-8ZKV2-9R3MM-90VHA-0N73J
+0LZ4T-A57ZC-0IZSL-HD9ZU
 [Serials_End]
 [Commands]

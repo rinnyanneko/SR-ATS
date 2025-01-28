@@ -1,30 +1,30 @@
 # SR-ATS
 # https://github.com/rinnyanneko/SR-ATS
-# Copyright © 2024 rinnyanneko. All rights reserved.
+# Copyright © 2025 rinnyanneko. All rights reserved.
 
 extends TextureButton
 var cfg = ConfigFile.new()
 var sel = 0
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	cfg.load("res://config.cfg")
-	if cfg.get_value("System", "lang") == "en":
+	cfg.load("user://config.cfg")
+	if cfg.get_value("System", "lang", "null") == "en":
 		TranslationServer.set_locale("en")
 		print("English(en)!")
 		sel = 1
-	elif cfg.get_value("System", "lang") == "jp":
+	elif cfg.get_value("System", "lang", "null") == "jp":
 		TranslationServer.set_locale("jp")
 		print("Japanese(jp)!")
 		sel = 2
-	elif cfg.get_value("System", "lang") == "cmn":
+	elif cfg.get_value("System", "lang", "null") == "cmn":
 		TranslationServer.set_locale("cmn")
 		print("Tradition Chinese(cmn)!")
 		sel = 3
-	elif cfg.get_value("System", "lang") == "zh":
+	elif cfg.get_value("System", "lang", "null") == "zh":
 		TranslationServer.set_locale("zh")
 		print("Simplified Chinese(zh)!")
 		sel = 4
-	elif cfg.get_value("System", "lang") == "ko":
+	elif cfg.get_value("System", "lang", "null") == "ko":
 		TranslationServer.set_locale("ko")
 		print("Korean(ko)!")
 		sel = 0
@@ -58,7 +58,7 @@ func _on_pressed() -> void:
 		cfg.set_value("System", "lang", "ko")
 		TranslationServer.set_locale("ko")
 		print("Korean(ko)!")
-	cfg.save("res://config.cfg")
+	cfg.save("user://config.cfg")
 	sel += 1
 	if sel > 4:sel = 0
 	self.disabled = true

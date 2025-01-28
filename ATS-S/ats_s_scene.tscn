@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://b2fq5q2n383tm"]
+[gd_scene load_steps=24 format=3 uid="uid://b2fq5q2n383tm"]
 
 [ext_resource type="Script" path="res://ATS-S/scripts/scene.gd" id="1_573xv"]
 [ext_resource type="Texture2D" uid="uid://qi8arniw74fg" path="res://ATS-S/assets/ATS confirm.png" id="2_12kp5"]
@@ -22,6 +22,7 @@
 [ext_resource type="Script" path="res://ATS-S/scripts/ats_reset_cover.gd" id="19_6hvex"]
 [ext_resource type="Texture2D" uid="uid://bxf68lfemelrv" path="res://ATS-S/assets/Alarm reset.png" id="20_px1rn"]
 [ext_resource type="Script" path="res://ATS-S/scripts/debug_word.gd" id="23_7mp4i"]
+[ext_resource type="Script" path="res://scripts/ControlBrake.cs" id="23_hbtq8"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_573xv")
@@ -135,6 +136,13 @@ offset_right = 389.0
 offset_bottom = 648.0
 text = "Copyright © 2024 - 2025 rinnyanneko. All rights reserved."
 underline = 2
+
+[node name="Brake Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("23_hbtq8")
 
 [connection signal="pressed" from="ATS Confirm" to="AtsAlarmOn" method="_on_ats_confirm_pressed"]
 [connection signal="pressed" from="Return" to="Return" method="_on_pressed"]

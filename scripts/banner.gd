@@ -1,6 +1,6 @@
 # SR-ATS
 # https://github.com/rinnyanneko/SR-ATS
-# Copyright © 2024 rinnyanneko. All rights reserved.
+# Copyright © 2025 rinnyanneko. All rights reserved.
 
 extends TextureButton
 var clicked:int = 0
@@ -21,6 +21,6 @@ func _on_pressed() -> void:
 	if clicked == 4:
 		$"../DevEnabled".visible = true
 		cfg.set_value("System", "DevSetting", true)
-		cfg.save("res://config.cfg")
+		cfg.save("user://config.cfg")
 	else:
 		clicked += 1

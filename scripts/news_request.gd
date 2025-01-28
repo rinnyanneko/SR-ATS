@@ -9,7 +9,7 @@ var data
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	var value = request("https://gitlab.com/rinnyanneko/SR-ATS/-/raw/main/news/news.json")
+	request("https://gitlab.com/rinnyanneko/SR-ATS/-/raw/main/news/news.json")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -18,7 +18,7 @@ func _process(delta: float) -> void:
 
 func _on_request_completed(result: int, response_code: int, headers: PackedStringArray, body: PackedByteArray) -> void:
 	if response_code == 200:
-		cfg.load("res://config.cfg")
+		cfg.load("user://config.cfg")
 		json = JSON.parse_string(body.get_string_from_utf8())
 		data = json["data"]
 		for i in data:
@@ -28,16 +28,13 @@ func _on_request_completed(result: int, response_code: int, headers: PackedStrin
 		$"../news/RichTextLabel".text = data["text"]
 		$"../news".cancel_button_text = tr("CLOSE")
 		$"../news".ok_button_text = tr("DO_NOT_SHOW")
-		if data["image"] != "false":
-			$"../news/RichTextLabel".text += "[img]" + data["image"] + "[/img]"
-		print(json)
-		if data["type"] != "" and data["number"] > cfg.get_value("News", "NeverShow")  || 0 and not data["draft"]:
+		if data["type"] != "" and data["number"] > cfg.get_value("News", "NeverShow", 0)and not data["draft"]:
 			$"../news".visible = true
 
 
 func _on_news_confirmed() -> void:
 	cfg.set_value("News", "NeverShow", data["number"])
-	cfg.save("res://config.cfg")
+	cfg.save("user://config.cfg")
 	print("Never show this news")
 	$"../news".visible = false
 

@@ -1,6 +1,6 @@
 # SR-ATS
 # https://github.com/rinnyanneko/SR-ATS
-# Copyright © 2024 rinnyanneko. All rights reserved.
+# Copyright © 2025 rinnyanneko. All rights reserved.
 
 extends Button
 var cfg = ConfigFile.new()
@@ -9,15 +9,24 @@ var cfg = ConfigFile.new()
 func _ready() -> void:
 	self.disabled = true
 	await get_tree().create_timer(0.2).timeout
-	cfg.load("res://config.cfg")
+	cfg.load("user://config.cfg")
 	$"../Title".text = tr("READ_LICENSE")
+	match TranslationServer.get_locale():
+		"cmn":
+			$"../License".text = FileAccess.get_file_as_string("res://license/LICENSE_cmn.txt")
+		"ja":
+			$"../License".text = FileAccess.get_file_as_string("res://license/LICENSE_ja.txt")
+		"ko":
+			$"../License".text = FileAccess.get_file_as_string("res://license/LICENSE_ko.txt")
+		_:
+			$"../License".text = FileAccess.get_file_as_string("res://license/LICENSE_en.txt")
 	$"../License".text = FileAccess.get_file_as_string("res://license/LICENSE_" + TranslationServer.get_locale() + ".txt")
 	if $"../License".text == "":
 		$"../License".text = FileAccess.get_file_as_string("res://license/LICENSE_en.txt")
 	$"../DoNotShow".text = tr("DO_NOT_SHOW")
 	self.text = tr("AGREE_LICENSE")
 	timer()
-	if cfg.get_value("License", "DoNotShow") and cfg.get_value("License", "agree"):
+	if cfg.get_value("License", "DoNotShow", false) and cfg.get_value("License", "agree", false):
 		get_tree().change_scene_to_file("res://main.tscn")
 
 
@@ -32,7 +41,7 @@ func _on_pressed() -> void:
 	else:
 		cfg.set_value("License", "DoNotShow", false)
 	cfg.set_value("License", "agree", true)
-	cfg.save("res://config.cfg")
+	cfg.save("user://config.cfg")
 	get_tree().change_scene_to_file("res://main.tscn")
 
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dm01geiku0yxr"]
+[gd_scene load_steps=13 format=3 uid="uid://dm01geiku0yxr"]
 
 [ext_resource type="Texture2D" uid="uid://da26ervg41qj5" path="res://assets/return (Custom).png" id="1_ugf2m"]
 [ext_resource type="Script" path="res://scripts/return.gd" id="2_toyrf"]
@@ -10,6 +10,8 @@
 [ext_resource type="Script" path="res://config/scripts/update_channel.gd" id="6_r4fv4"]
 [ext_resource type="Script" path="res://config/scripts/update_mirror.gd" id="7_1llyc"]
 [ext_resource type="Script" path="res://config/scripts/debug_save.gd" id="8_saujo"]
+[ext_resource type="Script" path="res://config/scripts/open_app_dir.gd" id="9_iadgi"]
+[ext_resource type="Script" path="res://config/scripts/brake.gd" id="10_l3qj3"]
 
 [node name="Config" type="Control"]
 layout_mode = 3
@@ -64,6 +66,7 @@ offset_bottom = 138.0
 flat = true
 text_overrun_behavior = 1
 fit_to_longest_item = false
+allow_reselect = true
 script = ExtResource("3_rdhe2")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Train Data/Server"]
@@ -123,7 +126,6 @@ offset_bottom = 29.0
 text = "%"
 
 [node name="General" type="Control" parent="."]
-visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -180,6 +182,15 @@ offset_right = 596.0
 offset_bottom = 641.0
 text = "Save"
 
+[node name="OpenAppUsrDir" type="Button" parent="General"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 183.0
+offset_right = 125.0
+offset_bottom = 214.0
+text = "OPEN_APP_USR_DIR"
+script = ExtResource("9_iadgi")
+
 [node name="Debug" type="Control" parent="."]
 visible = false
 anchors_preset = 0
@@ -201,7 +212,17 @@ offset_bottom = 641.0
 text = "Save"
 script = ExtResource("8_saujo")
 
+[node name="Brake" type="Button" parent="Debug"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 142.0
+offset_right = 57.0
+offset_bottom = 173.0
+text = "Brake"
+script = ExtResource("10_l3qj3")
+
 [node name="Credits" type="Control" parent="."]
+visible = false
 anchors_preset = 0
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Credits"]
@@ -230,4 +251,6 @@ script = ExtResource("6_ixw2y")
 [connection signal="confirmed" from="RequestServers/ErrorMsg" to="RequestServers/ErrorMsg" method="_on_confirmed"]
 [connection signal="pressed" from="Train Data/Save" to="Train Data/Server" method="_on_save_button_pressed"]
 [connection signal="pressed" from="General/Save" to="General/UpdateMirror" method="_on_save_pressed"]
+[connection signal="pressed" from="General/OpenAppUsrDir" to="General/OpenAppUsrDir" method="_on_pressed"]
 [connection signal="pressed" from="Debug/Save" to="Debug/Save" method="_on_pressed"]
+[connection signal="pressed" from="Debug/Brake" to="Debug/Brake" method="_on_pressed"]

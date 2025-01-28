@@ -8,12 +8,12 @@ var cfg = ConfigFile.new()
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	cfg.load("res://config.cfg")
-	if cfg.get_value("General", "UpdateMirror") == "GitHub":self.selected = 0
+	cfg.load("user://config.cfg")
+	if cfg.get_value("General", "UpdateMirror", "GitHub") == "GitHub":self.selected = 0
 	elif cfg.get_value("General", "UpdateMirror") == "GitLab":self.selected = 1
 	elif cfg.get_value("General", "UpdateMirror") == "GitCode":self.selected = 2
 	$RichTextLabel.text = tr("UPDATE_MIRROR")
-	
+
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

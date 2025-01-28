@@ -84,11 +84,11 @@ script = ExtResource("12_qinf2")
 
 [node name="version" type="LinkButton" parent="."]
 layout_mode = 0
-offset_left = 1084.0
+offset_left = 1065.0
 offset_top = 625.0
 offset_right = 1152.0
 offset_bottom = 648.0
-text = "v0.0.10.1"
+text = "v0.0.10.2b1"
 underline = 1
 
 [node name="copyright" type="LinkButton" parent="."]
