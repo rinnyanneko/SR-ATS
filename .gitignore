@@ -19,4 +19,5 @@ config.cfg
 *.tmp
 android/
 .DS_Store
+
 .vs/

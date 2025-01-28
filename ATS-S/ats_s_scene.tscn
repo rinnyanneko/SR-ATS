@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://b2fq5q2n383tm"]
+[gd_scene load_steps=24 format=3 uid="uid://b2fq5q2n383tm"]
 
 [ext_resource type="Script" path="res://ATS-S/scripts/scene.gd" id="1_573xv"]
 [ext_resource type="Texture2D" uid="uid://qi8arniw74fg" path="res://ATS-S/assets/ATS confirm.png" id="2_12kp5"]
