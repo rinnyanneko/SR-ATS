@@ -8,10 +8,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="vJoyInterfaceWrap">
-      <HintPath>scripts\dlls\vJoyInterfaceWrap.dll</HintPath>
+      <HintPath>vJoyInterfaceWrap.dll</HintPath>
     </Reference>
     <Reference Include="vJoyInterface">
-      <HintPath>scripts\dlls\vJoyInterface.dll</HintPath>
+      <HintPath>vJoyInterface.dll</HintPath>
     </Reference>
   </ItemGroup>
 </Project>
