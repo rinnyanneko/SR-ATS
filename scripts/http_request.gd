@@ -11,12 +11,14 @@ func _ready() -> void:
 	if cfg.get_value("Train Data", "server", "null") != "127":
 		while(true):
 			print("getting data from server...")
-			var value = request("https://panel.simrail.eu:8084/trains-open?serverCode=" + cfg.get_value("Train Data", "server"))
+			var value = request("https://panel.simrail.eu:8084/trains-open?serverCode=" + cfg.get_value("Train Data", "server", "null"))
 			if value == ERR_TIMEOUT:
 				printerr("REQUEST TIMEOUT")
 				$"../ErrorMsg".connection_timeout()
 			elif value == ERR_BUSY:
 				printerr("[HTTP REQUEST ERROR]BUSY")
+			elif value == ERR_UNAVAILABLE:
+				printerr("[HTTP REQUEST ERROR]UNAVAILABLE")
 			elif value != OK:
 				printerr("[HTTP REQUEST ERROR]"+str(value))
 			await get_tree().create_timer(2.5).timeout

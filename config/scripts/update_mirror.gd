@@ -31,4 +31,4 @@ func _on_save_pressed() -> void:
 		cfg.set_value("General", "UpdateChannel", "Stable")
 	else:
 		cfg.set_value("General", "UpdateChannel", "Beta")
-	cfg.save("res://config.cfg")
+	cfg.save("user://config.cfg")

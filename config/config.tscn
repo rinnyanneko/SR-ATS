@@ -54,14 +54,13 @@ dialog_text = "Error connect to server, check the server code and train number a
 script = ExtResource("5_tvbes")
 
 [node name="Train Data" type="Control" parent="."]
-visible = false
 anchors_preset = 0
 
 [node name="Server" type="OptionButton" parent="Train Data"]
 layout_mode = 2
 offset_left = 81.0
 offset_top = 107.0
-offset_right = 152.0
+offset_right = 251.0
 offset_bottom = 138.0
 flat = true
 text_overrun_behavior = 1
@@ -79,10 +78,10 @@ text = "Server"
 
 [node name="TrainNumber" type="LineEdit" parent="Train Data"]
 layout_mode = 2
-offset_left = 289.0
-offset_top = 108.0
-offset_right = 409.0
-offset_bottom = 139.0
+offset_left = 130.0
+offset_top = 145.0
+offset_right = 250.0
+offset_bottom = 176.0
 placeholder_text = "Train Number"
 max_length = 6
 
@@ -103,10 +102,10 @@ text = "Save"
 
 [node name="Braking Ratio" type="LineEdit" parent="Train Data"]
 layout_mode = 0
-offset_left = 536.0
-offset_top = 108.0
-offset_right = 654.0
-offset_bottom = 139.0
+offset_left = 129.0
+offset_top = 189.0
+offset_right = 247.0
+offset_bottom = 220.0
 placeholder_text = "Braking Ratio"
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Train Data/Braking Ratio"]
@@ -126,6 +125,7 @@ offset_bottom = 29.0
 text = "%"
 
 [node name="General" type="Control" parent="."]
+visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
