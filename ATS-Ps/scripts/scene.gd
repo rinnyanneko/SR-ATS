@@ -1,11 +1,12 @@
 # SR-ATS
 # https://github.com/rinnyanneko/SR-ATS
-# Copyright © 2024 rinnyanneko. All rights reserved.
+# Copyright © 2025 rinnyanneko. All rights reserved.
 
 extends Node2D
-var alarm = false
-var chime = false
-var alarmHard = false
+var em_brake = false
+var brake_disable = false
+var pattern_generated = false
+var pattern_speed = 32767
 var signalInFront = ""
 
 var VDDelayedTimetableIndex = -1.0
