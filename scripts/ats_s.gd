@@ -12,6 +12,9 @@ func _ready() -> void:
 		$"../ATS-S".disabled = false
 		#$"../ATS-P".disabled = false
 		#$"../ATS-Ps".disabled = false
+		if cfg.get_value("System", "DevSetting", false):
+			$"../ATS-P".disabled = false
+			#$"../ATS-Ps".disabled = false
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
