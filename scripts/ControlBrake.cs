@@ -8,14 +8,14 @@ using vJoyInterfaceWrap;
 
 public partial class ControlBrake: Node
 {
-    [Signal]
-    public delegate void BrakeReadyEventHandler();
+	[Signal]
+	public delegate void BrakeReadyEventHandler();
 
-    vJoy joystick = new vJoy();
+	vJoy joystick = new vJoy();
 	uint id = 1;
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
-    {
+	{
 		try
 		{
 			var prt = "";
@@ -81,7 +81,7 @@ public partial class ControlBrake: Node
 		{
 			GD.PrintErr(e.Message);
 		}
-    }
+	}
 	public void _on_tree_exiting(){
 		joystick.RelinquishVJD(id);
 		GD.Print("Exiting Tree");

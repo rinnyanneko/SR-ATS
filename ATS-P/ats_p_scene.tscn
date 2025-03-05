@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://du8k1m6t8gk8d"]
+[gd_scene load_steps=17 format=3 uid="uid://du8k1m6t8gk8d"]
 
 [ext_resource type="Script" uid="uid://nktgoyxehop6" path="res://ATS-P/scripts/scene.gd" id="1_1rnh6"]
 [ext_resource type="Texture2D" uid="uid://da26ervg41qj5" path="res://assets/return (Custom).png" id="1_gvy33"]
@@ -9,10 +9,13 @@
 [ext_resource type="Script" uid="uid://iscloj5yswc3" path="res://scripts/ControlBrake.cs" id="7_dghsc"]
 [ext_resource type="Script" uid="uid://dtgjquilxngum" path="res://ATS-P/scripts/indicators.gd" id="8_4cwyc"]
 [ext_resource type="Texture2D" uid="uid://ddsxkn4a3v5oj" path="res://ATS-P/assets/Ppower.png" id="8_4jskg"]
-[ext_resource type="Texture2D" uid="uid://d1ftak1vip1u7" path="res://ATS-P/assets/ApproachPattern.png" id="9_4cwyc"]
-[ext_resource type="Texture2D" uid="uid://bau7j0yxxmols" path="res://ATS-P/assets/Brake.png" id="10_gypl4"]
-[ext_resource type="Texture2D" uid="uid://cuh16f88gu8r0" path="res://ATS-P/assets/BrakeOpen.png" id="11_s1nov"]
-[ext_resource type="Texture2D" uid="uid://c2p1ohtj1dxvf" path="res://ATS-P/assets/ATSp.png" id="12_ksjca"]
+[ext_resource type="Texture2D" uid="uid://vyfrml7kfhc4" path="res://ATS-P/assets/Ppower_dim.png" id="9_ksjca"]
+[ext_resource type="Texture2D" uid="uid://45t3nwtixwog" path="res://ATS-P/assets/ApproachPattern_dim.png" id="10_hg6yp"]
+[ext_resource type="Texture2D" uid="uid://c0dd1qu2bwve6" path="res://ATS-P/assets/Brake_dim.png" id="11_sak2e"]
+[ext_resource type="Texture2D" uid="uid://buokp5i4fcfpa" path="res://ATS-P/assets/BrakeOpen_dim.png" id="12_xpqym"]
+[ext_resource type="Texture2D" uid="uid://tfwaofrhpcal" path="res://ATS-P/assets/ATSp_dim.png" id="13_6ftik"]
+[ext_resource type="AudioStream" uid="uid://cc5n8rlhre7x" path="res://assets/ATCChime.wav" id="14_gypl4"]
+[ext_resource type="Script" uid="uid://17cmm5sd6keo" path="res://ATS-P/scripts/Main.cs" id="16_gtghf"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_1rnh6")
@@ -62,27 +65,33 @@ script = ExtResource("8_4cwyc")
 
 [node name="Ppower" type="Sprite2D" parent="Indicators"]
 position = Vector2(201, 292)
-texture = ExtResource("8_4jskg")
+texture = ExtResource("9_ksjca")
 
 [node name="ApproachPattern" type="Sprite2D" parent="Indicators"]
 position = Vector2(335, 292)
-texture = ExtResource("9_4cwyc")
+texture = ExtResource("10_hg6yp")
 
 [node name="Brake" type="Sprite2D" parent="Indicators"]
 position = Vector2(487, 291)
-texture = ExtResource("10_gypl4")
+texture = ExtResource("11_sak2e")
 
 [node name="BrakeOpen" type="Sprite2D" parent="Indicators"]
 position = Vector2(630, 289)
-texture = ExtResource("11_s1nov")
+texture = ExtResource("12_xpqym")
 
 [node name="ATSp" type="Sprite2D" parent="Indicators"]
 position = Vector2(779, 288)
-texture = ExtResource("12_ksjca")
+texture = ExtResource("13_6ftik")
 
-[node name="fail" type="Sprite2D" parent="Indicators"]
+[node name="Fail" type="Sprite2D" parent="Indicators"]
 position = Vector2(934, 287)
 texture = ExtResource("8_4jskg")
+
+[node name="Bell" type="AudioStreamPlayer" parent="Indicators"]
+stream = ExtResource("14_gypl4")
+
+[node name="Main" type="Node" parent="."]
+script = ExtResource("16_gtghf")
 
 [connection signal="pressed" from="Return" to="Return" method="_on_pressed"]
 [connection signal="confirmed" from="ErrorMsg" to="ErrorMsg" method="_on_confirmed"]

@@ -13,6 +13,8 @@ const BrakeOpenON = preload("res://ATS-P/assets/BrakeOpen.png")
 const BrakeOpenOFF = preload("res://ATS-P/assets/BrakeOpen_dim.png")
 const ATSpON = preload("res://ATS-P/assets/ATSp.png")
 const ATSpOFF = preload("res://ATS-P/assets/ATSp_dim.png")
+#const FailON = preload("res://ATS-P/assets/Fail.png")
+#const FailOFF = preload("res://ATS-P/assets/Fail_dim.png")
 
 func Ppower(status:bool):
 	if status:
@@ -45,4 +47,12 @@ func ATSp(status:bool):
 		$ATSp.texture = ATSpOFF
 
 func fail(status:bool):
-	pass
+	if status:
+		pass
+		#$Fail.texture = FailON
+	else:
+		pass
+		#$Fail.texture = FailOFF
+
+func playBell():
+	$Bell.play()
