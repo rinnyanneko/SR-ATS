@@ -1,11 +1,11 @@
 [gd_scene load_steps=7 format=3 uid="uid://tbxyrr82s74d"]
 
 [ext_resource type="Texture2D" uid="uid://da26ervg41qj5" path="res://assets/return (Custom).png" id="1_q345d"]
-[ext_resource type="Script" path="res://config/ControlBrake/scripts/return.gd" id="2_0ba03"]
-[ext_resource type="Script" path="res://scripts/ControlBrake.cs" id="3_5iu3e"]
-[ext_resource type="Script" path="res://config/ControlBrake/scripts/brake.gd" id="4_kkqmt"]
-[ext_resource type="Script" path="res://config/ControlBrake/scripts/release.gd" id="5_5t0la"]
-[ext_resource type="Script" path="res://config/ControlBrake/scripts/emergency.gd" id="6_st05f"]
+[ext_resource type="Script" uid="uid://cdenlx5mhwh5q" path="res://config/ControlBrake/scripts/return.gd" id="2_0ba03"]
+[ext_resource type="Script" uid="uid://iscloj5yswc3" path="res://scripts/ControlBrake.cs" id="3_5iu3e"]
+[ext_resource type="Script" uid="uid://bmkv4ceeg347m" path="res://config/ControlBrake/scripts/brake.gd" id="4_kkqmt"]
+[ext_resource type="Script" uid="uid://bxsn44v4jw0bp" path="res://config/ControlBrake/scripts/release.gd" id="5_5t0la"]
+[ext_resource type="Script" uid="uid://deq0ck4v7ujes" path="res://config/ControlBrake/scripts/emergency.gd" id="6_st05f"]
 
 [node name="ControlBrake" type="Node2D"]
 

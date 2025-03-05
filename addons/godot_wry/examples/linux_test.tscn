@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://d0vbu5t4xqnfy"]
 
-[ext_resource type="Script" path="res://addons/godot_wry/examples/linux_test.gd" id="1_nkwlq"]
-[ext_resource type="Script" path="res://addons/godot_wry/examples/csg_mesh_3d.gd" id="1_yve5c"]
+[ext_resource type="Script" uid="uid://bfuvuh6ckku53" path="res://addons/godot_wry/examples/linux_test.gd" id="1_nkwlq"]
+[ext_resource type="Script" uid="uid://dhpaud40ff85v" path="res://addons/godot_wry/examples/csg_mesh_3d.gd" id="1_yve5c"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_mb2x8"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
