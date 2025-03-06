@@ -7,11 +7,11 @@ var cfg = ConfigFile.new()
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	cfg.load("user://config.cfg")
 	self.disabled = true
 	if cfg.get_value("License", "DoNotShow", false) and cfg.get_value("License", "agree", false):
 		get_tree().change_scene_to_file("res://main.tscn")
 	await get_tree().create_timer(0.2).timeout
-	cfg.load("user://config.cfg")
 	$"../Title".text = tr("READ_LICENSE")
 	match TranslationServer.get_locale():
 		"cmn":

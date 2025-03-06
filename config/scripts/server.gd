@@ -30,4 +30,4 @@ func _on_save_button_pressed() -> void:
 		cfg.set_value("Train Data", "brakingRatio", $"../Braking Ratio".text)
 		cfg.set_value("Train Data", "brakeDistance", 480/(float($"../Braking Ratio".text)))
 		cfg.set_value("Train Data", "decelRate", 0.805*(float($"../Braking Ratio".text)**2))
-	cfg.save("res://config.cfg")
+	cfg.save("user://config.cfg")

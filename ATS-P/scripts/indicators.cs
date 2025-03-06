@@ -1,9 +1,12 @@
+// SR-ATS
+// https://github.com/rinnyanneko/SR-ATS
+// Copyright © 2025 rinnyanneko. All rights reserved.
+
 using Godot;
 
-public partial class SRATS : Node2D
-{
-    private readonly Texture2D _pPowerON = GD.Load<Texture2D>("res://ATS-P/assets/ATSp.png");
-    private readonly Texture2D _pPowerOFF = GD.Load<Texture2D>("res://ATS-P/assets/ATSp_dim.png");
+public partial class Indicators : Node2D{
+    private readonly Texture2D _pPowerON = GD.Load<Texture2D>("res://ATS-P/assets/Ppower.png");
+    private readonly Texture2D _pPowerOFF = GD.Load<Texture2D>("res://ATS-P/assets/Ppower_dim.png");
     private readonly Texture2D _approachPatternON = GD.Load<Texture2D>("res://ATS-P/assets/ApproachPattern.png");
     private readonly Texture2D _approachPatternOFF = GD.Load<Texture2D>("res://ATS-P/assets/ApproachPattern_dim.png");
     private readonly Texture2D _brakeON = GD.Load<Texture2D>("res://ATS-P/assets/Brake.png");
@@ -23,8 +26,7 @@ public partial class SRATS : Node2D
     private Sprite2D _fail;
     private AudioStreamPlayer _bell;
 
-    public override void _Ready()
-    {
+    public override void _Ready(){
         _pPower = GetNode<Sprite2D>("Ppower");
         _approachPattern = GetNode<Sprite2D>("ApproachPattern");
         _brake = GetNode<Sprite2D>("Brake");
@@ -34,38 +36,31 @@ public partial class SRATS : Node2D
         _bell = GetNode<AudioStreamPlayer>("Bell");
     }
 
-    public void Ppower(bool status)
-    {
+    public void Ppower(bool status){
         _pPower.Texture = status ? _pPowerON : _pPowerOFF;
     }
 
-    public void ApproachPattern(bool status)
-    {
+    public void ApproachPattern(bool status){
         _approachPattern.Texture = status ? _approachPatternON : _approachPatternOFF;
     }
 
-    public void Brake(bool status)
-    {
+    public void Brake(bool status){
         _brake.Texture = status ? _brakeON : _brakeOFF;
     }
 
-    public void BrakeOpen(bool status)
-    {
+    public void BrakeOpen(bool status){
         _brakeOpen.Texture = status ? _brakeOpenON : _brakeOpenOFF;
     }
 
-    public void ATSp(bool status)
-    {
+    public void ATSp(bool status){
         _aTSp.Texture = status ? _aTSpON : _aTSpOFF;
     }
 
-    public void Fail(bool status)
-    {
+    public void Fail(bool status){
         _fail.Texture = status ? _failON : _failOFF;
     }
 
-    public void PlayBell()
-    {
+    public void PlayBell(){
         _bell.Play();
     }
 }

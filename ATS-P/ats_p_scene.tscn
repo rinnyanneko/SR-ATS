@@ -1,11 +1,11 @@
 [gd_scene load_steps=17 format=3 uid="uid://du8k1m6t8gk8d"]
 
-[ext_resource type="Script" uid="uid://nktgoyxehop6" path="res://ATS-P/scripts/scene.gd" id="1_1rnh6"]
 [ext_resource type="Texture2D" uid="uid://da26ervg41qj5" path="res://assets/return (Custom).png" id="1_gvy33"]
+[ext_resource type="Script" uid="uid://blitktlm74x4" path="res://ATS-P/scripts/Scene.cs" id="1_ksjca"]
 [ext_resource type="Script" uid="uid://w01f4pou6tm0" path="res://scripts/return.gd" id="2_f4fvo"]
 [ext_resource type="Script" uid="uid://cyfyme4s63wpp" path="res://scripts/http_request.gd" id="4_7g7on"]
 [ext_resource type="Script" uid="uid://dlf4goaleqo1i" path="res://scripts/request_error_msg.gd" id="5_hc38h"]
-[ext_resource type="Script" uid="uid://dcrwb74qrjfss" path="res://ATS-P/scripts/debug_word.gd" id="6_ntm4u"]
+[ext_resource type="Script" uid="uid://dtdsnhyiew44g" path="res://ATS-P/scripts/DebugWord.cs" id="6_ksjca"]
 [ext_resource type="Script" uid="uid://iscloj5yswc3" path="res://scripts/ControlBrake.cs" id="7_dghsc"]
 [ext_resource type="Script" uid="uid://dtgjquilxngum" path="res://ATS-P/scripts/Indicators.cs" id="8_ksjca"]
 [ext_resource type="Texture2D" uid="uid://vyfrml7kfhc4" path="res://ATS-P/assets/Ppower_dim.png" id="9_ksjca"]
@@ -18,7 +18,7 @@
 [ext_resource type="Script" uid="uid://17cmm5sd6keo" path="res://ATS-P/scripts/Main.cs" id="16_gtghf"]
 
 [node name="Node2D" type="Node2D"]
-script = ExtResource("1_1rnh6")
+script = ExtResource("1_ksjca")
 
 [node name="Return" type="TextureButton" parent="."]
 offset_right = 40.0
@@ -51,7 +51,7 @@ offset_top = 311.0
 offset_right = 1151.0
 offset_bottom = 645.0
 text = "Debug frame"
-script = ExtResource("6_ntm4u")
+script = ExtResource("6_ksjca")
 
 [node name="Brake Control" type="Control" parent="."]
 layout_mode = 3
