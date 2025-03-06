@@ -8,14 +8,14 @@ using vJoyInterfaceWrap;
 
 public partial class ControlBrake: Node
 {
-    [Signal]
-    public delegate void BrakeReadyEventHandler();
+	[Signal]
+	public delegate void BrakeReadyEventHandler();
 
-    vJoy joystick = new vJoy();
+	vJoy joystick = new vJoy();
 	uint id = 1;
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
-    {
+	{
 		try
 		{
 			var prt = "";
@@ -67,9 +67,10 @@ public partial class ControlBrake: Node
 			prt = String.Format("Device[{0}]: Buttons={1}; DiscPOVs:{2}; ContPOVs:{3}", id, nBtn, nDPov, nCPov);
 			GD.Print(prt);
 			// Acquire the target
-			if ((status == VjdStat.VJD_STAT_OWN) ||
-					((status == VjdStat.VJD_STAT_FREE) && (!joystick.AcquireVJD(id))))
+			if ((status == VjdStat.VJD_STAT_FREE) && (!joystick.AcquireVJD(id)))
 				prt = String.Format("Failed to acquire vJoy device number {0}.", id);
+			else if (status == VjdStat.VJD_STAT_OWN)
+				prt = String.Format("vJoy device number {0} is aquired by self already.", id);
 			else
 				prt = String.Format("Acquired: vJoy device number {0}.", id);
 			GD.Print(prt);
@@ -80,7 +81,7 @@ public partial class ControlBrake: Node
 		{
 			GD.PrintErr(e.Message);
 		}
-    }
+	}
 	public void _on_tree_exiting(){
 		joystick.RelinquishVJD(id);
 		GD.Print("Exiting Tree");
@@ -90,13 +91,40 @@ public partial class ControlBrake: Node
 	public override void _Process(double delta)
 	{
 	}
-	public void brake(){
-		GD.Print("brake");
-	}
 	public void release(){
+		try{
+			//joystick.SetAxis(0, id, HID_USAGES.HID_USAGE_Z);
+			joystick.SetBtn(true, id, 5);
+			System.Threading.Thread.Sleep(100);
+			joystick.SetBtn(false, id, 5);
+		}
+		catch (Exception e)
+		{
+			GD.PrintErr(e.Message);
+		}
 		GD.Print("release");
 	}
+	public void brake(){
+		try{
+			//joystick.SetAxis(90, id, HID_USAGES.HID_USAGE_Z);
+			joystick.SetBtn(true, id, 7);
+			System.Threading.Thread.Sleep(100);
+			joystick.SetBtn(false, id, 7);
+		}
+		catch (Exception e)
+		{
+			GD.PrintErr(e.Message);
+		}
+		GD.Print("brake");
+	}
 	public void emergency_brake(){
+		try{
+			joystick.SetAxis(100, id, HID_USAGES.HID_USAGE_Z);
+		}
+		catch (Exception e)
+		{
+			GD.PrintErr(e.Message);
+		}
 		GD.Print("emergency brake");
 	}
 }

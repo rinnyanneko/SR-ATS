@@ -1,14 +1,24 @@
-[gd_scene load_steps=7 format=3 uid="uid://du8k1m6t8gk8d"]
+[gd_scene load_steps=17 format=3 uid="uid://du8k1m6t8gk8d"]
 
-[ext_resource type="Script" path="res://ATS-P/scripts/scene.gd" id="1_1rnh6"]
 [ext_resource type="Texture2D" uid="uid://da26ervg41qj5" path="res://assets/return (Custom).png" id="1_gvy33"]
-[ext_resource type="Script" path="res://scripts/return.gd" id="2_f4fvo"]
-[ext_resource type="Script" path="res://scripts/http_request.gd" id="4_7g7on"]
-[ext_resource type="Script" path="res://scripts/request_error_msg.gd" id="5_hc38h"]
-[ext_resource type="Script" path="res://ATS-P/scripts/debug_word.gd" id="6_ntm4u"]
+[ext_resource type="Script" uid="uid://blitktlm74x4" path="res://ATS-P/scripts/Scene.cs" id="1_ksjca"]
+[ext_resource type="Script" uid="uid://w01f4pou6tm0" path="res://scripts/return.gd" id="2_f4fvo"]
+[ext_resource type="Script" uid="uid://cyfyme4s63wpp" path="res://scripts/http_request.gd" id="4_7g7on"]
+[ext_resource type="Script" uid="uid://dlf4goaleqo1i" path="res://scripts/request_error_msg.gd" id="5_hc38h"]
+[ext_resource type="Script" uid="uid://dtdsnhyiew44g" path="res://ATS-P/scripts/DebugWord.cs" id="6_ksjca"]
+[ext_resource type="Script" uid="uid://iscloj5yswc3" path="res://scripts/ControlBrake.cs" id="7_dghsc"]
+[ext_resource type="Script" uid="uid://dtgjquilxngum" path="res://ATS-P/scripts/Indicators.cs" id="8_ksjca"]
+[ext_resource type="Texture2D" uid="uid://vyfrml7kfhc4" path="res://ATS-P/assets/Ppower_dim.png" id="9_ksjca"]
+[ext_resource type="Texture2D" uid="uid://45t3nwtixwog" path="res://ATS-P/assets/ApproachPattern_dim.png" id="10_hg6yp"]
+[ext_resource type="Texture2D" uid="uid://c0dd1qu2bwve6" path="res://ATS-P/assets/Brake_dim.png" id="11_sak2e"]
+[ext_resource type="Texture2D" uid="uid://buokp5i4fcfpa" path="res://ATS-P/assets/BrakeOpen_dim.png" id="12_xpqym"]
+[ext_resource type="Texture2D" uid="uid://tfwaofrhpcal" path="res://ATS-P/assets/ATSp_dim.png" id="13_6ftik"]
+[ext_resource type="Texture2D" uid="uid://dmgadov4axub" path="res://ATS-P/assets/Fail_dim.png" id="14_ksjca"]
+[ext_resource type="AudioStream" uid="uid://cjwxqnyfu0gg4" path="res://assets/ATSPChime.mp3" id="15_ksjca"]
+[ext_resource type="Script" uid="uid://17cmm5sd6keo" path="res://ATS-P/scripts/Main.cs" id="16_gtghf"]
 
 [node name="Node2D" type="Node2D"]
-script = ExtResource("1_1rnh6")
+script = ExtResource("1_ksjca")
 
 [node name="Return" type="TextureButton" parent="."]
 offset_right = 40.0
@@ -35,12 +45,53 @@ text = "Copyright © 2024 - 2025 rinnyanneko. All rights reserved."
 underline = 2
 
 [node name="Debug frame" type="RichTextLabel" parent="."]
-offset_left = 73.0
-offset_top = -1.0
-offset_right = 482.0
-offset_bottom = 333.0
+top_level = true
+offset_left = 742.0
+offset_top = 311.0
+offset_right = 1151.0
+offset_bottom = 645.0
 text = "Debug frame"
-script = ExtResource("6_ntm4u")
+script = ExtResource("6_ksjca")
+
+[node name="Brake Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("7_dghsc")
+
+[node name="Indicators" type="Node2D" parent="."]
+script = ExtResource("8_ksjca")
+
+[node name="Ppower" type="Sprite2D" parent="Indicators"]
+position = Vector2(201, 292)
+texture = ExtResource("9_ksjca")
+
+[node name="ApproachPattern" type="Sprite2D" parent="Indicators"]
+position = Vector2(335, 292)
+texture = ExtResource("10_hg6yp")
+
+[node name="Brake" type="Sprite2D" parent="Indicators"]
+position = Vector2(487, 291)
+texture = ExtResource("11_sak2e")
+
+[node name="BrakeOpen" type="Sprite2D" parent="Indicators"]
+position = Vector2(630, 289)
+texture = ExtResource("12_xpqym")
+
+[node name="ATSp" type="Sprite2D" parent="Indicators"]
+position = Vector2(779, 288)
+texture = ExtResource("13_6ftik")
+
+[node name="Fail" type="Sprite2D" parent="Indicators"]
+position = Vector2(934, 287)
+texture = ExtResource("14_ksjca")
+
+[node name="Bell" type="AudioStreamPlayer" parent="Indicators"]
+stream = ExtResource("15_ksjca")
+
+[node name="Main" type="Node" parent="."]
+script = ExtResource("16_gtghf")
 
 [connection signal="pressed" from="Return" to="Return" method="_on_pressed"]
 [connection signal="confirmed" from="ErrorMsg" to="ErrorMsg" method="_on_confirmed"]

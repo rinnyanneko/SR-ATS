@@ -1,10 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://bbdh4fakp8omv"]
+[gd_scene load_steps=8 format=3 uid="uid://bbdh4fakp8omv"]
 
-[ext_resource type="Script" path="res://ATS-Ps/scripts/scene.gd" id="1_3txb8"]
+[ext_resource type="Script" uid="uid://csjs0skvkqn85" path="res://ATS-Ps/scripts/scene.gd" id="1_3txb8"]
 [ext_resource type="Texture2D" uid="uid://da26ervg41qj5" path="res://assets/return (Custom).png" id="1_pty6m"]
-[ext_resource type="Script" path="res://scripts/return.gd" id="2_rmidq"]
-[ext_resource type="Script" path="res://scripts/http_request.gd" id="4_eqv1q"]
-[ext_resource type="Script" path="res://scripts/request_error_msg.gd" id="5_7v6mv"]
+[ext_resource type="Script" uid="uid://w01f4pou6tm0" path="res://scripts/return.gd" id="2_rmidq"]
+[ext_resource type="Script" uid="uid://cyfyme4s63wpp" path="res://scripts/http_request.gd" id="4_eqv1q"]
+[ext_resource type="Script" uid="uid://dlf4goaleqo1i" path="res://scripts/request_error_msg.gd" id="5_7v6mv"]
+[ext_resource type="Script" uid="uid://daqt3cd308ah3" path="res://ATS-Ps/scripts/debug_word.gd" id="6_qh547"]
+[ext_resource type="Script" uid="uid://iscloj5yswc3" path="res://scripts/ControlBrake.cs" id="7_nv0f3"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_3txb8")
@@ -32,6 +34,21 @@ offset_right = 389.0
 offset_bottom = 648.0
 text = "Copyright © 2024 - 2025 rinnyanneko. All rights reserved."
 underline = 2
+
+[node name="Debug frame" type="RichTextLabel" parent="."]
+offset_left = 73.0
+offset_top = -1.0
+offset_right = 482.0
+offset_bottom = 333.0
+text = "Debug frame"
+script = ExtResource("6_qh547")
+
+[node name="Brake Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("7_nv0f3")
 
 [connection signal="pressed" from="Return" to="Return" method="_on_pressed"]
 [connection signal="confirmed" from="ErrorMsg" to="ErrorMsg" method="_on_confirmed"]

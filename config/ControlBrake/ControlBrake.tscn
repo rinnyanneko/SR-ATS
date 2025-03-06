@@ -1,8 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://tbxyrr82s74d"]
+[gd_scene load_steps=7 format=3 uid="uid://tbxyrr82s74d"]
 
 [ext_resource type="Texture2D" uid="uid://da26ervg41qj5" path="res://assets/return (Custom).png" id="1_q345d"]
-[ext_resource type="Script" path="res://config/ControlBrake/scripts/return.gd" id="2_0ba03"]
-[ext_resource type="Script" path="res://scripts/ControlBrake.cs" id="3_5iu3e"]
+[ext_resource type="Script" uid="uid://cdenlx5mhwh5q" path="res://config/ControlBrake/scripts/return.gd" id="2_0ba03"]
+[ext_resource type="Script" uid="uid://iscloj5yswc3" path="res://scripts/ControlBrake.cs" id="3_5iu3e"]
+[ext_resource type="Script" uid="uid://bmkv4ceeg347m" path="res://config/ControlBrake/scripts/brake.gd" id="4_kkqmt"]
+[ext_resource type="Script" uid="uid://bxsn44v4jw0bp" path="res://config/ControlBrake/scripts/release.gd" id="5_5t0la"]
+[ext_resource type="Script" uid="uid://deq0ck4v7ujes" path="res://config/ControlBrake/scripts/emergency.gd" id="6_st05f"]
 
 [node name="ControlBrake" type="Node2D"]
 
@@ -12,11 +15,38 @@ offset_bottom = 40.0
 texture_normal = ExtResource("1_q345d")
 script = ExtResource("2_0ba03")
 
-[node name="Brake" type="Control" parent="."]
+[node name="BrakeExec" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("3_5iu3e")
 
+[node name="Brake" type="Button" parent="."]
+offset_left = 3.0
+offset_top = 75.0
+offset_right = 57.0
+offset_bottom = 106.0
+text = "Brake"
+script = ExtResource("4_kkqmt")
+
+[node name="Release" type="Button" parent="."]
+offset_left = 5.0
+offset_top = 112.0
+offset_right = 59.0
+offset_bottom = 136.0
+text = "Release"
+script = ExtResource("5_5t0la")
+
+[node name="Emergency" type="Button" parent="."]
+offset_left = 2.0
+offset_top = 153.0
+offset_right = 97.0
+offset_bottom = 184.0
+text = "Emergency"
+script = ExtResource("6_st05f")
+
 [connection signal="pressed" from="return" to="return" method="_on_pressed"]
+[connection signal="pressed" from="Brake" to="Brake" method="_on_pressed"]
+[connection signal="pressed" from="Release" to="Release" method="_on_pressed"]
+[connection signal="pressed" from="Emergency" to="Emergency" method="_on_pressed"]

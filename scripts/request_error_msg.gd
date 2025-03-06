@@ -21,9 +21,11 @@ func _on_confirmed() -> void:
 func train_not_found():
 	self.dialog_text = tr("TRAIN_NOT_FOUND")
 	self.visible = true
+
 func server_not_found():
 	self.dialog_text = tr("SERVER_NOT_FOUND")
 	self.visible = true
+
 func connection_err(code:int):
 	self.dialog_text = tr("CONNECTION_ERROR")+"\n"
 	match code:
@@ -72,6 +74,7 @@ func connection_err(code:int):
 		_:
 			self.dialog_text+=str(code)
 	self.visible = true
+
 func connection_timeout():
 	self.dialog_text = tr("CONNECTION_TIMEOUT")
 	self.visible = true
