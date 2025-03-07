@@ -9,7 +9,7 @@ public partial class Scene : Node2D{
     public bool EmBrake = false;
     public bool BrakeOpen = false;
     public double PatternSpeed = 32767;
-    public bool Fail;
+    public bool Fail = false;
     public string SignalInFront = "";
     public double VDDelayedTimetableIndex = -1.0;
     public int SignalInFrontSpeed = -1;

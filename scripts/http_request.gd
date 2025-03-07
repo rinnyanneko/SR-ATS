@@ -22,8 +22,6 @@ func _ready() -> void:
 			elif value != OK:
 				printerr("[HTTP REQUEST ERROR]"+str(value))
 			await get_tree().create_timer(2.5).timeout
-	else:
-		pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

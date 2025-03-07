@@ -8,9 +8,12 @@ using System.Threading.Tasks;
 
 public partial class Main : Node{
     private Indicators indicators;
+    private Scene parent;
+    [Signal]
+    public delegate void ATSReadyEventHandler();
     public override async void _Ready(){
         try{
-            Scene parent = GetNode<Scene>("..");
+            parent = GetNode<Scene>("..");
             indicators = GetNode<Indicators>("../Indicators");
             indicators.Ppower(true);
             indicators.Fail(true);
@@ -21,6 +24,7 @@ public partial class Main : Node{
             indicators.Fail(false);
             parent.Fail = false;
             indicators.PlayBell();
+            EmitSignal(SignalName.ATSReady);
             await Task.Delay(3000);
             while (parent.Velocity < 10){
                 await Task.Delay(6000);
@@ -33,7 +37,7 @@ public partial class Main : Node{
     }
     // Called every frame. 'delta' is the elapsed time since the previous frame.
     public override void _Process(double delta){
-        Scene parent = GetNode<Scene>("..");
+        parent = GetNode<Scene>("..");
         ControlBrake controlBrake = GetNode<ControlBrake>("../ControlBrake");
         //TODO: Implement the logic for the brake system and indicators
     }
