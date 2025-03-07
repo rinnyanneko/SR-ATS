@@ -131,8 +131,9 @@ text = "Debug frame"
 script = ExtResource("23_7mp4i")
 
 [node name="copyright" type="LinkButton" parent="."]
+offset_left = 708.0
 offset_top = 625.0
-offset_right = 389.0
+offset_right = 1152.0
 offset_bottom = 648.0
 text = "Copyright © 2024 - 2025 rinnyanneko. All rights reserved."
 underline = 2

@@ -7,7 +7,7 @@
 [ext_resource type="Script" uid="uid://dlf4goaleqo1i" path="res://scripts/request_error_msg.gd" id="5_hc38h"]
 [ext_resource type="Script" uid="uid://dtdsnhyiew44g" path="res://ATS-P/scripts/DebugWord.cs" id="6_ksjca"]
 [ext_resource type="Script" uid="uid://iscloj5yswc3" path="res://scripts/ControlBrake.cs" id="7_dghsc"]
-[ext_resource type="Script" uid="uid://dtgjquilxngum" path="res://ATS-P/scripts/indicators.cs" id="8_ksjca"]
+[ext_resource type="Script" uid="uid://dtgjquilxngum" path="res://ATS-P/scripts/Indicators.cs" id="8_ksjca"]
 [ext_resource type="Texture2D" uid="uid://vyfrml7kfhc4" path="res://ATS-P/assets/Ppower_dim.png" id="9_ksjca"]
 [ext_resource type="Texture2D" uid="uid://45t3nwtixwog" path="res://ATS-P/assets/ApproachPattern_dim.png" id="10_hg6yp"]
 [ext_resource type="Texture2D" uid="uid://c0dd1qu2bwve6" path="res://ATS-P/assets/Brake_dim.png" id="11_sak2e"]
@@ -38,18 +38,19 @@ dialog_text = "Error connect to server, check the server code and train number a
 script = ExtResource("5_hc38h")
 
 [node name="copyright" type="LinkButton" parent="."]
+offset_left = 708.0
 offset_top = 625.0
-offset_right = 439.0
+offset_right = 1152.0
 offset_bottom = 648.0
 text = "Copyright © 2024 - 2025 rinnyanneko. All rights reserved."
 underline = 2
 
 [node name="Debug frame" type="RichTextLabel" parent="."]
 top_level = true
-offset_left = 742.0
-offset_top = 311.0
-offset_right = 1151.0
-offset_bottom = 645.0
+offset_left = 2.0
+offset_top = 314.0
+offset_right = 411.0
+offset_bottom = 648.0
 text = "Debug frame"
 script = ExtResource("6_ksjca")
 
