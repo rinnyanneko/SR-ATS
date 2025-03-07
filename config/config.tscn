@@ -124,6 +124,30 @@ offset_right = 157.0
 offset_bottom = 29.0
 text = "%"
 
+[node name="Vmax" type="LineEdit" parent="Train Data"]
+layout_mode = 0
+offset_left = 129.0
+offset_top = 231.0
+offset_right = 198.0
+offset_bottom = 262.0
+max_length = 3
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Train Data/Vmax"]
+layout_mode = 0
+offset_left = -124.0
+offset_top = 2.0
+offset_right = -16.0
+offset_bottom = 27.0
+text = "Vmax"
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="Train Data/Vmax"]
+layout_mode = 0
+offset_left = 78.0
+offset_top = 5.0
+offset_right = 140.0
+offset_bottom = 30.0
+text = "km/h"
+
 [node name="General" type="Control" parent="."]
 visible = false
 anchors_preset = 0

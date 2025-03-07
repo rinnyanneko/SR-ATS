@@ -9,8 +9,23 @@ using System.Threading.Tasks;
 public partial class Main : Node{
     private Indicators indicators;
     private Scene parent;
+    private ControlBrake controlBrake;
+    private ConfigFile _cfg = new ConfigFile();
+
     [Signal]
     public delegate void ATSReadyEventHandler();
+     public override void _Notification(int what){
+        if (what == 2016){ //NOTIFICATION_APPLICATION_FOCUS_IN
+            Engine.MaxFps = 0; // Zero means uncapped
+            OS.LowProcessorUsageMode = false;
+            GetTree().Paused = false;
+        }
+        if (what == 2017){ //NOTIFICATION_APPLICATION_FOCUS_OUT
+            Engine.MaxFps = 20; // Zero means uncapped
+            OS.LowProcessorUsageMode = true;
+            GetTree().Paused = true;
+        }
+    }
     public override async void _Ready(){
         try{
             parent = GetNode<Scene>("..");
@@ -26,8 +41,8 @@ public partial class Main : Node{
             indicators.PlayBell();
             EmitSignal(SignalName.ATSReady);
             await Task.Delay(3000);
-            while (parent.Velocity < 10){
-                await Task.Delay(6000);
+            while (parent.DistanceToSignalInFront > 500 && parent.DistanceToSignalInFront > 0){
+                await Task.Delay(2000);
             }
             indicators.ATSp(true);
             indicators.PlayBell();
@@ -38,7 +53,19 @@ public partial class Main : Node{
     // Called every frame. 'delta' is the elapsed time since the previous frame.
     public override void _Process(double delta){
         parent = GetNode<Scene>("..");
-        ControlBrake controlBrake = GetNode<ControlBrake>("../ControlBrake");
+        indicators = GetNode<Indicators>("../Indicators");
+        controlBrake = GetNode<ControlBrake>("../ControlBrake");
+        double PatternSpeed = CalculateBrakePatternSpeed();
         //TODO: Implement the logic for the brake system and indicators
+    }
+    private double CalculateBrakePatternSpeed(){
+        parent = GetNode<Scene>("..");
+        _cfg.Load("user://config.cfg");
+        double speed = parent.Velocity;
+        double distance = parent.DistanceToSignalInFront;
+        double decelRate = _cfg.GetValue("Train Data", "decelRate", 0.5).AsDouble();
+        int vmax = _cfg.GetValue("Train Data", "Vmax", 100).AsInt16();
+        double brakeDistance = Math.Pow(speed, 2) / (2 * decelRate);
+        return 32767;
     }
 }
