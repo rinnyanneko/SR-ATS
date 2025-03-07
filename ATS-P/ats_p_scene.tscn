@@ -3,11 +3,11 @@
 [ext_resource type="Texture2D" uid="uid://da26ervg41qj5" path="res://assets/return (Custom).png" id="1_gvy33"]
 [ext_resource type="Script" uid="uid://blitktlm74x4" path="res://ATS-P/scripts/Scene.cs" id="1_ksjca"]
 [ext_resource type="Script" uid="uid://w01f4pou6tm0" path="res://scripts/return.gd" id="2_f4fvo"]
-[ext_resource type="Script" uid="uid://cyfyme4s63wpp" path="res://scripts/http_request.gd" id="4_7g7on"]
+[ext_resource type="Script" uid="uid://5djfn6cacfid" path="res://ATS-P/scripts/HttpReq.cs" id="4_ksjca"]
 [ext_resource type="Script" uid="uid://dlf4goaleqo1i" path="res://scripts/request_error_msg.gd" id="5_hc38h"]
 [ext_resource type="Script" uid="uid://dtdsnhyiew44g" path="res://ATS-P/scripts/DebugWord.cs" id="6_ksjca"]
 [ext_resource type="Script" uid="uid://iscloj5yswc3" path="res://scripts/ControlBrake.cs" id="7_dghsc"]
-[ext_resource type="Script" uid="uid://dtgjquilxngum" path="res://ATS-P/scripts/Indicators.cs" id="8_ksjca"]
+[ext_resource type="Script" uid="uid://dtgjquilxngum" path="res://ATS-P/scripts/indicators.cs" id="8_ksjca"]
 [ext_resource type="Texture2D" uid="uid://vyfrml7kfhc4" path="res://ATS-P/assets/Ppower_dim.png" id="9_ksjca"]
 [ext_resource type="Texture2D" uid="uid://45t3nwtixwog" path="res://ATS-P/assets/ApproachPattern_dim.png" id="10_hg6yp"]
 [ext_resource type="Texture2D" uid="uid://c0dd1qu2bwve6" path="res://ATS-P/assets/Brake_dim.png" id="11_sak2e"]
@@ -27,7 +27,7 @@ texture_normal = ExtResource("1_gvy33")
 script = ExtResource("2_f4fvo")
 
 [node name="HTTPRequest" type="HTTPRequest" parent="."]
-script = ExtResource("4_7g7on")
+script = ExtResource("4_ksjca")
 
 [node name="ErrorMsg" type="AcceptDialog" parent="."]
 auto_translate_mode = 1
@@ -53,7 +53,7 @@ offset_bottom = 645.0
 text = "Debug frame"
 script = ExtResource("6_ksjca")
 
-[node name="Brake Control" type="Control" parent="."]
+[node name="ControlBrake" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
@@ -96,3 +96,4 @@ script = ExtResource("16_gtghf")
 [connection signal="pressed" from="Return" to="Return" method="_on_pressed"]
 [connection signal="confirmed" from="ErrorMsg" to="ErrorMsg" method="_on_confirmed"]
 [connection signal="pressed" from="copyright" to="copyright" method="_on_pressed"]
+[connection signal="ATSReady" from="Main" to="HTTPRequest" method="_on_main_ats_ready"]
