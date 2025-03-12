@@ -15,7 +15,7 @@ func _ready() -> void:
 	if cfg.get_value("Train Data", "server") != null:$".".text = cfg.get_value("Train Data", "server")
 	if cfg.get_value("Train Data", "trainNumber") != null:$"../TrainNumber".text = cfg.get_value("Train Data", "trainNumber")
 	if cfg.get_value("Train Data", "brakingRatio") != null:$"../Braking Ratio".text = cfg.get_value("Train Data", "brakingRatio")
-	if cfg.get_value("Train Data", "Vmax") != null:$"../Vmax".text = cfg.get_value("Train Data", "Vmax")
+	if cfg.get_value("Train Data", "Vmax") != null:$"../Vmax".text = str(cfg.get_value("Train Data", "Vmax"))
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

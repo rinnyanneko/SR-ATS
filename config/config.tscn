@@ -127,24 +127,25 @@ text = "%"
 [node name="Vmax" type="LineEdit" parent="Train Data"]
 layout_mode = 0
 offset_left = 129.0
-offset_top = 231.0
+offset_top = 233.0
 offset_right = 198.0
-offset_bottom = 262.0
+offset_bottom = 264.0
+placeholder_text = "Vmax"
 max_length = 3
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Train Data/Vmax"]
+[node name="Label" type="Label" parent="Train Data/Vmax"]
 layout_mode = 0
-offset_left = -124.0
-offset_top = 2.0
-offset_right = -16.0
-offset_bottom = 27.0
+offset_left = -125.0
+offset_top = 6.0
+offset_right = -81.0
+offset_bottom = 29.0
 text = "Vmax"
 
-[node name="RichTextLabel2" type="RichTextLabel" parent="Train Data/Vmax"]
+[node name="Label2" type="Label" parent="Train Data/Vmax"]
 layout_mode = 0
-offset_left = 78.0
-offset_top = 5.0
-offset_right = 140.0
+offset_left = 75.0
+offset_top = 7.0
+offset_right = 117.0
 offset_bottom = 30.0
 text = "km/h"
 
@@ -210,12 +211,20 @@ text = "Save"
 
 [node name="OpenAppUsrDir" type="Button" parent="General"]
 layout_mode = 0
-offset_left = 1.0
-offset_top = 183.0
-offset_right = 125.0
-offset_bottom = 214.0
+offset_left = 3.0
+offset_top = 208.0
+offset_right = 165.0
+offset_bottom = 239.0
 text = "OPEN_APP_USR_DIR"
 script = ExtResource("9_iadgi")
+
+[node name="vJoy" type="CheckBox" parent="General"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 174.0
+offset_right = 64.0
+offset_bottom = 205.0
+text = "vJoy"
 
 [node name="Debug" type="Control" parent="."]
 visible = false

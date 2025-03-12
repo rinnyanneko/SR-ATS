@@ -8,6 +8,8 @@ using vJoyInterfaceWrap;
 
 public partial class ControlBrake: Node
 {
+	private ConfigFile cfg = new ConfigFile();
+
 	[Signal]
 	public delegate void BrakeReadyEventHandler();
 
@@ -16,6 +18,9 @@ public partial class ControlBrake: Node
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
+		cfg.Load("user://config.cfg");
+		if ((bool)cfg.GetValue("Debug", "vJoy", false))
+			return;
 		try
 		{
 			var prt = "";
@@ -83,6 +88,9 @@ public partial class ControlBrake: Node
 		}
 	}
 	public void _on_tree_exiting(){
+		cfg.Load("user://config.cfg");
+		if ((bool)cfg.GetValue("Debug", "vJoy", false))
+			return;
 		joystick.RelinquishVJD(id);
 		GD.Print("Exiting Tree");
 	}
@@ -92,6 +100,9 @@ public partial class ControlBrake: Node
 	{
 	}
 	public void release(){
+		cfg.Load("user://config.cfg");
+		if ((bool)cfg.GetValue("Debug", "vJoy", false))
+			return;
 		try{
 			//joystick.SetAxis(0, id, HID_USAGES.HID_USAGE_Z);
 			joystick.SetBtn(true, id, 5);
@@ -105,6 +116,9 @@ public partial class ControlBrake: Node
 		GD.Print("release");
 	}
 	public void brake(){
+		cfg.Load("user://config.cfg");
+		if ((bool)cfg.GetValue("Debug", "vJoy", false))
+			return;
 		try{
 			//joystick.SetAxis(90, id, HID_USAGES.HID_USAGE_Z);
 			joystick.SetBtn(true, id, 7);
@@ -118,6 +132,9 @@ public partial class ControlBrake: Node
 		GD.Print("brake");
 	}
 	public void emergency_brake(){
+		cfg.Load("user://config.cfg");
+		if ((bool)cfg.GetValue("General", "vJoy", false))
+			return;
 		try{
 			joystick.SetAxis(100, id, HID_USAGES.HID_USAGE_Z);
 		}
