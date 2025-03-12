@@ -12,8 +12,8 @@ func _ready() -> void:
 	if cfg.get_value("General", "UpdateMirror", "GitHub") == "GitHub":self.selected = 0
 	elif cfg.get_value("General", "UpdateMirror") == "GitLab":self.selected = 1
 	elif cfg.get_value("General", "UpdateMirror") == "GitCode":self.selected = 2
-	if cfg.get_value("General", "vJoy", false):$"../vJoy".button_pressed = false
-	else:$"../vJoy".button_pressed = true
+	if cfg.get_value("General", "vJoy", false):$"../vJoy".button_pressed = true
+	else:$"../vJoy".button_pressed = false
 	$RichTextLabel.text = tr("UPDATE_MIRROR")
 	if cfg.get_value("System", "DevSetting", false):$"../vJoy".disabled = false
 	else:$"../vJoy".disabled = true

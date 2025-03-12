@@ -33,3 +33,13 @@ func _on_timer_timeout() -> void:
 	if alarm:
 		self.alarmHard = true
 		print("Hard alarm!")
+
+func _notification(what: int) -> void:
+	if what == NOTIFICATION_APPLICATION_FOCUS_IN:
+		Engine.max_fps = 0 # Zero means uncapped
+		OS.low_processor_usage_mode = false
+		get_tree().paused = false
+	if what == NOTIFICATION_APPLICATION_FOCUS_OUT:
+		Engine.max_fps = 20
+		OS.low_processor_usage_mode = true
+		get_tree().paused = true
