@@ -56,6 +56,35 @@ public partial class Main : Node{
         indicators = GetNode<Indicators>("../Indicators");
         controlBrake = GetNode<ControlBrake>("../ControlBrake");
         double PatternSpeed = CalculateBrakePatternSpeed();
+        if (parent.Velocity < PatternSpeed - 5 && parent.Brake){
+            controlBrake.release();
+            indicators.Brake(false);
+            indicators.PlayBell();
+            indicators.ApproachPattern(false);
+            parent.ApproachPattern = false;
+            parent.Brake = false;
+        }
+        else if (parent.Velocity < PatternSpeed - 5 && parent.ApproachPattern){
+            parent.ApproachPattern = false;
+            indicators.ApproachPattern(false);
+            indicators.PlayBell();
+        }
+        if (parent.Velocity >= PatternSpeed - 5 && parent.Velocity <= PatternSpeed){
+            parent.ApproachPattern = true;
+            indicators.ApproachPattern(true);
+            indicators.PlayBell();
+        }
+        else if (parent.Velocity > PatternSpeed && parent.Velocity < PatternSpeed +15 && !parent.Brake){
+            parent.Brake = true;
+            indicators.Brake(true);
+            indicators.PlayBell();
+            controlBrake.brake();
+        }else if (parent.Velocity > PatternSpeed + 15 && !parent.EmBrake){
+            controlBrake.emergency_brake();
+            indicators.EmBrake(false);
+            indicators.PlayBell();
+            parent.EmBrake = true;
+        }
         //TODO: Implement the logic for the brake system and indicators
     }
     private double CalculateBrakePatternSpeed(){
@@ -66,6 +95,10 @@ public partial class Main : Node{
         double decelRate = _cfg.GetValue("Train Data", "decelRate", 0.5).AsDouble();
         int vmax = _cfg.GetValue("Train Data", "Vmax", 100).AsInt16();
         double brakeDistance = Math.Pow(speed, 2) / (2 * decelRate);
+        if (parent.SignalInFrontSpeed > vmax){
+            return vmax + 5;
+        }
+        //TODO: Implement the logic for the brake pattern speed
         return 32767;
     }
 }
