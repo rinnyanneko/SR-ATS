@@ -74,16 +74,11 @@ public partial class Main : Node{
             indicators.ApproachPattern(true);
             indicators.PlayBell();
         }
-        else if (parent.Velocity > PatternSpeed && parent.Velocity < PatternSpeed +15 && !parent.Brake){
+        else if (parent.Velocity > PatternSpeed && !parent.Brake){
             parent.Brake = true;
             indicators.Brake(true);
             indicators.PlayBell();
             controlBrake.brake();
-        }else if (parent.Velocity > PatternSpeed + 15 && !parent.EmBrake){
-            controlBrake.emergency_brake();
-            indicators.EmBrake(false);
-            indicators.PlayBell();
-            parent.EmBrake = true;
         }
         //TODO: Implement the logic for the brake system and indicators
     }

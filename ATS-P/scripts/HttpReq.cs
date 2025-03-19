@@ -36,7 +36,7 @@ public partial class HttpReq : HttpRequest{
                     indicators.PlayBell();
                 }
                 else
-                GetNode<AcceptDialog>("../ErrorMsg").Visible = false;
+                    GetNode<AcceptDialog>("../ErrorMsg").Visible = false;
 
                 await ToSignal(GetTree().CreateTimer(2.5f), "timeout");
             }
@@ -50,10 +50,10 @@ public partial class HttpReq : HttpRequest{
             GD.PrintErr("HTTP response code:" + responseCode);
             GetNode<AcceptDialog>("../ErrorMsg").Call("ConnectionErr", (int)responseCode);
             if (!parent.Fail){
-                        parent.Fail = true;
-                        indicators.Fail(true);
-                        indicators.PlayBell();
-                    }
+                parent.Fail = true;
+                indicators.Fail(true);
+                indicators.PlayBell();
+            }
             return;
         }
 
