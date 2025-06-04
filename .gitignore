@@ -21,3 +21,4 @@ android/
 .DS_Store
 
 .vs/
+.idea/

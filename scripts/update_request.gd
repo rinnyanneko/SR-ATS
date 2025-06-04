@@ -9,6 +9,7 @@ var update_beta = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	$"../../version".text = FileAccess.get_file_as_string("res://version.txt")
 	check_for_update()
 
 

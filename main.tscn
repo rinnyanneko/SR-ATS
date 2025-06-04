@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://dl6vqmuu804oc"]
+[gd_scene load_steps=20 format=3 uid="uid://dl6vqmuu804oc"]
 
 [ext_resource type="Texture2D" uid="uid://ddw53s0vlshw" path="res://ATS-S/assets/icon (Custom).png" id="1_o7qkv"]
 [ext_resource type="Texture2D" uid="uid://cjrgpvf2qau18" path="res://ATS-S/assets/icon_INOP (Custom).png" id="3_dalr6"]
@@ -12,7 +12,6 @@
 [ext_resource type="Texture2D" uid="uid://dtdkmccpkytin" path="res://assets/banner.png" id="9_usuam"]
 [ext_resource type="Script" uid="uid://dkb1cl4o7qnm8" path="res://scripts/language.gd" id="11_qu0kt"]
 [ext_resource type="Texture2D" uid="uid://cbvfda7jahf80" path="res://assets/translation.png" id="11_tf4cp"]
-[ext_resource type="Script" uid="uid://l3pdx2v2cddc" path="res://scripts/confirm_info.gd" id="12_qinf2"]
 [ext_resource type="Script" uid="uid://ciry8djejqwbb" path="res://scripts/language_name.gd" id="14_tq6gw"]
 [ext_resource type="Script" uid="uid://dowaevrtb16vn" path="res://scripts/copyright.gd" id="14_xvmjn"]
 [ext_resource type="Script" uid="uid://dufl2n0jicb6t" path="res://scripts/news_request.gd" id="15_4f64g"]
@@ -79,24 +78,19 @@ tooltip_text = "Language"
 texture_normal = ExtResource("11_tf4cp")
 script = ExtResource("11_qu0kt")
 
-[node name="ConfirmationDialog" type="ConfirmationDialog" parent="."]
-initial_position = 2
-dialog_autowrap = true
-script = ExtResource("12_qinf2")
-
 [node name="version" type="LinkButton" parent="."]
 layout_mode = 0
-offset_left = 1084.0
 offset_top = 625.0
-offset_right = 1152.0
+offset_right = 166.0
 offset_bottom = 648.0
-text = "v0.0.10.2"
+text = "995914163af5dfd7ec7d7d6056ba29b5b76cb305"
 underline = 1
 
 [node name="copyright" type="LinkButton" parent="."]
 layout_mode = 0
+offset_left = 708.0
 offset_top = 625.0
-offset_right = 389.0
+offset_right = 1152.0
 offset_bottom = 648.0
 text = "Copyright © 2024 - 2025 rinnyanneko. All rights reserved."
 underline = 1
@@ -166,8 +160,6 @@ script = ExtResource("19_swxou")
 [connection signal="pressed" from="Language" to="Language" method="_on_pressed"]
 [connection signal="pressed" from="Language" to="Language name" method="_on_language_pressed"]
 [connection signal="pressed" from="Language" to="Please enter train data" method="_on_language_pressed"]
-[connection signal="canceled" from="ConfirmationDialog" to="ConfirmationDialog" method="_on_canceled"]
-[connection signal="confirmed" from="ConfirmationDialog" to="ConfirmationDialog" method="_on_confirmed"]
 [connection signal="pressed" from="version" to="updater/update_request" method="_on_version_pressed"]
 [connection signal="pressed" from="copyright" to="copyright" method="_on_pressed"]
 [connection signal="canceled" from="news" to="news_request" method="_on_news_canceled"]

@@ -4,4 +4,4 @@
 
 extends TextureButton
 func _on_pressed() -> void:
-	$"../ConfirmationDialog".run("p")
+	get_tree().change_scene_to_file("res://ATS-P/ats_p_scene.tscn")

@@ -34,7 +34,9 @@ public partial class HttpReq : HttpRequest{
                     parent.Fail = false;
                     indicators.Fail(false);
                     indicators.PlayBell();
-                    }
+                }
+                else
+                    GetNode<AcceptDialog>("../ErrorMsg").Visible = false;
 
                 await ToSignal(GetTree().CreateTimer(2.5f), "timeout");
             }
@@ -42,9 +44,16 @@ public partial class HttpReq : HttpRequest{
     }
 
     private void _OnRequestCompleted(long result, long responseCode, string[] headers, byte[] body){
+        var parent = GetNode<Scene>("..");
+        var indicators = GetNode<Indicators>("../Indicators");
         if (responseCode != 200){
             GD.PrintErr("HTTP response code:" + responseCode);
             GetNode<AcceptDialog>("../ErrorMsg").Call("ConnectionErr", (int)responseCode);
+            if (!parent.Fail){
+                parent.Fail = true;
+                indicators.Fail(true);
+                indicators.PlayBell();
+            }
             return;
         }
 
@@ -60,7 +69,6 @@ public partial class HttpReq : HttpRequest{
         if (data != null){
             GetNode<AcceptDialog>("../ErrorMsg").Visible = false;
 
-            var parent = GetNode<Scene>("..");
 
             if (data.ContainsKey("ControlledBySteamID") && data["ControlledBySteamID"].VariantType != Variant.Type.Nil)
                 parent.ControlledBySteamID = data["ControlledBySteamID"].AsString();

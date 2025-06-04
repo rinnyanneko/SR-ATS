@@ -15,6 +15,7 @@ func _ready() -> void:
 	if cfg.get_value("Train Data", "server") != null:$".".text = cfg.get_value("Train Data", "server")
 	if cfg.get_value("Train Data", "trainNumber") != null:$"../TrainNumber".text = cfg.get_value("Train Data", "trainNumber")
 	if cfg.get_value("Train Data", "brakingRatio") != null:$"../Braking Ratio".text = cfg.get_value("Train Data", "brakingRatio")
+	if cfg.get_value("Train Data", "Vmax") != null:$"../Vmax".text = str(cfg.get_value("Train Data", "Vmax"))
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -30,4 +31,5 @@ func _on_save_button_pressed() -> void:
 		cfg.set_value("Train Data", "brakingRatio", $"../Braking Ratio".text)
 		cfg.set_value("Train Data", "brakeDistance", 480/(float($"../Braking Ratio".text)))
 		cfg.set_value("Train Data", "decelRate", 0.805*(float($"../Braking Ratio".text)**2))
+		cfg.set_value("Train Data", "Vmax", int($"../Vmax".text))
 	cfg.save("user://config.cfg")

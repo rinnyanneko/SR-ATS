@@ -11,31 +11,33 @@ func _ready() -> void:
 	if cfg.get_value("System", "lang", "null") == "en":
 		TranslationServer.set_locale("en")
 		print("English(en)!")
-		sel = 1
+		sel = 0
 	elif cfg.get_value("System", "lang", "null") == "jp":
 		TranslationServer.set_locale("jp")
 		print("Japanese(jp)!")
-		sel = 2
+		sel = 1
 	elif cfg.get_value("System", "lang", "null") == "cmn":
 		TranslationServer.set_locale("cmn")
 		print("Tradition Chinese(cmn)!")
-		sel = 3
+		sel = 2
 	elif cfg.get_value("System", "lang", "null") == "zh":
 		TranslationServer.set_locale("zh")
 		print("Simplified Chinese(zh)!")
-		sel = 4
+		sel = 3
 	elif cfg.get_value("System", "lang", "null") == "ko":
 		TranslationServer.set_locale("ko")
 		print("Korean(ko)!")
-		sel = 0
+		sel = 4
+	elif cfg.get_value("System", "lang", "null") == "pl":
+		cfg.set_value("System", "lang", "pl")
+		TranslationServer.set_locale("pl")
+		print("Polish(pl)!")
+		sel = 5
 	else:
-		sel = 1
+		sel = 0
 		TranslationServer.set_locale("en")
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
-
+		cfg.set_value("System", "lang", "en")
+	cfg.save("user://config.cfg")
 
 func _on_pressed() -> void:
 	if sel == 0:
@@ -58,9 +60,13 @@ func _on_pressed() -> void:
 		cfg.set_value("System", "lang", "ko")
 		TranslationServer.set_locale("ko")
 		print("Korean(ko)!")
+	if sel == 5:
+		cfg.set_value("System", "lang", "pl")
+		TranslationServer.set_locale("pl")
+		print("Polish(pl)!")
 	cfg.save("user://config.cfg")
 	sel += 1
-	if sel > 4:sel = 0
+	if sel > 5:sel = 0
 	self.disabled = true
 	await get_tree().create_timer(0.1).timeout
 	self.disabled = false

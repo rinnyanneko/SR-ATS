@@ -15,11 +15,11 @@ func _ready() -> void:
 	$"../Title".text = tr("READ_LICENSE")
 	match TranslationServer.get_locale():
 		"cmn":
-			$"../License".text = FileAccess.get_file_as_string("res://license/LICENSE.txt")
+			$"../License".text = FileAccess.get_file_as_string("res://license/LICENSE_cmn.txt")
 		"ja":
 			$"../License".text = FileAccess.get_file_as_string("res://license/LICENSE_ja.txt")
 		_:
-			$"../License".text = FileAccess.get_file_as_string("res://license/LICENSE_en.txt")
+			$"../License".text = FileAccess.get_file_as_string("res://license/LICENSE.txt")
 	if $"../License".text == "":
 		$"../License".text = "ERROR: CAN NOT SHOW LICENSE"
 		return
