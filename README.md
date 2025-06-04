@@ -8,6 +8,8 @@ Written with [Godot Game Engine 4.4](https://godotengine.org)
 
 Feel free to open a pull request!
 
+[Milestone](milestone.md)
+
 [GitHub page](https://github.com/rinnyanneko/SR-ATS)
 
 [GitCode Page(for China users download)](https://gitcode.com/rinnyanneko/SR-ATS/)
