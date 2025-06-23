@@ -1,6 +1,6 @@
 {
-	"latest-stable":"v0.0.10.2",
-	"latest-beta":"v0.0.10.2",
+	"latest-stable":"v0.0.10.3",
+	"latest-beta":"v0.0.10.3",
 	"data":[
 		{
 			"type":"update",
@@ -53,9 +53,9 @@
 		{
 			"type":"announcement",
 			"number":7,
-			"title":"",
-			"text":"",
-			"draft":true
+			"title":"LICENSE CHANGED",
+			"text":"license changed to Apache 2.0",
+			"draft":false
 		}
 	]
 }
