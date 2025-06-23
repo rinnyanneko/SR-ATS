@@ -81,9 +81,9 @@ script = ExtResource("11_qu0kt")
 [node name="version" type="LinkButton" parent="."]
 layout_mode = 0
 offset_top = 625.0
-offset_right = 68.0
+offset_right = 297.0
 offset_bottom = 648.0
-text = "v0.0.10.3"
+text = "version"
 underline = 1
 
 [node name="copyright" type="LinkButton" parent="."]
