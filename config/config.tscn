@@ -277,7 +277,7 @@ SDK and APIs:
 	[url=https://github.com/doceazedo/godot_wry]WRY[/url]
 To contribute, please contact me via Discord(@rinnyanneko)
 
-Copyright © 2024 - 2025 rinnyanneko. All rights reserved."
+Copyright © 2024 - 2025 rinnyanneko. Some rights reserved."
 script = ExtResource("6_ixw2y")
 
 [connection signal="pressed" from="return" to="return" method="_on_pressed"]
