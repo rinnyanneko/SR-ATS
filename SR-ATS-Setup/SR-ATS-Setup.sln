@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.14.36221.1 d17.14
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup", "Setup.vdproj", "{566DDA83-86A8-EF57-29D8-DE63FF56C0EF}"
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "SR-ATS-Setup", "SR-ATS-Setup\SR-ATS-Setup.vdproj", "{0CC57FD1-A43E-7B00-C3FB-4C18F1D5949F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Default = Release|Default
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{566DDA83-86A8-EF57-29D8-DE63FF56C0EF}.Debug|Default.ActiveCfg = Debug
-		{566DDA83-86A8-EF57-29D8-DE63FF56C0EF}.Debug|Default.Build.0 = Debug
-		{566DDA83-86A8-EF57-29D8-DE63FF56C0EF}.Release|Default.ActiveCfg = Release
-		{566DDA83-86A8-EF57-29D8-DE63FF56C0EF}.Release|Default.Build.0 = Release
+		{0CC57FD1-A43E-7B00-C3FB-4C18F1D5949F}.Debug|Default.ActiveCfg = Debug
+		{0CC57FD1-A43E-7B00-C3FB-4C18F1D5949F}.Debug|Default.Build.0 = Debug
+		{0CC57FD1-A43E-7B00-C3FB-4C18F1D5949F}.Release|Default.ActiveCfg = Release
+		{0CC57FD1-A43E-7B00-C3FB-4C18F1D5949F}.Release|Default.Build.0 = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {AFF0848F-2FD8-49D0-A3A6-A67F9FFF8F00}
+		SolutionGuid = {91D3E698-7D95-400C-A167-2311BB51136E}
 	EndGlobalSection
 EndGlobal

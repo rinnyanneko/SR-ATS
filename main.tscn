@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://bi7rrmjfgq3i2" path="res://scripts/ats_s.gd" id="4_12aw2"]
 [ext_resource type="Texture2D" uid="uid://dr7q5id583e36" path="res://ATS-Ps/assets/icon (Custom).png" id="5_pvvx2"]
 [ext_resource type="Texture2D" uid="uid://bm7sfftk1ixl5" path="res://ATS-Ps/assets/icon_INOP (Custom).png" id="6_1sgmq"]
+[ext_resource type="Script" uid="uid://dysbdpohvqa6n" path="res://scripts/ats_ps.gd" id="6_cegan"]
 [ext_resource type="Texture2D" uid="uid://cha541t8nc2u6" path="res://ATS-P/assets/icon (Custom).png" id="7_6k4lh"]
 [ext_resource type="Script" uid="uid://vve70gxjb3pn" path="res://scripts/ats_p.gd" id="8_82xsv"]
 [ext_resource type="Texture2D" uid="uid://dl34jk3e5gqjj" path="res://ATS-P/assets/icon_INOP (Custom).png" id="8_xtb8p"]
@@ -13,7 +14,6 @@
 [ext_resource type="Script" uid="uid://dkb1cl4o7qnm8" path="res://scripts/language.gd" id="11_qu0kt"]
 [ext_resource type="Texture2D" uid="uid://cbvfda7jahf80" path="res://assets/translation.png" id="11_tf4cp"]
 [ext_resource type="Script" uid="uid://ciry8djejqwbb" path="res://scripts/language_name.gd" id="14_tq6gw"]
-[ext_resource type="Script" uid="uid://dowaevrtb16vn" path="res://scripts/copyright.gd" id="14_xvmjn"]
 [ext_resource type="Script" uid="uid://dufl2n0jicb6t" path="res://scripts/news_request.gd" id="15_4f64g"]
 [ext_resource type="Texture2D" uid="uid://dv5j6o4ipaxc3" path="res://assets/settings (Custom).png" id="15_k3h24"]
 [ext_resource type="Script" uid="uid://ctt8bhhr72m7h" path="res://scripts/conig.gd" id="16_qcr4t"]
@@ -48,6 +48,7 @@ offset_bottom = 454.0
 disabled = true
 texture_normal = ExtResource("5_pvvx2")
 texture_disabled = ExtResource("6_1sgmq")
+script = ExtResource("6_cegan")
 
 [node name="ATS-P" type="TextureButton" parent="."]
 layout_mode = 0
@@ -94,7 +95,7 @@ offset_right = 1152.0
 offset_bottom = 648.0
 text = "Copyright © 2025 rinnyanneko. Some Rights Reserved."
 underline = 1
-script = ExtResource("14_xvmjn")
+uri = "LICENSE.txt"
 
 [node name="news" type="ConfirmationDialog" parent="."]
 mode = 1
@@ -155,13 +156,13 @@ dialog_text = "Checking for update..."
 script = ExtResource("19_swxou")
 
 [connection signal="pressed" from="ATS-S" to="ATS-S" method="_on_pressed"]
+[connection signal="pressed" from="ATS-Ps" to="ATS-Ps" method="_on_pressed"]
 [connection signal="pressed" from="ATS-P" to="ATS-P" method="_on_pressed"]
 [connection signal="pressed" from="Banner" to="Banner" method="_on_pressed"]
 [connection signal="pressed" from="Language" to="Language" method="_on_pressed"]
 [connection signal="pressed" from="Language" to="Language name" method="_on_language_pressed"]
 [connection signal="pressed" from="Language" to="Please enter train data" method="_on_language_pressed"]
 [connection signal="pressed" from="version" to="updater/update_request" method="_on_version_pressed"]
-[connection signal="pressed" from="copyright" to="copyright" method="_on_pressed"]
 [connection signal="canceled" from="news" to="news_request" method="_on_news_canceled"]
 [connection signal="confirmed" from="news" to="news_request" method="_on_news_confirmed"]
 [connection signal="meta_clicked" from="news/RichTextLabel" to="news_request" method="_on_rich_text_label_meta_clicked"]

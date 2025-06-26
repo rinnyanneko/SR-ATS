@@ -54,6 +54,7 @@ dialog_text = "Error connect to server, check the server code and train number a
 script = ExtResource("5_tvbes")
 
 [node name="Train Data" type="Control" parent="."]
+visible = false
 anchors_preset = 0
 
 [node name="Server" type="OptionButton" parent="Train Data"]
@@ -257,7 +258,6 @@ text = "Brake"
 script = ExtResource("10_l3qj3")
 
 [node name="Credits" type="Control" parent="."]
-visible = false
 anchors_preset = 0
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Credits"]
@@ -275,9 +275,10 @@ SDK and APIs:
 	[url=https://wiki.simrail.eu/API/API-Introduction]SimRail Trains, Servers API[/url]
 	[url=https://sourceforge.net/projects/vjoystick/]vJoy SDK[/url]
 	[url=https://github.com/doceazedo/godot_wry]WRY[/url]
-To contribute, please contact me via Discord(@rinnyanneko)
+To contribute, please contact me via [url=https://github.com/rinnyanneko/SR-ATS]GitHub[/url]
 
-Copyright © 2024 - 2025 rinnyanneko. Some rights reserved."
+Copyright © 2024 - 2025 rinnyanneko. Some Rights Reserved.
+"
 script = ExtResource("6_ixw2y")
 
 [connection signal="pressed" from="return" to="return" method="_on_pressed"]

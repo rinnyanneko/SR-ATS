@@ -7,7 +7,7 @@
 
 using Godot;
 
-public partial class Indicators : Node2D{
+public partial class ATSIndicators : Node2D{
 	private readonly Texture2D _pPowerON = GD.Load<Texture2D>("res://ATS-P/assets/Ppower.png");
 	private readonly Texture2D _pPowerOFF = GD.Load<Texture2D>("res://ATS-P/assets/Ppower_dim.png");
 	private readonly Texture2D _approachPatternON = GD.Load<Texture2D>("res://ATS-P/assets/ApproachPattern.png");

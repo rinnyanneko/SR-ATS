@@ -7,45 +7,45 @@
 
 using Godot;
 
-public partial class DebugWord : RichTextLabel{
+public partial class DebugWord : RichTextLabel
+{
     private ConfigFile _cfg = new ConfigFile();
 
     // Called when the node enters the scene tree for the first time.
-    public override void _Ready(){
-        if (_cfg.GetValue("System", "Debug", false).AsBool()){
+    public override void _Ready()
+    {
+        _cfg.Load("user://config.cfg");
+        if (_cfg.GetValue("System", "Debug", false).AsBool())
             Visible = true;
-        }
-        else{
+        else
             Visible = false;
-        }
     }
 
     // Called every frame. 'delta' is the elapsed time since the previous frame.
-    public override void _Process(double delta){
+    public override void _Process(double delta)
+    {
         _cfg.Load("user://config.cfg");
-        if (_cfg.GetValue("System", "Debug", false).AsBool()){
-            Visible = true;
-            Scene parent = GetNode<Scene>("..");
-
-            Text = "UpdateTime = " + parent.UpdateTime.ToString() + "\n" +
-                   "pattern_speed = " + parent.PatternSpeed.ToString() + "\n" +
-                   "Brake = " + parent.Brake.ToString() + "\n" +
-                   "EmBrake = " + parent.EmBrake.ToString() + "\n" +
-                   "BrakeOpen = " + parent.BrakeOpen.ToString() + "\n" +
-                   "PatternSpeed = " + parent.PatternSpeed.ToString() + "\n" +
-                   "Fail = " + parent.Fail.ToString() + "\n" +
-                   "SignalInFront = " + parent.SignalInFront + "\n" +
-                   "VDDelayedTimetableIndex = " + parent.VDDelayedTimetableIndex.ToString() + "\n" +
-                   "SignalInFrontSpeed = " + parent.SignalInFrontSpeed.ToString() + "\n" +
-                   "DistanceToSignalInFront = " + parent.DistanceToSignalInFront.ToString() + "\n" +
-                   "Velocity = " + parent.Velocity.ToString() + "\n" +
-                   "Longitute = " + parent.Longitute.ToString() + "\n" +
-                   "Latititute = " + parent.Latititute.ToString() + "\n" +
-                   "InBorderStationArea = " + parent.InBorderStationArea.ToString() + "\n" +
-                   "ControlledBySteamID = " + parent.ControlledBySteamID;
-        }
-        else{
-            Visible = false;
+        if (_cfg.GetValue("System", "Debug", false).AsBool())
+        {
+            var parent = GetParent();
+            if (parent != null)
+            {
+                Text = $"UpdateTime = {parent.Get("UpdateTime")}\n" +
+                       $"Brake = {parent.Get("Brake")}\n" +
+                       $"EmBrake = {parent.Get("EmBrake")}\n" +
+                       $"BrakeOpen = {parent.Get("BrakeOpen")}\n" +
+                       $"PatternSpeed = {parent.Get("PatternSpeed")}\n" +
+                       $"Fail = {parent.Get("Fail")}\n" +
+                       $"SignalInFront = {parent.Get("SignalInFront")}\n" +
+                       $"VDDelayedTimetableIndex = {parent.Get("VDDelayedTimetableIndex")}\n" +
+                       $"SignalInFrontSpeed = {parent.Get("SignalInFrontSpeed")}\n" +
+                       $"DistanceToSignalInFront = {parent.Get("DistanceToSignalInFront")}\n" +
+                       $"Velocity = {parent.Get("Velocity")}\n" +
+                       $"Longitude = {parent.Get("Longitude")}\n" +
+                       $"Latitude = {parent.Get("Latitude")}\n" +
+                       $"InBorderStationArea = {parent.Get("InBorderStationArea")}\n" +
+                       $"ControlledBySteamID = {parent.Get("ControlledBySteamID")}";
+            }
         }
     }
 }
