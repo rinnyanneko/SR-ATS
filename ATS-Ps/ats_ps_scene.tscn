@@ -29,11 +29,11 @@ dialog_text = "Error connect to server, check the server code and train number a
 script = ExtResource("5_7v6mv")
 
 [node name="copyright" type="LinkButton" parent="."]
-offset_left = 708.0
+offset_left = 684.0
 offset_top = 625.0
 offset_right = 1152.0
 offset_bottom = 648.0
-text = "Copyright © 2024 - 2025 rinnyanneko. All rights reserved."
+text = "Copyright © 2024 - 2025 rinnyanneko. Some rights reserved."
 underline = 2
 
 [node name="Debug frame" type="RichTextLabel" parent="."]

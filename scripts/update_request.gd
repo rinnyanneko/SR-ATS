@@ -16,18 +16,13 @@ func _ready() -> void:
 	check_for_update()
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
 func check_for_update():
 	cfg.load("user://config.cfg")
 	if cfg.get_value("General", "UpdateMirror", "GitHub") == "GitHub":
-		var value = request("https://raw.githubusercontent.com/rinnyanneko/SR-ATS/refs/heads/main/news/news.json")
+		request("https://raw.githubusercontent.com/rinnyanneko/SR-ATS/refs/heads/main/news/news.json")
 	elif cfg.get_value("General", "UpdateMirror") == "GitCode":
-		var value = request("https://raw.gitcode.com/rinnyanneko/SR-ATS/raw/main/news/news.json")
-	else:
-		var value = request("https://gitlab.com/rinnyanneko/SR-ATS/-/raw/main/news/news.json")
+		request("https://raw.gitcode.com/rinnyanneko/SR-ATS/raw/main/news/news.json")
+
 
 func _on_request_completed(result: int, response_code: int, headers: PackedStringArray, body: PackedByteArray) -> void:
 	if response_code == 200:

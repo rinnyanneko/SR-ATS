@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36221.1 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "SR-ATS-Setup", "SR-ATS-Setup\SR-ATS-Setup.vdproj", "{0CC57FD1-A43E-7B00-C3FB-4C18F1D5949F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Default = Debug|Default
+		Release|Default = Release|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0CC57FD1-A43E-7B00-C3FB-4C18F1D5949F}.Debug|Default.ActiveCfg = Debug
+		{0CC57FD1-A43E-7B00-C3FB-4C18F1D5949F}.Debug|Default.Build.0 = Debug
+		{0CC57FD1-A43E-7B00-C3FB-4C18F1D5949F}.Release|Default.ActiveCfg = Release
+		{0CC57FD1-A43E-7B00-C3FB-4C18F1D5949F}.Release|Default.Build.0 = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {91D3E698-7D95-400C-A167-2311BB51136E}
+	EndGlobalSection
+EndGlobal

@@ -1,6 +1,6 @@
 {
-	"latest-stable":"v0.0.10.3",
-	"latest-beta":"v0.0.10.3",
+	"latest-stable":"0.1.0",
+	"latest-beta":"0.1.0",
 	"data":[
 		{
 			"type":"update",
@@ -55,6 +55,15 @@
 			"number":7,
 			"title":"LICENSE CHANGED",
 			"text":"license changed to Apache 2.0",
+			"image":"false",
+			"draft":false
+		},
+		{
+			"type":"announcement",
+			"number":8,
+			"title":"0.1.0 RELEASE",
+			"text":"I'm glad to announce that we have a new feature, the ATS-P, which is the most common ATS in Japan, and it is now available in the software.\nThank you for using SR-ATS, and I hope you enjoy the new features.",
+			"image":"false",
 			"draft":false
 		}
 	]
