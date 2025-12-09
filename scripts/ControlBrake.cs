@@ -9,8 +9,7 @@ using Godot;
 using System;
 using vJoyInterfaceWrap;
 
-public partial class ControlBrake: Node
-{
+public partial class ControlBrake: Node {
 	private ConfigFile cfg = new ConfigFile();
 
 	[Signal]
@@ -19,19 +18,16 @@ public partial class ControlBrake: Node
 	vJoy joystick = new vJoy();
 	uint id = 1;
 	// Called when the node enters the scene tree for the first time.
-	public override void _Ready()
-	{
+	public override void _Ready() {
 		cfg.Load("user://config.cfg");
 		if ((bool)cfg.GetValue("Debug", "vJoy", false))
 			return;
-		try
-		{
+		try {
 			var prt = "";
 			joystick = new vJoy();
 			GD.Print("vJoyEnabled: " + joystick.vJoyEnabled());
 			// Get the driver attributes (Vendor ID, Product ID, Version Number)
-			if (!joystick.vJoyEnabled())
-			{
+			if (!joystick.vJoyEnabled()) {
 				GD.PrintErr("vJoy driver not enabled: Failed Getting vJoy attributes.\n");
 				return;
 			}
@@ -46,23 +42,22 @@ public partial class ControlBrake: Node
 				GD.PrintErr("Version of Driver ("+DrvVer.ToString("X")+") does NOT match DLL Version ("+DllVer.ToString("X")+")\n");
 			// Get the state of the requested device
 			VjdStat status = joystick.GetVJDStatus(id);
-			switch (status)
-			{
-			case VjdStat.VJD_STAT_OWN:
-				GD.PrintErr("vJoy Device "+id+" is already owned by this feeder\n");
-				break;
-			case VjdStat.VJD_STAT_FREE:
-				GD.Print("vJoy Device "+id+" is free\n");
-				break;
-			case VjdStat.VJD_STAT_BUSY:
-				GD.PrintErr("vJoy Device "+id+" is already owned by another feeder\nCannot continue\n");
-				return;
-			case VjdStat.VJD_STAT_MISS:
-				GD.PrintErr("vJoy Device "+id+" is not installed or disabled\nCannot continue\n");
-				return;
-			default:
-				GD.Print("vJoy Device "+id+" general error\nCannot continue\n");
-				return;
+			switch (status) {
+				case VjdStat.VJD_STAT_OWN:
+					GD.PrintErr("vJoy Device "+id+" is already owned by this feeder\n");
+					break;
+				case VjdStat.VJD_STAT_FREE:
+					GD.Print("vJoy Device "+id+" is free\n");
+					break;
+				case VjdStat.VJD_STAT_BUSY:
+					GD.PrintErr("vJoy Device "+id+" is already owned by another feeder\nCannot continue\n");
+					return;
+				case VjdStat.VJD_STAT_MISS:
+					GD.PrintErr("vJoy Device "+id+" is not installed or disabled\nCannot continue\n");
+					return;
+				default:
+					GD.Print("vJoy Device "+id+" general error\nCannot continue\n");
+					return;
 			};
 			///// vJoy Device properties
 			int nBtn = joystick.GetVJDButtonNumber(id);
@@ -85,8 +80,7 @@ public partial class ControlBrake: Node
 
 			EmitSignal(SignalName.BrakeReady);
 		}
-		catch (Exception e)
-		{
+		catch (Exception e) {
 			GD.PrintErr(e.Message);
 		}
 	}
@@ -99,21 +93,20 @@ public partial class ControlBrake: Node
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
-	public override void _Process(double delta)
-	{
+	public override void _Process(double delta) {
+		return;
 	}
 	public void release(){
 		cfg.Load("user://config.cfg");
 		if ((bool)cfg.GetValue("Debug", "vJoy", false))
 			return;
-		try{
+		try {
 			//joystick.SetAxis(0, id, HID_USAGES.HID_USAGE_Z);
 			joystick.SetBtn(true, id, 5);
 			System.Threading.Thread.Sleep(100);
 			joystick.SetBtn(false, id, 5);
 		}
-		catch (Exception e)
-		{
+		catch (Exception e) {
 			GD.PrintErr(e.Message);
 		}
 		GD.Print("release");
@@ -122,14 +115,13 @@ public partial class ControlBrake: Node
 		cfg.Load("user://config.cfg");
 		if ((bool)cfg.GetValue("Debug", "vJoy", false))
 			return;
-		try{
+		try {
 			//joystick.SetAxis(90, id, HID_USAGES.HID_USAGE_Z);
 			joystick.SetBtn(true, id, 7);
 			System.Threading.Thread.Sleep(100);
 			joystick.SetBtn(false, id, 7);
 		}
-		catch (Exception e)
-		{
+		catch (Exception e) {
 			GD.PrintErr(e.Message);
 		}
 		GD.Print("brake");
@@ -138,11 +130,10 @@ public partial class ControlBrake: Node
 		cfg.Load("user://config.cfg");
 		if ((bool)cfg.GetValue("General", "vJoy", false))
 			return;
-		try{
+		try {
 			joystick.SetAxis(100, id, HID_USAGES.HID_USAGE_Z);
 		}
-		catch (Exception e)
-		{
+		catch (Exception e) {
 			GD.PrintErr(e.Message);
 		}
 		GD.Print("emergency brake");

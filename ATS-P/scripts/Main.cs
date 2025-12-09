@@ -64,8 +64,8 @@ public partial class Main : Node {
         parent = GetNode<Scene>("..");
         indicators = GetNode<ATSIndicators>("../Indicators");
         controlBrake = GetNode<ControlBrake>("../ControlBrake");
-        double PatternSpeed = CalculateBrakePatternSpeed();
-        if (parent.Velocity < PatternSpeed - 5 && parent.Brake) {
+        double patternSpeed = CalculateBrakePatternSpeed();
+        if (parent.Velocity < patternSpeed - 5 && parent.Brake) {
             controlBrake.release();
             indicators.Brake(false);
             indicators.PlayBell();
@@ -73,18 +73,18 @@ public partial class Main : Node {
             parent.ApproachPattern = false;
             parent.Brake = false;
         }
-        else if (parent.Velocity < PatternSpeed - 5 && parent.ApproachPattern) {
+        else if (parent.Velocity < patternSpeed - 5 && parent.ApproachPattern) {
             parent.ApproachPattern = false;
             indicators.ApproachPattern(false);
             indicators.PlayBell();
         }
 
-        if (parent.Velocity >= PatternSpeed - 5 && !parent.ApproachPattern) {
+        if (parent.Velocity >= patternSpeed - 5 && !parent.ApproachPattern) {
             parent.ApproachPattern = true;
             indicators.ApproachPattern(true);
             indicators.PlayBell();
         }
-        else if (parent.Velocity > PatternSpeed && !parent.Brake) {
+        else if (parent.Velocity > patternSpeed && !parent.Brake) {
             parent.Brake = true;
             indicators.Brake(true);
             indicators.PlayBell();
