@@ -7,7 +7,7 @@
 
 using Godot;
 
-public partial class Scene : Node2D{
+public partial class Scene : Node2D {
     public bool Brake = false;
     public bool EmBrake = false;
     public bool BrakeOpen = false;

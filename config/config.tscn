@@ -1,19 +1,19 @@
-[gd_scene load_steps=13 format=3 uid="uid://dm01geiku0yxr"]
+[gd_scene format=3 uid="uid://dm01geiku0yxr"]
 
 [ext_resource type="Texture2D" uid="uid://da26ervg41qj5" path="res://assets/return (Custom).png" id="1_ugf2m"]
-[ext_resource type="Script" uid="uid://w01f4pou6tm0" path="res://scripts/return.gd" id="2_toyrf"]
-[ext_resource type="Script" uid="uid://cy8q010etgknn" path="res://config/scripts/tab_bar.gd" id="3_0wwky"]
-[ext_resource type="Script" uid="uid://gv2at8tcldc" path="res://config/scripts/server.gd" id="3_rdhe2"]
-[ext_resource type="Script" uid="uid://ca2h1u7msvgcs" path="res://config/scripts/request_servers.gd" id="5_d33gm"]
-[ext_resource type="Script" uid="uid://dlf4goaleqo1i" path="res://scripts/request_error_msg.gd" id="5_tvbes"]
-[ext_resource type="Script" uid="uid://col0edc62ow62" path="res://config/scripts/credits_rich_text_label.gd" id="6_ixw2y"]
-[ext_resource type="Script" uid="uid://dyjjuuq6ty12p" path="res://config/scripts/update_channel.gd" id="6_r4fv4"]
-[ext_resource type="Script" uid="uid://cht5m6mu6wvsf" path="res://config/scripts/update_mirror.gd" id="7_1llyc"]
-[ext_resource type="Script" uid="uid://b6ktipmm241uc" path="res://config/scripts/debug_save.gd" id="8_saujo"]
-[ext_resource type="Script" uid="uid://dglc8jxhx4qex" path="res://config/scripts/open_app_dir.gd" id="9_iadgi"]
-[ext_resource type="Script" uid="uid://mhgbwi1cmcwv" path="res://config/scripts/brake.gd" id="10_l3qj3"]
+[ext_resource type="Script" uid="uid://w01f4pou6tm0" path="res://scripts/ReturnButton.cs" id="2_toyrf"]
+[ext_resource type="Script" uid="uid://cy8q010etgknn" path="res://config/scripts/ConfigTabBar.cs" id="3_0wwky"]
+[ext_resource type="Script" uid="uid://gv2at8tcldc" path="res://config/scripts/ServerOptionButton.cs" id="3_rdhe2"]
+[ext_resource type="Script" uid="uid://ca2h1u7msvgcs" path="res://config/scripts/RequestServers.cs" id="5_d33gm"]
+[ext_resource type="Script" uid="uid://dlf4goaleqo1i" path="res://scripts/RequestErrorMessage.cs" id="5_tvbes"]
+[ext_resource type="Script" uid="uid://col0edc62ow62" path="res://config/scripts/CreditsRichTextLabel.cs" id="6_ixw2y"]
+[ext_resource type="Script" uid="uid://dyjjuuq6ty12p" path="res://config/scripts/UpdateChannelOptionButton.cs" id="6_r4fv4"]
+[ext_resource type="Script" uid="uid://cht5m6mu6wvsf" path="res://config/scripts/UpdateMirrorOptionButton.cs" id="7_1llyc"]
+[ext_resource type="Script" uid="uid://b6ktipmm241uc" path="res://config/scripts/DebugSaveButton.cs" id="8_saujo"]
+[ext_resource type="Script" uid="uid://dglc8jxhx4qex" path="res://config/scripts/OpenAppDirButton.cs" id="9_iadgi"]
+[ext_resource type="Script" uid="uid://mhgbwi1cmcwv" path="res://config/scripts/BrakeConfigButton.cs" id="10_l3qj3"]
 
-[node name="Config" type="Control"]
+[node name="Config" type="Control" unique_id=2114976413]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -21,14 +21,14 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="return" type="TextureButton" parent="."]
+[node name="return" type="TextureButton" parent="." unique_id=1751903065]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 texture_normal = ExtResource("1_ugf2m")
 script = ExtResource("2_toyrf")
 
-[node name="TabBar" type="TabBar" parent="."]
+[node name="TabBar" type="TabBar" parent="." unique_id=1625767529]
 layout_mode = 0
 offset_left = 1.0
 offset_top = 64.0
@@ -42,10 +42,10 @@ tab_2/title = "Debug"
 tab_3/title = "Credits"
 script = ExtResource("3_0wwky")
 
-[node name="RequestServers" type="HTTPRequest" parent="."]
+[node name="RequestServers" type="HTTPRequest" parent="." unique_id=1771862270]
 script = ExtResource("5_d33gm")
 
-[node name="ErrorMsg" type="AcceptDialog" parent="RequestServers"]
+[node name="ErrorMsg" type="AcceptDialog" parent="RequestServers" unique_id=1730333472]
 auto_translate_mode = 1
 title = "ERROR"
 initial_position = 2
@@ -53,12 +53,12 @@ size = Vector2i(742, 100)
 dialog_text = "Error connect to server, check the server code and train number and your internet connection"
 script = ExtResource("5_tvbes")
 
-[node name="Train Data" type="Control" parent="."]
+[node name="Train Data" type="Control" parent="." unique_id=1081240158]
 visible = false
 anchors_preset = 0
 
-[node name="Server" type="OptionButton" parent="Train Data"]
-layout_mode = 2
+[node name="Server" type="OptionButton" parent="Train Data" unique_id=871668231]
+layout_mode = 0
 offset_left = 81.0
 offset_top = 107.0
 offset_right = 251.0
@@ -69,7 +69,7 @@ fit_to_longest_item = false
 allow_reselect = true
 script = ExtResource("3_rdhe2")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Train Data/Server"]
+[node name="RichTextLabel" type="RichTextLabel" parent="Train Data/Server" unique_id=1447017005]
 layout_mode = 0
 offset_left = -78.0
 offset_top = 4.0
@@ -77,8 +77,8 @@ offset_right = -7.0
 offset_bottom = 30.0
 text = "Server"
 
-[node name="TrainNumber" type="LineEdit" parent="Train Data"]
-layout_mode = 2
+[node name="TrainNumber" type="LineEdit" parent="Train Data" unique_id=54591772]
+layout_mode = 0
 offset_left = 130.0
 offset_top = 145.0
 offset_right = 250.0
@@ -86,22 +86,22 @@ offset_bottom = 176.0
 placeholder_text = "Train Number"
 max_length = 6
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Train Data/TrainNumber"]
+[node name="RichTextLabel" type="RichTextLabel" parent="Train Data/TrainNumber" unique_id=387241558]
 layout_mode = 0
 offset_left = -127.0
 offset_top = 2.0
 offset_bottom = 25.0
 text = "Train Number"
 
-[node name="Save" type="Button" parent="Train Data"]
-layout_mode = 2
+[node name="Save" type="Button" parent="Train Data" unique_id=1452159300]
+layout_mode = 0
 offset_left = 551.0
 offset_top = 610.0
 offset_right = 596.0
 offset_bottom = 641.0
 text = "Save"
 
-[node name="Braking Ratio" type="LineEdit" parent="Train Data"]
+[node name="Braking Ratio" type="LineEdit" parent="Train Data" unique_id=1936437734]
 layout_mode = 0
 offset_left = 129.0
 offset_top = 189.0
@@ -109,7 +109,7 @@ offset_right = 247.0
 offset_bottom = 220.0
 placeholder_text = "Braking Ratio"
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Train Data/Braking Ratio"]
+[node name="RichTextLabel" type="RichTextLabel" parent="Train Data/Braking Ratio" unique_id=1800846099]
 layout_mode = 0
 offset_left = -125.0
 offset_top = 4.0
@@ -117,7 +117,7 @@ offset_right = -10.0
 offset_bottom = 29.0
 text = "Braking Ratio"
 
-[node name="RichTextLabel2" type="RichTextLabel" parent="Train Data/Braking Ratio"]
+[node name="RichTextLabel2" type="RichTextLabel" parent="Train Data/Braking Ratio" unique_id=1138574464]
 layout_mode = 0
 offset_left = 126.0
 offset_top = 4.0
@@ -125,7 +125,7 @@ offset_right = 157.0
 offset_bottom = 29.0
 text = "%"
 
-[node name="Vmax" type="LineEdit" parent="Train Data"]
+[node name="Vmax" type="LineEdit" parent="Train Data" unique_id=1791332854]
 layout_mode = 0
 offset_left = 129.0
 offset_top = 233.0
@@ -134,7 +134,7 @@ offset_bottom = 264.0
 placeholder_text = "Vmax"
 max_length = 3
 
-[node name="Label" type="Label" parent="Train Data/Vmax"]
+[node name="Label" type="Label" parent="Train Data/Vmax" unique_id=1827947934]
 layout_mode = 0
 offset_left = -125.0
 offset_top = 6.0
@@ -142,7 +142,7 @@ offset_right = -81.0
 offset_bottom = 29.0
 text = "Vmax"
 
-[node name="Label2" type="Label" parent="Train Data/Vmax"]
+[node name="Label2" type="Label" parent="Train Data/Vmax" unique_id=1695526243]
 layout_mode = 0
 offset_left = 75.0
 offset_top = 7.0
@@ -150,13 +150,13 @@ offset_right = 117.0
 offset_bottom = 30.0
 text = "km/h"
 
-[node name="General" type="Control" parent="."]
+[node name="General" type="Control" parent="." unique_id=145137074]
 visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="UpdateChannel" type="OptionButton" parent="General"]
+[node name="UpdateChannel" type="OptionButton" parent="General" unique_id=414748876]
 layout_mode = 0
 offset_left = 163.0
 offset_top = 108.0
@@ -170,7 +170,7 @@ popup/item_1/text = "Beta"
 popup/item_1/id = 2
 script = ExtResource("6_r4fv4")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="General/UpdateChannel"]
+[node name="RichTextLabel" type="RichTextLabel" parent="General/UpdateChannel" unique_id=1650444197]
 layout_mode = 0
 offset_left = -160.0
 offset_top = 5.0
@@ -178,23 +178,21 @@ offset_right = -3.0
 offset_bottom = 29.0
 text = "UPDATE_CHANNEL"
 
-[node name="UpdateMirror" type="OptionButton" parent="General"]
+[node name="UpdateMirror" type="OptionButton" parent="General" unique_id=189073647]
 layout_mode = 0
 offset_left = 162.0
 offset_top = 145.0
 offset_right = 257.0
 offset_bottom = 176.0
 selected = 0
-item_count = 3
+item_count = 2
 popup/item_0/text = "GitHub"
 popup/item_0/id = 0
-popup/item_1/text = "GitLab"
+popup/item_1/text = "GitCode"
 popup/item_1/id = 1
-popup/item_2/text = "GitCode"
-popup/item_2/id = 2
 script = ExtResource("7_1llyc")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="General/UpdateMirror"]
+[node name="RichTextLabel" type="RichTextLabel" parent="General/UpdateMirror" unique_id=1024797655]
 layout_mode = 0
 offset_left = -160.0
 offset_top = 5.0
@@ -202,7 +200,7 @@ offset_right = -3.0
 offset_bottom = 30.0
 text = "UPDATE_MIRROR"
 
-[node name="Save" type="Button" parent="General"]
+[node name="Save" type="Button" parent="General" unique_id=684617378]
 layout_mode = 0
 offset_left = 551.0
 offset_top = 610.0
@@ -210,7 +208,7 @@ offset_right = 596.0
 offset_bottom = 641.0
 text = "Save"
 
-[node name="OpenAppUsrDir" type="Button" parent="General"]
+[node name="OpenAppUsrDir" type="Button" parent="General" unique_id=765240985]
 layout_mode = 0
 offset_left = 3.0
 offset_top = 208.0
@@ -219,7 +217,7 @@ offset_bottom = 239.0
 text = "OPEN_APP_USR_DIR"
 script = ExtResource("9_iadgi")
 
-[node name="vJoy" type="CheckBox" parent="General"]
+[node name="vJoy" type="CheckBox" parent="General" unique_id=1801227162]
 layout_mode = 0
 offset_left = 3.0
 offset_top = 174.0
@@ -227,11 +225,11 @@ offset_right = 64.0
 offset_bottom = 205.0
 text = "vJoy"
 
-[node name="Debug" type="Control" parent="."]
+[node name="Debug" type="Control" parent="." unique_id=816635307]
 visible = false
 anchors_preset = 0
 
-[node name="Debug frame" type="CheckBox" parent="Debug"]
+[node name="Debug frame" type="CheckBox" parent="Debug" unique_id=2099045087]
 layout_mode = 0
 offset_left = 2.0
 offset_top = 107.0
@@ -239,7 +237,7 @@ offset_right = 148.0
 offset_bottom = 138.0
 text = "Debug frame"
 
-[node name="Save" type="Button" parent="Debug"]
+[node name="Save" type="Button" parent="Debug" unique_id=1614781084]
 layout_mode = 0
 offset_left = 551.0
 offset_top = 610.0
@@ -248,7 +246,7 @@ offset_bottom = 641.0
 text = "Save"
 script = ExtResource("8_saujo")
 
-[node name="Brake" type="Button" parent="Debug"]
+[node name="Brake" type="Button" parent="Debug" unique_id=35333328]
 layout_mode = 0
 offset_left = 3.0
 offset_top = 142.0
@@ -257,10 +255,10 @@ offset_bottom = 173.0
 text = "Brake"
 script = ExtResource("10_l3qj3")
 
-[node name="Credits" type="Control" parent="."]
+[node name="Credits" type="Control" parent="." unique_id=1871528418]
 anchors_preset = 0
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Credits"]
+[node name="RichTextLabel" type="RichTextLabel" parent="Credits" unique_id=1164884195]
 layout_mode = 0
 offset_top = 108.0
 offset_right = 1152.0
@@ -277,16 +275,16 @@ SDK and APIs:
 	[url=https://github.com/doceazedo/godot_wry]WRY[/url]
 To contribute, please contact me via [url=https://github.com/rinnyanneko/SR-ATS]GitHub[/url]
 
-Copyright © 2024 - 2025 rinnyanneko. Some Rights Reserved.
+Copyright © 2024 - 2026 rinnyanneko. Some Rights Reserved.
 "
 script = ExtResource("6_ixw2y")
 
-[connection signal="pressed" from="return" to="return" method="_on_pressed"]
-[connection signal="tab_changed" from="TabBar" to="TabBar" method="_on_tab_changed"]
-[connection signal="request_completed" from="RequestServers" to="RequestServers" method="_on_request_completed"]
-[connection signal="confirmed" from="RequestServers/ErrorMsg" to="RequestServers/ErrorMsg" method="_on_confirmed"]
-[connection signal="pressed" from="Train Data/Save" to="Train Data/Server" method="_on_save_button_pressed"]
-[connection signal="pressed" from="General/Save" to="General/UpdateMirror" method="_on_save_pressed"]
-[connection signal="pressed" from="General/OpenAppUsrDir" to="General/OpenAppUsrDir" method="_on_pressed"]
-[connection signal="pressed" from="Debug/Save" to="Debug/Save" method="_on_pressed"]
-[connection signal="pressed" from="Debug/Brake" to="Debug/Brake" method="_on_pressed"]
+[connection signal="pressed" from="return" to="return" method="OnPressed"]
+[connection signal="tab_changed" from="TabBar" to="TabBar" method="OnTabChanged"]
+[connection signal="request_completed" from="RequestServers" to="RequestServers" method="OnRequestCompleted"]
+[connection signal="confirmed" from="RequestServers/ErrorMsg" to="RequestServers/ErrorMsg" method="OnConfirmed"]
+[connection signal="pressed" from="Train Data/Save" to="Train Data/Server" method="OnSaveButtonPressed"]
+[connection signal="pressed" from="General/Save" to="General/UpdateMirror" method="OnSavePressed"]
+[connection signal="pressed" from="General/OpenAppUsrDir" to="General/OpenAppUsrDir" method="OnPressed"]
+[connection signal="pressed" from="Debug/Save" to="Debug/Save" method="OnPressed"]
+[connection signal="pressed" from="Debug/Brake" to="Debug/Brake" method="OnPressed"]

@@ -7,13 +7,11 @@
 
 using Godot;
 
-public partial class DebugWord : RichTextLabel
-{
+public partial class DebugWord : RichTextLabel {
     private ConfigFile _cfg = new ConfigFile();
 
     // Called when the node enters the scene tree for the first time.
-    public override void _Ready()
-    {
+    public override void _Ready() {
         _cfg.Load("user://config.cfg");
         if (_cfg.GetValue("System", "Debug", false).AsBool())
             Visible = true;
@@ -22,14 +20,11 @@ public partial class DebugWord : RichTextLabel
     }
 
     // Called every frame. 'delta' is the elapsed time since the previous frame.
-    public override void _Process(double delta)
-    {
+    public override void _Process(double delta) {
         _cfg.Load("user://config.cfg");
-        if (_cfg.GetValue("System", "Debug", false).AsBool())
-        {
+        if (_cfg.GetValue("System", "Debug", false).AsBool()) {
             var parent = GetParent();
-            if (parent != null)
-            {
+            if (parent != null) {
                 Text = $"UpdateTime = {parent.Get("UpdateTime")}\n" +
                        $"Brake = {parent.Get("Brake")}\n" +
                        $"EmBrake = {parent.Get("EmBrake")}\n" +

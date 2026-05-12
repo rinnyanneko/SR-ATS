@@ -10,49 +10,41 @@ using Godot;
 public partial class HttpReq : HttpRequest{
     private ConfigFile _cfg = new ConfigFile();
 
-    public async void _on_main_ats_ready()
-    {
+    public async void _on_main_ats_ready() {
         var parent = GetNode<Scene>("..");
         var indicators = GetNode<ATSIndicators>("../Indicators");
         _cfg.Load("user://config.cfg");
-        if (_cfg.GetValue("Train Data", "server", "null").AsString() != "127")
-        {
-            while (true)
-            {
+        if (_cfg.GetValue("Train Data", "server", "null").AsString() != "127") {
+            while (true) {
+                if (GetHttpClientStatus() != HttpClient.Status.Disconnected) {
+                    await ToSignal(GetTree().CreateTimer(2.5f), "timeout");
+                    continue;
+                }
+
                 GD.Print("getting data from server...");
                 var value = Request("https://panel.simrail.eu:8084/trains-open?serverCode=" + _cfg.GetValue("Train Data", "server", "null").AsString());
 
-                if (value == Error.Timeout)
-                {
+                if (value == Error.Timeout) {
                     GD.PrintErr("REQUEST TIMEOUT");
                     GetNode<AcceptDialog>("../ErrorMsg").Call("ConnectionTimeout");
-                    if (!parent.Fail)
-                    {
+                    if (!parent.Fail) {
                         parent.Fail = true;
                         indicators.Fail(true);
                         indicators.PlayBell();
                     }
                 }
-                else if (value == Error.Busy)
-                {
-                    GD.PrintErr("[HTTP REQUEST ERROR]BUSY");
-                }
-                else if (value == Error.Unavailable)
-                {
+                else if (value == Error.Unavailable) {
                     GD.PrintErr("[HTTP REQUEST ERROR]UNAVAILABLE");
                 }
-                else if (value != Error.Ok)
-                {
+                else if (value != Error.Ok) {
                     GD.PrintErr("[HTTP REQUEST ERROR]" + value);
                 }
-                else if (parent.Fail)
-                {
+                else if (parent.Fail) {
                     parent.Fail = false;
                     indicators.Fail(false);
                     indicators.PlayBell();
                 }
-                else
-                {
+                else {
                     GetNode<AcceptDialog>("../ErrorMsg").Visible = false;
                 }
 
@@ -61,16 +53,13 @@ public partial class HttpReq : HttpRequest{
         }
     }
 
-    private void _OnRequestCompleted(long result, long responseCode, string[] headers, byte[] body)
-{
+    public void OnRequestCompleted(long result, long responseCode, string[] headers, byte[] body) {
     var parent = GetNode<Scene>("..");
     var indicators = GetNode<ATSIndicators>("../Indicators");
-    if (responseCode != 200)
-    {
+    if (responseCode != 200) {
         GD.PrintErr("HTTP response code:" + responseCode);
         GetNode<AcceptDialog>("../ErrorMsg").Call("ConnectionErr", (int)responseCode);
-        if (!parent.Fail)
-        {
+        if (!parent.Fail) {
             parent.Fail = true;
             indicators.Fail(true);
             indicators.PlayBell();
@@ -80,8 +69,7 @@ public partial class HttpReq : HttpRequest{
 
     var json = Json.ParseString(System.Text.Encoding.UTF8.GetString(body)).AsGodotDictionary();
 
-    if (json["count"].AsInt32() == 0)
-    {
+    if (json["count"].AsInt32() == 0) {
         GetNode<AcceptDialog>("../ErrorMsg").Call("ServerNotFound");
         return;
     }
@@ -89,8 +77,7 @@ public partial class HttpReq : HttpRequest{
     var dataArray = json["data"].AsGodotArray();
     var data = ReadArray(dataArray);
 
-    if (data != null)
-    {
+    if (data != null) {
         GetNode<AcceptDialog>("../ErrorMsg").Visible = false;
 
         if (data.ContainsKey("ControlledBySteamID") && data["ControlledBySteamID"].VariantType != Variant.Type.Nil)
@@ -111,9 +98,7 @@ public partial class HttpReq : HttpRequest{
         parent.UpdateTime = $"{time["hour"].AsString().PadLeft(2, '0')}:{time["minute"].AsString().PadLeft(2, '0')}:{time["second"].AsString().PadLeft(2, '0')}";
     }
     else
-    {
         GetNode<AcceptDialog>("../ErrorMsg").Call("TrainNotFound");
-    }
 }
 
     private Godot.Collections.Dictionary ReadArray(Godot.Collections.Array array){
