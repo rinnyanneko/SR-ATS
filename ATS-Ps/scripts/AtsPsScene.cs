@@ -1,0 +1,36 @@
+/*
+ * Copyright 2026 rinnyanneko
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+// SPDX-License-Identifier: Apache-2.0
+
+using Godot;
+
+public partial class AtsPsScene : Node2D {
+    [Export] public bool EmBrake { get; set; } = false;
+    [Export] public bool BrakeDisable { get; set; } = false;
+    [Export] public bool PatternGenerated { get; set; } = false;
+    [Export] public int PatternSpeed { get; set; } = 32767;
+    [Export] public string LastSignalInFront { get; set; } = "";
+    [Export] public double VDDelayedTimetableIndex { get; set; } = -1.0;
+    [Export] public int SignalInFrontSpeed { get; set; } = -1;
+    [Export] public double DistanceToSignalInFront { get; set; } = -1.0;
+    [Export] public string SignalInFront { get; set; } = "";
+    [Export] public int Velocity { get; set; } = -1;
+    [Export] public double Longitute { get; set; } = -1.0;
+    [Export] public double Latititute { get; set; } = -1.0;
+    [Export] public bool InBorderStationArea { get; set; } = false;
+    [Export] public string ControlledBySteamID { get; set; } = "";
+    [Export] public string UpdateTime { get; set; } = "";
+}

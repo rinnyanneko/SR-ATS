@@ -4,7 +4,14 @@
 
 Automatic Train Protection systems for [SimRail](https://simrail.eu/en/our-games/simrail-2021)
 
-Written with [Godot Game Engine 4.4](https://godotengine.org)
+Written with [Godot Game Engine 4.4 .NET](https://godotengine.org)
+
+Runtime scripts are C# .NET. Build and run locally with:
+
+```sh
+dotnet build SR-ATS.sln
+godot --path .
+```
 
 Feel free to open a pull request!
 

@@ -16,6 +16,11 @@ public partial class HttpReq : HttpRequest{
         _cfg.Load("user://config.cfg");
         if (_cfg.GetValue("Train Data", "server", "null").AsString() != "127") {
             while (true) {
+                if (GetHttpClientStatus() != HttpClient.Status.Disconnected) {
+                    await ToSignal(GetTree().CreateTimer(2.5f), "timeout");
+                    continue;
+                }
+
                 GD.Print("getting data from server...");
                 var value = Request("https://panel.simrail.eu:8084/trains-open?serverCode=" + _cfg.GetValue("Train Data", "server", "null").AsString());
 
@@ -27,9 +32,6 @@ public partial class HttpReq : HttpRequest{
                         indicators.Fail(true);
                         indicators.PlayBell();
                     }
-                }
-                else if (value == Error.Busy) {
-                    GD.PrintErr("[HTTP REQUEST ERROR]BUSY");
                 }
                 else if (value == Error.Unavailable) {
                     GD.PrintErr("[HTTP REQUEST ERROR]UNAVAILABLE");

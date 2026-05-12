@@ -15,10 +15,15 @@ public partial class ControlBrake: Node {
 	[Signal]
 	public delegate void BrakeReadyEventHandler();
 
-	vJoy joystick = new vJoy();
+	vJoy joystick;
 	uint id = 1;
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready() {
+		if (!OS.HasFeature("windows")) {
+			GD.Print("vJoy is only available on Windows; brake output disabled on this platform.");
+			return;
+		}
+
 		cfg.Load("user://config.cfg");
 		if ((bool)cfg.GetValue("Debug", "vJoy", false))
 			return;
@@ -84,7 +89,9 @@ public partial class ControlBrake: Node {
 			GD.PrintErr(e.Message);
 		}
 	}
-	public void _on_tree_exiting(){
+	public void OnTreeExiting(){
+		if (!OS.HasFeature("windows") || joystick == null)
+			return;
 		cfg.Load("user://config.cfg");
 		if ((bool)cfg.GetValue("Debug", "vJoy", false))
 			return;
@@ -96,7 +103,9 @@ public partial class ControlBrake: Node {
 	public override void _Process(double delta) {
 		return;
 	}
-	public void release(){
+	public void Release(){
+		if (!OS.HasFeature("windows") || joystick == null)
+			return;
 		cfg.Load("user://config.cfg");
 		if ((bool)cfg.GetValue("Debug", "vJoy", false))
 			return;
@@ -111,7 +120,10 @@ public partial class ControlBrake: Node {
 		}
 		GD.Print("release");
 	}
-	public void brake(){
+
+	public void Brake(){
+		if (!OS.HasFeature("windows") || joystick == null)
+			return;
 		cfg.Load("user://config.cfg");
 		if ((bool)cfg.GetValue("Debug", "vJoy", false))
 			return;
@@ -126,7 +138,10 @@ public partial class ControlBrake: Node {
 		}
 		GD.Print("brake");
 	}
-	public void emergency_brake(){
+
+	public void EmergencyBrake(){
+		if (!OS.HasFeature("windows") || joystick == null)
+			return;
 		cfg.Load("user://config.cfg");
 		if ((bool)cfg.GetValue("General", "vJoy", false))
 			return;
@@ -137,5 +152,17 @@ public partial class ControlBrake: Node {
 			GD.PrintErr(e.Message);
 		}
 		GD.Print("emergency brake");
+	}
+
+	public void release(){
+		Release();
+	}
+
+	public void brake(){
+		Brake();
+	}
+
+	public void emergency_brake(){
+		EmergencyBrake();
 	}
 }

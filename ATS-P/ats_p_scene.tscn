@@ -2,9 +2,9 @@
 
 [ext_resource type="Texture2D" uid="uid://da26ervg41qj5" path="res://assets/return (Custom).png" id="1_gvy33"]
 [ext_resource type="Script" uid="uid://blitktlm74x4" path="res://ATS-P/scripts/Scene.cs" id="1_ksjca"]
-[ext_resource type="Script" uid="uid://w01f4pou6tm0" path="res://scripts/return.gd" id="2_f4fvo"]
+[ext_resource type="Script" uid="uid://w01f4pou6tm0" path="res://scripts/ReturnButton.cs" id="2_f4fvo"]
 [ext_resource type="Script" uid="uid://5djfn6cacfid" path="res://ATS-P/scripts/HttpReq.cs" id="4_ksjca"]
-[ext_resource type="Script" uid="uid://dlf4goaleqo1i" path="res://scripts/request_error_msg.gd" id="5_hc38h"]
+[ext_resource type="Script" uid="uid://dlf4goaleqo1i" path="res://scripts/RequestErrorMessage.cs" id="5_hc38h"]
 [ext_resource type="Script" uid="uid://dtdsnhyiew44g" path="res://ATS-P/scripts/DebugWord.cs" id="6_ksjca"]
 [ext_resource type="Script" uid="uid://iscloj5yswc3" path="res://scripts/ControlBrake.cs" id="7_dghsc"]
 [ext_resource type="Script" uid="uid://bdpgr3qgm18dj" path="res://ATS-P/scripts/ATSIndicators.cs" id="8_ksjca"]
@@ -94,6 +94,6 @@ stream = ExtResource("15_ksjca")
 [node name="Main" type="Node" parent="."]
 script = ExtResource("16_gtghf")
 
-[connection signal="pressed" from="Return" to="Return" method="_on_pressed"]
-[connection signal="confirmed" from="ErrorMsg" to="ErrorMsg" method="_on_confirmed"]
-[connection signal="pressed" from="copyright" to="copyright" method="_on_pressed"]
+[connection signal="pressed" from="Return" to="Return" method="OnPressed"]
+[connection signal="confirmed" from="ErrorMsg" to="ErrorMsg" method="OnConfirmed"]
+[connection signal="pressed" from="copyright" to="copyright" method="OnPressed"]

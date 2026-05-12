@@ -1,0 +1,51 @@
+/*
+ * Copyright 2026 rinnyanneko
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+// SPDX-License-Identifier: Apache-2.0
+
+using Godot;
+
+public partial class AtsPsDebugWord : RichTextLabel {
+    private readonly ConfigFile cfg = new ConfigFile();
+
+    public override void _Ready() {
+        Visible = cfg.GetValue("System", "Debug", false).AsBool();
+    }
+
+    public override void _Process(double delta) {
+        cfg.Load("user://config.cfg");
+        if (!cfg.GetValue("System", "Debug", false).AsBool()) {
+            return;
+        }
+
+        Visible = true;
+        AtsPsScene scene = GetParent<AtsPsScene>();
+        Text = "UpdateTime = " + scene.UpdateTime
+            + "\npattern_generated = " + scene.PatternGenerated
+            + "\npattern_speed = " + scene.PatternSpeed
+            + "\nem_brake = " + scene.EmBrake
+            + "\nbrake_disable = " + scene.BrakeDisable
+            + "\nsignalInFront = " + scene.LastSignalInFront
+            + "\nVDDelayedTimetableIndex = " + scene.VDDelayedTimetableIndex
+            + "\nSignalInFrontSpeed = " + scene.SignalInFrontSpeed
+            + "\nDistanceToSignalInFront = " + scene.DistanceToSignalInFront
+            + "\nSignalInFront = " + scene.SignalInFront
+            + "\nVelocity = " + scene.Velocity
+            + "\nLongitute = " + scene.Longitute
+            + "\nLatititute = " + scene.Latititute
+            + "\nInBorderStationArea = " + scene.InBorderStationArea
+            + "\nControlledBySteamID = " + scene.ControlledBySteamID;
+    }
+}
