@@ -36,16 +36,19 @@ public partial class ServerOptionButton : OptionButton {
     }
 
     public void OnSaveButtonPressed() {
-        if (GetSelectedId() != -1) {
+        if (Selected >= 0) {
             RequestServers requestServers = GetNode<RequestServers>("../../RequestServers");
-            cfg.SetValue("Train Data", "server", requestServers.Codes[(int)GetSelectedId()]);
+            if (Selected < requestServers.Codes.Count) {
+                cfg.SetValue("Train Data", "server", requestServers.Codes[Selected]);
+            }
+
             cfg.SetValue("Train Data", "trainNumber", GetNode<LineEdit>("../TrainNumber").Text);
         }
 
         string brakingRatio = GetNode<LineEdit>("../Braking Ratio").Text;
-        if (brakingRatio != null) {
-            float.TryParse(brakingRatio, out float ratio);
-            int.TryParse(GetNode<LineEdit>("../Vmax").Text, out int vmax);
+        if (!string.IsNullOrWhiteSpace(brakingRatio)
+            && float.TryParse(brakingRatio, out float ratio)
+            && int.TryParse(GetNode<LineEdit>("../Vmax").Text, out int vmax)) {
             cfg.SetValue("Train Data", "brakingRatio", brakingRatio);
             cfg.SetValue("Train Data", "brakeDistance", ratio == 0 ? 0 : 480 / ratio);
             cfg.SetValue("Train Data", "decelRate", 0.805 * Mathf.Pow(ratio, 2));

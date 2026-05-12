@@ -59,7 +59,7 @@ public partial class RequestErrorMessage : AcceptDialog {
             406 => "406 Not Acceptable",
             407 => "407 Proxy Authentication Required",
             408 => "408 Request Timeout",
-            425 => "409 Too Early",
+            425 => "425 Too Early",
             451 => "451 Unavailable For Legal Reasons",
             500 => "500 Internal Server Error",
             501 => "501 Not Implemented",

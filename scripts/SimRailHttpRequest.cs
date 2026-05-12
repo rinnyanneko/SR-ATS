@@ -63,6 +63,7 @@ public partial class SimRailHttpRequest : HttpRequest {
         Godot.Collections.Dictionary json = parsed.AsGodotDictionary();
         if (json["count"].AsInt32() == 0) {
             GetNode<RequestErrorMessage>("../ErrorMsg").ServerNotFound();
+            return;
         }
 
         Godot.Collections.Dictionary? data = ReadArray(json["data"].AsGodotArray());

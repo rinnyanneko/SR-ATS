@@ -54,7 +54,8 @@ public partial class RequestServers : HttpRequest {
         for (int i = 0; i < count; i++) {
             Godot.Collections.Dictionary data = json["data"].AsGodotArray()[i].AsGodotDictionary();
             if (data["IsActive"].AsBool()) {
-                server.AddItem(data["ServerName"].AsString(), i);
+                int optionId = Codes.Count;
+                server.AddItem(data["ServerName"].AsString(), optionId);
                 Codes.Add(data["ServerCode"]);
             }
         }

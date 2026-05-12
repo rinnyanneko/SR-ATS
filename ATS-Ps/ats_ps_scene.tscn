@@ -52,5 +52,6 @@ offset_bottom = 40.0
 script = ExtResource("7_nv0f3")
 
 [connection signal="pressed" from="Return" to="Return" method="OnPressed"]
+[connection signal="request_completed" from="HTTPRequest" to="HTTPRequest" method="OnRequestCompleted"]
 [connection signal="confirmed" from="ErrorMsg" to="ErrorMsg" method="OnConfirmed"]
 [connection signal="pressed" from="copyright" to="copyright" method="OnPressed"]

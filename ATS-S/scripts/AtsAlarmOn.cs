@@ -38,7 +38,7 @@ public partial class AtsAlarmOn : Sprite2D {
             && signalInFrontSpeed <= 100
             && passedSignal != signalInFront) {
             Visible = true;
-            TopLevel = TopLevel;
+            TopLevel = true;
             GetNode<AudioStreamPlayer>("ATS Alarm").Play();
             GetNode<AudioStreamPlayer>("../AtsNormalOff/ATS Chime").Play();
             scene.LastSignalInFront = signalInFront;
@@ -55,7 +55,7 @@ public partial class AtsAlarmOn : Sprite2D {
             scene.AlarmHard = true;
             GD.Print("Hard alarm!");
             Visible = true;
-            TopLevel = TopLevel;
+            TopLevel = true;
             GetNode<AudioStreamPlayer>("ATS Alarm").Play();
             GetNode<AudioStreamPlayer>("../AtsNormalOff/ATS Chime").Play();
             scene.LastSignalInFront = signalInFront;

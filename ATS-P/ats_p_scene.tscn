@@ -95,5 +95,6 @@ stream = ExtResource("15_ksjca")
 script = ExtResource("16_gtghf")
 
 [connection signal="pressed" from="Return" to="Return" method="OnPressed"]
+[connection signal="request_completed" from="HTTPRequest" to="HTTPRequest" method="OnRequestCompleted"]
 [connection signal="confirmed" from="ErrorMsg" to="ErrorMsg" method="OnConfirmed"]
 [connection signal="pressed" from="copyright" to="copyright" method="OnPressed"]

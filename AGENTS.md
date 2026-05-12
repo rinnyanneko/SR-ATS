@@ -2,7 +2,7 @@
 
 ## Project Structure & Module Organization
 
-SR-ATS is a Godot 4.4 .NET project. Core metadata lives in `project.godot`, with the main scene in `main.tscn`. Runtime scripts are C# files. Shared scripts are in `scripts/`; ATS-specific modules are under `ATS-P/`, `ATS-Ps/`, and `ATS-S/` with their own scenes, scripts, and assets. UI/config scenes are under `config/`. Global media and localization files are in `assets/`, `fonts/`, `screenshot/`, `news/`, and `translation.csv`. The Windows installer project is under `SR-ATS-Setup/`.
+SR-ATS is a Godot 4.6 .NET project. Core metadata lives in `project.godot`, with the main scene in `main.tscn`. Runtime scripts are C# files. Shared scripts are in `scripts/`; ATS-specific modules are under `ATS-P/`, `ATS-Ps/`, and `ATS-S/` with their own scenes, scripts, and assets. UI/config scenes are under `config/`. Global media and localization files are in `assets/`, `fonts/`, `screenshot/`, `news/`, and `translation.csv`. The Windows installer project is under `SR-ATS-Setup/`.
 
 ## Build, Test, and Development Commands
 
@@ -11,7 +11,7 @@ SR-ATS is a Godot 4.4 .NET project. Core metadata lives in `project.godot`, with
 - `dotnet build SR-ATS.sln`: compile the Godot C# assembly and catch C# errors.
 - `dotnet build SR-ATS-Setup/SR-ATS-Setup.sln`: build the installer solution when Visual Studio setup project tooling is available.
 
-Use Godot 4.4.x with .NET support. The desktop target is `net9.0`, with `vJoyInterface.dll` and `vJoyInterfaceWrap.dll` referenced from the repository root.
+Use Godot 4.6.x with .NET support. The desktop target is `net9.0`, with `vJoyInterface.dll` and `vJoyInterfaceWrap.dll` referenced from the repository root.
 
 ## Coding Style & Naming Conventions
 

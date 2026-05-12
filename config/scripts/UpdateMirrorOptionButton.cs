@@ -27,6 +27,7 @@ public partial class UpdateMirrorOptionButton : OptionButton {
 			Selected = 0;
 		} else if (mirror == "GitCode") {
 			Selected = 1;
+		}
 
 		GetNode<BaseButton>("../vJoy").ButtonPressed = cfg.GetValue("General", "vJoy", false).AsBool();
 		GetNode<RichTextLabel>("RichTextLabel").Text = Tr("UPDATE_MIRROR");
@@ -38,6 +39,7 @@ public partial class UpdateMirrorOptionButton : OptionButton {
 			cfg.SetValue("General", "UpdateMirror", "GitHub");
 		} else if (GetSelectedId() == 1) {
 			cfg.SetValue("General", "UpdateMirror", "GitCode");
+		}
 
 		if (GetNode<OptionButton>("../UpdateChannel").GetSelectedId() == 0) {
 			cfg.SetValue("General", "UpdateChannel", "Stable");

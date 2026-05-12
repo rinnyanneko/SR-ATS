@@ -21,12 +21,15 @@ public partial class AtsPsDebugWord : RichTextLabel {
     private readonly ConfigFile cfg = new ConfigFile();
 
     public override void _Ready() {
+        cfg.Load("user://config.cfg");
         Visible = cfg.GetValue("System", "Debug", false).AsBool();
     }
 
     public override void _Process(double delta) {
         cfg.Load("user://config.cfg");
         if (!cfg.GetValue("System", "Debug", false).AsBool()) {
+            Visible = false;
+            Text = string.Empty;
             return;
         }
 

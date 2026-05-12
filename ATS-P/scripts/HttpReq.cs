@@ -53,7 +53,7 @@ public partial class HttpReq : HttpRequest{
         }
     }
 
-    private void _OnRequestCompleted(long result, long responseCode, string[] headers, byte[] body) {
+    public void OnRequestCompleted(long result, long responseCode, string[] headers, byte[] body) {
     var parent = GetNode<Scene>("..");
     var indicators = GetNode<ATSIndicators>("../Indicators");
     if (responseCode != 200) {
