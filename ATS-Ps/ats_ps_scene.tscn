@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bbdh4fakp8omv"]
+[gd_scene format=3 uid="uid://bbdh4fakp8omv"]
 
 [ext_resource type="Script" uid="uid://csjs0skvkqn85" path="res://ATS-Ps/scripts/AtsPsScene.cs" id="1_3txb8"]
 [ext_resource type="Texture2D" uid="uid://da26ervg41qj5" path="res://assets/return (Custom).png" id="1_pty6m"]
@@ -8,19 +8,19 @@
 [ext_resource type="Script" uid="uid://daqt3cd308ah3" path="res://ATS-Ps/scripts/AtsPsDebugWord.cs" id="6_qh547"]
 [ext_resource type="Script" uid="uid://iscloj5yswc3" path="res://scripts/ControlBrake.cs" id="7_nv0f3"]
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D" type="Node2D" unique_id=767546903]
 script = ExtResource("1_3txb8")
 
-[node name="Return" type="TextureButton" parent="."]
+[node name="Return" type="TextureButton" parent="." unique_id=528412977]
 offset_right = 40.0
 offset_bottom = 40.0
 texture_normal = ExtResource("1_pty6m")
 script = ExtResource("2_rmidq")
 
-[node name="HTTPRequest" type="HTTPRequest" parent="."]
+[node name="HTTPRequest" type="HTTPRequest" parent="." unique_id=663678718]
 script = ExtResource("4_eqv1q")
 
-[node name="ErrorMsg" type="AcceptDialog" parent="."]
+[node name="ErrorMsg" type="AcceptDialog" parent="." unique_id=620099343]
 auto_translate_mode = 1
 title = "ERROR"
 initial_position = 2
@@ -28,15 +28,15 @@ size = Vector2i(746, 100)
 dialog_text = "Error connect to server, check the server code and train number and your internet connection"
 script = ExtResource("5_7v6mv")
 
-[node name="copyright" type="LinkButton" parent="."]
+[node name="copyright" type="LinkButton" parent="." unique_id=290843248]
 offset_left = 684.0
 offset_top = 625.0
 offset_right = 1152.0
 offset_bottom = 648.0
-text = "Copyright © 2024 - 2025 rinnyanneko. Some rights reserved."
+text = "Copyright © 2024 - 2026 rinnyanneko. Some rights reserved."
 underline = 2
 
-[node name="Debug frame" type="RichTextLabel" parent="."]
+[node name="Debug frame" type="RichTextLabel" parent="." unique_id=35139702]
 offset_left = 73.0
 offset_top = -1.0
 offset_right = 482.0
@@ -44,7 +44,7 @@ offset_bottom = 333.0
 text = "Debug frame"
 script = ExtResource("6_qh547")
 
-[node name="Brake Control" type="Control" parent="."]
+[node name="Brake Control" type="Control" parent="." unique_id=2134489626]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0

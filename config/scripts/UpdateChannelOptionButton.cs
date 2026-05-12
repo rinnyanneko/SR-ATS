@@ -18,16 +18,16 @@
 using Godot;
 
 public partial class UpdateChannelOptionButton : OptionButton {
-    private readonly ConfigFile cfg = new ConfigFile();
+	private readonly ConfigFile cfg = new ConfigFile();
 
-    public override void _Ready() {
-        cfg.Load("user://config.cfg");
-        if (cfg.GetValue("General", "UpdateChannel", "Stable").AsString() == "Stable") {
-            Selected = 0;
-        } else if (cfg.GetValue("General", "UpdateChannel").AsString() == "Beta") {
-            Selected = 1;
-        }
+	public override void _Ready() {
+		cfg.Load("user://config.cfg");
+		if (cfg.GetValue("General", "UpdateChannel", "Stable").AsString() == "Stable") {
+			Selected = 0;
+		} else if (cfg.GetValue("General", "UpdateChannel").AsString() == "Beta") {
+			Selected = 1;
+		}
 
-        GetNode<RichTextLabel>("RichTextLabel").Text = Tr("UPDATE_CHANNEL");
-    }
+		GetNode<RichTextLabel>("RichTextLabel").Text = Tr("UPDATE_CHANNEL");
+	}
 }

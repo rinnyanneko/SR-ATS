@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://dl6vqmuu804oc"]
+[gd_scene format=3 uid="uid://dl6vqmuu804oc"]
 
 [ext_resource type="Texture2D" uid="uid://ddw53s0vlshw" path="res://ATS-S/assets/icon (Custom).png" id="1_o7qkv"]
 [ext_resource type="Texture2D" uid="uid://cjrgpvf2qau18" path="res://ATS-S/assets/icon_INOP (Custom).png" id="3_dalr6"]
@@ -20,7 +20,7 @@
 [ext_resource type="Script" uid="uid://ttnw736i8545" path="res://scripts/PleaseEnterTrainDataButton.cs" id="18_aobb2"]
 [ext_resource type="Script" uid="uid://3xpipvwhel6s" path="res://scripts/UpdateRequest.cs" id="19_swxou"]
 
-[node name="Control" type="Control"]
+[node name="Control" type="Control" unique_id=1045186799]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -28,7 +28,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ATS-S" type="TextureButton" parent="."]
+[node name="ATS-S" type="TextureButton" parent="." unique_id=535806910]
 layout_mode = 0
 offset_left = 120.0
 offset_top = 327.0
@@ -39,7 +39,7 @@ texture_normal = ExtResource("1_o7qkv")
 texture_disabled = ExtResource("3_dalr6")
 script = ExtResource("4_12aw2")
 
-[node name="ATS-Ps" type="TextureButton" parent="."]
+[node name="ATS-Ps" type="TextureButton" parent="." unique_id=1617685500]
 layout_mode = 0
 offset_left = 318.0
 offset_top = 326.0
@@ -50,7 +50,7 @@ texture_normal = ExtResource("5_pvvx2")
 texture_disabled = ExtResource("6_1sgmq")
 script = ExtResource("6_cegan")
 
-[node name="ATS-P" type="TextureButton" parent="."]
+[node name="ATS-P" type="TextureButton" parent="." unique_id=1217910732]
 layout_mode = 0
 offset_left = 510.0
 offset_top = 327.0
@@ -61,7 +61,7 @@ texture_normal = ExtResource("7_6k4lh")
 texture_disabled = ExtResource("8_xtb8p")
 script = ExtResource("8_82xsv")
 
-[node name="Banner" type="TextureButton" parent="."]
+[node name="Banner" type="TextureButton" parent="." unique_id=1402083585]
 layout_mode = 0
 offset_left = 330.0
 offset_top = 110.0
@@ -71,7 +71,7 @@ scale = Vector2(0.251848, 0.251848)
 texture_normal = ExtResource("9_usuam")
 script = ExtResource("9_8c6cy")
 
-[node name="Language" type="TextureButton" parent="."]
+[node name="Language" type="TextureButton" parent="." unique_id=972792753]
 layout_mode = 0
 offset_right = 30.0
 offset_bottom = 30.0
@@ -79,7 +79,7 @@ tooltip_text = "Language"
 texture_normal = ExtResource("11_tf4cp")
 script = ExtResource("11_qu0kt")
 
-[node name="version" type="LinkButton" parent="."]
+[node name="version" type="LinkButton" parent="." unique_id=1207766807]
 layout_mode = 0
 offset_top = 625.0
 offset_right = 297.0
@@ -87,34 +87,34 @@ offset_bottom = 648.0
 text = "version"
 underline = 1
 
-[node name="copyright" type="LinkButton" parent="."]
+[node name="copyright" type="LinkButton" parent="." unique_id=654940767]
 layout_mode = 0
 offset_left = 727.0
 offset_top = 625.0
 offset_right = 1152.0
 offset_bottom = 648.0
-text = "Copyright © 2025 rinnyanneko. Some Rights Reserved."
+text = "Copyright © 2026 rinnyanneko. Some Rights Reserved."
 underline = 1
 uri = "LICENSE.txt"
 
-[node name="news" type="ConfirmationDialog" parent="."]
+[node name="news" type="ConfirmationDialog" parent="." unique_id=528149732]
 mode = 1
 initial_position = 1
 size = Vector2i(400, 200)
 
-[node name="RichTextLabel" type="RichTextLabel" parent="news"]
+[node name="RichTextLabel" type="RichTextLabel" parent="news" unique_id=899279361]
 offset_left = 8.0
 offset_top = 8.0
 offset_right = 392.0
 offset_bottom = 151.0
 bbcode_enabled = true
 
-[node name="news_request" type="HTTPRequest" parent="."]
+[node name="news_request" type="HTTPRequest" parent="." unique_id=326324050]
 use_threads = true
 timeout = 3.0
 script = ExtResource("15_4f64g")
 
-[node name="Language name" type="RichTextLabel" parent="."]
+[node name="Language name" type="RichTextLabel" parent="." unique_id=664604160]
 layout_mode = 0
 offset_left = 33.0
 offset_top = 4.0
@@ -123,7 +123,7 @@ offset_bottom = 27.0
 fit_content = true
 script = ExtResource("14_tq6gw")
 
-[node name="Config" type="TextureButton" parent="."]
+[node name="Config" type="TextureButton" parent="." unique_id=1207640619]
 layout_mode = 0
 offset_left = 1122.0
 offset_right = 1152.0
@@ -132,13 +132,13 @@ tooltip_text = "Config"
 texture_normal = ExtResource("15_k3h24")
 script = ExtResource("16_qcr4t")
 
-[node name="DevEnabled" type="AcceptDialog" parent="."]
+[node name="DevEnabled" type="AcceptDialog" parent="." unique_id=464395372]
 title = "DEBUG"
 initial_position = 1
 size = Vector2i(223, 100)
 dialog_text = "Developer setting enabled"
 
-[node name="Please enter train data" type="Button" parent="."]
+[node name="Please enter train data" type="Button" parent="." unique_id=1501253864]
 layout_mode = 0
 offset_top = 225.0
 offset_right = 1152.0
@@ -146,13 +146,13 @@ offset_bottom = 256.0
 text = "PLEASE ENTER TRAIN DATA"
 script = ExtResource("18_aobb2")
 
-[node name="updater" type="AcceptDialog" parent="."]
+[node name="updater" type="AcceptDialog" parent="." unique_id=141416822]
 title = "Updater"
 initial_position = 1
 size = Vector2i(188, 100)
 dialog_text = "Checking for update..."
 
-[node name="update_request" type="HTTPRequest" parent="updater"]
+[node name="update_request" type="HTTPRequest" parent="updater" unique_id=507671358]
 script = ExtResource("19_swxou")
 
 [connection signal="pressed" from="ATS-S" to="ATS-S" method="OnPressed"]
