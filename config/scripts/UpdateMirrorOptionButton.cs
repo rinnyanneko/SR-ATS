@@ -17,34 +17,24 @@
 
 using Godot;
 
-public partial class UpdateMirrorOptionButton : OptionButton {
+public partial class UpdateMirrorOptionButton : Button {
 	public const string DefaultSimRailConnectUrl = "ws://localhost:5556/ws";
 
 	private readonly ConfigFile cfg = new ConfigFile();
 
 	public override void _Ready() {
 		cfg.Load("user://config.cfg");
-		string mirror = cfg.GetValue("General", "UpdateMirror", "GitHub").AsString();
-		if (mirror == "GitHub") {
-			Selected = 0;
-		} else if (mirror == "GitCode") {
-			Selected = 1;
-		}
+		cfg.SetValue("General", "UpdateMirror", "GitHub");
 
-		GetNode<RichTextLabel>("RichTextLabel").Text = Tr("UPDATE_MIRROR");
 		GetNode<LineEdit>("../SimRailConnectUrl").Text =
 			cfg.GetValue("SimRailConnect", "url", DefaultSimRailConnectUrl).AsString();
 		GetNode<RichTextLabel>("../SimRailConnectUrl/RichTextLabel").Text = Tr("SIMRAILCONNECT_WS_URL");
 		GetNode<Button>("../ResetSimRailConnectUrl").Text = Tr("RESET_TO_DEFAULT");
-		GetNode<Button>("../Save").Text = Tr("SAVE");
+		Text = Tr("SAVE");
 	}
 
 	public void OnSavePressed() {
-		if (GetSelectedId() == 0) {
-			cfg.SetValue("General", "UpdateMirror", "GitHub");
-		} else if (GetSelectedId() == 1) {
-			cfg.SetValue("General", "UpdateMirror", "GitCode");
-		}
+		cfg.SetValue("General", "UpdateMirror", "GitHub");
 
 		if (GetNode<OptionButton>("../UpdateChannel").GetSelectedId() == 0) {
 			cfg.SetValue("General", "UpdateChannel", "Stable");

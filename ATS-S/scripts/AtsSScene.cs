@@ -36,7 +36,6 @@ public partial class AtsSScene : Node2D {
     public void OnTimerTimeout() {
         if (Alarm) {
             AlarmHard = true;
-            GD.Print("Hard alarm!");
         }
     }
 

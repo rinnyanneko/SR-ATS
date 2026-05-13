@@ -2,7 +2,7 @@
 
 ## Project Structure & Module Organization
 
-SR-ATS is a Godot 4.6 .NET project. Core metadata lives in `project.godot`, with the main scene in `main.tscn`. Runtime scripts are C# files. Shared scripts are in `scripts/`; ATS-specific modules are under `ATS-P/`, `ATS-Ps/`, and `ATS-S/` with their own scenes, scripts, and assets. UI/config scenes are under `config/`. Global media and localization files are in `assets/`, `fonts/`, `screenshot/`, `news/`, and `translation.csv`. The Windows installer project is under `SR-ATS-Setup/`.
+SR-ATS is a Godot 4.6 .NET project. Core metadata lives in `project.godot`, with the main scene in `main.tscn`. Runtime scripts are C# files. Shared scripts are in `scripts/`; ATS-specific modules are under `ATS-P/`, `ATS-Ps/`, and `ATS-S/` with their own scenes, scripts, and assets. UI/config scenes are under `config/`. Global media and localization files are in `assets/`, `fonts/`, `screenshot/`, and `translation.csv`. The Windows installer project is under `SR-ATS-Setup/`.
 
 ## Build, Test, and Development Commands
 

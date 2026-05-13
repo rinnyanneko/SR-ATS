@@ -1,9 +1,8 @@
 [gd_scene format=3 uid="uid://dm01geiku0yxr"]
 
-[ext_resource type="Texture2D" uid="uid://da26ervg41qj5" path="res://assets/return (Custom).png" id="1_ugf2m"]
+[ext_resource type="Texture2D" uid="uid://cmtq8rhl7ytee" path="res://assets/return (Custom).png" id="1_ugf2m"]
 [ext_resource type="Script" uid="uid://w01f4pou6tm0" path="res://scripts/ReturnButton.cs" id="2_toyrf"]
 [ext_resource type="Script" uid="uid://cy8q010etgknn" path="res://config/scripts/ConfigTabBar.cs" id="3_0wwky"]
-[ext_resource type="Script" uid="uid://gv2at8tcldc" path="res://config/scripts/ServerOptionButton.cs" id="3_rdhe2"]
 [ext_resource type="Script" uid="uid://col0edc62ow62" path="res://config/scripts/CreditsRichTextLabel.cs" id="6_ixw2y"]
 [ext_resource type="Script" uid="uid://dyjjuuq6ty12p" path="res://config/scripts/UpdateChannelOptionButton.cs" id="6_r4fv4"]
 [ext_resource type="Script" uid="uid://cht5m6mu6wvsf" path="res://config/scripts/UpdateMirrorOptionButton.cs" id="7_1llyc"]
@@ -32,87 +31,23 @@ offset_top = 64.0
 offset_right = 1153.0
 offset_bottom = 106.0
 current_tab = 0
-tab_count = 4
-tab_0/title = "TRAIN_DATA"
-tab_1/title = "GENERAL_SETTING"
-tab_2/title = "Debug"
-tab_3/title = "CREDITS"
+tab_count = 3
+tab_0/title = "GENERAL_SETTING"
+tab_1/title = "Debug"
+tab_2/title = "CREDITS"
 script = ExtResource("3_0wwky")
 
-[node name="Train Data" type="Control" parent="." unique_id=1081240158]
-visible = false
-anchors_preset = 0
-
-[node name="Save" type="Button" parent="Train Data" unique_id=1452159300]
-layout_mode = 0
-offset_left = 551.0
-offset_top = 610.0
-offset_right = 596.0
-offset_bottom = 641.0
-text = "Save"
-script = ExtResource("3_rdhe2")
-
-[node name="Braking Ratio" type="LineEdit" parent="Train Data" unique_id=1936437734]
-layout_mode = 0
-offset_left = 129.0
-offset_top = 107.0
-offset_right = 247.0
-offset_bottom = 138.0
-placeholder_text = "Braking Ratio"
-
-[node name="RichTextLabel" type="RichTextLabel" parent="Train Data/Braking Ratio" unique_id=1800846099]
-layout_mode = 0
-offset_left = -125.0
-offset_top = 4.0
-offset_right = -10.0
-offset_bottom = 29.0
-text = "Braking Ratio"
-
-[node name="RichTextLabel2" type="RichTextLabel" parent="Train Data/Braking Ratio" unique_id=1138574464]
-layout_mode = 0
-offset_left = 126.0
-offset_top = 4.0
-offset_right = 157.0
-offset_bottom = 29.0
-text = "%"
-
-[node name="Vmax" type="LineEdit" parent="Train Data" unique_id=1791332854]
-layout_mode = 0
-offset_left = 129.0
-offset_top = 151.0
-offset_right = 198.0
-offset_bottom = 182.0
-placeholder_text = "Vmax"
-max_length = 3
-
-[node name="Label" type="Label" parent="Train Data/Vmax" unique_id=1827947934]
-layout_mode = 0
-offset_left = -125.0
-offset_top = 6.0
-offset_right = -81.0
-offset_bottom = 29.0
-text = "Vmax"
-
-[node name="Label2" type="Label" parent="Train Data/Vmax" unique_id=1695526243]
-layout_mode = 0
-offset_left = 75.0
-offset_top = 7.0
-offset_right = 117.0
-offset_bottom = 30.0
-text = "km/h"
-
 [node name="General" type="Control" parent="." unique_id=145137074]
-visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="UpdateChannel" type="OptionButton" parent="General" unique_id=414748876]
 layout_mode = 0
-offset_left = 163.0
-offset_top = 108.0
-offset_right = 244.0
-offset_bottom = 139.0
+offset_left = 159.0
+offset_top = 111.0
+offset_right = 240.0
+offset_bottom = 142.0
 selected = 0
 item_count = 2
 popup/item_0/text = "Stable"
@@ -123,33 +58,10 @@ script = ExtResource("6_r4fv4")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="General/UpdateChannel" unique_id=1650444197]
 layout_mode = 0
-offset_left = -160.0
-offset_top = 5.0
-offset_right = -3.0
-offset_bottom = 29.0
+offset_left = -157.0
+offset_top = 4.0
+offset_bottom = 28.0
 text = "UPDATE_CHANNEL"
-
-[node name="UpdateMirror" type="OptionButton" parent="General" unique_id=189073647]
-layout_mode = 0
-offset_left = 162.0
-offset_top = 145.0
-offset_right = 257.0
-offset_bottom = 176.0
-selected = 0
-item_count = 2
-popup/item_0/text = "GitHub"
-popup/item_0/id = 0
-popup/item_1/text = "GitCode"
-popup/item_1/id = 1
-script = ExtResource("7_1llyc")
-
-[node name="RichTextLabel" type="RichTextLabel" parent="General/UpdateMirror" unique_id=1024797655]
-layout_mode = 0
-offset_left = -160.0
-offset_top = 5.0
-offset_right = -3.0
-offset_bottom = 30.0
-text = "UPDATE_MIRROR"
 
 [node name="Save" type="Button" parent="General" unique_id=684617378]
 layout_mode = 0
@@ -158,37 +70,38 @@ offset_top = 610.0
 offset_right = 596.0
 offset_bottom = 641.0
 text = "SAVE"
+script = ExtResource("7_1llyc")
 
 [node name="SimRailConnectUrl" type="LineEdit" parent="General" unique_id=1529274366]
 layout_mode = 0
-offset_left = 162.0
-offset_top = 184.0
-offset_right = 425.0
-offset_bottom = 215.0
+offset_left = 232.0
+offset_top = 145.0
+offset_right = 495.0
+offset_bottom = 176.0
 placeholder_text = "ws://localhost:5556/ws"
 
 [node name="RichTextLabel" type="RichTextLabel" parent="General/SimRailConnectUrl" unique_id=1793151742]
 layout_mode = 0
-offset_left = -160.0
-offset_top = 5.0
-offset_right = -3.0
-offset_bottom = 30.0
+offset_left = -231.0
+offset_top = 2.0
+offset_right = -7.0
+offset_bottom = 27.0
 text = "SIMRAILCONNECT_WS_URL"
 
 [node name="ResetSimRailConnectUrl" type="Button" parent="General" unique_id=669735435]
 layout_mode = 0
-offset_left = 433.0
-offset_top = 184.0
-offset_right = 562.0
-offset_bottom = 215.0
+offset_left = 501.0
+offset_top = 145.0
+offset_right = 660.0
+offset_bottom = 176.0
 text = "RESET_TO_DEFAULT"
 
 [node name="OpenAppUsrDir" type="Button" parent="General" unique_id=765240985]
 layout_mode = 0
-offset_left = 3.0
-offset_top = 225.0
-offset_right = 165.0
-offset_bottom = 256.0
+offset_left = 2.0
+offset_top = 180.0
+offset_right = 164.0
+offset_bottom = 211.0
 text = "OPEN_APP_USR_DIR"
 script = ExtResource("9_iadgi")
 
@@ -214,6 +127,7 @@ text = "Save"
 script = ExtResource("8_saujo")
 
 [node name="Credits" type="Control" parent="." unique_id=1871528418]
+visible = false
 anchors_preset = 0
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Credits" unique_id=1164884195]
@@ -238,8 +152,7 @@ script = ExtResource("6_ixw2y")
 
 [connection signal="pressed" from="return" to="return" method="OnPressed"]
 [connection signal="tab_changed" from="TabBar" to="TabBar" method="OnTabChanged"]
-[connection signal="pressed" from="Train Data/Save" to="Train Data/Save" method="OnSaveButtonPressed"]
-[connection signal="pressed" from="General/Save" to="General/UpdateMirror" method="OnSavePressed"]
-[connection signal="pressed" from="General/ResetSimRailConnectUrl" to="General/UpdateMirror" method="OnResetSimRailConnectUrlPressed"]
+[connection signal="pressed" from="General/Save" to="General/Save" method="OnSavePressed"]
+[connection signal="pressed" from="General/ResetSimRailConnectUrl" to="General/Save" method="OnResetSimRailConnectUrlPressed"]
 [connection signal="pressed" from="General/OpenAppUsrDir" to="General/OpenAppUsrDir" method="OnPressed"]
 [connection signal="pressed" from="Debug/Save" to="Debug/Save" method="OnPressed"]

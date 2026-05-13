@@ -51,6 +51,8 @@ public partial class AtsSDebugWord : RichTextLabel {
             + "\nalarm = " + scene.Alarm
             + "\nchime = " + scene.Chime
             + "\nalarmHard = " + scene.AlarmHard
-            + "\nSignal telemetry = unavailable in current SimRailConnect WS API";
+            + "\nSignalInFront = " + scene.SignalInFront
+            + "\nDistanceToSignalInFront = " + scene.DistanceToSignalInFront + " m"
+            + "\nSignalInFrontSpeed = " + scene.SignalInFrontSpeed + " km/h";
     }
 }

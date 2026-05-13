@@ -21,10 +21,17 @@ using Godot;
 using System.Text;
 
 public partial class SimRailConnectTelemetry : Node {
+    private const int FirstConnectionWarningAttemptCount = 3;
+    private const double ConnectionAttemptTimeoutSeconds = 2.5;
+
     private readonly WebSocketPeer socket = new WebSocketPeer();
     private readonly ConfigFile cfg = new ConfigFile();
     private double reconnectInSeconds;
     private bool subscribed;
+    private bool hasConnected;
+    private bool connectionLostShown;
+    private bool firstConnectionWarningShown;
+    private int connectionAttemptCount;
     private string currentUrl = UpdateMirrorOptionButton.DefaultSimRailConnectUrl;
 
     public override void _Ready() {
@@ -36,12 +43,16 @@ public partial class SimRailConnectTelemetry : Node {
         WebSocketPeer.State state = socket.GetReadyState();
 
         if (state == WebSocketPeer.State.Open) {
+            hasConnected = true;
+            connectionLostShown = false;
+            firstConnectionWarningShown = false;
+            connectionAttemptCount = 0;
             if (!subscribed) {
                 subscribed = true;
                 Send(new Godot.Collections.Dictionary {
                     ["type"] = "subscribe",
                     ["id"] = "sr-ats-subscribe",
-                    ["channels"] = new Godot.Collections.Array { "telemetry" },
+                    ["channels"] = new Godot.Collections.Array { "train", "environment", "signals", "safety", "status" },
                     ["rateHz"] = 10
                 });
                 Send(new Godot.Collections.Dictionary {
@@ -53,11 +64,26 @@ public partial class SimRailConnectTelemetry : Node {
             while (socket.GetAvailablePacketCount() > 0) {
                 HandlePacket(Encoding.UTF8.GetString(socket.GetPacket()));
             }
+        } else if (state == WebSocketPeer.State.Connecting) {
+            reconnectInSeconds -= delta;
+            if (reconnectInSeconds <= 0) {
+                ShowFirstConnectionWarningIfNeeded();
+                socket.Close();
+                reconnectInSeconds = 0;
+            }
         } else if (state == WebSocketPeer.State.Closed) {
+            if (hasConnected && subscribed && !connectionLostShown) {
+                ShowError(TranslateOrFallback(
+                    "SIMRAILCONNECT_CONNECTION_LOST",
+                    "SimRailConnect connection lost. Reconnecting..."));
+                connectionLostShown = true;
+            }
+
             subscribed = false;
             reconnectInSeconds -= delta;
             if (reconnectInSeconds <= 0) {
                 ConnectToSimRailConnect();
+                ShowFirstConnectionWarningIfNeeded();
             }
         }
     }
@@ -70,11 +96,12 @@ public partial class SimRailConnectTelemetry : Node {
 
         cfg.Load("user://config.cfg");
         currentUrl = cfg.GetValue("SimRailConnect", "url", UpdateMirrorOptionButton.DefaultSimRailConnectUrl).AsString();
+        connectionAttemptCount++;
         Error error = socket.ConnectToUrl(currentUrl);
-        reconnectInSeconds = 2.5;
+        reconnectInSeconds = ConnectionAttemptTimeoutSeconds;
         if (error != Error.Ok) {
             GD.PrintErr("SimRailConnect WebSocket connect failed: " + error);
-            ShowError(Tr("SIMRAILCONNECT_CONNECTION_FAILED").Replace("{error}", error.ToString()));
+            ShowFirstConnectionWarningIfNeeded();
         }
     }
 
@@ -87,7 +114,13 @@ public partial class SimRailConnectTelemetry : Node {
         Godot.Collections.Dictionary message = parsed.AsGodotDictionary();
         string type = GetString(message, "type");
         if (type == "state") {
-            ApplySnapshot(GetDictionary(message, "data"));
+            string channel = GetString(message, "channel", "telemetry");
+            Godot.Collections.Dictionary? data = GetDictionary(message, "data");
+            if (channel == "telemetry" || channel == "full") {
+                ApplySnapshot(data);
+            } else {
+                ApplyChannel(channel, data);
+            }
         } else if (type == "snapshot" && GetBool(message, "ok")) {
             ApplySnapshot(GetDictionary(message, "data"));
         } else if (type == "error") {
@@ -107,20 +140,72 @@ public partial class SimRailConnectTelemetry : Node {
         }
 
         GetNode<CanvasItem>("../ErrorMsg").Visible = false;
-        Godot.Collections.Dictionary? train = GetDictionary(snapshot, "train");
-        Godot.Collections.Dictionary? environment = GetDictionary(snapshot, "environment");
         Node parent = GetParent();
+
+        ApplyTrain(GetDictionary(snapshot, "train"), parent);
+        ApplySignals(GetDictionary(snapshot, "signals"), parent);
+        ApplyEnvironment(GetDictionary(snapshot, "environment"), parent);
+        parent.Set("VDDelayedTimetableIndex", -1.0);
+    }
+
+    private void ApplyChannel(string channel, Godot.Collections.Dictionary? data) {
+        if (data == null) {
+            return;
+        }
+
+        Node parent = GetParent();
+        switch (channel) {
+            case "train":
+                ApplyTrain(data, parent);
+                break;
+            case "environment":
+                ApplyEnvironment(data, parent);
+                break;
+            case "signals":
+                ApplySignals(data, parent);
+                break;
+            case "safety":
+                break;
+            case "status":
+                if (!GetBool(data, "isActive", true)) {
+                    ShowError(GetString(data, "status", Tr("SIMRAILCONNECT_WAITING_TELEMETRY")));
+                }
+                break;
+        }
+    }
+
+    private static void ApplyTrain(Godot.Collections.Dictionary? train, Node parent) {
+        if (train == null) {
+            return;
+        }
 
         parent.Set("ControlledBySteamID", "SimRailConnect");
         parent.Set("InBorderStationArea", false);
         parent.Set("Latititute", -1.0);
         parent.Set("Longitute", -1.0);
         parent.Set("Velocity", GetInt(train, "velocityInt", (int)Mathf.Round(GetDouble(train, "velocity"))));
-        parent.Set("SignalInFront", "");
-        parent.Set("DistanceToSignalInFront", -1.0);
-        parent.Set("SignalInFrontSpeed", -1);
-        parent.Set("VDDelayedTimetableIndex", -1.0);
+    }
+
+    private static void ApplyEnvironment(Godot.Collections.Dictionary? environment, Node parent) {
+        if (environment == null) {
+            return;
+        }
+
         parent.Set("UpdateTime", ReadUpdateTime(environment));
+    }
+
+    private static void ApplySignals(Godot.Collections.Dictionary? signals, Node parent) {
+        if (signals == null || !GetBool(signals, "hasSignal")) {
+            parent.Set("SignalInFront", "");
+            parent.Set("DistanceToSignalInFront", -1.0);
+            parent.Set("SignalInFrontSpeed", -1);
+            return;
+        }
+
+        string signalName = GetString(signals, "name", GetString(signals, "objectIdentifier", "SimRailConnectSignal"));
+        parent.Set("SignalInFront", signalName);
+        parent.Set("DistanceToSignalInFront", GetDouble(signals, "distanceMeters", -1.0));
+        parent.Set("SignalInFrontSpeed", ReadSignalSpeed(signals));
     }
 
     private void Send(Godot.Collections.Dictionary message) {
@@ -135,6 +220,26 @@ public partial class SimRailConnectTelemetry : Node {
 
         dialog.DialogText = message;
         dialog.Visible = true;
+    }
+
+    private void ShowFirstConnectionWarningIfNeeded() {
+        if (hasConnected
+            || firstConnectionWarningShown
+            || connectionAttemptCount < FirstConnectionWarningAttemptCount) {
+            return;
+        }
+
+        ShowError(TranslateOrFallback(
+                "SIMRAILCONNECT_FIRST_CONNECTION_FAILED",
+                "Unable to connect to SimRailConnect after {retries} retries. Check that SimRail and the plugin are running. URL: {url}")
+            .Replace("{retries}", FirstConnectionWarningAttemptCount.ToString())
+            .Replace("{url}", currentUrl));
+        firstConnectionWarningShown = true;
+    }
+
+    private string TranslateOrFallback(string key, string fallback) {
+        string translated = Tr(key);
+        return translated == key ? fallback : translated;
     }
 
     private static string ReadUpdateTime(Godot.Collections.Dictionary? environment) {
@@ -158,8 +263,8 @@ public partial class SimRailConnectTelemetry : Node {
             : fallback;
     }
 
-    private static bool GetBool(Godot.Collections.Dictionary data, string key) {
-        return data.ContainsKey(key) && data[key].AsBool();
+    private static bool GetBool(Godot.Collections.Dictionary data, string key, bool fallback = false) {
+        return data.ContainsKey(key) && data[key].VariantType != Variant.Type.Nil ? data[key].AsBool() : fallback;
     }
 
     private static int GetInt(Godot.Collections.Dictionary? data, string key, int fallback = 0) {
@@ -168,6 +273,24 @@ public partial class SimRailConnectTelemetry : Node {
 
     private static double GetDouble(Godot.Collections.Dictionary? data, string key, double fallback = 0) {
         return data != null && data.ContainsKey(key) ? data[key].AsDouble() : fallback;
+    }
+
+    private static int GetNullableInt(Godot.Collections.Dictionary? data, string key, int fallback = 0) {
+        return data != null && data.ContainsKey(key) && data[key].VariantType != Variant.Type.Nil
+            ? data[key].AsInt32()
+            : fallback;
+    }
+
+    private static int ReadSignalSpeed(Godot.Collections.Dictionary signals) {
+        int speed = GetNullableInt(signals, "speedLimitKmh", -1);
+        if (speed >= 0) {
+            return speed;
+        }
+
+        return GetString(signals, "color").ToLowerInvariant() switch {
+            "red" => 0,
+            _ => -1
+        };
     }
 
     public string DebugWsUrl => currentUrl;

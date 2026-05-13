@@ -42,7 +42,9 @@ public partial class DebugWord : RichTextLabel {
                        $"Brake = {parent.Get("Brake")}\n" +
                        $"BrakeOpen = {parent.Get("BrakeOpen")}\n" +
                        $"Fail = {parent.Get("Fail")}\n" +
-                       "Signal telemetry = unavailable in current SimRailConnect WS API";
+                       $"SignalInFront = {parent.Get("SignalInFront")}\n" +
+                       $"DistanceToSignalInFront = {parent.Get("DistanceToSignalInFront")} m\n" +
+                       $"SignalInFrontSpeed = {parent.Get("SignalInFrontSpeed")} km/h";
             }
         }
     }

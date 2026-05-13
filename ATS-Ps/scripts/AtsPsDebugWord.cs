@@ -52,6 +52,8 @@ public partial class AtsPsDebugWord : RichTextLabel {
             + "\npattern_speed = " + scene.PatternSpeed
             + "\nem_brake = " + scene.EmBrake
             + "\nbrake_disable = " + scene.BrakeDisable
-            + "\nSignal telemetry = unavailable in current SimRailConnect WS API";
+            + "\nSignalInFront = " + scene.SignalInFront
+            + "\nDistanceToSignalInFront = " + scene.DistanceToSignalInFront + " m"
+            + "\nSignalInFrontSpeed = " + scene.SignalInFrontSpeed + " km/h";
     }
 }

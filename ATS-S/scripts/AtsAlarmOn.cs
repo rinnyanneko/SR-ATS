@@ -19,12 +19,16 @@ using Godot;
 
 public partial class AtsAlarmOn : Sprite2D {
     private AtsSScene scene = null!;
+    private AudioStreamPlayer alarm = null!;
+    private AudioStreamPlayer chime = null!;
+    private Timer alarmTimer = null!;
 
     public override void _Ready() {
         scene = GetParent<AtsSScene>();
-        scene.Alarm = true;
-        GetNode<AudioStreamPlayer>("ATS Alarm").Play();
-        GD.Print("Test Alarm!");
+        alarm = GetNode<AudioStreamPlayer>("ATS Alarm");
+        chime = GetNode<AudioStreamPlayer>("../AtsNormalOff/ATS Chime");
+        alarmTimer = GetNode<Timer>("../Timer");
+        Visible = false;
     }
 
     public override void _Process(double delta) {
@@ -33,41 +37,53 @@ public partial class AtsAlarmOn : Sprite2D {
         double signalInFrontSpeed = scene.SignalInFrontSpeed;
         string signalInFront = scene.SignalInFront;
         string passedSignal = scene.LastSignalInFront;
-        if (velocity > 0
+        bool hasNewRestrictiveSignal = !string.IsNullOrEmpty(signalInFront)
+            && passedSignal != signalInFront
+            && velocity > 0
             && distanceToSignalInFront < 600
+            && distanceToSignalInFront >= 0
             && signalInFrontSpeed <= 100
-            && passedSignal != signalInFront) {
-            Visible = true;
-            TopLevel = true;
-            GetNode<AudioStreamPlayer>("ATS Alarm").Play();
-            GetNode<AudioStreamPlayer>("../AtsNormalOff/ATS Chime").Play();
-            scene.LastSignalInFront = signalInFront;
-            GD.Print("Alarm Triggered!");
-            GetNode<Timer>("../Timer").Start();
+            && signalInFrontSpeed >= 0;
+
+        if (hasNewRestrictiveSignal) {
+            TriggerAlarm(signalInFront);
         }
 
-        Visible = scene.Alarm;
         if (Input.IsActionJustPressed("ATS confirm")) {
             OnAtsConfirmPressed();
         }
 
-        if (velocity > 0 && distanceToSignalInFront < 10 && signalInFrontSpeed == 0) {
+        if (velocity > 0 && distanceToSignalInFront >= 0 && distanceToSignalInFront < 10 && signalInFrontSpeed == 0) {
             scene.AlarmHard = true;
-            GD.Print("Hard alarm!");
-            Visible = true;
-            TopLevel = true;
-            GetNode<AudioStreamPlayer>("ATS Alarm").Play();
-            GetNode<AudioStreamPlayer>("../AtsNormalOff/ATS Chime").Play();
-            scene.LastSignalInFront = signalInFront;
+            TriggerAlarm(signalInFront);
         }
+
+        Visible = scene.Alarm || scene.AlarmHard;
     }
 
     public void OnAtsConfirmPressed() {
         if (!scene.AlarmHard) {
-            GetNode<AudioStreamPlayer>("ATS Alarm").Stop();
             scene.Alarm = false;
-            GetNode<Timer>("../Timer").Stop();
-            GD.Print("Alarm confirmed!");
+            alarm.Stop();
+            alarmTimer.Stop();
+        }
+    }
+
+    private void TriggerAlarm(string signalInFront) {
+        scene.Alarm = true;
+        scene.Chime = true;
+        scene.LastSignalInFront = signalInFront;
+
+        if (!alarm.Playing) {
+            alarm.Play();
+        }
+
+        if (!chime.Playing) {
+            chime.Play();
+        }
+
+        if (alarmTimer.IsStopped() && !scene.AlarmHard) {
+            alarmTimer.Start();
         }
     }
 }

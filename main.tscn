@@ -12,10 +12,8 @@
 [ext_resource type="Script" uid="uid://jn2sdqhh5y58" path="res://scripts/Banner.cs" id="9_8c6cy"]
 [ext_resource type="Texture2D" uid="uid://rj1xtqglh55u" path="res://assets/banner.png" id="9_usuam"]
 [ext_resource type="Script" uid="uid://dkb1cl4o7qnm8" path="res://scripts/LanguageButton.cs" id="11_qu0kt"]
-[ext_resource type="Script" uid="uid://dufl2n0jicb6t" path="res://scripts/NewsRequest.cs" id="15_4f64g"]
 [ext_resource type="Texture2D" uid="uid://de0q6d30tvatb" path="res://assets/settings (Custom).png" id="15_k3h24"]
 [ext_resource type="Script" uid="uid://ctt8bhhr72m7h" path="res://scripts/ConfigButton.cs" id="16_qcr4t"]
-[ext_resource type="Script" uid="uid://ttnw736i8545" path="res://scripts/PleaseEnterTrainDataButton.cs" id="18_aobb2"]
 [ext_resource type="Script" uid="uid://3xpipvwhel6s" path="res://scripts/UpdateRequest.cs" id="19_swxou"]
 
 [node name="Control" type="Control" unique_id=1045186799]
@@ -32,7 +30,6 @@ offset_left = 120.0
 offset_top = 327.0
 offset_right = 248.0
 offset_bottom = 455.0
-disabled = true
 texture_normal = ExtResource("1_o7qkv")
 texture_disabled = ExtResource("3_dalr6")
 script = ExtResource("4_12aw2")
@@ -54,7 +51,6 @@ offset_left = 510.0
 offset_top = 327.0
 offset_right = 638.0
 offset_bottom = 455.0
-disabled = true
 texture_normal = ExtResource("7_6k4lh")
 texture_disabled = ExtResource("8_xtb8p")
 script = ExtResource("8_82xsv")
@@ -83,8 +79,9 @@ layout_mode = 0
 offset_top = 625.0
 offset_right = 297.0
 offset_bottom = 648.0
-text = "version"
+text = "VERSION"
 underline = 1
+script = ExtResource("19_swxou")
 
 [node name="copyright" type="LinkButton" parent="." unique_id=654940767]
 layout_mode = 0
@@ -95,23 +92,6 @@ offset_bottom = 648.0
 text = "Copyright © 2026 rinnyanneko. Some Rights Reserved."
 underline = 1
 uri = "LICENSE.txt"
-
-[node name="news" type="ConfirmationDialog" parent="." unique_id=528149732]
-mode = 1
-initial_position = 1
-size = Vector2i(400, 200)
-
-[node name="RichTextLabel" type="RichTextLabel" parent="news" unique_id=899279361]
-offset_left = 8.0
-offset_top = 8.0
-offset_right = 392.0
-offset_bottom = 151.0
-bbcode_enabled = true
-
-[node name="news_request" type="HTTPRequest" parent="." unique_id=326324050]
-use_threads = true
-timeout = 3.0
-script = ExtResource("15_4f64g")
 
 [node name="Config" type="TextureButton" parent="." unique_id=1207640619]
 layout_mode = 0
@@ -128,34 +108,10 @@ initial_position = 1
 size = Vector2i(223, 100)
 dialog_text = "Developer setting enabled"
 
-[node name="Please enter train data" type="Button" parent="." unique_id=1501253864]
-layout_mode = 0
-offset_top = 225.0
-offset_right = 1152.0
-offset_bottom = 256.0
-text = "PLEASE ENTER TRAIN DATA"
-script = ExtResource("18_aobb2")
-
-[node name="updater" type="AcceptDialog" parent="." unique_id=141416822]
-title = "Updater"
-initial_position = 1
-size = Vector2i(188, 100)
-dialog_text = "Checking for update..."
-
-[node name="update_request" type="HTTPRequest" parent="updater" unique_id=507671358]
-script = ExtResource("19_swxou")
-
 [connection signal="pressed" from="ATS-S" to="ATS-S" method="OnPressed"]
 [connection signal="pressed" from="ATS-Ps" to="ATS-Ps" method="OnPressed"]
 [connection signal="pressed" from="ATS-P" to="ATS-P" method="OnPressed"]
 [connection signal="pressed" from="Banner" to="Banner" method="OnPressed"]
 [connection signal="item_selected" from="Language" to="Language" method="OnItemSelected"]
-[connection signal="pressed" from="version" to="updater/update_request" method="OnVersionPressed"]
-[connection signal="canceled" from="news" to="news_request" method="OnNewsCanceled"]
-[connection signal="confirmed" from="news" to="news_request" method="OnNewsConfirmed"]
-[connection signal="meta_clicked" from="news/RichTextLabel" to="news_request" method="OnRichTextLabelMetaClicked"]
-[connection signal="request_completed" from="news_request" to="news_request" method="OnRequestCompleted"]
+[connection signal="pressed" from="version" to="version" method="OnVersionPressed"]
 [connection signal="pressed" from="Config" to="Config" method="OnPressed"]
-[connection signal="pressed" from="Please enter train data" to="Please enter train data" method="OnPressed"]
-[connection signal="confirmed" from="updater" to="updater/update_request" method="OnUpdaterConfirmed"]
-[connection signal="request_completed" from="updater/update_request" to="updater/update_request" method="OnRequestCompleted"]

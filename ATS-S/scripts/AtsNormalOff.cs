@@ -19,27 +19,23 @@ using Godot;
 
 public partial class AtsNormalOff : Sprite2D {
     private AtsSScene scene = null!;
+    private CanvasItem normalOn = null!;
+    private AudioStreamPlayer chime = null!;
 
     public override void _Ready() {
         scene = GetParent<AtsSScene>();
-        scene.Chime = true;
-        GetNode<AudioStreamPlayer>("ATS Chime").Play();
+        normalOn = GetNode<CanvasItem>("../AtsNormalOn");
+        chime = GetNode<AudioStreamPlayer>("ATS Chime");
     }
 
     public override void _Process(double delta) {
-        if (scene.Alarm) {
-            GetNode<CanvasItem>("../AtsNormalOn").Visible = false;
-            scene.Chime = true;
-        } else {
-            GetNode<CanvasItem>("../AtsNormalOn").Visible = true;
-        }
+        normalOn.Visible = !scene.Alarm;
     }
 
     public void OnChimeOffPressed() {
         if (!scene.Alarm && !scene.AlarmHard) {
             scene.Chime = false;
-            GetNode<AudioStreamPlayer>("ATS Chime").Stop();
-            GD.Print("Chime off!");
+            chime.Stop();
         }
     }
 }

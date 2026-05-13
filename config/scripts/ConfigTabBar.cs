@@ -22,21 +22,19 @@ public partial class ConfigTabBar : TabBar {
 
     public override void _Ready() {
         cfg.Load("user://config.cfg");
-        GetNode<CanvasItem>("../Train Data").Visible = true;
+        GetNode<CanvasItem>("../General").Visible = true;
         GetNode<CanvasItem>("../Debug").Visible = false;
         GetNode<CanvasItem>("../Credits").Visible = false;
         ClearTabs();
-        AddTab(Tr("TRAIN_DATA"));
         AddTab(Tr("GENERAL_SETTING"));
         AddTab("Debug");
-        SetTabDisabled(2, !cfg.GetValue("System", "DevSetting", false).AsBool());
+        SetTabDisabled(1, !cfg.GetValue("System", "DevSetting", false).AsBool());
         AddTab(Tr("CREDITS"));
     }
 
     public void OnTabChanged(long tab) {
-        GetNode<CanvasItem>("../Train Data").Visible = tab == 0;
-        GetNode<CanvasItem>("../General").Visible = tab == 1;
-        GetNode<CanvasItem>("../Debug").Visible = tab == 2;
-        GetNode<CanvasItem>("../Credits").Visible = tab == 3;
+        GetNode<CanvasItem>("../General").Visible = tab == 0;
+        GetNode<CanvasItem>("../Debug").Visible = tab == 1;
+        GetNode<CanvasItem>("../Credits").Visible = tab == 2;
     }
 }

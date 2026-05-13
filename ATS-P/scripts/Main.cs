@@ -14,7 +14,6 @@ public partial class Main : Node {
 	private ATSIndicators indicators;
 	private Scene parent;
 	private ControlBrake controlBrake;
-	private ConfigFile _cfg = new ConfigFile();
 	private CancellationTokenSource startupCancellation = new CancellationTokenSource();
 	
 	private bool isReady = false;
@@ -34,9 +33,10 @@ public partial class Main : Node {
 		try {
 			parent = GetNode<Scene>("..");
 			indicators = GetNode<ATSIndicators>("../Indicators");
+			controlBrake = GetNode<ControlBrake>("../ControlBrake");
 			indicators.Ppower(true);
+			parent.Ppower = true;
 			indicators.Fail(true);
-			indicators.PlayBell();
 			parent.Fail = true;
 			indicators.PlayBell();
 			await Task.Delay(3000, startupCancellation.Token);
@@ -53,15 +53,15 @@ public partial class Main : Node {
 				return;
 			}
 
-			while (IsInstanceValid(parent) && parent.DistanceToSignalInFront > 500 && parent.DistanceToSignalInFront > 0) {
+			while (IsInstanceValid(parent) && parent.DistanceToSignalInFront > 500) {
 				await Task.Delay(2000, startupCancellation.Token);
 				if (!IsInstanceValid(this) || !IsInstanceValid(parent) || !IsInstanceValid(indicators)) {
 					return;
 				}
 			}
 
-			indicators.BrakeOpen(true); // REMOVE WHEN BRAKE IMPLEMENTED
 			indicators.ATSp(true);
+			parent.ATSp = true;
 			indicators.PlayBell();
 			this.isReady = true;
 		}
@@ -83,22 +83,25 @@ public partial class Main : Node {
 		if (!isReady) {
 			return; // Exit if ATS is not ready
 		}
-		parent = GetNode<Scene>("..");
-		indicators = GetNode<ATSIndicators>("../Indicators");
-		controlBrake = GetNode<ControlBrake>("../ControlBrake");
 		double patternSpeed = CalculateBrakePatternSpeed();
-		if (parent.Velocity < patternSpeed - 5 && parent.Brake) {
-			controlBrake.release();
+		parent.PatternSpeed = patternSpeed;
+
+		if (patternSpeed < 0 || parent.Velocity < 0) {
+			ClearPatternAndBrake();
+			return;
+		}
+
+		if (parent.Velocity > patternSpeed && !parent.Brake) {
+			parent.Brake = true;
+			indicators.Brake(true);
+			indicators.PlayBell();
+			controlBrake.Brake();
+		}
+		else if (parent.Velocity < patternSpeed - 5 && parent.Brake) {
+			parent.Brake = false;
 			indicators.Brake(false);
 			indicators.PlayBell();
-			indicators.ApproachPattern(false);
-			parent.ApproachPattern = false;
-			parent.Brake = false;
-		}
-		else if (parent.Velocity < patternSpeed - 5 && parent.ApproachPattern) {
-			parent.ApproachPattern = false;
-			indicators.ApproachPattern(false);
-			indicators.PlayBell();
+			controlBrake.Release();
 		}
 
 		if (parent.Velocity >= patternSpeed - 5 && !parent.ApproachPattern) {
@@ -106,27 +109,22 @@ public partial class Main : Node {
 			indicators.ApproachPattern(true);
 			indicators.PlayBell();
 		}
-		else if (parent.Velocity > patternSpeed && !parent.Brake) {
-			parent.Brake = true;
-			indicators.Brake(true);
+		else if (parent.Velocity < patternSpeed - 5 && parent.ApproachPattern) {
+			parent.ApproachPattern = false;
+			indicators.ApproachPattern(false);
 			indicators.PlayBell();
-			controlBrake.brake();
 		}
-		//TODO: Implement the logic for the brake system and indicators
 	}
 
 	private double CalculateBrakePatternSpeed() {
-		parent = GetNode<Scene>("..");
-		_cfg.Load("user://config.cfg");
-		double speed = parent.Velocity;
 		double distance = parent.DistanceToSignalInFront;
-		double decelRate = _cfg.GetValue("Train Data", "decelRate", 0.5).AsDouble();
-		int vmax = _cfg.GetValue("Train Data", "Vmax", 100).AsInt16();
-		double brakingRatio = _cfg.GetValue("Train Data", "brakingRatio", 1.0).AsDouble();
+		double effectiveDecel = parent.EffectiveDecel;
+		int vmax = parent.Vmax;
 		double signalSpeed = parent.SignalInFrontSpeed;
 
-		// Adjust deceleration by braking ratio
-		double effectiveDecel = decelRate * brakingRatio;
+		if (distance < 0 || signalSpeed < 0 || effectiveDecel <= 0) {
+			return -1;
+		}
 
 		// Calculate the maximum speed at which the train can stop before the signal
 		// v^2 = 2 * a * d + v_signal^2
@@ -141,5 +139,20 @@ public partial class Main : Node {
 		patternSpeed = Math.Min(patternSpeed, vmax);
 
 		return patternSpeed;
+	}
+
+	private void ClearPatternAndBrake() {
+		if (parent.Brake) {
+			parent.Brake = false;
+			indicators.Brake(false);
+			controlBrake.Release();
+			indicators.PlayBell();
+		}
+
+		if (parent.ApproachPattern) {
+			parent.ApproachPattern = false;
+			indicators.ApproachPattern(false);
+			indicators.PlayBell();
+		}
 	}
 }

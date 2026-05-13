@@ -18,17 +18,6 @@
 using Godot;
 
 public partial class AtsSButton : TextureButton {
-    private readonly ConfigFile cfg = new ConfigFile();
-
-    public override void _Ready() {
-        cfg.Load("user://config.cfg");
-        GetNode<BaseButton>("../ATS-S").Disabled = false;
-        GetNode<BaseButton>("../ATS-P").Disabled = false;
-        if (cfg.GetValue("System", "DevSetting", false).AsBool()) {
-            GetNode<BaseButton>("../ATS-Ps").Disabled = false;
-        }
-    }
-
     public void OnPressed() {
         GetTree().ChangeSceneToFile("res://ATS-S/ats_s_scene.tscn");
     }

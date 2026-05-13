@@ -20,6 +20,5 @@ using Godot;
 public partial class AtsSBackButton : TextureButton {
     public void OnPressed() {
         GetTree().ChangeSceneToFile("res://main.tscn");
-        GD.Print("back to main");
     }
 }

@@ -18,6 +18,8 @@ public partial class Scene : Node2D {
     public int SignalInFrontSpeed = -1;
     public double DistanceToSignalInFront = -1.0;
     public int Velocity = -1;
+    public int Vmax = 100;
+    public double EffectiveDecel = 0.5;
     public double Longitute = -1.0;
     public double Latititute = -1.0;
     public bool InBorderStationArea = false;
