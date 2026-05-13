@@ -33,4 +33,8 @@ public partial class AtsPsScene : Node2D {
     [Export] public bool InBorderStationArea { get; set; } = false;
     [Export] public string ControlledBySteamID { get; set; } = "";
     [Export] public string UpdateTime { get; set; } = "";
+
+    public override void _Ready() {
+        WindowSettings.ApplyFromConfig();
+    }
 }

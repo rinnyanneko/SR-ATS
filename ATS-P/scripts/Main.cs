@@ -21,16 +21,9 @@ public partial class Main : Node {
 	[Signal]
 	public delegate void ATSReadyEventHandler();
 
-	
-	public override void _Notification(int what) {
-		if (what == NotificationApplicationFocusIn)
-			Engine.MaxFps = 0; // Zero means uncapped
-		if (what == NotificationApplicationFocusOut)
-			Engine.MaxFps = 20;
-	}
-
 	public override async void _Ready() {
 		try {
+			WindowSettings.ApplyFromConfig();
 			parent = GetNode<Scene>("..");
 			indicators = GetNode<ATSIndicators>("../Indicators");
 			controlBrake = GetNode<ControlBrake>("../ControlBrake");

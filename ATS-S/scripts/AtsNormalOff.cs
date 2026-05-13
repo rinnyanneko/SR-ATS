@@ -36,6 +36,7 @@ public partial class AtsNormalOff : Sprite2D {
         if (!scene.Alarm && !scene.AlarmHard) {
             scene.Chime = false;
             chime.Stop();
+            GD.Print("Chime off!");
         }
     }
 }

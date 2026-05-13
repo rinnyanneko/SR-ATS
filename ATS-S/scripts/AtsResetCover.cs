@@ -23,6 +23,7 @@ public partial class AtsResetCover : TextureButton {
     }
 
     public void OnPressed() {
+        GD.Print("Open reset cover");
         Visible = false;
         GetNode<CanvasItem>("../ATS reset cover open").Visible = true;
         GetNode<BaseButton>("../ATS Reset").Disabled = false;
@@ -34,5 +35,6 @@ public partial class AtsResetCover : TextureButton {
         Visible = true;
         GetNode<BaseButton>("../ATS Reset").Disabled = true;
         GetNode<CanvasItem>("../ATS Reset").Visible = false;
+        GD.Print("Close reset cover");
     }
 }

@@ -33,19 +33,15 @@ public partial class AtsSScene : Node2D {
     [Export] public string ControlledBySteamID { get; set; } = "";
     [Export] public string UpdateTime { get; set; } = "";
 
+    public override void _Ready() {
+        WindowSettings.ApplyFromConfig();
+    }
+
     public void OnTimerTimeout() {
         if (Alarm) {
             AlarmHard = true;
+            GD.Print("Hard alarm!");
         }
     }
 
-    public override void _Notification(int what) {
-        if (what == NotificationApplicationFocusIn) {
-            Engine.MaxFps = 0;
-        }
-
-        if (what == NotificationApplicationFocusOut) {
-            Engine.MaxFps = 20;
-        }
-    }
 }

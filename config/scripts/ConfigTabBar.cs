@@ -22,6 +22,7 @@ public partial class ConfigTabBar : TabBar {
 
     public override void _Ready() {
         cfg.Load("user://config.cfg");
+        WindowSettings.ApplyFromConfig();
         GetNode<CanvasItem>("../General").Visible = true;
         GetNode<CanvasItem>("../Debug").Visible = false;
         GetNode<CanvasItem>("../Credits").Visible = false;

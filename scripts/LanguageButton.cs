@@ -26,6 +26,7 @@ public partial class LanguageButton : OptionButton {
 
 	public override void _Ready() {
 		cfg.Load("user://config.cfg");
+		WindowSettings.ApplyFromConfig();
 		AddLanguageItems();
 		Select(FindLanguageIndex(cfg.GetValue("System", "lang", "en").AsString()));
 		ApplyLanguage(languages[Selected]);

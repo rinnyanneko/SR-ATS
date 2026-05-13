@@ -29,6 +29,9 @@ public partial class UpdateMirrorOptionButton : Button {
 		GetNode<LineEdit>("../SimRailConnectUrl").Text =
 			cfg.GetValue("SimRailConnect", "url", DefaultSimRailConnectUrl).AsString();
 		GetNode<RichTextLabel>("../SimRailConnectUrl/RichTextLabel").Text = Tr("SIMRAILCONNECT_WS_URL");
+		GetNode<CheckBox>("../AlwaysOnTop").Text = Tr("ALWAYS_ON_TOP");
+		GetNode<BaseButton>("../AlwaysOnTop").ButtonPressed =
+			cfg.GetValue(WindowSettings.Section, WindowSettings.AlwaysOnTopKey, false).AsBool();
 		GetNode<Button>("../ResetSimRailConnectUrl").Text = Tr("RESET_TO_DEFAULT");
 		Text = Tr("SAVE");
 	}
@@ -43,7 +46,11 @@ public partial class UpdateMirrorOptionButton : Button {
 		}
 
 		cfg.SetValue("SimRailConnect", "url", GetNode<LineEdit>("../SimRailConnectUrl").Text);
+		bool alwaysOnTop = GetNode<BaseButton>("../AlwaysOnTop").ButtonPressed;
+		cfg.SetValue(WindowSettings.Section, WindowSettings.AlwaysOnTopKey, alwaysOnTop);
 		cfg.Save("user://config.cfg");
+		WindowSettings.ApplyFrameRate();
+		WindowSettings.ApplyAlwaysOnTop(alwaysOnTop);
 	}
 
 	public void OnResetSimRailConnectUrlPressed() {

@@ -28,7 +28,12 @@ public partial class AtsAlarmOn : Sprite2D {
         alarm = GetNode<AudioStreamPlayer>("ATS Alarm");
         chime = GetNode<AudioStreamPlayer>("../AtsNormalOff/ATS Chime");
         alarmTimer = GetNode<Timer>("../Timer");
-        Visible = false;
+        scene.Alarm = true;
+        scene.Chime = true;
+        Visible = true;
+        alarm.Play();
+        chime.Play();
+        GD.Print("Test Alarm!");
     }
 
     public override void _Process(double delta) {
@@ -47,6 +52,7 @@ public partial class AtsAlarmOn : Sprite2D {
 
         if (hasNewRestrictiveSignal) {
             TriggerAlarm(signalInFront);
+            GD.Print("Alarm Triggered!");
         }
 
         if (Input.IsActionJustPressed("ATS confirm")) {
@@ -56,6 +62,7 @@ public partial class AtsAlarmOn : Sprite2D {
         if (velocity > 0 && distanceToSignalInFront >= 0 && distanceToSignalInFront < 10 && signalInFrontSpeed == 0) {
             scene.AlarmHard = true;
             TriggerAlarm(signalInFront);
+            GD.Print("Hard alarm!");
         }
 
         Visible = scene.Alarm || scene.AlarmHard;
@@ -66,6 +73,7 @@ public partial class AtsAlarmOn : Sprite2D {
             scene.Alarm = false;
             alarm.Stop();
             alarmTimer.Stop();
+            GD.Print("Alarm confirmed!");
         }
     }
 

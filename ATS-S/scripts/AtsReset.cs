@@ -23,5 +23,6 @@ public partial class AtsReset : TextureButton {
         scene.Alarm = false;
         scene.AlarmHard = false;
         GetNode<AudioStreamPlayer>("../../AtsAlarmOn/ATS Alarm").Stop();
+        GD.Print("ATS Reset!");
     }
 }
