@@ -19,87 +19,61 @@
 
 using Godot;
 
-public partial class LanguageButton : TextureButton {
-    private readonly ConfigFile cfg = new ConfigFile();
-    private int selectedLanguage = 0;
+public partial class LanguageButton : OptionButton {
+	private static readonly (string Code, string Label, string Message)[] Languages = [
+		("en", "English", "English(en)!"),
+		("jp", "Japanese", "Japanese(jp)!"),
+		("cmn", "Traditional Chinese", "Tradition Chinese(cmn)!"),
+		("zh", "Simplified Chinese", "Simplified Chinese(zh)!"),
+		("ko", "Korean", "Korean(ko)!"),
+		("pl", "Polish", "Polish(pl)!")
+	];
 
-    public override void _Ready() {
-        cfg.Load("user://config.cfg");
-        ApplyInitialLanguage(cfg.GetValue("System", "lang", "null").AsString());
-        cfg.Save("user://config.cfg");
-    }
+	private readonly ConfigFile cfg = new ConfigFile();
 
-    public async void OnPressed() {
-        switch (selectedLanguage) {
-            case 0:
-                SetLanguage("en", "English(en)!");
-                break;
-            case 1:
-                SetLanguage("jp", "Japanese(jp)!");
-                break;
-            case 2:
-                SetLanguage("cmn", "Tradition Chinese(cmn)!");
-                break;
-            case 3:
-                SetLanguage("zh", "Simplified Chinese(zh)!");
-                break;
-            case 4:
-                SetLanguage("ko", "Korean(ko)!");
-                break;
-            case 5:
-                SetLanguage("pl", "Polish(pl)!");
-                break;
-        }
+	public override void _Ready() {
+		cfg.Load("user://config.cfg");
+		AddLanguageItems();
+		Select(FindLanguageIndex(cfg.GetValue("System", "lang", "en").AsString()));
+		SetLanguage(Languages[Selected].Code, null);
+		cfg.Save("user://config.cfg");
+	}
 
-        cfg.Save("user://config.cfg");
-        selectedLanguage++;
-        if (selectedLanguage > 5) {
-            selectedLanguage = 0;
-        }
+	public void OnItemSelected(long index) {
+		if (index < 0 || index >= Languages.Length) {
+			return;
+		}
 
-        Disabled = true;
-        await ToSignal(GetTree().CreateTimer(0.1), Timer.SignalName.Timeout);
-        Disabled = false;
-    }
+		int selectedIndex = (int)index;
+		(string code, _, string message) = Languages[selectedIndex];
+		SetLanguage(code, message);
+		cfg.Save("user://config.cfg");
+		GetNodeOrNull<Node>("../Language name")?.CallDeferred("OnLanguageChanged");
+		GetNodeOrNull<Node>("../Please enter train data")?.CallDeferred("OnLanguageChanged");
+	}
 
-    private void ApplyInitialLanguage(string language) {
-        switch (language) {
-            case "en":
-                SetLanguage("en", "English(en)!");
-                selectedLanguage = 0;
-                break;
-            case "jp":
-                SetLanguage("jp", "Japanese(jp)!");
-                selectedLanguage = 1;
-                break;
-            case "cmn":
-                SetLanguage("cmn", "Tradition Chinese(cmn)!");
-                selectedLanguage = 2;
-                break;
-            case "zh":
-                SetLanguage("zh", "Simplified Chinese(zh)!");
-                selectedLanguage = 3;
-                break;
-            case "ko":
-                SetLanguage("ko", "Korean(ko)!");
-                selectedLanguage = 4;
-                break;
-            case "pl":
-                SetLanguage("pl", "Polish(pl)!");
-                selectedLanguage = 5;
-                break;
-            default:
-                selectedLanguage = 0;
-                SetLanguage("en", null);
-                break;
-        }
-    }
+	private void AddLanguageItems() {
+		Clear();
+		for (int i = 0; i < Languages.Length; i++) {
+			AddItem(Languages[i].Label, i);
+		}
+	}
 
-    private void SetLanguage(string language, string? message) {
-        cfg.SetValue("System", "lang", language);
-        TranslationServer.SetLocale(language);
-        if (message != null) {
-            GD.Print(message);
-        }
-    }
+	private int FindLanguageIndex(string language) {
+		for (int i = 0; i < Languages.Length; i++) {
+			if (Languages[i].Code == language) {
+				return i;
+			}
+		}
+
+		return 0;
+	}
+
+	private void SetLanguage(string language, string? message) {
+		cfg.SetValue("System", "lang", language);
+		TranslationServer.SetLocale(language);
+		if (message != null) {
+			GD.Print(message);
+		}
+	}
 }

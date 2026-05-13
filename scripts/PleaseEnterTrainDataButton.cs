@@ -24,7 +24,7 @@ public partial class PleaseEnterTrainDataButton : Button {
         RefreshText();
     }
 
-    public void OnLanguagePressed() {
+    public void OnLanguageChanged() {
         RefreshText();
     }
 
