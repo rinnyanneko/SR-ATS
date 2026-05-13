@@ -22,3 +22,6 @@ android/
 
 .vs/
 .idea/
+
+SR-ATS Setup/output/
+SR-ATS Setup/payload/
