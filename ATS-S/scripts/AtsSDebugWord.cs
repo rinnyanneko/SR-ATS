@@ -35,19 +35,22 @@ public partial class AtsSDebugWord : RichTextLabel {
 
         Visible = true;
         AtsSScene scene = GetParent<AtsSScene>();
-        Text = "UpdateTime = " + scene.UpdateTime
+        SimRailConnectTelemetry telemetry = GetNode<SimRailConnectTelemetry>("../TelemetryWebSocket");
+        ControlBrake brakeOutput = GetNode<ControlBrake>("../Brake Control");
+        Text = "Data source = SimRailConnect WebSocket"
+            + "\nTelemetry WS URL = " + telemetry.DebugWsUrl
+            + "\nTelemetry WS state = " + telemetry.DebugWsState
+            + "\nTelemetry subscribed = " + telemetry.DebugSubscribed
+            + "\nTelemetry reconnect in = " + telemetry.DebugReconnectInSeconds.ToString("0.00") + "s"
+            + "\nBrake WS URL = " + brakeOutput.DebugWsUrl
+            + "\nBrake WS state = " + brakeOutput.DebugWsState
+            + "\nBrake queued commands = " + brakeOutput.DebugQueuedCommandCount
+            + "\nBrake reconnect in = " + brakeOutput.DebugReconnectInSeconds.ToString("0.00") + "s"
+            + "\nUpdateTime = " + scene.UpdateTime
+            + "\nVelocity = " + scene.Velocity + " km/h"
             + "\nalarm = " + scene.Alarm
             + "\nchime = " + scene.Chime
             + "\nalarmHard = " + scene.AlarmHard
-            + "\nsignalInFront = " + scene.LastSignalInFront
-            + "\nVDDelayedTimetableIndex = " + scene.VDDelayedTimetableIndex
-            + "\nSignalInFrontSpeed = " + scene.SignalInFrontSpeed
-            + "\nDistanceToSignalInFront = " + scene.DistanceToSignalInFront
-            + "\nSignalInFront = " + scene.SignalInFront
-            + "\nVelocity = " + scene.Velocity
-            + "\nLongitute = " + scene.Longitute
-            + "\nLatititute = " + scene.Latititute
-            + "\nInBorderStationArea = " + scene.InBorderStationArea
-            + "\nControlledBySteamID = " + scene.ControlledBySteamID;
+            + "\nSignal telemetry = unavailable in current SimRailConnect WS API";
     }
 }

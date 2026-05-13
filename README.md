@@ -6,6 +6,8 @@ Automatic Train Protection systems for [SimRail](https://simrail.eu/en/our-games
 
 Written with [Godot Game Engine 4.6 .NET](https://godotengine.org)
 
+[Help with translation](https://crowdin.com/project/sr-ats)
+
 Runtime scripts are C\# .NET. Build and run locally with:
 
 ```sh

@@ -6,12 +6,4 @@
     <EnableDynamicLoading>true</EnableDynamicLoading>
     <RootNamespace>SRATS</RootNamespace>
   </PropertyGroup>
-  <ItemGroup>
-    <Reference Include="vJoyInterfaceWrap">
-      <HintPath>vJoyInterfaceWrap.dll</HintPath>
-    </Reference>
-    <Reference Include="vJoyInterface">
-      <HintPath>vJoyInterface.dll</HintPath>
-    </Reference>
-  </ItemGroup>
 </Project>

@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://da26ervg41qj5" path="res://assets/return (Custom).png" id="1_gvy33"]
 [ext_resource type="Script" uid="uid://blitktlm74x4" path="res://ATS-P/scripts/Scene.cs" id="1_ksjca"]
 [ext_resource type="Script" uid="uid://w01f4pou6tm0" path="res://scripts/ReturnButton.cs" id="2_f4fvo"]
-[ext_resource type="Script" uid="uid://5djfn6cacfid" path="res://ATS-P/scripts/HttpReq.cs" id="4_ksjca"]
+[ext_resource type="Script" uid="uid://5djfn6cacfid" path="res://ATS-P/scripts/AtsPSimRailConnectTelemetry.cs" id="4_ksjca"]
 [ext_resource type="Script" uid="uid://dlf4goaleqo1i" path="res://scripts/RequestErrorMessage.cs" id="5_hc38h"]
 [ext_resource type="Script" uid="uid://dtdsnhyiew44g" path="res://ATS-P/scripts/DebugWord.cs" id="6_ksjca"]
 [ext_resource type="Script" uid="uid://iscloj5yswc3" path="res://scripts/ControlBrake.cs" id="7_dghsc"]
@@ -26,7 +26,7 @@ offset_bottom = 40.0
 texture_normal = ExtResource("1_gvy33")
 script = ExtResource("2_f4fvo")
 
-[node name="HTTPRequest" type="HTTPRequest" parent="." unique_id=862692159]
+[node name="TelemetryWebSocket" type="Node" parent="." unique_id=862692159]
 script = ExtResource("4_ksjca")
 
 [node name="ErrorMsg" type="AcceptDialog" parent="." unique_id=1921409288]
@@ -34,7 +34,7 @@ auto_translate_mode = 1
 title = "ERROR"
 initial_position = 2
 size = Vector2i(742, 100)
-dialog_text = "Error connect to server, check the server code and train number and your internet connection"
+dialog_text = "SIMRAILCONNECT_CONNECT_HINT"
 script = ExtResource("5_hc38h")
 
 [node name="copyright" type="LinkButton" parent="." unique_id=1926016629]
@@ -95,6 +95,5 @@ stream = ExtResource("15_ksjca")
 script = ExtResource("16_gtghf")
 
 [connection signal="pressed" from="Return" to="Return" method="OnPressed"]
-[connection signal="request_completed" from="HTTPRequest" to="HTTPRequest" method="OnRequestCompleted"]
 [connection signal="confirmed" from="ErrorMsg" to="ErrorMsg" method="OnConfirmed"]
 [connection signal="pressed" from="copyright" to="copyright" method="OnPressed"]

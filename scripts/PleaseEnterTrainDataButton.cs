@@ -18,8 +18,6 @@
 using Godot;
 
 public partial class PleaseEnterTrainDataButton : Button {
-    private readonly ConfigFile cfg = new ConfigFile();
-
     public override void _Ready() {
         RefreshText();
     }
@@ -33,14 +31,6 @@ public partial class PleaseEnterTrainDataButton : Button {
     }
 
     private void RefreshText() {
-        cfg.Load("user://config.cfg");
         Text = Tr("PLEASE_ENTER_TRAIN_DATA");
-        Variant server = cfg.GetValue("Train Data", "server", "null");
-        Variant trainNumber = cfg.GetValue("Train Data", "trainNumber", "null");
-        if (server.AsString() != "null" && trainNumber.AsString() != "null") {
-            Text = Tr("ENTERED_TRAIN_DATA")
-                .Replace("{server}", server.AsString())
-                .Replace("{trainNumber}", trainNumber.AsString());
-        }
     }
 }

@@ -11,7 +11,7 @@ SR-ATS is a Godot 4.6 .NET project. Core metadata lives in `project.godot`, with
 - `dotnet build SR-ATS.sln`: compile the Godot C# assembly and catch C# errors.
 - `dotnet build SR-ATS-Setup/SR-ATS-Setup.sln`: build the installer solution when Visual Studio setup project tooling is available.
 
-Use Godot 4.6.x with .NET support. The desktop target is `net9.0`, with `vJoyInterface.dll` and `vJoyInterfaceWrap.dll` referenced from the repository root.
+Use Godot 4.6.x with .NET support. The desktop target is `net9.0`.
 
 ## Coding Style & Naming Conventions
 
@@ -33,4 +33,4 @@ Pull requests should include a brief summary, affected modules or scenes, manual
 
 ## Agent-Specific Instructions
 
-Avoid broad rewrites of generated Godot `.import` files or scene UIDs unless required by an asset or scene change. Do not remove bundled DLLs without confirming replacement behavior for vJoy integration.
+Avoid broad rewrites of generated Godot `.import` files or scene UIDs unless required by an asset or scene change.

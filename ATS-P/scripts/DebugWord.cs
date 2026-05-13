@@ -25,21 +25,24 @@ public partial class DebugWord : RichTextLabel {
         if (_cfg.GetValue("System", "Debug", false).AsBool()) {
             var parent = GetParent();
             if (parent != null) {
-                Text = $"UpdateTime = {parent.Get("UpdateTime")}\n" +
-                       $"Brake = {parent.Get("Brake")}\n" +
-                       $"EmBrake = {parent.Get("EmBrake")}\n" +
-                       $"BrakeOpen = {parent.Get("BrakeOpen")}\n" +
+                AtsPSimRailConnectTelemetry telemetry = GetNode<AtsPSimRailConnectTelemetry>("../TelemetryWebSocket");
+                ControlBrake brakeOutput = GetNode<ControlBrake>("../ControlBrake");
+                Text = "Data source = SimRailConnect WebSocket\n" +
+                       $"Telemetry WS URL = {telemetry.DebugWsUrl}\n" +
+                       $"Telemetry WS state = {telemetry.DebugWsState}\n" +
+                       $"Telemetry subscribed = {telemetry.DebugSubscribed}\n" +
+                       $"Telemetry reconnect in = {telemetry.DebugReconnectInSeconds:0.00}s\n" +
+                       $"Brake WS URL = {brakeOutput.DebugWsUrl}\n" +
+                       $"Brake WS state = {brakeOutput.DebugWsState}\n" +
+                       $"Brake queued commands = {brakeOutput.DebugQueuedCommandCount}\n" +
+                       $"Brake reconnect in = {brakeOutput.DebugReconnectInSeconds:0.00}s\n" +
+                       $"UpdateTime = {parent.Get("UpdateTime")}\n" +
+                       $"Velocity = {parent.Get("Velocity")} km/h\n" +
                        $"PatternSpeed = {parent.Get("PatternSpeed")}\n" +
+                       $"Brake = {parent.Get("Brake")}\n" +
+                       $"BrakeOpen = {parent.Get("BrakeOpen")}\n" +
                        $"Fail = {parent.Get("Fail")}\n" +
-                       $"SignalInFront = {parent.Get("SignalInFront")}\n" +
-                       $"VDDelayedTimetableIndex = {parent.Get("VDDelayedTimetableIndex")}\n" +
-                       $"SignalInFrontSpeed = {parent.Get("SignalInFrontSpeed")}\n" +
-                       $"DistanceToSignalInFront = {parent.Get("DistanceToSignalInFront")}\n" +
-                       $"Velocity = {parent.Get("Velocity")}\n" +
-                       $"Longitude = {parent.Get("Longitude")}\n" +
-                       $"Latitude = {parent.Get("Latitude")}\n" +
-                       $"InBorderStationArea = {parent.Get("InBorderStationArea")}\n" +
-                       $"ControlledBySteamID = {parent.Get("ControlledBySteamID")}";
+                       "Signal telemetry = unavailable in current SimRailConnect WS API";
             }
         }
     }

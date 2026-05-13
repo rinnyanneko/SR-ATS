@@ -22,13 +22,10 @@ public partial class AtsSButton : TextureButton {
 
     public override void _Ready() {
         cfg.Load("user://config.cfg");
-        if (cfg.GetValue("Train Data", "server").VariantType != Variant.Type.Nil
-            && cfg.GetValue("Train Data", "trainNumber").VariantType != Variant.Type.Nil) {
-            GetNode<BaseButton>("../ATS-S").Disabled = false;
-            GetNode<BaseButton>("../ATS-P").Disabled = false;
-            if (cfg.GetValue("System", "DevSetting", false).AsBool()) {
-                GetNode<BaseButton>("../ATS-Ps").Disabled = false;
-            }
+        GetNode<BaseButton>("../ATS-S").Disabled = false;
+        GetNode<BaseButton>("../ATS-P").Disabled = false;
+        if (cfg.GetValue("System", "DevSetting", false).AsBool()) {
+            GetNode<BaseButton>("../ATS-Ps").Disabled = false;
         }
     }
 

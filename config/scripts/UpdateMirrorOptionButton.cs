@@ -18,6 +18,8 @@
 using Godot;
 
 public partial class UpdateMirrorOptionButton : OptionButton {
+	public const string DefaultSimRailConnectUrl = "ws://localhost:5556/ws";
+
 	private readonly ConfigFile cfg = new ConfigFile();
 
 	public override void _Ready() {
@@ -29,9 +31,12 @@ public partial class UpdateMirrorOptionButton : OptionButton {
 			Selected = 1;
 		}
 
-		GetNode<BaseButton>("../vJoy").ButtonPressed = cfg.GetValue("General", "vJoy", false).AsBool();
 		GetNode<RichTextLabel>("RichTextLabel").Text = Tr("UPDATE_MIRROR");
-		GetNode<BaseButton>("../vJoy").Disabled = !cfg.GetValue("System", "DevSetting", false).AsBool();
+		GetNode<LineEdit>("../SimRailConnectUrl").Text =
+			cfg.GetValue("SimRailConnect", "url", DefaultSimRailConnectUrl).AsString();
+		GetNode<RichTextLabel>("../SimRailConnectUrl/RichTextLabel").Text = Tr("SIMRAILCONNECT_WS_URL");
+		GetNode<Button>("../ResetSimRailConnectUrl").Text = Tr("RESET_TO_DEFAULT");
+		GetNode<Button>("../Save").Text = Tr("SAVE");
 	}
 
 	public void OnSavePressed() {
@@ -47,7 +52,13 @@ public partial class UpdateMirrorOptionButton : OptionButton {
 			cfg.SetValue("General", "UpdateChannel", "Beta");
 		}
 
-		cfg.SetValue("General", "vJoy", GetNode<BaseButton>("../vJoy").ButtonPressed);
+		cfg.SetValue("SimRailConnect", "url", GetNode<LineEdit>("../SimRailConnectUrl").Text);
+		cfg.Save("user://config.cfg");
+	}
+
+	public void OnResetSimRailConnectUrlPressed() {
+		GetNode<LineEdit>("../SimRailConnectUrl").Text = DefaultSimRailConnectUrl;
+		cfg.SetValue("SimRailConnect", "url", DefaultSimRailConnectUrl);
 		cfg.Save("user://config.cfg");
 	}
 }

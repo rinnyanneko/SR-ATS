@@ -22,6 +22,8 @@ public partial class DebugSaveButton : Button {
 
     public override void _Ready() {
         cfg.Load("user://config.cfg");
+        Text = Tr("SAVE");
+        GetNode<Button>("../Debug frame").Text = "Debug frame";
         if (cfg.GetValue("System", "Debug", false).AsBool()) {
             GetNode<BaseButton>("../Debug frame").ButtonPressed = true;
         }

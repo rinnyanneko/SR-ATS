@@ -10,11 +10,6 @@ Copyright © doceazedo
 Licensed under the MIT License
 Source: https://github.com/doceazedo/godot_wry
 
-vJoy
-Copyright © Shaul Eizikovich
-Licensed under the MIT License
-Source: https://github.com/njz3/vJoy
-
 Flaticon Icon
 Icon made by fariha begum from www.flaticon.com
 Licensed under Flaticon License (https://www.flaticon.com/legal)

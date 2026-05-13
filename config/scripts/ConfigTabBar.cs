@@ -30,7 +30,7 @@ public partial class ConfigTabBar : TabBar {
         AddTab(Tr("GENERAL_SETTING"));
         AddTab("Debug");
         SetTabDisabled(2, !cfg.GetValue("System", "DevSetting", false).AsBool());
-        AddTab("Credits");
+        AddTab(Tr("CREDITS"));
     }
 
     public void OnTabChanged(long tab) {

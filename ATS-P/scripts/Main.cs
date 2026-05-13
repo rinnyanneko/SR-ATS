@@ -7,6 +7,7 @@
 
 using Godot;
 using System;
+using System.Threading;
 using System.Threading.Tasks;
 
 public partial class Main : Node {
@@ -14,6 +15,7 @@ public partial class Main : Node {
 	private Scene parent;
 	private ControlBrake controlBrake;
 	private ConfigFile _cfg = new ConfigFile();
+	private CancellationTokenSource startupCancellation = new CancellationTokenSource();
 	
 	private bool isReady = false;
 
@@ -37,23 +39,43 @@ public partial class Main : Node {
 			indicators.PlayBell();
 			parent.Fail = true;
 			indicators.PlayBell();
-			await Task.Delay(3000);
+			await Task.Delay(3000, startupCancellation.Token);
+			if (!IsInstanceValid(this) || !IsInstanceValid(parent) || !IsInstanceValid(indicators)) {
+				return;
+			}
+
 			indicators.Fail(false);
 			parent.Fail = false;
 			indicators.PlayBell();
 			EmitSignal(SignalName.ATSReady);
-			await Task.Delay(3000);
-			while (parent.DistanceToSignalInFront > 500 && parent.DistanceToSignalInFront > 0) {
-				await Task.Delay(2000);
+			await Task.Delay(3000, startupCancellation.Token);
+			if (!IsInstanceValid(this) || !IsInstanceValid(parent) || !IsInstanceValid(indicators)) {
+				return;
 			}
+
+			while (IsInstanceValid(parent) && parent.DistanceToSignalInFront > 500 && parent.DistanceToSignalInFront > 0) {
+				await Task.Delay(2000, startupCancellation.Token);
+				if (!IsInstanceValid(this) || !IsInstanceValid(parent) || !IsInstanceValid(indicators)) {
+					return;
+				}
+			}
+
 			indicators.BrakeOpen(true); // REMOVE WHEN BRAKE IMPLEMENTED
 			indicators.ATSp(true);
 			indicators.PlayBell();
 			this.isReady = true;
 		}
+		catch (TaskCanceledException) {
+		}
 		catch (Exception e) {
 			GD.PrintErr(e);
 		}
+	}
+
+	public override void _ExitTree() {
+		isReady = false;
+		startupCancellation.Cancel();
+		startupCancellation.Dispose();
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.

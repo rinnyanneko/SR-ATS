@@ -17,34 +17,17 @@
 
 using Godot;
 
-public partial class ServerOptionButton : OptionButton {
+public partial class ServerOptionButton : Button {
     private readonly ConfigFile cfg = new ConfigFile();
 
     public override void _Ready() {
         cfg.Load("user://config.cfg");
-        GetNode<RichTextLabel>("RichTextLabel").Text = Tr("SERVER");
-        GetNode<RichTextLabel>("../TrainNumber/RichTextLabel").Text = Tr("TRAIN_NUMBER");
-        GetNode<Button>("../Save").Text = Tr("SAVE");
-        Variant savedServer = cfg.GetValue("Train Data", "server");
-        if (savedServer.VariantType != Variant.Type.Nil) {
-            Text = savedServer.AsString();
-        }
-
-        SetLineEditTextIfPresent("../TrainNumber", cfg.GetValue("Train Data", "trainNumber"));
+        Text = Tr("SAVE");
         SetLineEditTextIfPresent("../Braking Ratio", cfg.GetValue("Train Data", "brakingRatio"));
         SetLineEditTextIfPresent("../Vmax", cfg.GetValue("Train Data", "Vmax"));
     }
 
     public void OnSaveButtonPressed() {
-        if (Selected >= 0) {
-            RequestServers requestServers = GetNode<RequestServers>("../../RequestServers");
-            if (Selected < requestServers.Codes.Count) {
-                cfg.SetValue("Train Data", "server", requestServers.Codes[Selected]);
-            }
-
-            cfg.SetValue("Train Data", "trainNumber", GetNode<LineEdit>("../TrainNumber").Text);
-        }
-
         string brakingRatio = GetNode<LineEdit>("../Braking Ratio").Text;
         if (!string.IsNullOrWhiteSpace(brakingRatio)
             && float.TryParse(brakingRatio, out float ratio)
