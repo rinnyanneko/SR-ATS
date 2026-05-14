@@ -108,6 +108,14 @@ initial_position = 1
 size = Vector2i(223, 100)
 dialog_text = "Developer setting enabled"
 
+[node name="BETA" type="AcceptDialog" parent="." unique_id=1883532464]
+oversampling_override = 1.0
+initial_position = 1
+size = Vector2i(527, 106)
+visible = true
+dialog_text = "This is the BETA version of the software, may contain lots of bugs.
+Use at own risk"
+
 [connection signal="pressed" from="ATS-S" to="ATS-S" method="OnPressed"]
 [connection signal="pressed" from="ATS-Ps" to="ATS-Ps" method="OnPressed"]
 [connection signal="pressed" from="ATS-P" to="ATS-P" method="OnPressed"]

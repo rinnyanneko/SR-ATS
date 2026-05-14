@@ -1,22 +1,10 @@
 key,en,jp,cmn,zh,ko,pl
 LANG_NAME,English,日本語,繁體中文,简体中文,한국어(DeepL),Polski(DeepL)
-SERVER,Server,サーバー,伺服器,服务器,서버,Serwer
-TRAIN_NUMBER,Train Number,列車番号,車次,车次,열차 번호,Numer pociągu
 SAVE,Save,保存,保存,保存,저장,Zapis
 CONFIRM,Confirm,確認,確認,确认,확인,Potwierdź
 CANCEL,Cancel,キャンセル,取消,取消,취소,Anuluj
-READ_LICENSE,Please read the Software License Agreement,ライセンスをお読んでください,請閱讀軟體授權合約,请阅读软件授权合约,소프트웨어 사용권 계약을 읽어주세요.,Przeczytaj umowę licencyjną oprogramowania
-AGREE_LICENSE,I agree,同意する,我同意,我同意,동의합니다,Zgadzam się
 CLOSE,Close,閉じる,關閉,关闭,닫기,Zamknij
-PLEASE_ENTER_TRAIN_DATA,PLEASE ENTER TRAIN DATA,列車情報を入力してください,請輸入列車資訊,请输入列车信息,열차 데이터를 입력하세요,WPROWADŹ DANE POCIĄGU
-TRAIN_DATA,Train Data,列車情報,列車資訊,列车信息,열차 데이터,Dane pociągu
-UPDATE_CHANNEL,Update Channel,更新チャンネル,更新頻道,更新频道,채널 업데이트,Zaktualizuj kanał
 GENERAL_SETTING,General,一般,一般,通用,일반,Ogólne
-TRAIN_NOT_FOUND,The train number not found in the selected server,選択したサーバーに列車番号が見つかりません,所選伺服器中找不到該車次,所选服务器中找不到该车次,선택한 서버에서 열차 번호를 찾을 수 없습니다.,Numer pociągu nie został znaleziony na wybranym serwerze
-SERVER_NOT_FOUND,The server does not exist,サーバーが存在しません,伺服器不存在,服务器不存在,서버가 존재하지 않습니다.,Serwer nie istnieje
-CONNECTION_ERROR,An error occurred while connecting to the server,サーバーへの接続中にエラーが発生しました,連接到伺服器時發生錯誤,连接到服务器时发生错误,서버에 연결하는 동안 오류가 발생했습니다.,Wystąpił błąd podczas łączenia się z serwerem
-CONNECTION_TIMEOUT,Connection timeout,接続タイムアウト,連線逾時,连线逾时,연결 시간 초과,Limit czasu połączenia
-ENTERED_TRAIN_DATA,Server: {server} Train number: {trainNumber},サーバー：{server} 列車番号：{trainNumber},伺服器: {server} 車次: {trainNumber},服务器: {server} 车次: {trainNumber},서버 서버: {server} 열차 번호: {trainNumber},Serwer: {server} Numer pociągu: {trainNumber}
 OPEN_APP_USR_DIR,Open application user directory,ソフトウェアのユーザーディレクトリを開く,開啟軟體使用者目錄,打开软件用户目录,애플리케이션 사용자 디렉터리 열기,Otwórz katalog użytkownika aplikacji
 SIMRAILCONNECT_WS_URL,SimRailConnect WS URL,SimRailConnect WS URL,SimRailConnect WS URL,SimRailConnect WS URL,SimRailConnect WS URL,SimRailConnect WS URL
 RESET_TO_DEFAULT,Reset to default,デフォルトに戻す,重設為預設值,重置为默认值,기본값으로 재설정,Przywróć domyślne

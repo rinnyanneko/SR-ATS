@@ -18,10 +18,11 @@
 #nullable enable
 
 using Godot;
+using System;
 using System.Text;
 
 public partial class SimRailConnectTelemetry : Node {
-    private const int FirstConnectionWarningAttemptCount = 3;
+    private const int FirstConnectionWarningAttemptCount = 4;
     private const double ConnectionAttemptTimeoutSeconds = 2.5;
 
     private readonly WebSocketPeer socket = new WebSocketPeer();
@@ -184,6 +185,10 @@ public partial class SimRailConnectTelemetry : Node {
         parent.Set("Latititute", -1.0);
         parent.Set("Longitute", -1.0);
         parent.Set("Velocity", GetInt(train, "velocityInt", (int)Mathf.Round(GetDouble(train, "velocity"))));
+
+        if (HasProperty(parent, "DriverBrakeApplied")) {
+            parent.Set("DriverBrakeApplied", ReadDriverBrakeApplied(train));
+        }
     }
 
     private static void ApplyEnvironment(Godot.Collections.Dictionary? environment, Node parent) {
@@ -273,6 +278,78 @@ public partial class SimRailConnectTelemetry : Node {
 
     private static double GetDouble(Godot.Collections.Dictionary? data, string key, double fallback = 0) {
         return data != null && data.ContainsKey(key) ? data[key].AsDouble() : fallback;
+    }
+
+    private static double GetDouble(Godot.Collections.Dictionary? data, string[] keys, double fallback = 0) {
+        if (data == null) {
+            return fallback;
+        }
+
+        foreach (string key in keys) {
+            if (data.ContainsKey(key) && data[key].VariantType != Variant.Type.Nil) {
+                return data[key].AsDouble();
+            }
+        }
+
+        return fallback;
+    }
+
+    private static string GetString(Godot.Collections.Dictionary? data, string[] keys, string fallback = "") {
+        if (data == null) {
+            return fallback;
+        }
+
+        foreach (string key in keys) {
+            if (data.ContainsKey(key) && data[key].VariantType != Variant.Type.Nil) {
+                return data[key].AsString();
+            }
+        }
+
+        return fallback;
+    }
+
+    private static bool ReadDriverBrakeApplied(Godot.Collections.Dictionary train) {
+        double brakingRatio = GetDouble(train, new[] { "brakingRatio", "brakeRatio", "brakePercent", "brakePercentage" }, -1);
+        if (brakingRatio > 0) {
+            return true;
+        }
+
+        double brakePosition = GetDouble(train, new[] { "brakePosition", "brakeNotch", "brakeControllerPosition", "brakeControllerNotch" }, -1);
+        if (brakePosition > 0) {
+            return true;
+        }
+
+        string mainControllerPosition = GetString(
+            train,
+            new[] { "mainControllerPosition", "mainControllerNotch", "mainController", "masterControllerPosition", "masterControllerNotch", "masterController" });
+        if (IsBrakeControllerPosition(mainControllerPosition)) {
+            return true;
+        }
+
+        return GetBool(train, "brakeApplied")
+            || GetBool(train, "isBraking")
+            || GetBool(train, "driverBrakeApplied");
+    }
+
+    private static bool IsBrakeControllerPosition(string position) {
+        if (string.IsNullOrWhiteSpace(position)) {
+            return false;
+        }
+
+        string normalizedPosition = position.Trim().ToLowerInvariant();
+        return normalizedPosition.StartsWith("b", StringComparison.Ordinal)
+            || normalizedPosition.Contains("brake")
+            || normalizedPosition.Contains("emergency");
+    }
+
+    private static bool HasProperty(GodotObject obj, string propertyName) {
+        foreach (Godot.Collections.Dictionary property in obj.GetPropertyList()) {
+            if (GetString(property, "name") == propertyName) {
+                return true;
+            }
+        }
+
+        return false;
     }
 
     private static int GetNullableInt(Godot.Collections.Dictionary? data, string key, int fallback = 0) {

@@ -69,7 +69,7 @@ public partial class AtsAlarmOn : Sprite2D {
     }
 
     public void OnAtsConfirmPressed() {
-        if (!scene.AlarmHard) {
+        if (scene.Alarm && !scene.AlarmHard && scene.DriverBrakeApplied) {
             scene.Alarm = false;
             alarm.Stop();
             alarmTimer.Stop();

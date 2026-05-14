@@ -48,6 +48,7 @@ public partial class AtsSDebugWord : RichTextLabel {
             + "\nBrake reconnect in = " + brakeOutput.DebugReconnectInSeconds.ToString("0.00") + "s"
             + "\nUpdateTime = " + scene.UpdateTime
             + "\nVelocity = " + scene.Velocity + " km/h"
+            + "\nDriverBrakeApplied = " + scene.DriverBrakeApplied
             + "\nalarm = " + scene.Alarm
             + "\nchime = " + scene.Chime
             + "\nalarmHard = " + scene.AlarmHard

@@ -21,6 +21,7 @@ public partial class AtsSScene : Node2D {
     [Export] public bool Alarm { get; set; } = false;
     [Export] public bool Chime { get; set; } = false;
     [Export] public bool AlarmHard { get; set; } = false;
+    [Export] public bool DriverBrakeApplied { get; set; } = false;
     [Export] public string LastSignalInFront { get; set; } = "";
     [Export] public double VDDelayedTimetableIndex { get; set; } = -1.0;
     [Export] public int SignalInFrontSpeed { get; set; } = -1;
