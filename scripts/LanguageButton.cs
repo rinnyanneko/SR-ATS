@@ -21,16 +21,25 @@ using Godot;
 using System.Collections.Generic;
 
 public partial class LanguageButton : OptionButton {
-	private readonly ConfigFile cfg = new ConfigFile();
 	private readonly List<string> languages = [];
+	private LocalizationManager? localizationManager;
 
 	public override void _Ready() {
-		cfg.Load("user://config.cfg");
 		WindowSettings.ApplyFromConfig();
+		localizationManager = GetNodeOrNull<LocalizationManager>("/root/LocalizationManager");
+		if (localizationManager != null) {
+			localizationManager.LocaleChanged += OnLocaleChanged;
+		}
+
 		AddLanguageItems();
-		Select(FindLanguageIndex(cfg.GetValue("System", "lang", "en").AsString()));
-		ApplyLanguage(languages[Selected]);
-		cfg.Save("user://config.cfg");
+		Select(FindLanguageIndex(GetCurrentLocale()));
+		RefreshLanguageItems();
+	}
+
+	public override void _ExitTree() {
+		if (localizationManager != null) {
+			localizationManager.LocaleChanged -= OnLocaleChanged;
+		}
 	}
 
 	public void OnItemSelected(long index) {
@@ -40,14 +49,13 @@ public partial class LanguageButton : OptionButton {
 
 		int selectedIndex = (int)index;
 		ApplyLanguage(languages[selectedIndex]);
-		cfg.Save("user://config.cfg");
-		GetNodeOrNull<Node>("../Language name")?.CallDeferred("OnLanguageChanged");
 	}
 
 	private void AddLanguageItems() {
 		Clear();
 		languages.Clear();
-		foreach (string locale in TranslationServer.GetLoadedLocales()) {
+		string[] locales = localizationManager?.GetAvailableLocales() ?? TranslationServer.GetLoadedLocales();
+		foreach (string locale in locales) {
 			languages.Add(locale);
 		}
 
@@ -67,15 +75,29 @@ public partial class LanguageButton : OptionButton {
 	}
 
 	private void ApplyLanguage(string language) {
-		cfg.SetValue("System", "lang", language);
-		TranslationServer.SetLocale(language);
+		if (localizationManager != null) {
+			localizationManager.ApplyLocale(language);
+		} else {
+			TranslationServer.SetLocale(language);
+		}
 	}
 
 	private string GetLanguageName(string language) {
-		string previousLocale = TranslationServer.GetLocale();
-		TranslationServer.SetLocale(language);
-		string languageName = Tr("LANG_NAME");
-		TranslationServer.SetLocale(previousLocale);
-		return languageName == "LANG_NAME" ? language : languageName;
+		return localizationManager?.GetLocaleDisplayName(language) ?? language;
+	}
+
+	private string GetCurrentLocale() {
+		return localizationManager?.GetCurrentLocale() ?? TranslationServer.GetLocale();
+	}
+
+	private void RefreshLanguageItems() {
+		for (int i = 0; i < languages.Count; i++) {
+			SetItemText(i, GetLanguageName(languages[i]));
+		}
+	}
+
+	private void OnLocaleChanged(string locale) {
+		RefreshLanguageItems();
+		Select(FindLanguageIndex(locale));
 	}
 }

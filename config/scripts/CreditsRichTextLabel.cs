@@ -15,10 +15,37 @@
  */
 // SPDX-License-Identifier: Apache-2.0
 
+#nullable enable
+
 using Godot;
 
 public partial class CreditsRichTextLabel : RichTextLabel {
+    private LocalizationManager? localizationManager;
+
+    public override void _Ready() {
+        localizationManager = GetNodeOrNull<LocalizationManager>("/root/LocalizationManager");
+        if (localizationManager != null) {
+            localizationManager.LocaleChanged += OnLocaleChanged;
+        }
+
+        RefreshTranslations();
+    }
+
+    public override void _ExitTree() {
+        if (localizationManager != null) {
+            localizationManager.LocaleChanged -= OnLocaleChanged;
+        }
+    }
+
     public void OnMetaClicked(Variant meta) {
         OS.ShellOpen(meta.AsString());
+    }
+
+    private void RefreshTranslations() {
+        Text = Tr("CREDITS_TEXT").Replace("\\n", "\n");
+    }
+
+    private void OnLocaleChanged(string locale) {
+        RefreshTranslations();
     }
 }

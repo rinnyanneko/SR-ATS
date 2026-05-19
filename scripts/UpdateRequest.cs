@@ -18,13 +18,11 @@
 using Godot;
 
 public partial class UpdateRequest : LinkButton {
-    private const string ReleasesUrl = "https://github.com/rinnyanneko/SR-ATS/releases";
-
     public override void _Ready() {
         Text = FileAccess.GetFileAsString("res://version.txt");
     }
 
     public void OnVersionPressed() {
-        OS.ShellOpen(ReleasesUrl);
+        OS.ShellOpen(UpdateManager.ReleasesUrl);
     }
 }

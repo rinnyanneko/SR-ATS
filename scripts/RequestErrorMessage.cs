@@ -39,7 +39,7 @@ public partial class RequestErrorMessage : AcceptDialog {
     }
 
     public void ConnectionErr(int code) {
-        DialogText = Tr("CONNECTION_ERROR") + "\n" + GetHttpStatusText(code);
+        DialogText = Tr("CONNECTION_ERROR_STATUS").Replace("{status}", GetHttpStatusText(code));
         Visible = true;
     }
 

@@ -15,14 +15,37 @@
  */
 // SPDX-License-Identifier: Apache-2.0
 
+#nullable enable
+
 using Godot;
 
 public partial class OpenAppDirButton : Button {
+    private LocalizationManager? localizationManager;
+
     public override void _Ready() {
-        Text = Tr("OPEN_APP_USR_DIR");
+        localizationManager = GetNodeOrNull<LocalizationManager>("/root/LocalizationManager");
+        if (localizationManager != null) {
+            localizationManager.LocaleChanged += OnLocaleChanged;
+        }
+
+        RefreshTranslations();
+    }
+
+    public override void _ExitTree() {
+        if (localizationManager != null) {
+            localizationManager.LocaleChanged -= OnLocaleChanged;
+        }
     }
 
     public void OnPressed() {
         OS.ShellOpen(ProjectSettings.GlobalizePath("user://"));
+    }
+
+    private void RefreshTranslations() {
+        Text = Tr("OPEN_APP_USR_DIR");
+    }
+
+    private void OnLocaleChanged(string locale) {
+        RefreshTranslations();
     }
 }

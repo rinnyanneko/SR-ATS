@@ -8,6 +8,8 @@
 [ext_resource type="Script" uid="uid://cht5m6mu6wvsf" path="res://config/scripts/UpdateMirrorOptionButton.cs" id="7_1llyc"]
 [ext_resource type="Script" uid="uid://b6ktipmm241uc" path="res://config/scripts/DebugSaveButton.cs" id="8_saujo"]
 [ext_resource type="Script" uid="uid://dglc8jxhx4qex" path="res://config/scripts/OpenAppDirButton.cs" id="9_iadgi"]
+[ext_resource type="Script" uid="uid://dkb1cl4o7qnm8" path="res://scripts/LanguageButton.cs" id="10_q5xgi"]
+[ext_resource type="Script" uid="uid://ca023gdg74kld" path="res://config/scripts/UpdateSettingsController.cs" id="11_0h6rg"]
 
 [node name="Config" type="Control" unique_id=2114976413]
 layout_mode = 3
@@ -42,26 +44,22 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="UpdateChannel" type="OptionButton" parent="General" unique_id=414748876]
+[node name="Language" type="OptionButton" parent="General" unique_id=1902684969]
 layout_mode = 0
-offset_left = 159.0
-offset_top = 111.0
-offset_right = 240.0
-offset_bottom = 142.0
-selected = 0
-item_count = 2
-popup/item_0/text = "Stable"
-popup/item_0/id = 0
-popup/item_1/text = "Beta"
-popup/item_1/id = 2
-script = ExtResource("6_r4fv4")
+offset_left = 161.0
+offset_top = 112.0
+offset_right = 357.0
+offset_bottom = 143.0
+fit_to_longest_item = false
+allow_reselect = true
+script = ExtResource("10_q5xgi")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="General/UpdateChannel" unique_id=1650444197]
+[node name="RichTextLabel" type="RichTextLabel" parent="General/Language" unique_id=394103098]
 layout_mode = 0
 offset_left = -157.0
 offset_top = 4.0
 offset_bottom = 28.0
-text = "UPDATE_CHANNEL"
+text = "SETTINGS_LANGUAGE"
 
 [node name="Save" type="Button" parent="General" unique_id=684617378]
 layout_mode = 0
@@ -74,10 +72,10 @@ script = ExtResource("7_1llyc")
 
 [node name="SimRailConnectUrl" type="LineEdit" parent="General" unique_id=1529274366]
 layout_mode = 0
-offset_left = 232.0
-offset_top = 145.0
-offset_right = 495.0
-offset_bottom = 176.0
+offset_left = 236.0
+offset_top = 152.0
+offset_right = 499.0
+offset_bottom = 183.0
 placeholder_text = "ws://localhost:5556/ws"
 
 [node name="RichTextLabel" type="RichTextLabel" parent="General/SimRailConnectUrl" unique_id=1793151742]
@@ -90,28 +88,69 @@ text = "SIMRAILCONNECT_WS_URL"
 
 [node name="ResetSimRailConnectUrl" type="Button" parent="General" unique_id=669735435]
 layout_mode = 0
-offset_left = 501.0
-offset_top = 145.0
-offset_right = 660.0
-offset_bottom = 176.0
+offset_left = 503.0
+offset_top = 153.0
+offset_right = 662.0
+offset_bottom = 184.0
 text = "RESET_TO_DEFAULT"
 
 [node name="AlwaysOnTop" type="CheckBox" parent="General" unique_id=508667137]
 layout_mode = 0
-offset_left = 2.0
-offset_top = 180.0
-offset_right = 170.0
-offset_bottom = 211.0
+offset_left = 6.0
+offset_top = 183.0
+offset_right = 174.0
+offset_bottom = 214.0
 text = "ALWAYS_ON_TOP"
 
 [node name="OpenAppUsrDir" type="Button" parent="General" unique_id=765240985]
 layout_mode = 0
-offset_left = 2.0
-offset_top = 216.0
-offset_right = 164.0
-offset_bottom = 247.0
+offset_left = 6.0
+offset_top = 223.0
+offset_right = 168.0
+offset_bottom = 254.0
 text = "OPEN_APP_USR_DIR"
 script = ExtResource("9_iadgi")
+
+[node name="UpdateChannel" type="OptionButton" parent="General" unique_id=414748876]
+layout_mode = 0
+offset_left = 161.0
+offset_top = 263.0
+offset_right = 413.0
+offset_bottom = 294.0
+selected = 0
+item_count = 2
+popup/item_0/text = "UPDATE_CHANNEL_STABLE"
+popup/item_0/id = 0
+popup/item_1/text = "UPDATE_CHANNEL_PREVIEW"
+popup/item_1/id = 2
+script = ExtResource("6_r4fv4")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="General/UpdateChannel" unique_id=1650444197]
+layout_mode = 0
+offset_left = -157.0
+offset_top = 4.0
+offset_bottom = 28.0
+text = "UPDATE_CHANNEL"
+
+[node name="Updater" type="VBoxContainer" parent="General" unique_id=1565959724]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 300.0
+offset_right = 663.0
+offset_bottom = 426.0
+script = ExtResource("11_0h6rg")
+
+[node name="CurrentVersion" type="Label" parent="General/Updater" unique_id=1174187217]
+layout_mode = 2
+text = "UPDATE_CURRENT_VERSION"
+
+[node name="CheckNow" type="Button" parent="General/Updater" unique_id=473982709]
+layout_mode = 2
+text = "UPDATE_CHECK_NOW"
+
+[node name="Status" type="Label" parent="General/Updater" unique_id=1611300033]
+layout_mode = 2
+autowrap_mode = 3
 
 [node name="Debug" type="Control" parent="." unique_id=816635307]
 visible = false
@@ -131,7 +170,7 @@ offset_left = 551.0
 offset_top = 610.0
 offset_right = 596.0
 offset_bottom = 641.0
-text = "Save"
+text = "SAVE"
 script = ExtResource("8_saujo")
 
 [node name="Credits" type="Control" parent="." unique_id=1871528418]
@@ -144,23 +183,14 @@ offset_top = 108.0
 offset_right = 1152.0
 offset_bottom = 629.0
 bbcode_enabled = true
-text = "Thank you for using SR-ATS!
-Main Developer: [url=https://rinnyanneko.github.io]ミルクねこ[/url]
-Icons:
-	[url=https://www.flaticon.com/]Flaticon[/url]
-	[url=https://steamcommunity.com/id/3N-SPAMU-NSZS/]3N[/url]
-SDK and APIs:
-	[url=https://github.com/rinnyanneko/SimRailConnect]SimRailConnect[/url]
-	[url=https://github.com/doceazedo/godot_wry]WRY[/url]
-To contribute, please contact me via [url=https://github.com/rinnyanneko/SR-ATS]GitHub[/url]
-
-Copyright © 2024 - 2026 rinnyanneko. Some Rights Reserved.
-"
+text = "CREDITS_TEXT"
 script = ExtResource("6_ixw2y")
 
 [connection signal="pressed" from="return" to="return" method="OnPressed"]
 [connection signal="tab_changed" from="TabBar" to="TabBar" method="OnTabChanged"]
+[connection signal="item_selected" from="General/Language" to="General/Language" method="OnItemSelected"]
 [connection signal="pressed" from="General/Save" to="General/Save" method="OnSavePressed"]
 [connection signal="pressed" from="General/ResetSimRailConnectUrl" to="General/Save" method="OnResetSimRailConnectUrlPressed"]
 [connection signal="pressed" from="General/OpenAppUsrDir" to="General/OpenAppUsrDir" method="OnPressed"]
+[connection signal="pressed" from="General/Updater/CheckNow" to="General/Updater" method="OnCheckNowPressed"]
 [connection signal="pressed" from="Debug/Save" to="Debug/Save" method="OnPressed"]

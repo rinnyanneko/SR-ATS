@@ -1,0 +1,16 @@
+{
+  "product": "SR-ATS",
+  "channel": "stable",
+  "version": "0.1.0",
+  "tag": "v0.1.0",
+  "prerelease": false,
+  "installer_url": "https://github.com/rinnyanneko/SR-ATS/releases/download/v0.1.0/SR-ATS-v0.1.0-win-x64-setup.exe",
+  "sha256": "PUT_SHA256_HERE",
+  "notes": [
+    "Initial stable updater manifest example."
+  ],
+  "components": {
+    "sr_ats": "0.1.0",
+    "simrailconnect": "0.0.1"
+  }
+}

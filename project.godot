@@ -23,6 +23,11 @@ boot_splash/stretch_mode=0
 boot_splash/image="res://SR-ATS.png"
 config/icon="res://SR-ATS.png"
 
+[autoload]
+
+LocalizationManager="*res://scripts/LocalizationManager.cs"
+UpdateManager="*res://scripts/UpdateManager.cs"
+
 [debug]
 
 file_logging/enable_file_logging=true
@@ -54,7 +59,7 @@ theme/custom_font="res://fonts/NotoSans-SemiBold.ttf"
 
 [internationalization]
 
-locale/translations=PackedStringArray("res://translation.cmn.translation", "res://translation.en.translation", "res://translation.jp.translation", "res://translation.zh.translation", "res://translation.ko.translation")
+locale/translations=PackedStringArray("res://translation.cmn.translation", "res://translation.en.translation", "res://translation.jp.translation", "res://translation.zh.translation", "res://translation.ko.translation", "res://translation.pl.translation")
 
 [rendering]
 

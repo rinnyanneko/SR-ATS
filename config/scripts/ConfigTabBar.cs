@@ -15,10 +15,13 @@
  */
 // SPDX-License-Identifier: Apache-2.0
 
+#nullable enable
+
 using Godot;
 
 public partial class ConfigTabBar : TabBar {
     private readonly ConfigFile cfg = new ConfigFile();
+    private LocalizationManager? localizationManager;
 
     public override void _Ready() {
         cfg.Load("user://config.cfg");
@@ -26,16 +29,37 @@ public partial class ConfigTabBar : TabBar {
         GetNode<CanvasItem>("../General").Visible = true;
         GetNode<CanvasItem>("../Debug").Visible = false;
         GetNode<CanvasItem>("../Credits").Visible = false;
+        localizationManager = GetNodeOrNull<LocalizationManager>("/root/LocalizationManager");
+        if (localizationManager != null) {
+            localizationManager.LocaleChanged += OnLocaleChanged;
+        }
+
+        RefreshTranslations();
+    }
+
+    public override void _ExitTree() {
+        if (localizationManager != null) {
+            localizationManager.LocaleChanged -= OnLocaleChanged;
+        }
+    }
+
+    public void RefreshTranslations() {
+        int currentTab = CurrentTab;
         ClearTabs();
         AddTab(Tr("GENERAL_SETTING"));
         AddTab("Debug");
         SetTabDisabled(1, !cfg.GetValue("System", "DevSetting", false).AsBool());
         AddTab(Tr("CREDITS"));
+        CurrentTab = Mathf.Clamp(currentTab, 0, TabCount - 1);
     }
 
     public void OnTabChanged(long tab) {
         GetNode<CanvasItem>("../General").Visible = tab == 0;
         GetNode<CanvasItem>("../Debug").Visible = tab == 1;
         GetNode<CanvasItem>("../Credits").Visible = tab == 2;
+    }
+
+    private void OnLocaleChanged(string locale) {
+        RefreshTranslations();
     }
 }

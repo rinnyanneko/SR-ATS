@@ -11,10 +11,10 @@
 [ext_resource type="Texture2D" uid="uid://b36e05qchupi7" path="res://ATS-P/assets/icon_INOP (Custom).png" id="8_xtb8p"]
 [ext_resource type="Script" uid="uid://jn2sdqhh5y58" path="res://scripts/Banner.cs" id="9_8c6cy"]
 [ext_resource type="Texture2D" uid="uid://rj1xtqglh55u" path="res://assets/banner.png" id="9_usuam"]
-[ext_resource type="Script" uid="uid://dkb1cl4o7qnm8" path="res://scripts/LanguageButton.cs" id="11_qu0kt"]
 [ext_resource type="Texture2D" uid="uid://de0q6d30tvatb" path="res://assets/settings (Custom).png" id="15_k3h24"]
 [ext_resource type="Script" uid="uid://ctt8bhhr72m7h" path="res://scripts/ConfigButton.cs" id="16_qcr4t"]
 [ext_resource type="Script" uid="uid://3xpipvwhel6s" path="res://scripts/UpdateRequest.cs" id="19_swxou"]
+[ext_resource type="Script" uid="uid://dswi0spdtooqy" path="res://scripts/StartupUpdateChecker.cs" id="20_tn4p4"]
 
 [node name="Control" type="Control" unique_id=1045186799]
 layout_mode = 3
@@ -23,6 +23,9 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="StartupUpdateChecker" type="Node" parent="." unique_id=379926605]
+script = ExtResource("20_tn4p4")
 
 [node name="ATS-S" type="TextureButton" parent="." unique_id=535806910]
 layout_mode = 0
@@ -65,15 +68,6 @@ scale = Vector2(0.251848, 0.251848)
 texture_normal = ExtResource("9_usuam")
 script = ExtResource("9_8c6cy")
 
-[node name="Language" type="OptionButton" parent="." unique_id=972792753]
-layout_mode = 0
-offset_right = 170.0
-offset_bottom = 31.0
-tooltip_text = "Language"
-fit_to_longest_item = false
-allow_reselect = true
-script = ExtResource("11_qu0kt")
-
 [node name="version" type="LinkButton" parent="." unique_id=1207766807]
 layout_mode = 0
 offset_top = 625.0
@@ -89,7 +83,7 @@ offset_left = 727.0
 offset_top = 625.0
 offset_right = 1152.0
 offset_bottom = 648.0
-text = "Copyright © 2026 rinnyanneko. Some Rights Reserved."
+text = "COPYRIGHT_NOTICE"
 underline = 1
 uri = "LICENSE.txt"
 
@@ -98,7 +92,7 @@ layout_mode = 0
 offset_left = 1122.0
 offset_right = 1152.0
 offset_bottom = 30.0
-tooltip_text = "Config"
+tooltip_text = "CONFIG"
 texture_normal = ExtResource("15_k3h24")
 script = ExtResource("16_qcr4t")
 
@@ -106,20 +100,18 @@ script = ExtResource("16_qcr4t")
 title = "DEBUG"
 initial_position = 1
 size = Vector2i(223, 100)
-dialog_text = "Developer setting enabled"
+dialog_text = "DEVELOPER_SETTING_ENABLED"
 
 [node name="BETA" type="AcceptDialog" parent="." unique_id=1883532464]
 oversampling_override = 1.0
 initial_position = 1
 size = Vector2i(527, 106)
 visible = true
-dialog_text = "This is the BETA version of the software, may contain lots of bugs.
-Use at own risk"
+dialog_text = "BETA_VERSION_WARNING"
 
 [connection signal="pressed" from="ATS-S" to="ATS-S" method="OnPressed"]
 [connection signal="pressed" from="ATS-Ps" to="ATS-Ps" method="OnPressed"]
 [connection signal="pressed" from="ATS-P" to="ATS-P" method="OnPressed"]
 [connection signal="pressed" from="Banner" to="Banner" method="OnPressed"]
-[connection signal="item_selected" from="Language" to="Language" method="OnItemSelected"]
 [connection signal="pressed" from="version" to="version" method="OnVersionPressed"]
 [connection signal="pressed" from="Config" to="Config" method="OnPressed"]

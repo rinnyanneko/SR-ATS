@@ -1,5 +1,5 @@
 #define MyAppName "SR-ATS"
-#define MyAppVersion "0.1.1b2"
+#define MyAppVersion "0.1.1-beta.3"
 #define MyAppPublisher "rinnyanneko"
 #define MyAppExeName "SR-ATS.exe"
 

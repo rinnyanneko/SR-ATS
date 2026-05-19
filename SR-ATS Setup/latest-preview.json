@@ -1,0 +1,17 @@
+{
+  "product": "SR-ATS",
+  "channel": "preview",
+  "version": "0.1.1-beta.3",
+  "tag": "v0.1.1-beta.3",
+  "prerelease": true,
+  "installer_url": "https://github.com/rinnyanneko/SR-ATS/releases/download/v0.1.1-beta.3/SR-ATS-v0.1.1-beta.3-win-x64-setup.exe",
+  "sha256": "PUT_SHA256_HERE",
+  "notes": [
+    "Preview updater integration build.",
+    "This manifest may advertise prerelease builds to users on the Preview channel."
+  ],
+  "components": {
+    "sr_ats": "0.1.1-beta.3",
+    "simrailconnect": "0.0.1"
+  }
+}

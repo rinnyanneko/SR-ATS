@@ -33,7 +33,7 @@ offset_left = 684.0
 offset_top = 625.0
 offset_right = 1152.0
 offset_bottom = 648.0
-text = "Copyright © 2024 - 2026 rinnyanneko. Some rights reserved."
+text = "COPYRIGHT_NOTICE"
 underline = 2
 
 [node name="Debug frame" type="RichTextLabel" parent="." unique_id=35139702]

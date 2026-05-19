@@ -15,22 +15,44 @@
  */
 // SPDX-License-Identifier: Apache-2.0
 
+#nullable enable
+
 using Godot;
 
 public partial class DebugSaveButton : Button {
     private readonly ConfigFile cfg = new ConfigFile();
+    private LocalizationManager? localizationManager;
 
     public override void _Ready() {
         cfg.Load("user://config.cfg");
-        Text = Tr("SAVE");
-        GetNode<Button>("../Debug frame").Text = "Debug frame";
+        localizationManager = GetNodeOrNull<LocalizationManager>("/root/LocalizationManager");
+        if (localizationManager != null) {
+            localizationManager.LocaleChanged += OnLocaleChanged;
+        }
+
+        RefreshTranslations();
         if (cfg.GetValue("System", "Debug", false).AsBool()) {
             GetNode<BaseButton>("../Debug frame").ButtonPressed = true;
+        }
+    }
+
+    public override void _ExitTree() {
+        if (localizationManager != null) {
+            localizationManager.LocaleChanged -= OnLocaleChanged;
         }
     }
 
     public void OnPressed() {
         cfg.SetValue("System", "Debug", GetNode<BaseButton>("../Debug frame").ButtonPressed);
         cfg.Save("user://config.cfg");
+    }
+
+    public void RefreshTranslations() {
+        Text = Tr("SAVE");
+        GetNode<Button>("../Debug frame").Text = "Debug frame";
+    }
+
+    private void OnLocaleChanged(string locale) {
+        RefreshTranslations();
     }
 }

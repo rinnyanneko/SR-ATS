@@ -15,23 +15,41 @@
  */
 // SPDX-License-Identifier: Apache-2.0
 
+#nullable enable
+
 using Godot;
 
 public partial class UpdateMirrorOptionButton : Button {
 	public const string DefaultSimRailConnectUrl = "ws://localhost:5556/ws";
 
 	private readonly ConfigFile cfg = new ConfigFile();
+	private LocalizationManager? localizationManager;
 
 	public override void _Ready() {
 		cfg.Load("user://config.cfg");
 		cfg.SetValue("General", "UpdateMirror", "GitHub");
+		localizationManager = GetNodeOrNull<LocalizationManager>("/root/LocalizationManager");
+		if (localizationManager != null) {
+			localizationManager.LocaleChanged += OnLocaleChanged;
+		}
 
 		GetNode<LineEdit>("../SimRailConnectUrl").Text =
 			cfg.GetValue("SimRailConnect", "url", DefaultSimRailConnectUrl).AsString();
-		GetNode<RichTextLabel>("../SimRailConnectUrl/RichTextLabel").Text = Tr("SIMRAILCONNECT_WS_URL");
-		GetNode<CheckBox>("../AlwaysOnTop").Text = Tr("ALWAYS_ON_TOP");
 		GetNode<BaseButton>("../AlwaysOnTop").ButtonPressed =
 			cfg.GetValue(WindowSettings.Section, WindowSettings.AlwaysOnTopKey, false).AsBool();
+		RefreshTranslations();
+	}
+
+	public override void _ExitTree() {
+		if (localizationManager != null) {
+			localizationManager.LocaleChanged -= OnLocaleChanged;
+		}
+	}
+
+	public void RefreshTranslations() {
+		GetNode<RichTextLabel>("../Language/RichTextLabel").Text = Tr("SETTINGS_LANGUAGE");
+		GetNode<RichTextLabel>("../SimRailConnectUrl/RichTextLabel").Text = Tr("SIMRAILCONNECT_WS_URL");
+		GetNode<CheckBox>("../AlwaysOnTop").Text = Tr("ALWAYS_ON_TOP");
 		GetNode<Button>("../ResetSimRailConnectUrl").Text = Tr("RESET_TO_DEFAULT");
 		Text = Tr("SAVE");
 	}
@@ -42,7 +60,7 @@ public partial class UpdateMirrorOptionButton : Button {
 		if (GetNode<OptionButton>("../UpdateChannel").GetSelectedId() == 0) {
 			cfg.SetValue("General", "UpdateChannel", "Stable");
 		} else {
-			cfg.SetValue("General", "UpdateChannel", "Beta");
+			cfg.SetValue("General", "UpdateChannel", "Preview");
 		}
 
 		cfg.SetValue("SimRailConnect", "url", GetNode<LineEdit>("../SimRailConnectUrl").Text);
@@ -57,5 +75,9 @@ public partial class UpdateMirrorOptionButton : Button {
 		GetNode<LineEdit>("../SimRailConnectUrl").Text = DefaultSimRailConnectUrl;
 		cfg.SetValue("SimRailConnect", "url", DefaultSimRailConnectUrl);
 		cfg.Save("user://config.cfg");
+	}
+
+	private void OnLocaleChanged(string locale) {
+		RefreshTranslations();
 	}
 }

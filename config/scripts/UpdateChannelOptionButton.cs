@@ -15,19 +15,41 @@
  */
 // SPDX-License-Identifier: Apache-2.0
 
+#nullable enable
+
 using Godot;
 
 public partial class UpdateChannelOptionButton : OptionButton {
 	private readonly ConfigFile cfg = new ConfigFile();
+	private LocalizationManager? localizationManager;
 
 	public override void _Ready() {
 		cfg.Load("user://config.cfg");
-		if (cfg.GetValue("General", "UpdateChannel", "Stable").AsString() == "Stable") {
-			Selected = 0;
-		} else if (cfg.GetValue("General", "UpdateChannel").AsString() == "Beta") {
-			Selected = 1;
+		localizationManager = GetNodeOrNull<LocalizationManager>("/root/LocalizationManager");
+		if (localizationManager != null) {
+			localizationManager.LocaleChanged += OnLocaleChanged;
 		}
 
+		RefreshTranslations();
+		Selected = UpdateChannelExtensions.ParseConfigValue(
+			cfg.GetValue("General", "UpdateChannel", "Stable").AsString()) == UpdateChannel.Preview
+				? 1
+				: 0;
+	}
+
+	public override void _ExitTree() {
+		if (localizationManager != null) {
+			localizationManager.LocaleChanged -= OnLocaleChanged;
+		}
+	}
+
+	public void RefreshTranslations() {
 		GetNode<RichTextLabel>("RichTextLabel").Text = Tr("UPDATE_CHANNEL");
+		SetItemText(0, Tr("UPDATE_CHANNEL_STABLE"));
+		SetItemText(1, Tr("UPDATE_CHANNEL_PREVIEW"));
+	}
+
+	private void OnLocaleChanged(string locale) {
+		RefreshTranslations();
 	}
 }
